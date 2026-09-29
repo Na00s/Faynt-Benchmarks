@@ -65,7 +65,9 @@ python -m melee_rl.release_cli run \
   --override 'phillip.agent="delay0/FoxFD"'
 ```
 
-The example runs one 16-game Fox-mirror block with the supplied checkpoint. For the six-stage block, select `--config video_phillip_stages`. To reproduce the native-character mirrors, set both characters with `--override 'env.dolphin.characters=[ID,ID]'` using this table:
+The example runs one 16-game Fox-mirror block with the supplied checkpoint. For the six-stage block, select `--config video_phillip_stages`. The character pair is ordered `[Faynt, Phillip]`; changing `phillip.agent` does not change that pair automatically.
+
+For native-character mirrors, set `--override 'env.dolphin.characters=[ID,ID]'` using the specialist's ID below. For Fox against a specialist, set `--override 'env.dolphin.characters=[1,ID]'`. For example, `delay0/FalcoFD` uses `[22,22]` for Falco mirrors and `[1,22]` for Faynt Fox against Phillip Falco. Keep the selected character pair with the run's results so these protocols remain distinguishable.
 
 | `phillip.agent` | Fighter | ID |
 |---|---|---:|
