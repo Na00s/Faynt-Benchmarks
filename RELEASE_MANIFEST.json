@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "5a06e6df461616f6c4580957305100135bca7050ab9eda74f6ecc8a5ed62892b",
-      "bytes": 9727
+      "sha256": "89bf82dd003e515956212e869a7d06b2d48c21fa44c80ac088425ebbd7deb693",
+      "bytes": 9718
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -83,8 +83,8 @@
     },
     {
       "path": "docs/LOCAL_BENCHMARKS.md",
-      "sha256": "240f1c90154cc7a0f46c416c934802d75bfea4b732367d02ee59f6b74c55d90a",
-      "bytes": 10143
+      "sha256": "abb08e36dafb93c1dc17f02dbfb0df2d07cc3b72ae897824b6f1a3c8b9de67f0",
+      "bytes": 10207
     },
     {
       "path": "docs/historical-cloud/LIVE_PILOT_AUTHORIZATION.json",

@@ -1,6 +1,8 @@
 # Faynt benchmarks
 
-This repository contains the benchmarks applied to **Base, Expert, and reinforcement-learned Arena models** in **Faynt: Scaling and Optimizing Policies for Competitive Melee**, together with their execution runtimes and reported results. Base is the pretrained policy. Expert adds supervised curricula, with 75M-to-10M distillation for the 10M. Arena continues the Expert policy through Fox-only reinforcement learning. The six checkpoints cover two model sizes and all 26 characters. Browse the [Faynt model family](https://huggingface.co/collections/frisson-labs/faynt) for model cards and inference examples.
+Evaluate Faynt from pretraining through reinforcement learning. This repository provides the match schedules, reported results and execution tools from **Faynt: Scaling and Optimizing Policies for Competitive Melee**.
+
+Base is the pretrained policy. Expert adds supervised curricula, with 75M-to-10M distillation for the 10M. Arena continues the Expert policy through Fox-only reinforcement learning. The six checkpoints cover two model sizes and all 26 characters. Browse the [Faynt model family](https://huggingface.co/collections/frisson-labs/faynt) for model cards and inference examples.
 
 | Size | Base | Expert | Arena |
 |---|---|---|---|
@@ -39,7 +41,7 @@ Each Arena checkpoint plays 1,312 games against 14 frozen Slippi-AI releases. Th
 
 | Condition | Meaning | 10M Arena | 75M Arena |
 |---|---|---:|---:|
-| Supported mirrors | Both sides use a fighter in the opponent's deployed roster. | 240/244 | 149/244 |
+| Supported mirrors | Both agents use the same fighter from the opponent's deployed roster. | 240/244 | 149/244 |
 | Extended roster | Faynt uses an outside-roster fighter; the opponent retains a supported fighter. | 427/534 | 198/534 |
 | Forced mirrors | Both sides use the same outside-roster fighter. | 531/534 | 503/534 |
 
