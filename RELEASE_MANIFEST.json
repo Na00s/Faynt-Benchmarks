@@ -12,19 +12,24 @@
       "bytes": 379
     },
     {
+      "path": "LICENSE",
+      "sha256": "6a6444a7fdd7e848bd260863331db54f4e60f01bb33307766525c1a254891f39",
+      "bytes": 1069
+    },
+    {
       "path": "LOCAL_MATCHES.md",
-      "sha256": "fa1502e2d811761e1bd1aeabc2062b0e514b4ac87602bbb3d27b25ddeac3b8bf",
-      "bytes": 5724
+      "sha256": "7d57c08fef0dc390907543de454a460ba7c3228c5179b7dcb3573862e8e1a3f2",
+      "bytes": 5885
     },
     {
       "path": "README.md",
-      "sha256": "e36c668ffde491d5319f705712520408436a3b3772995af32703ca6a3dbb0a11",
-      "bytes": 7754
+      "sha256": "fdbf012c9255ad6add1dffb122500e9a3f96bcfa61d954744a841fa99cd0650c",
+      "bytes": 8128
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sha256": "54fcc92f91fcc24ddf7381f12b080eb16158cd487a2c59961ca6f26b6f18b92a",
-      "bytes": 2535
+      "sha256": "0b5b88caa1c396ef5733278e6ea2610e69d4fb74688bb62b0d1a765061e4557a",
+      "bytes": 3694
     },
     {
       "path": "artifacts/integration/frisson_ai/faynt-d0-632-980-v1/expanded-slippi/manifest.json",
@@ -378,13 +383,13 @@
     },
     {
       "path": "evaluation/SOURCE_MANIFEST.json",
-      "sha256": "40ea6bf8f2071c6c7573b81b635f18509c7732baa57e045e558156024ddd6857",
-      "bytes": 84510
+      "sha256": "068e7297657d9a3d3558cee9f3df9da199af6cce7d44a07a0252872f8a6cb7c8",
+      "bytes": 84616
     },
     {
       "path": "evaluation/THIRD_PARTY_NOTICES.md",
-      "sha256": "9b54f8524ad2042a882f5f614ef4437038e2baf0e2c1a032688470a029481045",
-      "bytes": 1612
+      "sha256": "fbd65ba209fbba5c96a57ffc91c0cbebd14aba9f010e1bc01359507960e05e57",
+      "bytes": 1938
     },
     {
       "path": "evaluation/config.yaml",

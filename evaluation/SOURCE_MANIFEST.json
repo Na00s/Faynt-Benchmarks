@@ -1315,7 +1315,7 @@
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sha256": "9b54f8524ad2042a882f5f614ef4437038e2baf0e2c1a032688470a029481045"
+      "sha256": "fbd65ba209fbba5c96a57ffc91c0cbebd14aba9f010e1bc01359507960e05e57"
     },
     {
       "path": "config.yaml",
@@ -2123,7 +2123,8 @@
     "Frozen hash-checked source allowlist for cloud mounting",
     "Local evaluation CLI using unchanged research execution helpers",
     "Faynt application and logging names",
-    "Upstream source and license notices retained"
+    "Upstream source and license notices retained",
+    "Faynt-owned code and documentation licensed under MIT; upstream component license notices retained"
   ],
   "original_execution_helpers_ast_unchanged": [
     "run_record_video",

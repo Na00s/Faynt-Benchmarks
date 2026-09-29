@@ -1,6 +1,6 @@
 # Third-party notices
 
-The export contains first-party policy and evaluation code from the source revision recorded in `SOURCE_MANIFEST.json`.
+Faynt-owned policy and evaluation code and accompanying documentation are covered by the repository's [MIT License](../LICENSE), copyright 2026 Frisson Labs. The source revision is recorded in `SOURCE_MANIFEST.json`. Third-party portions retain the notices and licenses identified here.
 
 The state representation, controller codec, reward functions, RL utilities, frame conversion and PyTorch Slippi-AI compatibility implementation follow or adapt Slippi-AI at revision `577965a7731dc53e3472ea63d9e9853a4e9d65fa`. Its MIT copyright and permission notice is retained in `LICENSES/slippi-ai-MIT.txt`. The MIMIC integration is attributed to Erick Martinez, with its MIT notice retained in `LICENSES/MIMIC-MIT.txt`.
 
@@ -17,4 +17,4 @@ Users provide the following dependencies separately and retain their applicable 
 
 HAL implementations and checkpoints are excluded. Game images, game art, upstream source checkouts and third-party checkpoint payloads are excluded. The private zero-delay checkpoint remains a local path prerequisite; its availability is controlled by its provider.
 
-These notices record code provenance. Publication licensing and any obligations arising from a particular dependency combination require review by the repository owners.
+The retained MIT notices apply to the adapted Slippi-AI and MIMIC portions. Separately supplied dependency source, weights, datasets, game images and emulator binaries remain subject to their providers' terms. The [repository component notices](../THIRD_PARTY_NOTICES.md) also identify the GPL-2.0-or-later Slippi Dolphin patch.

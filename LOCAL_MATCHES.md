@@ -45,7 +45,7 @@ The equivalent 75M Base comparison uses `Faynt-75M-Base/checkpoint.pt`. Use a ne
 
 Checkpoint formats matter. The Base and Expert `.pt` files use the historical training envelopes. Expert winners also have fixed benchmark paths. The paper's Arena zero-delay schedules use the recorded Ali benchmark envelopes and their native-checkpoint attestations. Published Arena policy exports and Transformers `model.safetensors` packages have separate loading interfaces. Use the companion benchmark suite's Arena entry point and its declared envelope preparation when reproducing those schedules.
 
-The configured actor uses a 128-frame ring cache, FP32, temperature 1, next-frame action alignment, and zero added Faynt delay. The model's trained sequence length is 256. These settings form part of the checkpoint and benchmark contracts.
+The local match runtime uses a continuous 256-frame ring cache, FP32, temperature 1, next-frame action alignment, and zero added Faynt delay. It resets the cache at the start of each game. The model's trained sequence length is also 256; the original actor's 128-frame trajectory-context setting is separate from the cache capacity. These settings form part of the checkpoint and benchmark contracts.
 
 ## Baseline tournament
 

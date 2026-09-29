@@ -98,3 +98,7 @@ Read the [benchmark runtime guide](BENCHMARK_RUNTIME.md) for initial/expanded co
 HAL implementation and adapters, game assets, emulator binaries, third-party source trees and checkpoint payloads are excluded. Users provide the declared local inputs. Cloud execution uses an explicitly supplied prepared image. Source revisions, per-file hashes and dependency notices accompany the export.
 
 This repository starts with a clean source export and contains no internal research Git or LFS history. The companion [Faynt Tournament](https://github.com/Na00s/Faynt-Tournament) repository contains the standalone match runtime and mirrored baseline tournament scheduler. A new game run needs its own qualification and accepted-result evidence. The paper's historical results remain separately identified in `results/`.
+
+## License
+
+Faynt-owned code and accompanying documentation are available under the [MIT License](LICENSE), copyright 2026 Frisson Labs. Third-party portions retain their original notices. The Slippi Dolphin source patch is licensed under GPL-2.0-or-later. See the [component licensing and runtime notices](THIRD_PARTY_NOTICES.md) for the scope and retained license texts.
