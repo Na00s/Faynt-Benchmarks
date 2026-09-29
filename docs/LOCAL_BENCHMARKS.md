@@ -1,19 +1,19 @@
 # Local benchmark schedules and execution
 
-This directory preserves the local initial benchmark and expanded public Slippi-AI panel used during Faynt evaluation. The separate `evaluation/` directory contains the remote Phillip and private zero-delay evaluation source. The historical post-RL continuation here uses earlier checkpoint endpoints; the final Arena endpoints are the D0 10M step 632 continuation and 75M step 980.
+This guide covers the initial **Base (pretrained)** and **Expert (supervised post-trained)** benchmarks and the expanded **Arena (reinforcement-learned)** panel. Expert includes curricula for both sizes and distillation for 10M. The separate [evaluation runtime](../evaluation/README.md) runs the Phillip and private zero-delay comparisons. The historical post-RL continuation uses 10M step 1,318 and 75M step 222; the final Arena endpoints are the second-run 10M step 632 and 75M step 980.
 
 | Entry point | Scope |
 | --- | --- |
 | `scripts/run_final_winner_benchmark.py` | Frozen Base schedule, 309 physical games |
 | `scripts/run_posttraining_winner_benchmark.py` | Frozen Expert schedule, 329 physical games |
-| `scripts/run_post_rl_benchmark.py` | Earlier historical post-RL continuation |
-| `scripts/slippi_panel_plan.py` | Expanded panel, 2,624 games against 14 unique public releases |
+| `scripts/run_post_rl_benchmark.py` | Earlier RL continuation: 10M step 1,318 and 75M step 222 |
+| `scripts/slippi_panel_plan.py` | Original expanded schedule for the earlier RL checkpoints, 2,624 games against 14 public releases |
 | `scripts/prepare_faynt_d0_benchmark.py` | Exact checkpoint-only transformation of that panel for final Arena 632/980 |
 | `scripts/prepare_faynt_d0_cloud.py` | Build its immutable cloud queue locally from a qualified template |
 | `scripts/modal_panel_cloud_app.py` | Cloud queue, workers, retries, ownership, budget and durable result handling |
 | `scripts/report_slippi_public_panel.py` | Paired descriptive results with separate supported/transfer strata |
 
-The initial reported score uses 152 games per model. The full schedules also contain five shared cross-size games; the Expert schedule adds ten ancestor games per model. Expanded coverage per model is 244 supported-mirror, 534 extended-roster and 534 forced-mirror games. Each matched cell runs both physical ports with the same seed, stage and characters. Public opponent decision delays and native name conditioning stay in the frozen metadata. The final Arena contract is FP32, temperature 1, no added policy delay, one-frame action offset and a 128-frame actor ring. The paper's 256-token training context describes a separate setting.
+The initial reported score uses 152 games per Base or Expert model. Its replay-fidelity audits are complete. The full schedules also contain five shared cross-size games; the Expert schedule adds ten ancestor games per model. Expanded coverage per model is 244 supported-mirror, 534 extended-roster and 534 forced-mirror games. Each matched cell runs both physical ports with the same seed, stage and characters. Public opponent decision delays and native name conditioning stay in the frozen metadata. The final Arena contract is FP32, temperature 1, no added Faynt policy delay, one-frame action offset and a continuous 256-frame ring cache. The recorded actor trajectory-context setting is 128 frames; cache capacity and the trained sequence length are both 256. The `d0` names describe Faynt's delay; the public Slippi-AI opponents retain their recorded 21- or 24-frame queues.
 
 ## Required local inputs
 
@@ -38,7 +38,7 @@ python scripts/run_posttraining_winner_benchmark.py
 
 `--label`, `--group` and `--maximum-games` restrict a launch. `--status-only` reconciles the retained state. Each invocation verifies the frozen model/opponent identities and preserves unresolved postgame validation records. A completed game with an unresolved audit remains distinct from an accepted result.
 
-## Expanded local panel
+## Earlier RL expanded local panel
 
 The published frozen manifest and audit summary preserve public metadata and every scientific game field. Personal path prefixes were removed; `docs/metadata-provenance.json` records original and release hashes.
 
@@ -51,9 +51,11 @@ python scripts/slippi_panel_deploy.py --freeze
 python scripts/run_slippi_public_panel.py
 ```
 
-The freeze step requires successful checkpoint canaries, native adapter agreement and at least 100 passing tests. The foreground runner preserves the historical panel endpoints. Its release readiness gate checks the selected full schedule instead of requiring completion of an unrelated earlier campaign. The optional historical `slippi_panel_deploy.py --install` command installs macOS launchd services and starts their supervisor; use it only when that persistent operation is intended.
+The freeze step requires successful checkpoint canaries, native adapter agreement and at least 100 passing tests. The foreground runner uses the earlier 10M step 1,318 and 75M step 222 endpoints. The final Arena 632/980 run uses the separate preparation and cloud queue below. Its release readiness gate checks the selected full schedule instead of requiring completion of an unrelated earlier campaign. The optional historical `slippi_panel_deploy.py --install` command installs macOS launchd services and starts their supervisor; use it only when that persistent operation is intended.
 
 ## Final Arena cloud panel
+
+This is the path for the paper's **1,312 games per final RL checkpoint**, using 10M leash step 632 and 75M step 980. Its reported results are [the frozen Arena ledger](../results/rl_current_scores.json).
 
 ```sh
 export PYTHONPATH=src:scripts

@@ -1302,6 +1302,11 @@
   ],
   "runtime_files": [
     {
+      "path": "CHECKPOINT_COMPATIBILITY.json",
+      "sha256": "c3db902d9ec9f5abae5b1c5da5c240d8922000658fe7cb3b30e29ec03deb5764",
+      "bytes": 2193
+    },
+    {
       "path": "LICENSES/MIMIC-MIT.txt",
       "sha256": "dddb0f1396b4b5b5c1fd8badae8d6ccb6f930207cc2916d2a09145886ceae8e1"
     },
@@ -1311,7 +1316,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "c9fb29661457aec0d29acb816e947a45b154253012568240ab67523b3943c6ae"
+      "sha256": "c06aabf308f84911cf0184355c87e0b236fc56230528ea177bdb99f5f759ba2e"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",

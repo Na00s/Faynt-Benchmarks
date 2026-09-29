@@ -1,0 +1,61 @@
+{
+  "scope": "Recorded strict native checkpoint loads; this check does not launch emulator games.",
+  "loader": "melee_rl.checkpoint.load_policy",
+  "format": "checkpoint.pt",
+  "models": [
+    {
+      "model": "10M-Base",
+      "parameter_count": 10163629,
+      "added_delay_frames": 0,
+      "strict_load": true,
+      "repository": "frisson-labs/Faynt-10M-Base",
+      "native_checkpoint_sha256": "5a54ea4ecfa150198180dff4d06ac4fe6ecec5d9433803cc13b527e41f41d14e",
+      "checkpoint_filename": "checkpoint.pt"
+    },
+    {
+      "model": "75M-Base",
+      "parameter_count": 75305709,
+      "added_delay_frames": 0,
+      "strict_load": true,
+      "repository": "frisson-labs/Faynt-75M-Base",
+      "native_checkpoint_sha256": "8662de0c4c0deaae2879548d6373def792dbb52adec44f2b474adb7fe155c648",
+      "checkpoint_filename": "checkpoint.pt"
+    },
+    {
+      "model": "10M-Expert",
+      "parameter_count": 10163629,
+      "added_delay_frames": 0,
+      "strict_load": true,
+      "repository": "frisson-labs/Faynt-10M-Expert",
+      "native_checkpoint_sha256": "63b5ff05ef30476c4f41590c478f4a7218f3b72a8b5ef24a0e336eeb2b7c287b",
+      "checkpoint_filename": "checkpoint.pt"
+    },
+    {
+      "model": "75M-Expert",
+      "parameter_count": 75305709,
+      "added_delay_frames": 0,
+      "strict_load": true,
+      "repository": "frisson-labs/Faynt-75M-Expert",
+      "native_checkpoint_sha256": "8211f1832198646e9f4e3bacde26f181614f93320e68bd326dd5942c4e0f4077",
+      "checkpoint_filename": "checkpoint.pt"
+    },
+    {
+      "model": "10M-Arena",
+      "parameter_count": 10163629,
+      "added_delay_frames": 0,
+      "strict_load": true,
+      "repository": "frisson-labs/Faynt-10M-Arena",
+      "native_checkpoint_sha256": "c8a810c0d33b72ae448eec0e0b7d0538beacfaeb9a2e357eddd7be4fc0ce286b",
+      "checkpoint_filename": "checkpoint.pt"
+    },
+    {
+      "model": "75M-Arena",
+      "parameter_count": 75305709,
+      "added_delay_frames": 0,
+      "strict_load": true,
+      "repository": "frisson-labs/Faynt-75M-Arena",
+      "native_checkpoint_sha256": "6d2474608869b360238fb15598aa95eed34e0b28bee83a57b59890abead180f8",
+      "checkpoint_filename": "checkpoint.pt"
+    }
+  ]
+}
