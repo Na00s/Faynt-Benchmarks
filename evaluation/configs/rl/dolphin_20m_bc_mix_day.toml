@@ -1,0 +1,124 @@
+# The P10 mixed-curriculum day run (user decisions 26 Aug 2026): continue the 20m BC-init policy from
+# its best.pt with a 50/50-by-rows curriculum -- 32 self-play Dolphins (both ports trained, 64 rows)
+# plus 64 Dolphins vs the in-game CPU level 9 (64 rows) -- so the policy practises directly against
+# the opponent the run is judged by.  The teacher stays anchored to the ORIGINAL BC file (AlphaStar
+# keeps its KL-to-supervised anchor through all of league training; re-anchoring per generation lets
+# drift from human play compound), and best.pt is now selected by the cpu9 evaluation, not the BC
+# anchor.  lr / guard / teacher weight are unchanged from the parent run -- the curriculum is the one
+# variable; the smoke file measures the first-step KL transient in the new regime before this launches.
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_20m_bc_mix_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/20m_bc_mix --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 84600             # 23.5 h: one detached launch per day, resumed by the same command
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2
+snapshot_interval_steps = 8       # step_<n>.pt every ~40 min: past selves for a later opponent pool
+
+[policy]
+profile = "20m"
+init = "checkpoint"
+checkpoint = "/runs/selfplay/20m_bc/best.pt"   # the parent run's best; frozen as init.pt at first launch
+init_value = true                 # warm-start the value net from the same RL checkpoint (P10)
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true
+
+[teacher]
+source = "checkpoint"
+path = "/runs/bc/20m-muon-scaling-c3.pt"       # the ORIGINAL BC anchor (sha256 pinned in the record)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 32 + 64 (the mix groups must sum to this)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # sliced per group, then per worker
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 16             # split 8 + 8 across the groups (opponent.mix_workers)
+mp_start_method = "spawn"
+chunk_frames = 1                  # D = 0: lockstep (mixed mode is lockstep-only anyway)
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0                  # matches the model's action_offset_frames = 1 (no mismatch flag)
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"
+mix = ["self*32", "cpu9*64"]      # 64 self-play rows + 64 cpu9 rows per rollout (50/50 gradient share)
+mix_workers = [8, 8]              # 4 Dolphins per self worker, 8 per cpu9 worker
+seed = 1
+
+[learner]
+learning_rate = 4e-5              # unchanged from the parent run (its settled KL was ~8e-6/update)
+kl_teacher_weight = 0.1
+value_burnin_steps = 6            # the cpu9 rows are a new return distribution even with init_value
+optimizer_burnin_steps = 3
+microbatch_envs = 64              # each group's trajectory is 64 rows: one chunk per trajectory
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16                  # 16 rollouts x 128 rows x 128 frames = 262 144 rows per update
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 5e-3          # above the first-step transient (the session-21 lockout lesson)
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "mix", "cpu9-arm", "self-play", "rl-init", "from-20m-bc-best", "teacher-kl",
+    "20m", "l4", "day", "wide", "ring", "mp-workers", "fast-step", "nb16",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 7200.0
+at_start = true
+at_end = true
+frames = 57600
+num_envs = 32
+rollout_length = 128
+opponents = ["cpu1", "cpu9", "other:/runs/bc/20m-muon-scaling-c3.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "cpu9"          # best.pt = best vs cpu9 now (the goal); the BC anchor stays logged

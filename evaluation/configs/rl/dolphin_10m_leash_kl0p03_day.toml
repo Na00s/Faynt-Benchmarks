@@ -1,0 +1,176 @@
+# Strength plan, gate 1 (user decision 10 Sep 2026, session 57; `docs/rl-post-training/STRENGTH-PLAN.md`): the
+# 10m post-trained run's step 1318 (`best_1318.pt`: 32-2 vs MIMIC; vs slippi-ai level with `diamond`, 1-15 / 5-13
+# vs `master`, 0-16 / 0-18 vs `gm`, P27) forked into a fresh directory with the teacher leash loosened into the
+# range slippi-ai's releases were trained with, plus the rest of their recipe.  Why: their strength ladder is ONE
+# teacher with more PPO steps and a looser teacher KL per rung -- medium-v2 0.05 (6 829 steps) -> diamond 0.02
+# (14 374) -> master 0.01 (26 765) -> gm 0.005 (32 344), forward AND reverse at policy-gradient weight 3; the Fox
+# dittos 0.003 -- read out of the release files (`rl_config`); ours was 0.1 forward at PG weight 1 (15-100x
+# tighter per direction), and the 10m run's evals went flat after ~step 1100 with teacher_kl creeping 2.7e-3 ->
+# 4.7e-3 (W&B `oymejnsq`); its step 2385 plays level with 1318 against gm and fox_d21 (P27 wave 2).
+# THIS ARM: forward + reverse teacher KL 0.03 (0.01 per direction at PG weight 3: between their medium-v2 and
+# diamond rungs).  The three gate-1 arms differ ONLY in that weight -- 0.03 / 0.01 / 0.003
+# (`dolphin_10m_leash_kl0p03_day.toml`, `..._kl0p01_day.toml`, `..._kl0p003_day.toml`) -- and one tag.
+# Changes against `dolphin_10m_pt_stages_day.toml`:
+#   * [policy] the frozen step 1318, policy AND value net (`init_value`, P10); the teacher stays Ali's post-trained
+#     file, so the KL still measures the distance from the BC prior (their chain keeps its teacher too);
+#   * their learner recipe: `policy_gradient_weight` 3, `reverse_kl_teacher_weight` = the forward weight, PPO `beta`
+#     0.3 (a fixed KL(actor || pi) penalty beside the clip), `reward_halflife` 8 s; our lr 1e-4 kept (measured);
+#   * 100 % self-play as in every release (`opponent.type = self, train = True`): the CPU-9 arm dropped (the day
+#     run beat it by +2.4 KO/min), 96 self Dolphins as two lockstep groups of 48 stepped in alternation (P20);
+#   * every speed lever in the file (the day runs' `--overrides` of 6 Sep): the actor package, shared memory, the
+#     lean learner forward + torch.compile with gradient checkpointing off; `metrics.jsonl` on (the free read);
+#   * the in-loop anchor is step 1318 itself (`other:`) and best.pt selects on it -- MIMIC is saturated (32-2).
+# `teacher_prefix` stays on: the teacher reads the policy's stored prefix keys (learner.py:134-140), an
+# approximation that grows with the drift; switching it off costs a 4.95e-3-nat context floor, larger than the
+# whole current teacher KL.  No smoke: the first PPO steps (after 6 value + 3 optimizer burn-in steps) are it.
+# Launch (each 22-h launch needs its own yes; gate 1 = one launch per arm, ~$63.9 each, approved 10 Sep 2026):
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_10m_leash_kl0p03_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/10m_leash/kl0p03 --spawn
+# Never two launches on one directory at once.  What to read: loss/actor_kl on the first PPO steps against the day
+# run's 1.3e-5 (stop and relaunch at a lower lr if >10x), ppo/reverted 0, the loss/teacher_kl (starts near 4.3e-3 =
+# the old run at 1318) and loss/entropy (0.75) trends, eval/other/* (vs 1318: ~0 at step 0, must move up),
+# eval/cpu9 and eval/mimic must not fall; the decision is the yardstick matches (master FD / six + diamond FD
+# through P27's recorder) at ~11 h and at the end.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 79200             # 22 h per launch: leaves ~2 h inside Modal's 24-h cap for boot, the end eval, saves
+max_total_runtime_s = 259200      # 72 h across launches (accumulated in loop_state.runtime_s; resumes count); each launch needs its own yes
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2           # a step is 16 rollouts (~1.5 min at 10m with the levers)
+snapshot_interval_steps = 8       # step_<n>.pt ladder: the yardstick checkpoints and the past-self pool to come
+
+[policy]
+profile = "10m"                   # config.yaml: 10.16 M params; the checkpoint's summary names this profile
+init = "checkpoint"
+checkpoint = "/runs/selfplay/10m_pt_stages/best_1318.pt"   # frozen 7 Sep 2026: best.pt of the post-trained run (MIMIC-selected)
+init_value = true                 # the value net warm-starts from the same file (P10); its burn-in re-fits the 8-s half-life
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+fast_attention = "lean"           # the actor package (5 Sep 2026): lean GQA attention over the ring
+fast_encoder = true               # the sync-free encoder
+graph_step = true                 # the CUDA-graph frame step (needs actor.packed_frames)
+model_overrides = {gradient_checkpointing = false}   # learner.compile needs it off (memory only; the day runs' 6 Sep override)
+
+[teacher]
+source = "checkpoint"             # the KL anchor stays the BC prior the run started from, as in slippi-ai's chain
+path = "/runs/bc/frisson-melee-10m-posttrained-best-val.pt"   # Ali's cur-6-kd step 195248 (sha256 63b5ff05...287b)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 96 self-play Dolphins in two groups of 48 (the mix groups must sum to this)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # unused while `stages` is set (kept for the config's default path)
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- cycled over the global env index: 16 each
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 6w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 96 boots, 6 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (6)
+boot = "two_phase"
+worker_processes = 16             # split 8 + 8 across the two groups (opponent.mix_workers)
+mp_start_method = "spawn"
+chunk_frames = 1                  # D = 0: the slack (b-1)+(k-1) <= D forces lockstep stepping
+shared_memory = true              # lever 0 / IPC: frames and controllers through shared memory, tokens on the pipes
+
+[actor]
+rollout_length = 128
+context_frames = 128              # still recorded: the value net reads the C + T window
+delay_frames = 0                  # matches the model's action_offset_frames = 1 (no mismatch flag)
+context_mode = "prefix"           # the rolling cache + its snapshot on the trajectory (patch #1)
+batch_steps = 1                   # D = 0: no pipeline (P8 stays dormant by construction)
+packed_frames = true              # the actor package: one pinned copy per dtype into static buffers
+interleave_arms = true            # lever 1: the two groups step frame by frame in alternation
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3         # the values in slippi-ai's releases (medium-v2 ... gm) and RewardConfig.default()
+
+[opponent]
+type = "mix"                      # 100 % self-play (every slippi-ai release: opponent.type = self, train = True)
+mix = ["self*48@a", "self*48@b"]  # both ports trained in both groups: 192 rows per rollout
+mix_workers = [8, 8]              # 6 Dolphins per worker in both groups (48 = 8 x 6 stages)
+seed = 1
+
+[learner]
+learning_rate = 1e-4              # ours, measured in-regime (slippi-ai's 3e-5 is their own regime)
+policy_gradient_weight = 3.0      # slippi-ai's releases (the twelve-character ladder and the Fox dittos)
+kl_teacher_weight = 0.03          # THE GATE-1 KNOB: 0.03 / 0.01 / 0.003 across the three arms (the day runs: 0.1)
+reverse_kl_teacher_weight = 0.03  # = the forward weight, as up their ladder
+value_burnin_steps = 6            # ~96 rollouts of value-only training: re-fits the warm value net to the 8-s returns
+optimizer_burnin_steps = 3        # ~48 rollouts at lr 0: fresh Adam moments warm before the policy moves
+microbatch_envs = 24              # must divide every arm's rows (96 and 96): 4 chunks per group per update
+teacher_prefix = true             # the frozen teacher attends to the stored prefix too (no 5e-3 context floor)
+fast_forward = true               # the lean learner forward (session 47)
+compile = true                    # torch.compile over the lean pass (~5 min on the first step)
+
+[learner.returns]
+reward_halflife = 8.0             # slippi-ai's releases (their library default is 4 s)
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16                  # slippi-ai's production regime: accumulate 16 rollouts per update
+epsilon = 1e-2                    # the BC regime's measured clip window (= slippi-ai's)
+beta = 0.3                        # slippi-ai's releases: a fixed KL(actor || pi) penalty beside the clip
+max_mean_actor_kl = 5e-3          # ~400x above the day run's per-update KL (1.3e-5)
+
+[delay]
+allow_mismatch = false
+
+[mimic]
+source_dir = "/opt/mimic/source"          # the pinned checkout baked into the MIMIC image
+asset_dir = "/opt/mimic/fox-master"       # model.pt + config.json + the normalisation bundle
+device = "cuda"                   # MIMIC has no KV cache: it re-runs its 60-frame window every frame
+temperature = 1.0                 # the released defaults of integration_mimic_vs_hal.toml [mimic]
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1                        # environment player 1 = Dolphin port 2, as in Ali's launcher
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "rl-init", "pt-init", "cur6kd", "teacher-kl", "10m", "l4", "day",
+    "wide", "prefix", "teacher-prefix", "mp-workers", "fast-step", "nb16", "stages", "mimic-eval", "mix", "self100",
+    "shm", "interleave", "compile", "leash", "gate1", "fork1318", "slippi-recipe", "kl0p03",
+]
+print_interval_steps = 1
+jsonl = true                      # metrics.jsonl in the run directory: the free read of every curve (W&B needs a query host)
+
+[eval]
+enabled = true
+interval_seconds = 10800.0        # three-hourly (user decision): a warm round is ~14 min
+at_start = true                   # a fresh directory: round 0 measures the fork point itself
+at_end = true
+frames = 46080                    # per opponent: 30 eval Dolphins x 1536 frames (25.6 s of game each)
+num_envs = 30                     # 5 per stage: every stage is covered in every round
+worker_processes = 10             # the eval Dolphins' own layout (3 per worker; 30 does not divide by the 16 training workers)
+rollout_length = 128
+# The zero-noise anchor is the fork point (step 1318): eval/other reads ~0 at step 0 and must move up.
+# MIMIC (the released fox-master model through its own inference code, P12) stays as the continuity line.
+opponents = ["cpu9", "mimic", "other:/runs/selfplay/10m_pt_stages/best_1318.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "other"         # best.pt selects on the fork-point anchor: MIMIC is saturated (1318 goes 32-2 against it)

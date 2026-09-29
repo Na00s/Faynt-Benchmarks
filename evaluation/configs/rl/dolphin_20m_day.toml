@@ -1,0 +1,114 @@
+# P6b: the first real run with Ali's profile -- the 20m model (config.yaml active_profile: d_model 512, 6 layers,
+# 20.04 M parameters) from scratch against Dolphin's level-9 CPU (Fox vs Fox, Final Destination) in eight
+# headless Dolphins, T = C = 128, every slippi-ai reward term on, the in-loop evaluator every hour, one *detached*
+# launch per day (Modal caps a function call at 24 h: max_runtime_s = 23.5 h, then the next launch of the same
+# command resumes from latest.pt into the same W&B run).  The 20m forward needs the L4: launch on the GPU function
+# (--gpu = the cu128 Dolphin image, torch on cuda; the 3m twin dolphin_cpu8_day.toml runs on the CPU function).
+# Instructions: docs/rl-post-training/P6B-RUNS.md.  Estimate + yes before every launch (CLAUDE.md rule 4):
+# L4 + 8 cores / 16 GiB = about $1.30/h = $30.7 per launch.
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_20m_day \
+#       --gpu --wandb-mode online --checkpoint-subdir p6b/20m_day --spawn
+# Random init and no teacher (user decision 22 Aug 2026: first runs from scratch); the actor-KL guard is 1e-2 (the
+# fine-tuning 1e-4 of the P6a files reverted every update at random init); RL precision fp32 (PLAN.md §3.9).
+# Relaunch 1 (22 Aug 2026 09:50 UTC, user decision): lr 3e-5 instead of the 3m file's 1e-4 -- at lr 1e-4 the 20m
+# model's per-update actor KL was 0.020-0.041 (clip fraction 0.96-0.98), so the 1e-2 guard reverted every update of
+# the first launch (steps 1-30, W&B 86dw7v18); the first Adam steps are lr-sized, so KL ~ lr^2: 3e-5 gives ~2.5e-3.
+# And eval.frames 28800 instead of 57600: the 20m eval worker runs at ~130 fps on the L4 (460 s per opponent).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 1000000               # the wall-time limit below ends each launch
+max_runtime_s = 84600             # 23.5 h < Modal's 24 h function cap; the next launch resumes from latest.pt
+seed = 0
+deterministic = true
+device = "cuda"                   # the L4 function (--gpu); the 20m forward is too slow on CPU threads
+threads = 4
+save_interval_steps = 20          # latest.pt every ~2-3 min (a stop loses at most that)
+snapshot_interval_steps = 1000    # step_<n>.pt every ~2 h at the 20m rate (~250 MiB each)
+
+[policy]
+profile = "20m"                   # Ali's active profile (config.yaml): d_model 512, 6 layers, 20.04 M
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 8
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 16 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 120.0
+keepalive_seconds = 0.0
+step_threads = 0                  # one thread per Dolphin for send + advance + convert
+boot = "two_phase"
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"
+cpu_level = 9
+
+[learner]
+learning_rate = 3e-5                # 20m from scratch: 1e-4 gave actor KL 0.02-0.04 per update (all reverted)
+kl_teacher_weight = 0.0
+reverse_kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-2          # from scratch: the P6a runs saw ~2e-3 per update at lr 1e-4 (1e-4 reverted all)
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "p6b", "cpu9", "from-scratch", "20m", "l4", "day"]
+print_interval_steps = 10
+
+[eval]
+enabled = true
+interval_seconds = 3600.0         # hourly, checked after the current step; plus the start and the end of each launch
+at_start = true
+at_end = true
+frames = 28800                    # per opponent: 8 eval Dolphins x 1 min; ~3.7 min at the 20m eval rate (~130 fps)
+num_envs = 8
+rollout_length = 128
+opponents = ["cpu9", "best"]      # best = this run's best.pt (skipped until it exists)
+temperature = 1.0
+seed = 0
+metric = "damage_dealt_per_minute"
+metric_opponent = "cpu9"

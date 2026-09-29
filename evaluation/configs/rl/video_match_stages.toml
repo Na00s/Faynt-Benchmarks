@@ -1,0 +1,137 @@
+# P14 (2 Sep 2026): REAL four-stock matches vs CPU 9 across the SIX legal stages -- the six-stage twin
+# of `video_match.toml` (P11), for checkpoints trained on every stage.
+#
+# Ali's 10m family checkpoint is trained on the ranked corpus (Final Destination is its rarest stage,
+# 7 %) and RL-tuned on `stages = [25, 24, 18, 26, 8, 6]`, so its matches are recorded twice: 16 on FD
+# with `video_match.toml` (like for like with every earlier arm) and 18 with this file.  `stages`
+# cycles over the environment index (`DolphinEnvConfig.stage_for`), so 18 Dolphins are exactly three
+# matches per stage; the stage of every kept match is read back out of its `.slp` into the manifest.
+# Everything else is the P11 recorder: `infinite_time = false`, one match per Dolphin, the FIRST
+# replay kept, the result parsed by `melee_rl.slp`.  The cap is 520 s, past Melee's 8-minute timer
+# (the P12 lesson: the rollout starts at frame -123, so 480 s would cut a timed-out game before its
+# GAME_END).
+#
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::video \
+#       --config video_match_stages --checkpoint /runs/bc/frisson-melee-10m-v1-best-val.pt \
+#       --output-dir /runs/matches/p14-10m --label 10m-bc-vs-cpu9-stages --no-render --spawn
+#
+# `[video] bc` names the 10m checkpoint so a later `policy:bc` head-to-head (its RL result against its
+# own init) needs no override.
+
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains in a recording job
+seed = 0
+deterministic = true
+device = "cpu"                    # batch 2: the policy forward is latency-bound (the L4 measured worse)
+threads = 8
+
+[policy]
+profile = "10m"                   # only a fallback; the recorded checkpoint carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 18                     # one Dolphin per match, three per stage (VideoConfig.clips overrides it)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # unused while `stages` is set (the config's default path)
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- cycled over the env index: 3 each of 18
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # in-process: two Dolphins do not need worker processes
+chunk_frames = 1
+save_replays = true               # the recorder overrides this per matchup; true documents the intent
+infinite_time = false             # P11: a REAL match -- stocks fall and the game ends
+stop_timeout_s = 20.0             # SIGTERM Dolphin before Console.stop kills it: a killed .slp has no
+                                  # trailing metadata block (ENV.md §6.5)
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode: no history window (the deployment path)
+delay_frames = 0                  # matches action_offset_frames = 1 of the recorded checkpoints
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"                      # per matchup the recorder builds its own opponent; this only fixes
+                                  # the default player layout of [env.dolphin]
+
+[learner]
+kl_teacher_weight = 0.0           # nothing trains here; without a teacher the weights must be zero
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # no W&B: a recording job logs nothing (the uploader is --wandb, off)
+
+[video]
+mode = "match"                    # P11: one real match per Dolphin, first replay kept
+matchups = ["policy:cpu9"]        # the opponent every experiment is judged by (--matchups overrides)
+clips = 18                        # 18 matches per model: three per stage
+seconds = 520.0                   # the per-match CAP, deliberately PAST Melee's 8-minute timer (P12)
+bc = "/runs/bc/frisson-melee-10m-v1-best-val.pt"   # Ali's 10m checkpoint: opponent and baseline player
+output_dir = "/runs/matches"
+baseline_subdir = "baseline"
+rollout_length = 128
+temperature = 1.0                 # the training distribution, as in [eval]
+seed = 0
+port_offset = 0                   # a recording job has the container to itself
+wandb = false                     # user decision 26 Aug 2026: keep the clips on the Volume for now
+wandb_seconds = 30.0
+wandb_bitrate_kbps = 1200
+
+[video.render]
+# The Slippi PLAYBACK build, pinned into the video image only (26 Aug 2026 probe): the ExiAI Dolphin
+# we train with has no -i and no ffmpeg, both netplay builds reject -i, and this is the one binary
+# that accepted the comm file and actually wrote frames.  It needs an X server and does not exit when
+# the replay ends, so the call is bounded by the clip length x speed_factor and ffmpeg trims the dump.
+dolphin_path = "/opt/dolphin/ishiiruka-playback-3.5.2/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+backend = "OGL"
+platform = ""                     # wx build: no --platform flag (Xvfb supplies the display)
+xvfb = true
+internal_resolution = 1           # 1x native 640 x 480 -> GFX.ini EFBScale = SCALE_1X (P9b: Ishiiruka
+                                  # has no InternalResolution key, and its Linux default is SCALE_2X,
+                                  # so before the fix every render rasterised 1280 x 960)
+bitrate_kbps = 3000
+dump_format = "avi"
+emulation_speed = 0.0
+caption = true                    # "<checkpoint> step N (P1) vs CPU 9 (P2) - clip 1/2", burned in
+font_size = 18
+crf = 26                          # x264 quality of the caption pass. 20 gave ~4.7 Mbit/s at
+                                  # 642 x 528 (~71 MB per 2-min clip); 26 is visually close at
+                                  # this size and about a third of the bytes, which matters when
+                                  # a ten-clip job gets passed around a team.
+timeout_s = 1800.0                # the hard cap per render call
+speed_factor = 20.0               # only a safety net now: --cout frame markers end each render as
+min_timeout_s = 120.0             # soon as the replay does (render.run_playback)
+workers = 6                       # eight concurrent renders measured the wall clock of one, so the
+                                  # six fresh clips of a job are a single batch

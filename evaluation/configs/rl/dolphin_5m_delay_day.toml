@@ -1,0 +1,140 @@
+# The first real delayed training run (P8, approved 25 Aug 2026): 5m from scratch at D = 5, two-port
+# self-play on the wide box, with the whole throughput stack on -- 16 env worker processes, the
+# vectorised fast policy step, ring mode, and the delay pipeline at the winning bench point
+# (b, k) = (2, 4): step 7.11 s at 1152 env fps vs 7.55 s / 1085 for (4, 3) and 8.62 s / 950 at D = 0
+# (W&B h8x9d5l2 / bqj1zbfc / bnpecevw; medians of the last 30 steps).  The deeper runahead r = 4 wins
+# because the step is env-bound -- more frames in flight hide more of the emulation wall.
+#
+# Batch regime matched to slippi-ai's production recipes (user decision 25 Aug 2026): ppo.num_batches
+# = 16 rollouts accumulated into the same 2 optimizer steps (their scripts/rl_example.sh:32 and
+# jax/rl/scripts/launch_rl.py:49; both stacks accumulate, ours learner.py:527-555) and 96 Dolphins
+# (6 per worker; measured headroom at 64: GPU 6.7/23 GiB, RAM 31.6/64 GiB, CPU 17.2/32 cores) --
+# 16 x 96 x 128 = 196 608 env frames = 393 216 training rows per update (their recipes: 256-369k
+# rows), vs 8 192 env frames before -- a 24x larger update.  Step-denominated cadences rescaled: burn-ins 4/3 (data-equivalent
+# to the old 50/50), save every 2 steps (~5 min), snapshots every 8 (~20 min).
+# From scratch is the honest choice at D > 0: no delayed BC checkpoint exists yet (INTERFACE.md q12),
+# and a random init has no trained-in delay, so D = 5 training is in-distribution by construction --
+# the model learns to act on 5-frame-old information from its first update (the netplay-legal regime;
+# slippi-ai's Phillip ships delay 18).  One detached 23.5 h launch per day; the same command resumes
+# latest.pt into the same W&B run.
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_delay_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/5m_delay --spawn
+# What to read (SELFPLAY-RUNS.md): eval/other/* first (the zero-noise anchor -- the from-scratch D = 0
+# run cycled with a flat anchor for 800 steps; stop this one too if the anchor is flat after day 1),
+# then eval/cpu1 / cpu9 against their noise floors, loss/entropy (max ln 728 + ln 85 = 11.03),
+# ppo/reverted, weights/drift_total, env/fps.
+# allow_mismatch: the model declares action_offset_frames = 1; at random init the flag only
+# acknowledges the declared field -- nothing trained is mismatched (P8-PLAN.md preamble).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 84600             # 23.5 h < Modal's 24 h function cap; the next launch resumes latest.pt
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2           # a step is ~16 rollouts (~2.5 min) now
+snapshot_interval_steps = 8       # step_<n>.pt ladder: past selves for the future opponent pool
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M
+init = "random"                   # from scratch: no delayed BC checkpoint exists yet (q12)
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 6 per worker; players is derived from opponent.type
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 6w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 96 boots, 6 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (6)
+boot = "two_phase"
+worker_processes = 16             # the P7 layout (groups of 4)
+mp_start_method = "spawn"
+chunk_frames = 4                  # k = 4: the winning bench point (runahead r = D - (b - 1) = 4)
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 5                  # D = 5 (Ali's q12 target: data.delay 6 <=> delay_frames 5)
+context_mode = "ring"
+batch_steps = 2                   # b = 2: the winning bench point (b | T = 128)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: 2 x 96 = 192 rows
+seed = 1
+
+[learner]
+learning_rate = 2e-4              # measured twice: the D = 0 5m smoke (median actor KL 3.08e-3) and
+                                  # the P8 b2k4 bench (3.04e-3 at D = 5, 0/47 reverts) agree
+kl_teacher_weight = 0.0
+value_burnin_steps = 4            # ~64 rollouts of value-only training (the old 50-step regime's data)
+optimizer_burnin_steps = 3        # ~48 rollouts at lr 0: Adam's moments warm before the policy moves
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16                  # slippi-ai's production regime: accumulate 16 rollouts per update
+epsilon = 0.1                     # the from-scratch clip window (session 13 take two)
+beta = 0.0
+max_mean_actor_kl = 2e-2          # a backstop, not the throttle
+
+[delay]
+allow_mismatch = true             # random init: the flag only acknowledges the declared offset (header)
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "from-scratch", "5m", "l4", "day", "wide",
+    "ring", "mp-workers", "fast-step", "p8", "delay-pipeline",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 7200.0         # two-hourly: three opponents cost ~20 % of wall clock hourly
+at_start = true
+at_end = true
+frames = 57600                    # per opponent: 32 eval Dolphins x 30 s of game
+num_envs = 32
+rollout_length = 128
+# The fixed references: the CPU ladder at both ends and the frozen 20m random init on the Volume
+# (the zero-noise anchor; the evaluator plays lockstep at the training delay, so the student acts
+# through its D = 5 queue exactly as trained).  "best" stays absent -- it moves and can cycle.
+opponents = ["cpu1", "cpu9", "other:/runs/p6b/20m_day/step_00000000.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"       # the composite the learner optimises, against the weakest CPU
+metric_opponent = "cpu1"

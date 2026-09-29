@@ -1,0 +1,38 @@
+[
+  {
+    "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+    "original_sha256": "c7c85408ce45e26916082ffa7456fb681273ec70d5be9d865a6edb7bda4e09af",
+    "release_sha256": "f80624560cc51283dc894787984de6089a42fd1e9f451ed2f1e845f4d33a6115",
+    "original_bytes": 1894960,
+    "release_bytes": 1894132,
+    "transform": "Personal project paths made relative; upstream runtime-home prefixes replaced by ${UPSTREAM_RUNTIME}; all scientific game rows, checkpoint byte hashes and other metadata fields preserved.",
+    "previous_release_sha256": "4f9d114ac62c73d030c1895f5a880294ce5b866a17e5e122d18736719b6bff07"
+  },
+  {
+    "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/audit-summary.json",
+    "original_sha256": "3ba58bc1afc351e4a042820fe4144f9a66b716d2560341fb79c57802a6a49e81",
+    "release_sha256": "a5a224c36096b23afb4479ca1a4ff7a9182280abd9c3a1af064de620221af01a",
+    "original_bytes": 184513,
+    "release_bytes": 183620,
+    "transform": "Personal project paths made relative; upstream runtime-home prefixes replaced by ${UPSTREAM_RUNTIME}; all scientific game rows, checkpoint byte hashes and other metadata fields preserved.",
+    "previous_release_sha256": "15f6a2665151dd3993225a02c03a2d9522c2a5e3e24a1458c41fec41f346b78a"
+  },
+  {
+    "path": "artifacts/integration/frisson_ai/faynt-d0-632-980-v1/manifest.json",
+    "original_sha256": "920da7da0e12a6040ba9d346dc162ca12ea306f83e9966b38bbda6956ecf964a",
+    "original_bytes": 5230658,
+    "release_sha256": "fd00a4c14bda6a43b556c71ba7a8d703f1e51084ac46339da4bbaa7e24dd2fe5",
+    "release_bytes": 5229830,
+    "previous_release_sha256": "e057c55829c5ccf8b537283f89ce923ac856eadbe3aa3b1337cc62e67120eb01",
+    "transform": "Personal project paths made relative; upstream runtime-home prefixes replaced by ${UPSTREAM_RUNTIME}; all scientific game rows, checkpoint byte hashes and other metadata fields preserved."
+  },
+  {
+    "path": "artifacts/integration/frisson_ai/faynt-d0-632-980-v1/expanded-slippi/manifest.json",
+    "original_sha256": "7a6d7d9a698b1cef9954a9c7ac1b800660fad4952819c37313fa9e6d58265de9",
+    "original_bytes": 1948555,
+    "release_sha256": "7cd987e1ab91581a45a8b54150d2cc58f31a1a6fc8e6874422e692fe02bc6b06",
+    "release_bytes": 1947727,
+    "previous_release_sha256": "2232a182499086fb0b85e71c02382cfddd3d9156bf9d13b1efebcdef9d21d4cb",
+    "transform": "Personal project paths made relative; upstream runtime-home prefixes replaced by ${UPSTREAM_RUNTIME}; all scientific game rows, checkpoint byte hashes and other metadata fields preserved."
+  }
+]

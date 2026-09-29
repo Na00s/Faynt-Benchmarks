@@ -1,0 +1,110 @@
+# Throughput/limit probe 160 (25 Aug 2026, approved by the user; the companion of the 128 probe --
+# this file completes the pair its PLANNED_RUNS row describes): the expected wall of the wide box.  Measured points so far: 64 envs -> 1152 env fps (W&B h8x9d5l2),
+# 96 envs -> 1382 env fps (W&B 1o1i2w91), with 96 Dolphins costing 23.4 cores and 34.5 GiB of RSS
+# (/proc snapshot inside the live container, 25 Aug 10:24 UTC) and 12.7 of 23 GiB of L4 memory at
+# 2 x 96 = 192 learner rows.  This file adds one point at 128 envs (10 per worker); everything else is
+# the nb16 smoke.  num_batches = 4 rather than 16 because the learner does 2 forward/backwards per
+# rollout at any num_batches (learner.py _epoch) -- only the optimizer step and the guard snapshot are
+# per-step -- so 4 gives the same per-frame cost with ~4x more measurement points in a 10-minute window.
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_delay_e160_probe --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir p8/probe160 --spawn
+# allow_mismatch: random init at D = 5 is in-distribution by construction (P8-PLAN.md preamble).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 600              # 10 min: boot + 2 burn-in steps + ~8 PPO steps
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 1000
+snapshot_interval_steps = 0
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M
+init = "random"                   # from scratch: no delayed BC checkpoint exists yet (q12)
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 160                    # 10 per worker; players is derived from opponent.type
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 8w + j
+console_timeout_s = 30.0
+boot_timeout_s = 600.0            # 128 boots, 8 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (6)
+boot = "two_phase"
+worker_processes = 16             # the P7 layout: 10 Dolphins per worker
+mp_start_method = "spawn"
+chunk_frames = 4                  # k = 4: the winning bench point (runahead r = D - (b - 1) = 4)
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 5                  # D = 5 (Ali's q12 target: data.delay 6 <=> delay_frames 5)
+context_mode = "ring"
+batch_steps = 2                   # b = 2: the winning bench point (b | T = 128)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: 2 x 96 = 192 rows
+seed = 1
+
+[learner]
+learning_rate = 2e-4              # measured twice: the D = 0 5m smoke (median actor KL 3.08e-3) and
+                                  # the P8 b2k4 bench (3.04e-3 at D = 5, 0/47 reverts) agree
+kl_teacher_weight = 0.0
+value_burnin_steps = 1            # the smoke only needs PPO steps quickly; the day file uses 4/3
+optimizer_burnin_steps = 1
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 4                   # 4 rollouts per update: same per-frame learner cost, faster steps
+epsilon = 0.1                     # the from-scratch clip window (session 13 take two)
+beta = 0.0
+max_mean_actor_kl = 2e-2          # a backstop, not the throttle
+
+[delay]
+allow_mismatch = true             # random init: the flag only acknowledges the declared offset (header)
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "from-scratch", "5m", "l4", "probe", "wide",
+    "ring", "mp-workers", "fast-step", "p8", "delay-pipeline", "probe", "e128",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = false                   # a measurement run: no eval boots

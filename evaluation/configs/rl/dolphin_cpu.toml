@@ -1,0 +1,83 @@
+# Two learner steps of the 3m profile against Dolphin's level-9 CPU (Fox vs Fox, Final Destination) in two
+# headless Dolphins -- the P5 acceptance run (PLAN.md §6 P5, P5-PLAN.md).  Meant for the Modal Dolphin image
+# (estimate + yes first, CLAUDE.md rule 4):
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_cpu --steps 1 \
+#       --wandb-mode online
+# The paths are the image's: the mainline ExiAI build extracted under /opt/dolphin (modal_app.DOLPHIN_BUILDS)
+# and the Melee ISO on the Volume melee-iso mounted at /iso.  Locally (a Linux box with the AppImage extracted
+# and an ISO) override [env.dolphin] dolphin_path / iso_path in a copy of this file.
+# Random init (no BC checkpoint yet): the teacher is a frozen copy of the initial policy, so the teacher-KL
+# weight must be 0 (PLAN.md §5, §9.4); switch to init = "checkpoint" + kl_teacher_weight = 0.1 and
+# learning_rate = 3e-5 once Ali's weights land.  RL precision fp32 (PLAN.md §3.9), W&B off by default.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 2
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 4
+save_interval_steps = 1
+snapshot_interval_steps = 0
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 2
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i
+console_timeout_s = 30.0
+boot_timeout_s = 120.0
+keepalive_seconds = 0.0           # libmelee 0.47.3 keeps enet alive on its own; >0 enables idle ticks
+
+[actor]
+rollout_length = 16
+context_frames = 16
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[opponent]
+type = "cpu"
+cpu_level = 9
+
+[learner]
+learning_rate = 1e-4
+kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-4
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # cloud runs pass --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"           # shared W&B project: our runs are separable by group / tags / job_type
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "smoke", "3m"]
+print_interval_steps = 1

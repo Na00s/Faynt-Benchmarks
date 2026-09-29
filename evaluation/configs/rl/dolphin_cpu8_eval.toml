@@ -1,0 +1,107 @@
+# P6b item 0 shake-out: dolphin_cpu8.toml plus the in-loop evaluator (PLAN.md §6 P6b).  Every 150 s of wall time
+# (and at the start and the end of the run) a frozen copy of the student plays 7 200 frames (8 Dolphins x 15 s)
+# against the level-9 CPU and, once it exists, against the run's own best.pt; the eval rows land in the same W&B
+# run as eval/<opponent>/<stat>, best.pt is selected by damage dealt per minute vs cpu9, eval_history.json keeps
+# every record.  The run ends at max_runtime_s (about 5.5 minutes of training + two or three evaluations).  Meant
+# for the Modal Dolphin image (estimate + yes first, CLAUDE.md rule 4):
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_cpu8_eval \
+#       --wandb-mode online --checkpoint-subdir p6b/cpu8_eval
+# Same paths and caveats as dolphin_cpu8.toml (image paths, random init => teacher-KL weight 0, fp32; every update
+# is reverted by the 1e-4 guard at random init -- this file exercises the evaluator plumbing, not learning).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000                 # the wall-time limit below ends the run
+max_runtime_s = 330
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 8
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 16 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 120.0
+keepalive_seconds = 0.0           # libmelee 0.47.3 keeps enet alive on its own; >0 enables idle ticks
+step_threads = 0                  # 0 = one thread per Dolphin for send + advance + convert (1 = sequential)
+boot = "two_phase"                # start every Dolphin, then connect / settle them (overlapping boots)
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"
+cpu_level = 9
+
+[learner]
+learning_rate = 1e-4
+kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-4
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # cloud runs pass --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"           # shared W&B project: our runs are separable by group / tags / job_type
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "p6b", "eval", "cpu9", "3m"]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 150.0          # wall clock, checked after each learner step (interval_steps is the alternative)
+at_start = true                   # the baseline of the initial weights
+at_end = true
+frames = 7200                     # per opponent: 8 eval Dolphins x 15 s (real runs: 57600 = 8 x 2 min)
+num_envs = 8
+rollout_length = 128
+opponents = ["cpu9", "best"]      # best = this run's best.pt, skipped until it exists
+temperature = 1.0
+seed = 0
+metric = "damage_dealt_per_minute"
+metric_opponent = "cpu9"

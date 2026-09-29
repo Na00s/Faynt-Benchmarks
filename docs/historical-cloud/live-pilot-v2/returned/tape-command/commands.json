@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "/work/runtime-pilot/venv/bin/python",
+      "/opt/runtime-root/scripts/modal_panel_live_pilot.py",
+      "--tape-child"
+    ],
+    "cwd": "/work/research/live-pilot",
+    "ended_unix": 1789168357.5836723,
+    "exit_code": 0,
+    "log": "logs/001.log",
+    "log_bytes": 738,
+    "log_sha256": "ca170df02b1e57d206fb880eaaa87120de6d6e4fba98ddf1afb66b0f0d516054",
+    "pid": 4737,
+    "started_unix": 1789168307.1193933,
+    "terminated_owned_process_group": true,
+    "unreaped_leader_group_guard": true
+  }
+]

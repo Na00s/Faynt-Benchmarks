@@ -1,0 +1,1304 @@
+{
+  "acquired": [
+    {
+      "bytes": 137410,
+      "filename": "absl_py-2.5.0-py3-none-any.whl",
+      "sha256": "0f17b89f2a4eaaedc4f28c622998aa690564b3012a396a4ffad0821007fe03ba"
+    },
+    {
+      "bytes": 13427,
+      "filename": "annotated_types-0.8.0-py3-none-any.whl",
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+    },
+    {
+      "bytes": 12732,
+      "filename": "astunparse-1.6.3-py2.py3-none-any.whl",
+      "sha256": "c2652417f2c8b5bb325c885ae329bdf3f86424075c4fd1a128674bc6fba4b8e8"
+    },
+    {
+      "bytes": 60752,
+      "filename": "attrs-23.2.0-py3-none-any.whl",
+      "sha256": "99b87a485a5820b23b879f04c2305b44b951b502fd64be915879d77a7e8fc6f1"
+    },
+    {
+      "bytes": 496195,
+      "filename": "backports_zstd-1.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "470895d0bcddc850766e593d1b26764fb138c2feed149f515a2627ef9587d54c"
+    },
+    {
+      "bytes": 1419762,
+      "filename": "brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "072e7624b1fc4d601036ab3f4f27942ef772887e876beff0301d261210bca97f"
+    },
+    {
+      "bytes": 136983,
+      "filename": "certifi-2026.7.22-py3-none-any.whl",
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775"
+    },
+    {
+      "bytes": 248801,
+      "filename": "charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "b9af956078716df40d985fb0dfeb2c2120c5ca92ba4ff4b388acfd01cdc14d08"
+    },
+    {
+      "bytes": 119243,
+      "filename": "click-8.4.2-py3-none-any.whl",
+      "sha256": "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76"
+    },
+    {
+      "bytes": 22228,
+      "filename": "cloudpickle-3.1.2-py3-none-any.whl",
+      "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a"
+    },
+    {
+      "bytes": 10365,
+      "filename": "decorator-5.3.1-py3-none-any.whl",
+      "sha256": "f47fe6fdbd2edd623ecfe36875d37aba411624e2670dd395dddae1358689bb3c"
+    },
+    {
+      "bytes": 268388,
+      "filename": "dm_sonnet-2.0.2-py3-none-any.whl",
+      "sha256": "4c2364cc9ed5f1d9754e00e52a59b8b4fb5194c109b66390f33c44a9c5a34b89"
+    },
+    {
+      "bytes": 186506,
+      "filename": "dm_tree-0.1.10-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "012c2b376e88d3685c73a4b5c23be41fe933e14e380dcd90172971690b0e02d2"
+    },
+    {
+      "bytes": 331094,
+      "filename": "dnspython-2.8.0-py3-none-any.whl",
+      "sha256": "01d9bbc4a2d76bf0db7c1f729812ded6d912bd318d3b1cf81d30c0f845dbf3af"
+    },
+    {
+      "bytes": 34535,
+      "filename": "fancyflags-1.2-py3-none-any.whl",
+      "sha256": "f06b08e92c1996791d325526ee205e8751117c3ff9b943ffe3f65582e0fdfa21"
+    },
+    {
+      "bytes": 98901,
+      "filename": "filelock-3.32.3-py3-none-any.whl",
+      "sha256": "7f0ca4bcc0e181c60dbbd8aa9ab5b120ebb99e4e064e83636340056f833a1f09"
+    },
+    {
+      "bytes": 26661,
+      "filename": "flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"
+    },
+    {
+      "bytes": 206583,
+      "filename": "fsspec-2026.7.0-py3-none-any.whl",
+      "sha256": "b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279"
+    },
+    {
+      "bytes": 22966,
+      "filename": "gast-0.7.0-py3-none-any.whl",
+      "sha256": "99cbf1365633a74099f69c59bd650476b96baa5ef196fec88032b00b31ba36f7"
+    },
+    {
+      "bytes": 57471,
+      "filename": "google_pasta-0.2.0-py3-none-any.whl",
+      "sha256": "b32482794a366b5366a32c92a9a9201b107821889935a02b3e51f6b432ea84ed"
+    },
+    {
+      "bytes": 7040616,
+      "filename": "grpcio-1.83.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "aeb339838db07600481ef869507279b75326c75eac6d10f7afa62a0da1d2bcdd"
+    },
+    {
+      "bytes": 4929422,
+      "filename": "h5py-3.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "0cbd41f4e3761f150aa5b662df991868ca533872c95467216f2bec5fcad84882"
+    },
+    {
+      "bytes": 68550,
+      "filename": "idna-3.19-py3-none-any.whl",
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4"
+    },
+    {
+      "bytes": 100594,
+      "filename": "inflate64-1.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "62d1aac3aba094ae42e27ce7581b414c90f218248be0953b6aeb11a127225e5d"
+    },
+    {
+      "bytes": 9454,
+      "filename": "inflection-0.5.1-py2.py3-none-any.whl",
+      "sha256": "f38b2b640938a4f35ade69ac3d053042959b62a0f1076a5bbaa1b9526605a8a2"
+    },
+    {
+      "bytes": 134899,
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+    },
+    {
+      "bytes": 1918413,
+      "filename": "keras_nightly-3.16.0.dev2026082004-py3-none-any.whl",
+      "sha256": "f56ab3b81ed1369bd3c3145575134394555e2da0c1f560a7d92d77edaf1080f0"
+    },
+    {
+      "bytes": 24515943,
+      "filename": "libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl",
+      "sha256": "c533091d8a3bbf7460a00cb6c1a71da93bffe148f172c7d03b1c31fbf8aa2a0b"
+    },
+    {
+      "bytes": 110757,
+      "filename": "markdown-3.10.3-py3-none-any.whl",
+      "sha256": "fa6c92a00a4a3c98b22728c64a935ae1928250ae65058a6ded814d2cc29a4cea"
+    },
+    {
+      "bytes": 91687,
+      "filename": "markdown_it_py-4.2.0-py3-none-any.whl",
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a"
+    },
+    {
+      "bytes": 22947,
+      "filename": "markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "d6dd0be5b5b189d31db7cda48b91d7e0a9795f31430b7f271219ab30f1d3ac9d"
+    },
+    {
+      "bytes": 9979,
+      "filename": "mdurl-0.1.2-py3-none-any.whl",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"
+    },
+    {
+      "bytes": 630169,
+      "filename": "melee-0.47.3-py3-none-any.whl",
+      "sha256": "7261df65518dfb306b59abc13150e769ba1f15c8cf83320e8f031cfe747faf45"
+    },
+    {
+      "bytes": 409890,
+      "filename": "ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "3b4a480aa8fd54a1805b8ac10f3f91763926a74f73c0c364c10f9231854f4170"
+    },
+    {
+      "bytes": 536198,
+      "filename": "mpmath-1.3.0-py3-none-any.whl",
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+    },
+    {
+      "bytes": 17037,
+      "filename": "multivolumefile-0.2.3-py3-none-any.whl",
+      "sha256": "237f4353b60af1703087cf7725755a1f6fcaeeea48421e1896940cd1c920d678"
+    },
+    {
+      "bytes": 5905,
+      "filename": "namex-0.1.0-py3-none-any.whl",
+      "sha256": "e2012a474502f1e2251267062aae3114611f07df4224b6e06334c57b0f2ce87c"
+    },
+    {
+      "bytes": 2068504,
+      "filename": "networkx-3.6.1-py3-none-any.whl",
+      "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
+    },
+    {
+      "bytes": 16527618,
+      "filename": "numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "fd83c01228a688733f1ded5201c678f0c53ecc1006ffbc404db9f7a899ac6249"
+    },
+    {
+      "bytes": 60018,
+      "filename": "opentelemetry_api-1.44.0-py3-none-any.whl",
+      "sha256": "94b98c893a91b88657eaac1e3ba89618cdb85be6918196705354f34728b2cdef"
+    },
+    {
+      "bytes": 71932,
+      "filename": "opt_einsum-3.4.0-py3-none-any.whl",
+      "sha256": "69bb92469f86a1565195ece4ac0323943e83477171b91d24c35afe028a90d7cd"
+    },
+    {
+      "bytes": 488981,
+      "filename": "optree-0.20.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "5c4ed341ea1ee7eb04eff01527b88a868cb19aac672a667e0aefadf7d14c0260"
+    },
+    {
+      "bytes": 66469,
+      "filename": "packaging-25.0-py3-none-any.whl",
+      "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
+    },
+    {
+      "bytes": 11991493,
+      "filename": "pandas-2.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "ba24af48643b12ffe49b27065d3babd52702d95ab70f50e1b34f71ca703e2c0d"
+    },
+    {
+      "bytes": 20475,
+      "filename": "parameterized-0.9.0-py2.py3-none-any.whl",
+      "sha256": "4e0758e3d41bea3bbd05ec14fc2c24736723f243b28d702081aef438c9372b1b"
+    },
+    {
+      "bytes": 1056459,
+      "filename": "peppi_py_vladfi-0.9.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "29f4309b242ef3189b0c0739630152ab8cc584d1f2e55cea792fb3f8c16dc69b"
+    },
+    {
+      "bytes": 6940830,
+      "filename": "pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91"
+    },
+    {
+      "bytes": 1825227,
+      "filename": "pip-25.1.1-py3-none-any.whl",
+      "sha256": "2913a38a2abf4ea6b64ab507bd9e967f3b53dc1ede74b01b0931e1ce548751af"
+    },
+    {
+      "bytes": 23491,
+      "filename": "platformdirs-4.11.3-py3-none-any.whl",
+      "sha256": "5ed065d443751de711da036041a7a214122efc4a4de393b3f4137ba5576540e7"
+    },
+    {
+      "bytes": 16613,
+      "filename": "portpicker-1.6.0-py3-none-any.whl",
+      "sha256": "b2787a41404cf7edbe29b07b9e0ed863b09f2665dcc01c1eb0c2261c1e7d0755"
+    },
+    {
+      "bytes": 340439,
+      "filename": "protobuf-7.36.0-cp310-abi3-manylinux2014_x86_64.whl",
+      "sha256": "70f5ec8eb0da81a44360c0dc0beac99a0d78071d21956a7076bae8bd2051841b"
+    },
+    {
+      "bytes": 155560,
+      "filename": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9"
+    },
+    {
+      "bytes": 50316,
+      "filename": "py-ubjson-0.16.1.tar.gz",
+      "sha256": "b9bfb8695a1c7e3632e800fb83c943bf67ed45ddd87cd0344851610c69a5a482"
+    },
+    {
+      "bytes": 72242,
+      "filename": "py7zr-1.1.3-py3-none-any.whl",
+      "sha256": "17934a35089e026dec6c72ee275d9b841e646881ef822d618e805c3006661d9a"
+    },
+    {
+      "bytes": 47586063,
+      "filename": "pyarrow-23.0.1-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "sha256": "813d99f31275919c383aab17f0f455a04f5a429c261cc411b1e9a8f5e4aaaa05"
+    },
+    {
+      "bytes": 52332,
+      "filename": "pybcj-1.0.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "a50b58f9b9d9978c55e3219b6816a1021a778b028a810b36aa754407591cb5ae"
+    },
+    {
+      "bytes": 2272578,
+      "filename": "pycryptodomex-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "f489c4765093fb60e2edafdf223397bc716491b2b69fe74367b70d6999257a5c"
+    },
+    {
+      "bytes": 472262,
+      "filename": "pydantic-2.13.4-py3-none-any.whl",
+      "sha256": "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba"
+    },
+    {
+      "bytes": 2094516,
+      "filename": "pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "926c9541b14b12b1681dca8a0b75feb510b06c6341b70a8e500c2fdcff837cce"
+    },
+    {
+      "bytes": 514663,
+      "filename": "pyenet_vladfi-1.3.19-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "153aa579caee315f3a01ef97541efe23460950d3cf10ba4e38720bcdf18e8e26"
+    },
+    {
+      "bytes": 1250147,
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+    },
+    {
+      "bytes": 144306,
+      "filename": "pyppmd-1.3.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "1bd6d179ad39b6191ca0cbe62fb9592f33f49277b4384ad7bc5eb0e6ca27ebee"
+    },
+    {
+      "bytes": 229892,
+      "filename": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+    },
+    {
+      "bytes": 508283,
+      "filename": "pytz-2026.3.post1-py2.py3-none-any.whl",
+      "sha256": "dd95840dd199baea12d9cc096a1d452caa6596a1c1e4b5f3dbd1541855d5e815"
+    },
+    {
+      "bytes": 10092,
+      "filename": "pyvers-0.1.0-py3-none-any.whl",
+      "sha256": "065249805ae537ddf9a2d1a8dffc6d0a12474a347d2eaa2f35ebdae92c0c8199"
+    },
+    {
+      "bytes": 807870,
+      "filename": "pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc"
+    },
+    {
+      "bytes": 73075,
+      "filename": "requests-2.34.2-py3-none-any.whl",
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0"
+    },
+    {
+      "bytes": 310654,
+      "filename": "rich-15.0.0-py3-none-any.whl",
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb"
+    },
+    {
+      "bytes": 518670,
+      "filename": "sentry_sdk-2.68.0-py3-none-any.whl",
+      "sha256": "538e56c2d03679d42f7c0cb5f1af73a7a510b00abc7e296c13ac49b107b713a4"
+    },
+    {
+      "bytes": 818216,
+      "filename": "setuptools-84.0.0-py3-none-any.whl",
+      "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670"
+    },
+    {
+      "bytes": 11050,
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+    },
+    {
+      "bytes": 6299353,
+      "filename": "sympy-1.14.0-py3-none-any.whl",
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5"
+    },
+    {
+      "bytes": 39814,
+      "filename": "tabulate-0.10.0-py3-none-any.whl",
+      "sha256": "f0b0622e567335c8fabaaa659f1b33bcb6ddfe2e496071b743aa113f8774f2d3"
+    },
+    {
+      "bytes": 5525762,
+      "filename": "tb_nightly-2.20.0a20250717-py3-none-any.whl",
+      "sha256": "3a2e0a75258baba5ffff993ac8f4a0aae4dc8b382bae42ec2660dc3af73505fc"
+    },
+    {
+      "bytes": 6590363,
+      "filename": "tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl",
+      "sha256": "ef687163c24185ae9754ed5650eb5bc4d84ff257aabdc33f0cc6f74d8ba54530"
+    },
+    {
+      "bytes": 7734,
+      "filename": "termcolor-3.3.0-py3-none-any.whl",
+      "sha256": "cf642efadaf0a8ebbbf4bc7a31cec2f9b5f21a9f726f4ccbb08192c9c26f43a5"
+    },
+    {
+      "bytes": 10768,
+      "filename": "texttable-1.7.0-py2.py3-none-any.whl",
+      "sha256": "72227d592c82b3d7f672731ae73e4d1f88cd8e2ef5b075a7a7f01a23a3743917"
+    },
+    {
+      "bytes": 1695241,
+      "filename": "tf_keras_nightly-2.21.0.dev2026082009-py3-none-any.whl",
+      "sha256": "6ee1d379b0a8eb999feee8ddc96b66fc03da9f1c637f8d9f6cb92790c8a093d6"
+    },
+    {
+      "bytes": 572640176,
+      "filename": "tf_nightly-2.21.0.dev20260203-cp312-cp312-manylinux_2_27_x86_64.whl",
+      "sha256": "eadcd9ba51586243d87ee88fe1b515d33604acbc0d178430b8df57a8ba970dff"
+    },
+    {
+      "bytes": 6975580,
+      "filename": "tfp_nightly-0.26.0.dev20260820-py2.py3-none-any.whl",
+      "sha256": "222d4d8f2a04fd191fcefae597c9b06f76ebcf6d10ef7cde92385e5dfedae3ed"
+    },
+    {
+      "bytes": 175833687,
+      "filename": "torch-2.7.1+cpu-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "sha256": "8f8b3cfc53010a4b4a3c7ecb88c212e9decc4f5eeb6af75c3c803937d2d60947"
+    },
+    {
+      "bytes": 78275,
+      "filename": "tqdm-4.66.4-py3-none-any.whl",
+      "sha256": "b75ca56b413b030bc3f00af51fd2c1a1a5eac6a0c1cca83cbb37a5c52abce644"
+    },
+    {
+      "bytes": 45571,
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "bytes": 14750,
+      "filename": "typing_inspection-0.4.4-py3-none-any.whl",
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147"
+    },
+    {
+      "bytes": 348168,
+      "filename": "tzdata-2026.3-py2.py3-none-any.whl",
+      "sha256": "dc096730c87af6cab1b171c9d532be840741ff5d459015e7f6947bd7d7e54931"
+    },
+    {
+      "bytes": 131087,
+      "filename": "urllib3-2.7.0-py3-none-any.whl",
+      "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897"
+    },
+    {
+      "bytes": 29622780,
+      "filename": "wandb-0.28.2-py3-none-manylinux_2_28_x86_64.whl",
+      "sha256": "1db698d107871c66b2dcbb0cf4dc2af1ddb159ba94e957e890158ec60ab2de54"
+    },
+    {
+      "bytes": 226459,
+      "filename": "werkzeug-3.1.8-py3-none-any.whl",
+      "sha256": "63a77fb8892bf28ebc3178683445222aa500e48ebad5ec77b0ad80f8726b1f50"
+    },
+    {
+      "bytes": 33320,
+      "filename": "wheel-0.48.0-py3-none-any.whl",
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+    },
+    {
+      "bytes": 172381,
+      "filename": "wrapt-2.3.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "sha256": "5d221a6e6ddd302b8397433184e96b59f259f50024b854db1c411a881586b6b8"
+    },
+    {
+      "bytes": 430242,
+      "filename": "tensordict-0.9.1-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "sha256": "ba30eacb5630dc1ee47159a66baa9dc6c5cec3f130b39b7589ff712f9e45777a"
+    },
+    {
+      "bytes": 27789,
+      "filename": "importlib_metadata-9.0.0-py3-none-any.whl",
+      "sha256": "2d21d1cc5a017bd0559e36150c21c830ab1dc304dedd1b7ea85d20f45ef3edd7"
+    },
+    {
+      "bytes": 131245,
+      "filename": "orjson-3.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "1192a7021b6d071aaf909864f6e924d6a2675ca360485b972b8401749311750b"
+    },
+    {
+      "bytes": 10238,
+      "filename": "zipp-4.1.0-py3-none-any.whl",
+      "sha256": "25ad4e16390cd314347dd8f1de67a2ac538ae658ed4ab9db16029c07c188e97f"
+    }
+  ],
+  "cleanup": {
+    "ended_unix": 1789168307.0708146,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "parent_terminal_cleanup_verified": true,
+    "pid": 4714
+  },
+  "commands": [
+    {
+      "command": [
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=30",
+        "update"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168188.7708151,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 1544,
+      "log_sha256": "8a03a1e35ce510bc1354c2be80be301a6e7c9638746a9ab49d5dd7a7b2209fc5",
+      "pid": 5,
+      "started_unix": 1789168184.4299948,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    },
+    {
+      "command": [
+        "apt-get",
+        "-o",
+        "Acquire::Retries=0",
+        "-o",
+        "Acquire::http::Timeout=30",
+        "install",
+        "-y",
+        "--no-install-recommends",
+        "build-essential",
+        "ca-certificates",
+        "libgtk-3-0",
+        "libasound2",
+        "libxi6",
+        "libsfml-network2.5",
+        "libusb-1.0-0",
+        "libmbedtls14",
+        "libsoil1",
+        "libsm6",
+        "liblzo2-2",
+        "libudev1",
+        "libcurl4",
+        "libopengl0",
+        "libglx0",
+        "libxrandr2",
+        "libxxf86vm1",
+        "xvfb",
+        "libgl1-mesa-dri",
+        "mesa-utils",
+        "x11-utils"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168223.4573953,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 86165,
+      "log_sha256": "3aa88a942533d5f8f931023851ae5741d9430a2636b28db4fed0a4a9f49e6976",
+      "pid": 207,
+      "started_unix": 1789168188.771279,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    },
+    {
+      "command": [
+        "/usr/local/bin/python",
+        "-m",
+        "venv",
+        "/work/runtime-pilot/venv"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168236.8681889,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pid": 4681,
+      "started_unix": 1789168234.1335347,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    },
+    {
+      "command": [
+        "/work/runtime-pilot/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--require-hashes",
+        "-r",
+        "/work/runtime-pilot/bootstrap.txt"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168238.8003695,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 729,
+      "log_sha256": "9dfa688f46cda730ed7ae82e0fb2332c3de25474dfea4d0bab4fa62c345d2121",
+      "pid": 4686,
+      "started_unix": 1789168236.8688903,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    },
+    {
+      "command": [
+        "/work/runtime-pilot/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--require-hashes",
+        "-r",
+        "/work/runtime-pilot/runtime-wheels.txt"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168298.1911006,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 14513,
+      "log_sha256": "9b95bcdff006d37a8264eafa1b81efd76859be387950ad0caf7b680cf722c681",
+      "pid": 4689,
+      "started_unix": 1789168238.8015568,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    },
+    {
+      "command": [
+        "/work/runtime-pilot/venv/bin/python",
+        "-c",
+        "import setuptools,wheel,packaging,sysconfig,os; from pathlib import Path; from setuptools._distutils import ccompiler,sysconfig as dsc; assert setuptools.__version__=='84.0.0'; assert (Path(sysconfig.get_path('include'))/'Python.h').is_file(); c=ccompiler.new_compiler(); dsc.customize_compiler(c); assert os.environ['CC']=='/usr/bin/gcc'; assert c.compiler_so[0]=='/usr/bin/gcc' and c.linker_so[0]=='/usr/bin/gcc'; print(c.compiler_so,c.linker_so)"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168298.4150417,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 226,
+      "log_sha256": "c19bf9d623c6409d5c8f41639702fbb27d385b72376985761e40ea326195f639",
+      "pid": 4693,
+      "started_unix": 1789168298.1916018,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    },
+    {
+      "command": [
+        "/work/runtime-pilot/venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--verbose",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--require-hashes",
+        "-r",
+        "/work/runtime-pilot/runtime-source.txt"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168300.8482957,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 8697,
+      "log_sha256": "2dc6bbf3afca61960fdea0e930499f57c7efbf2161eaa9d2bed564ee3ac9e3c0",
+      "pid": 4694,
+      "started_unix": 1789168298.4156206,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    },
+    {
+      "command": [
+        "/work/runtime-pilot/venv/bin/python",
+        "/opt/runtime-root/scripts/modal_panel_runtime_pilot.py",
+        "--qualify",
+        "--sha",
+        "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02",
+        "--expires",
+        "1789168482.611371",
+        "--parent-pid",
+        "4"
+      ],
+      "cwd": "/work/runtime-pilot",
+      "ended_unix": 1789168307.0708146,
+      "exit_code": 0,
+      "log": "logs/001.log",
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "pid": 4714,
+      "started_unix": 1789168302.611671,
+      "terminated_owned_process_group": true,
+      "unreaped_leader_group_guard": true
+    }
+  ],
+  "ended_unix": 1789168307.071626,
+  "expires_unix": 1789169243.1995132,
+  "package_materialized": {
+    "archive_sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19",
+    "build_patch_sha256": "e276165fa35ab2c8d63f0cc97df3aa643543088453f13ba23391a6902f41c682",
+    "bytes": 81401746,
+    "executable": {
+      "bytes": 19996344,
+      "format": "ELF64-x86_64",
+      "path": "/work/runtime-pilot/package/dolphin-emu",
+      "sha256": "de76b9e141d35b9f81bc335a5d5a0ccb875ad43d9dcb91f27b412b0a07d17a43"
+    },
+    "executed": false,
+    "files": 344,
+    "frame_patch_sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e",
+    "gameplay_admitted": false,
+    "manifest_sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700",
+    "materialized": true,
+    "outer_plan_sha256": "aea6a4743a53589411c4d460467e7df6ec5e0a10d7f9e707be049f943da2a483",
+    "package_audit_sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05",
+    "package_root": "/work/runtime-pilot/package",
+    "release": "3.6.4",
+    "rust_library": {
+      "bytes": 56535656,
+      "path": "/work/runtime-pilot/package/libslippi_rust_extensions.so",
+      "sha256": "cbee3d3750f9690cb5beb630a362656ae0ada6a47bfedefa530d4b688a0e1a69"
+    },
+    "schema": "e011.modal-panel-linux-host.v1",
+    "source_revision": "e7711b104b339a99385f2bb12b472d46140a7bc7",
+    "status": "linux-package-bytes-verified",
+    "target_platform": "linux_x86_64",
+    "verification_host": {
+      "machine": "x86_64",
+      "system": "Linux"
+    }
+  },
+  "plan_sha256": "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02",
+  "qualification": {
+    "display": {
+      "display": ":0",
+      "environment": {
+        "GALLIUM_DRIVER": "llvmpipe",
+        "LIBGL_ALWAYS_SOFTWARE": "1",
+        "TF_ENABLE_ONEDNN_OPTS": "0"
+      },
+      "pid": 4723,
+      "software_renderer_verified": true,
+      "tcp_listener_disabled": true
+    },
+    "evidence": {
+      "data_manifest": {
+        "src/melee_policy/integration/mimic_native_bundles.v1.json": {
+          "bytes": 31259,
+          "sha256": "adb8fa9ef8c6fd5f054fb68b22552c2c92cacce3f8cc0ac0ca2f72bed9ebcef3"
+        }
+      },
+      "installed_runtime": {
+        "pip_check_passed": true,
+        "schema": "e011.modal-live-installed-runtime.v1",
+        "versions": {
+          "absl-py": "2.5.0",
+          "annotated-types": "0.8.0",
+          "astunparse": "1.6.3",
+          "attrs": "23.2.0",
+          "backports-zstd": "1.7.0",
+          "brotli": "1.2.0",
+          "certifi": "2026.7.22",
+          "charset-normalizer": "3.5.1",
+          "click": "8.4.2",
+          "cloudpickle": "3.1.2",
+          "decorator": "5.3.1",
+          "dm-sonnet": "2.0.2",
+          "dm-tree": "0.1.10",
+          "dnspython": "2.8.0",
+          "fancyflags": "1.2",
+          "filelock": "3.32.3",
+          "flatbuffers": "25.12.19",
+          "fsspec": "2026.7.0",
+          "gast": "0.7.0",
+          "google-pasta": "0.2.0",
+          "grpcio": "1.83.0",
+          "h5py": "3.14.0",
+          "idna": "3.19",
+          "importlib-metadata": "9.0.0",
+          "inflate64": "1.0.4",
+          "inflection": "0.5.1",
+          "jinja2": "3.1.6",
+          "keras-nightly": "3.16.0.dev2026082004",
+          "libclang": "18.1.1",
+          "markdown": "3.10.3",
+          "markdown-it-py": "4.2.0",
+          "markupsafe": "3.0.3",
+          "mdurl": "0.1.2",
+          "melee": "0.47.3",
+          "ml-dtypes": "0.6.0",
+          "mpmath": "1.3.0",
+          "multivolumefile": "0.2.3",
+          "namex": "0.1.0",
+          "networkx": "3.6.1",
+          "numpy": "2.2.6",
+          "opentelemetry-api": "1.44.0",
+          "opt-einsum": "3.4.0",
+          "optree": "0.20.0",
+          "orjson": "3.12.0",
+          "packaging": "25.0",
+          "pandas": "2.3.0",
+          "parameterized": "0.9.0",
+          "peppi-py-vladfi": "0.9.2",
+          "pillow": "12.3.0",
+          "pip": "25.1.1",
+          "platformdirs": "4.11.3",
+          "portpicker": "1.6.0",
+          "protobuf": "7.36.0",
+          "psutil": "7.2.2",
+          "py-ubjson": "0.16.1",
+          "py7zr": "1.1.3",
+          "pyarrow": "23.0.1",
+          "pybcj": "1.0.8",
+          "pycryptodomex": "3.23.0",
+          "pydantic": "2.13.4",
+          "pydantic-core": "2.46.4",
+          "pyenet-vladfi": "1.3.19",
+          "pygments": "2.21.0",
+          "pyppmd": "1.3.1",
+          "python-dateutil": "2.9.0.post0",
+          "pytz": "2026.3.post1",
+          "pyvers": "0.1.0",
+          "pyyaml": "6.0.3",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "sentry-sdk": "2.68.0",
+          "setuptools": "84.0.0",
+          "six": "1.17.0",
+          "sympy": "1.14.0",
+          "tabulate": "0.10.0",
+          "tb-nightly": "2.20.0a20250717",
+          "tensorboard-data-server": "0.7.2",
+          "tensordict": "0.9.1",
+          "termcolor": "3.3.0",
+          "texttable": "1.7.0",
+          "tf-keras-nightly": "2.21.0.dev2026082009",
+          "tf-nightly": "2.21.0.dev20260203",
+          "tfp-nightly": "0.26.0.dev20260820",
+          "torch": "2.7.1+cpu",
+          "tqdm": "4.66.4",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.4",
+          "tzdata": "2026.3",
+          "urllib3": "2.7.0",
+          "wandb": "0.28.2",
+          "werkzeug": "3.1.8",
+          "wheel": "0.48.0",
+          "wrapt": "2.3.0",
+          "zipp": "4.1.0"
+        }
+      },
+      "os_packages": {
+        "libasound2": "1.2.6.1-1ubuntu1.2",
+        "libcurl4": "7.81.0-1ubuntu1.27",
+        "libgl1-mesa-dri": "23.2.1-1ubuntu3.1~22.04.4",
+        "libglx0": "1.4.0-1",
+        "libgtk-3-0": "3.24.33-1ubuntu2.2",
+        "liblzo2-2": "2.10-2build3",
+        "libmbedtls14": "2.28.0-1build1",
+        "libopengl0": "1.4.0-1",
+        "libsfml-network2.5": "2.5.1+dfsg-2",
+        "libsm6": "2:1.2.3-1build2",
+        "libsoil1": "1.07~20080707.dfsg-4",
+        "libudev1": "249.11-0ubuntu3.22",
+        "libusb-1.0-0": "2:1.0.25-1ubuntu2",
+        "libxi6": "2:1.8-1build1",
+        "libxrandr2": "2:1.5.2-1build1",
+        "libxxf86vm1": "1:1.1.4-1build3",
+        "mesa-utils": "8.4.0-1ubuntu1",
+        "x11-utils": "7.7+5build2",
+        "xvfb": "2:21.1.4-2ubuntu1.7~22.04.16"
+      },
+      "source_manifest": {
+        "scripts/modal_panel_build_pilot.py": {
+          "bytes": 38811,
+          "sha256": "d7cb2f8244bdb4926b9488d56bb12b1d0a4feffcba494921b33f3058e9c6d8fe"
+        },
+        "scripts/modal_panel_linux_build.py": {
+          "bytes": 32050,
+          "sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e"
+        },
+        "scripts/modal_panel_linux_host.py": {
+          "bytes": 16558,
+          "sha256": "8bc70d4ff7f43083ca7c763b3ea824755ca1685baa767a690d8076ede4bd4f7d"
+        },
+        "scripts/modal_panel_live_context.py": {
+          "bytes": 38939,
+          "sha256": "8d6a7ba10b83f4ef350f3a4264a717f2c1b6eb75c6f81bb242ee3451e4eea8f8"
+        },
+        "scripts/modal_panel_package_audit.py": {
+          "bytes": 18433,
+          "sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61"
+        },
+        "scripts/modal_panel_policy_canary.py": {
+          "bytes": 32148,
+          "sha256": "d97f4b9634eaa18f1a7b04114a679e685a26261c5923494b9e24792970e7f5be"
+        },
+        "scripts/modal_panel_policy_pilot.py": {
+          "bytes": 42396,
+          "sha256": "fd7e12bf9eec55cd0be54dcbc538f155f0d08cb5907472fcbbcb8189ca8e428c"
+        },
+        "scripts/modal_panel_runtime_pilot.py": {
+          "bytes": 34365,
+          "sha256": "1d7c7fc2abc262c0d6584670ed760167a3b3721e1fa17fc6532298b9c978dbc6"
+        },
+        "scripts/modal_panel_source_snapshot.py": {
+          "bytes": 11640,
+          "sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507"
+        },
+        "src/melee_policy/__init__.py": {
+          "bytes": 60,
+          "sha256": "7255d380f78c96124b5f40c80609b3a2a5e84f7c236884eea35f6f84da427e50"
+        },
+        "src/melee_policy/integration/__init__.py": {
+          "bytes": 47,
+          "sha256": "063b43d1dedbefc78c2152595ccf701f7c19f825e9adb6b3559fdd900369bd7f"
+        },
+        "src/melee_policy/integration/frame_watchdog.py": {
+          "bytes": 2842,
+          "sha256": "8bf24e6c4ded876ad743227bccbb91ac67c87fd4af15fe3eb87e2f54eae34b7b"
+        },
+        "src/melee_policy/integration/frisson_match.py": {
+          "bytes": 78691,
+          "sha256": "d536c7f87c2c6ee5bceeb6973d910a27758c2c89b663f82439842fa76248fa76"
+        },
+        "src/melee_policy/integration/frisson_policy.py": {
+          "bytes": 110279,
+          "sha256": "fcdba59fc186b104689d20510d7a3d2b8fb4c2515cac6df587028926cf6025ca"
+        },
+        "src/melee_policy/integration/mimic_bundle_manifest.py": {
+          "bytes": 9427,
+          "sha256": "53313d0fa9ed6dccd786a349cfb6509440fa4beca8d3345c80c0e5496fc97720"
+        },
+        "src/melee_policy/integration/mimic_vs_hal.py": {
+          "bytes": 203556,
+          "sha256": "24ed6cb674de7242009c7e07fb0b9e7657c348168fa5723551a3aa40fcd1cb42"
+        },
+        "src/melee_policy/integration/natural_game_end.py": {
+          "bytes": 728,
+          "sha256": "043a5913f0bf421a708ff0a683c52703a42ebaa6da8f611516021846c211f0ad"
+        },
+        "src/melee_policy/integration/post_rl_checkpoints.py": {
+          "bytes": 2259,
+          "sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f"
+        },
+        "src/melee_policy/integration/runtime_identity.py": {
+          "bytes": 5508,
+          "sha256": "388bd46e041df6a5ec80ec3d96eedcb22abb2e9e0b56fa1281cff4ec818e17a9"
+        },
+        "src/melee_policy/integration/slippi_ai_policy.py": {
+          "bytes": 64440,
+          "sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a"
+        },
+        "src/melee_policy/integration/slippi_match.py": {
+          "bytes": 214774,
+          "sha256": "e41af721dd6e53a7e4592c3a7e2a273ad68159494344af21c64e4fde20be4b69"
+        },
+        "src/melee_policy/integration/state_identity.py": {
+          "bytes": 1743,
+          "sha256": "9bb290953064ce574ef59ca1b4fa351e30c5c191854fb891bd290f3cbf60d96c"
+        }
+      },
+      "ubjson_extension": {
+        "identity": {
+          "bytes": 306448,
+          "sha256": "a7c89782fbc365018f993da214750695ae26f184e91f36abcc7f0f42e3149845"
+        },
+        "version": "0.16.1"
+      }
+    },
+    "loaded_project_sources": [
+      "src/melee_policy/__init__.py",
+      "src/melee_policy/integration/__init__.py",
+      "src/melee_policy/integration/frame_watchdog.py",
+      "src/melee_policy/integration/frisson_match.py",
+      "src/melee_policy/integration/frisson_policy.py",
+      "src/melee_policy/integration/mimic_bundle_manifest.py",
+      "src/melee_policy/integration/mimic_vs_hal.py",
+      "src/melee_policy/integration/natural_game_end.py",
+      "src/melee_policy/integration/post_rl_checkpoints.py",
+      "src/melee_policy/integration/runtime_identity.py",
+      "src/melee_policy/integration/slippi_ai_policy.py",
+      "src/melee_policy/integration/slippi_match.py",
+      "src/melee_policy/integration/state_identity.py"
+    ],
+    "loader": {
+      "libGL.so.1": "/lib/x86_64-linux-gnu/libGL.so.1",
+      "libGLX.so.0": "/lib/x86_64-linux-gnu/libGLX.so.0",
+      "libGLdispatch.so.0": "/lib/x86_64-linux-gnu/libGLdispatch.so.0",
+      "libICE.so.6": "/lib/x86_64-linux-gnu/libICE.so.6",
+      "libOpenGL.so.0": "/lib/x86_64-linux-gnu/libOpenGL.so.0",
+      "libSM.so.6": "/lib/x86_64-linux-gnu/libSM.so.6",
+      "libSOIL.so.1": "/lib/libSOIL.so.1",
+      "libX11.so.6": "/lib/x86_64-linux-gnu/libX11.so.6",
+      "libXau.so.6": "/lib/x86_64-linux-gnu/libXau.so.6",
+      "libXcomposite.so.1": "/lib/x86_64-linux-gnu/libXcomposite.so.1",
+      "libXcursor.so.1": "/lib/x86_64-linux-gnu/libXcursor.so.1",
+      "libXdamage.so.1": "/lib/x86_64-linux-gnu/libXdamage.so.1",
+      "libXdmcp.so.6": "/lib/x86_64-linux-gnu/libXdmcp.so.6",
+      "libXext.so.6": "/lib/x86_64-linux-gnu/libXext.so.6",
+      "libXfixes.so.3": "/lib/x86_64-linux-gnu/libXfixes.so.3",
+      "libXi.so.6": "/lib/x86_64-linux-gnu/libXi.so.6",
+      "libXinerama.so.1": "/lib/x86_64-linux-gnu/libXinerama.so.1",
+      "libXrandr.so.2": "/lib/x86_64-linux-gnu/libXrandr.so.2",
+      "libXrender.so.1": "/lib/x86_64-linux-gnu/libXrender.so.1",
+      "libXxf86vm.so.1": "/lib/x86_64-linux-gnu/libXxf86vm.so.1",
+      "libasound.so.2": "/lib/x86_64-linux-gnu/libasound.so.2",
+      "libatk-1.0.so.0": "/lib/x86_64-linux-gnu/libatk-1.0.so.0",
+      "libatk-bridge-2.0.so.0": "/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0",
+      "libatspi.so.0": "/lib/x86_64-linux-gnu/libatspi.so.0",
+      "libblkid.so.1": "/lib/x86_64-linux-gnu/libblkid.so.1",
+      "libbrotlicommon.so.1": "/lib/x86_64-linux-gnu/libbrotlicommon.so.1",
+      "libbrotlidec.so.1": "/lib/x86_64-linux-gnu/libbrotlidec.so.1",
+      "libbsd.so.0": "/lib/x86_64-linux-gnu/libbsd.so.0",
+      "libc.so.6": "/lib/x86_64-linux-gnu/libc.so.6",
+      "libcairo-gobject.so.2": "/lib/x86_64-linux-gnu/libcairo-gobject.so.2",
+      "libcairo.so.2": "/lib/x86_64-linux-gnu/libcairo.so.2",
+      "libcap.so.2": "/lib/x86_64-linux-gnu/libcap.so.2",
+      "libcom_err.so.2": "/lib/x86_64-linux-gnu/libcom_err.so.2",
+      "libcrypto.so.3": "/lib/x86_64-linux-gnu/libcrypto.so.3",
+      "libcurl.so.4": "/lib/x86_64-linux-gnu/libcurl.so.4",
+      "libdatrie.so.1": "/lib/x86_64-linux-gnu/libdatrie.so.1",
+      "libdbus-1.so.3": "/lib/x86_64-linux-gnu/libdbus-1.so.3",
+      "libepoxy.so.0": "/lib/x86_64-linux-gnu/libepoxy.so.0",
+      "libexpat.so.1": "/lib/x86_64-linux-gnu/libexpat.so.1",
+      "libffi.so.8": "/lib/x86_64-linux-gnu/libffi.so.8",
+      "libfontconfig.so.1": "/lib/x86_64-linux-gnu/libfontconfig.so.1",
+      "libfreetype.so.6": "/lib/x86_64-linux-gnu/libfreetype.so.6",
+      "libfribidi.so.0": "/lib/x86_64-linux-gnu/libfribidi.so.0",
+      "libgcc_s.so.1": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "libgcrypt.so.20": "/lib/x86_64-linux-gnu/libgcrypt.so.20",
+      "libgdk-3.so.0": "/lib/x86_64-linux-gnu/libgdk-3.so.0",
+      "libgdk_pixbuf-2.0.so.0": "/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0",
+      "libgio-2.0.so.0": "/lib/x86_64-linux-gnu/libgio-2.0.so.0",
+      "libglib-2.0.so.0": "/lib/x86_64-linux-gnu/libglib-2.0.so.0",
+      "libgmodule-2.0.so.0": "/lib/x86_64-linux-gnu/libgmodule-2.0.so.0",
+      "libgmp.so.10": "/lib/x86_64-linux-gnu/libgmp.so.10",
+      "libgnutls.so.30": "/lib/x86_64-linux-gnu/libgnutls.so.30",
+      "libgobject-2.0.so.0": "/lib/x86_64-linux-gnu/libgobject-2.0.so.0",
+      "libgpg-error.so.0": "/lib/x86_64-linux-gnu/libgpg-error.so.0",
+      "libgraphite2.so.3": "/lib/x86_64-linux-gnu/libgraphite2.so.3",
+      "libgssapi_krb5.so.2": "/lib/x86_64-linux-gnu/libgssapi_krb5.so.2",
+      "libgtk-3.so.0": "/lib/x86_64-linux-gnu/libgtk-3.so.0",
+      "libharfbuzz.so.0": "/lib/x86_64-linux-gnu/libharfbuzz.so.0",
+      "libhogweed.so.6": "/lib/x86_64-linux-gnu/libhogweed.so.6",
+      "libidn2.so.0": "/lib/x86_64-linux-gnu/libidn2.so.0",
+      "libjpeg.so.8": "/lib/x86_64-linux-gnu/libjpeg.so.8",
+      "libk5crypto.so.3": "/lib/x86_64-linux-gnu/libk5crypto.so.3",
+      "libkeyutils.so.1": "/lib/x86_64-linux-gnu/libkeyutils.so.1",
+      "libkrb5.so.3": "/lib/x86_64-linux-gnu/libkrb5.so.3",
+      "libkrb5support.so.0": "/lib/x86_64-linux-gnu/libkrb5support.so.0",
+      "liblber-2.5.so.0": "/lib/x86_64-linux-gnu/liblber-2.5.so.0",
+      "libldap-2.5.so.0": "/lib/x86_64-linux-gnu/libldap-2.5.so.0",
+      "liblz4.so.1": "/lib/x86_64-linux-gnu/liblz4.so.1",
+      "liblzma.so.5": "/lib/x86_64-linux-gnu/liblzma.so.5",
+      "liblzo2.so.2": "/lib/x86_64-linux-gnu/liblzo2.so.2",
+      "libm.so.6": "/lib/x86_64-linux-gnu/libm.so.6",
+      "libmbedcrypto.so.7": "/lib/x86_64-linux-gnu/libmbedcrypto.so.7",
+      "libmbedtls.so.14": "/lib/x86_64-linux-gnu/libmbedtls.so.14",
+      "libmbedx509.so.1": "/lib/x86_64-linux-gnu/libmbedx509.so.1",
+      "libmd.so.0": "/lib/x86_64-linux-gnu/libmd.so.0",
+      "libmount.so.1": "/lib/x86_64-linux-gnu/libmount.so.1",
+      "libnettle.so.8": "/lib/x86_64-linux-gnu/libnettle.so.8",
+      "libnghttp2.so.14": "/lib/x86_64-linux-gnu/libnghttp2.so.14",
+      "libp11-kit.so.0": "/lib/x86_64-linux-gnu/libp11-kit.so.0",
+      "libpango-1.0.so.0": "/lib/x86_64-linux-gnu/libpango-1.0.so.0",
+      "libpangocairo-1.0.so.0": "/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0",
+      "libpangoft2-1.0.so.0": "/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0",
+      "libpcre.so.3": "/lib/x86_64-linux-gnu/libpcre.so.3",
+      "libpcre2-8.so.0": "/lib/x86_64-linux-gnu/libpcre2-8.so.0",
+      "libpixman-1.so.0": "/lib/x86_64-linux-gnu/libpixman-1.so.0",
+      "libpng16.so.16": "/lib/x86_64-linux-gnu/libpng16.so.16",
+      "libpsl.so.5": "/lib/x86_64-linux-gnu/libpsl.so.5",
+      "libresolv.so.2": "/lib/x86_64-linux-gnu/libresolv.so.2",
+      "librtmp.so.1": "/lib/x86_64-linux-gnu/librtmp.so.1",
+      "libsasl2.so.2": "/lib/x86_64-linux-gnu/libsasl2.so.2",
+      "libselinux.so.1": "/lib/x86_64-linux-gnu/libselinux.so.1",
+      "libsfml-network.so.2.5": "/lib/x86_64-linux-gnu/libsfml-network.so.2.5",
+      "libsfml-system.so.2.5": "/lib/x86_64-linux-gnu/libsfml-system.so.2.5",
+      "libslippi_rust_extensions.so": "/work/runtime-pilot/package/libslippi_rust_extensions.so",
+      "libssh.so.4": "/lib/x86_64-linux-gnu/libssh.so.4",
+      "libssl.so.3": "/lib/x86_64-linux-gnu/libssl.so.3",
+      "libstdc++.so.6": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+      "libsystemd.so.0": "/lib/x86_64-linux-gnu/libsystemd.so.0",
+      "libtasn1.so.6": "/lib/x86_64-linux-gnu/libtasn1.so.6",
+      "libthai.so.0": "/lib/x86_64-linux-gnu/libthai.so.0",
+      "libudev.so.1": "/lib/x86_64-linux-gnu/libudev.so.1",
+      "libunistring.so.2": "/lib/x86_64-linux-gnu/libunistring.so.2",
+      "libusb-1.0.so.0": "/lib/x86_64-linux-gnu/libusb-1.0.so.0",
+      "libuuid.so.1": "/lib/x86_64-linux-gnu/libuuid.so.1",
+      "libwayland-client.so.0": "/lib/x86_64-linux-gnu/libwayland-client.so.0",
+      "libwayland-cursor.so.0": "/lib/x86_64-linux-gnu/libwayland-cursor.so.0",
+      "libwayland-egl.so.1": "/lib/x86_64-linux-gnu/libwayland-egl.so.1",
+      "libxcb-render.so.0": "/lib/x86_64-linux-gnu/libxcb-render.so.0",
+      "libxcb-shm.so.0": "/lib/x86_64-linux-gnu/libxcb-shm.so.0",
+      "libxcb.so.1": "/lib/x86_64-linux-gnu/libxcb.so.1",
+      "libxkbcommon.so.0": "/lib/x86_64-linux-gnu/libxkbcommon.so.0",
+      "libz.so.1": "/lib/x86_64-linux-gnu/libz.so.1",
+      "libzstd.so.1": "/lib/x86_64-linux-gnu/libzstd.so.1"
+    },
+    "os_release": {
+      "BUG_REPORT_URL": "\"https://bugs.launchpad.net/ubuntu/\"",
+      "HOME_URL": "\"https://www.ubuntu.com/\"",
+      "ID": "ubuntu",
+      "ID_LIKE": "debian",
+      "NAME": "\"Ubuntu\"",
+      "PRETTY_NAME": "\"Ubuntu 22.04.5 LTS\"",
+      "PRIVACY_POLICY_URL": "\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"",
+      "SUPPORT_URL": "\"https://help.ubuntu.com/\"",
+      "UBUNTU_CODENAME": "jammy",
+      "VERSION": "\"22.04.5 LTS (Jammy Jellyfish)\"",
+      "VERSION_CODENAME": "jammy",
+      "VERSION_ID": "\"22.04\""
+    },
+    "package": {
+      "archive_sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19",
+      "build_patch_sha256": "e276165fa35ab2c8d63f0cc97df3aa643543088453f13ba23391a6902f41c682",
+      "bytes": 81401746,
+      "executable": {
+        "bytes": 19996344,
+        "format": "ELF64-x86_64",
+        "path": "/work/runtime-pilot/package/dolphin-emu",
+        "sha256": "de76b9e141d35b9f81bc335a5d5a0ccb875ad43d9dcb91f27b412b0a07d17a43"
+      },
+      "executed": false,
+      "files": 344,
+      "frame_patch_sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e",
+      "gameplay_admitted": false,
+      "manifest_sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700",
+      "outer_plan_sha256": "aea6a4743a53589411c4d460467e7df6ec5e0a10d7f9e707be049f943da2a483",
+      "package_audit_sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05",
+      "package_root": "/work/runtime-pilot/package",
+      "release": "3.6.4",
+      "rust_library": {
+        "bytes": 56535656,
+        "path": "/work/runtime-pilot/package/libslippi_rust_extensions.so",
+        "sha256": "cbee3d3750f9690cb5beb630a362656ae0ada6a47bfedefa530d4b688a0e1a69"
+      },
+      "schema": "e011.modal-panel-linux-host.v1",
+      "source_revision": "e7711b104b339a99385f2bb12b472d46140a7bc7",
+      "status": "linux-package-bytes-verified",
+      "target_platform": "linux_x86_64",
+      "verification_host": {
+        "machine": "x86_64",
+        "system": "Linux"
+      }
+    },
+    "parent_pid": 4,
+    "parent_terminal_cleanup_verified": false,
+    "pgid": 4714,
+    "pid": 4714,
+    "runtime": {
+      "os_packages": {
+        "libasound2": "1.2.6.1-1ubuntu1.2",
+        "libcurl4": "7.81.0-1ubuntu1.27",
+        "libgl1-mesa-dri": "23.2.1-1ubuntu3.1~22.04.4",
+        "libglx0": "1.4.0-1",
+        "libgtk-3-0": "3.24.33-1ubuntu2.2",
+        "liblzo2-2": "2.10-2build3",
+        "libmbedtls14": "2.28.0-1build1",
+        "libopengl0": "1.4.0-1",
+        "libsfml-network2.5": "2.5.1+dfsg-2",
+        "libsm6": "2:1.2.3-1build2",
+        "libsoil1": "1.07~20080707.dfsg-4",
+        "libudev1": "249.11-0ubuntu3.22",
+        "libusb-1.0-0": "2:1.0.25-1ubuntu2",
+        "libxi6": "2:1.8-1build1",
+        "libxrandr2": "2:1.5.2-1build1",
+        "libxxf86vm1": "1:1.1.4-1build3",
+        "mesa-utils": "8.4.0-1ubuntu1",
+        "x11-utils": "7.7+5build2",
+        "xvfb": "2:21.1.4-2ubuntu1.7~22.04.16"
+      },
+      "pip_check_passed": true,
+      "versions": {
+        "absl-py": "2.5.0",
+        "annotated-types": "0.8.0",
+        "astunparse": "1.6.3",
+        "attrs": "23.2.0",
+        "backports-zstd": "1.7.0",
+        "brotli": "1.2.0",
+        "certifi": "2026.7.22",
+        "charset-normalizer": "3.5.1",
+        "click": "8.4.2",
+        "cloudpickle": "3.1.2",
+        "decorator": "5.3.1",
+        "dm-sonnet": "2.0.2",
+        "dm-tree": "0.1.10",
+        "dnspython": "2.8.0",
+        "fancyflags": "1.2",
+        "filelock": "3.32.3",
+        "flatbuffers": "25.12.19",
+        "fsspec": "2026.7.0",
+        "gast": "0.7.0",
+        "google-pasta": "0.2.0",
+        "grpcio": "1.83.0",
+        "h5py": "3.14.0",
+        "idna": "3.19",
+        "importlib-metadata": "9.0.0",
+        "inflate64": "1.0.4",
+        "inflection": "0.5.1",
+        "jinja2": "3.1.6",
+        "keras-nightly": "3.16.0.dev2026082004",
+        "libclang": "18.1.1",
+        "markdown": "3.10.3",
+        "markdown-it-py": "4.2.0",
+        "markupsafe": "3.0.3",
+        "mdurl": "0.1.2",
+        "melee": "0.47.3",
+        "ml-dtypes": "0.6.0",
+        "mpmath": "1.3.0",
+        "multivolumefile": "0.2.3",
+        "namex": "0.1.0",
+        "networkx": "3.6.1",
+        "numpy": "2.2.6",
+        "opentelemetry-api": "1.44.0",
+        "opt-einsum": "3.4.0",
+        "optree": "0.20.0",
+        "orjson": "3.12.0",
+        "packaging": "25.0",
+        "pandas": "2.3.0",
+        "parameterized": "0.9.0",
+        "peppi-py-vladfi": "0.9.2",
+        "pillow": "12.3.0",
+        "pip": "25.1.1",
+        "platformdirs": "4.11.3",
+        "portpicker": "1.6.0",
+        "protobuf": "7.36.0",
+        "psutil": "7.2.2",
+        "py-ubjson": "0.16.1",
+        "py7zr": "1.1.3",
+        "pyarrow": "23.0.1",
+        "pybcj": "1.0.8",
+        "pycryptodomex": "3.23.0",
+        "pydantic": "2.13.4",
+        "pydantic-core": "2.46.4",
+        "pyenet-vladfi": "1.3.19",
+        "pygments": "2.21.0",
+        "pyppmd": "1.3.1",
+        "python-dateutil": "2.9.0.post0",
+        "pytz": "2026.3.post1",
+        "pyvers": "0.1.0",
+        "pyyaml": "6.0.3",
+        "requests": "2.34.2",
+        "rich": "15.0.0",
+        "sentry-sdk": "2.68.0",
+        "setuptools": "84.0.0",
+        "six": "1.17.0",
+        "sympy": "1.14.0",
+        "tabulate": "0.10.0",
+        "tb-nightly": "2.20.0a20250717",
+        "tensorboard-data-server": "0.7.2",
+        "tensordict": "0.9.1",
+        "termcolor": "3.3.0",
+        "texttable": "1.7.0",
+        "tf-keras-nightly": "2.21.0.dev2026082009",
+        "tf-nightly": "2.21.0.dev20260203",
+        "tfp-nightly": "0.26.0.dev20260820",
+        "torch": "2.7.1+cpu",
+        "tqdm": "4.66.4",
+        "typing-extensions": "4.16.0",
+        "typing-inspection": "0.4.4",
+        "tzdata": "2026.3",
+        "urllib3": "2.7.0",
+        "wandb": "0.28.2",
+        "werkzeug": "3.1.8",
+        "wheel": "0.48.0",
+        "wrapt": "2.3.0",
+        "zipp": "4.1.0"
+      }
+    },
+    "schema": "e011.modal-runtime-pilot.v1",
+    "scope": {
+      "dolphin_launches": 0,
+      "gameplay_admitted": false,
+      "install_exact94": true,
+      "loader_inspection": true,
+      "native_imports": true,
+      "policy_inference": 0,
+      "policy_instances": 0,
+      "rom_reads": 0,
+      "xvfb_software_display": true
+    },
+    "sid": 4714,
+    "status": "runtime-child-qualified"
+  },
+  "schema": "e011.modal-runtime-pilot.v1",
+  "scope": {
+    "dolphin_launches": 0,
+    "gameplay_admitted": false,
+    "install_exact94": true,
+    "loader_inspection": true,
+    "native_imports": true,
+    "policy_inference": 0,
+    "policy_instances": 0,
+    "rom_reads": 0,
+    "xvfb_software_display": true
+  },
+  "started_unix": 1789168184.4298215,
+  "status": "runtime-qualified-gameplay-unadmitted",
+  "tls": {
+    "ca_bundle": "/etc/ssl/certs/ca-certificates.crt",
+    "ca_bundle_bytes": 182140,
+    "ca_bundle_sha256": "9481fcd95f41b221f02f14d896535fe500bec539bc563c4cdca1acee483a8bdd",
+    "cert_store_stats": {
+      "crl": 0,
+      "x509": 121,
+      "x509_ca": 121
+    },
+    "check_hostname": true,
+    "default_verify_paths": {
+      "cafile": null,
+      "capath": "/etc/ssl/certs",
+      "openssl_cafile": "/etc/ssl/cert.pem",
+      "openssl_cafile_env": "SSL_CERT_FILE",
+      "openssl_capath": "/etc/ssl/certs",
+      "openssl_capath_env": "SSL_CERT_DIR"
+    },
+    "openssl": "OpenSSL 3.0.12 24 Oct 2023",
+    "python": "/usr/local/bin/python",
+    "schema": "e011.modal-policy-tls-trust.v1",
+    "verify_mode": "CERT_REQUIRED"
+  }
+}

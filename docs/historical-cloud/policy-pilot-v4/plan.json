@@ -1,0 +1,349 @@
+{
+  "admitted": false,
+  "cases": [
+    {
+      "key": "75m",
+      "kind": "frisson",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-75m-p1-plan-v3.json",
+      "plan_sha256": "19f26fbbcbd21f2ba5e37ae646dca8432989ca325c425f1c0b0f494f2123d3d2",
+      "port": 1
+    },
+    {
+      "key": "75m",
+      "kind": "frisson",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-75m-p2-plan-v3.json",
+      "plan_sha256": "4676df52372bad1835c8a640fefe29493f7b9fab5165a60ed71685b8bb1a0dd1",
+      "port": 2
+    },
+    {
+      "key": "10m",
+      "kind": "frisson",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-10m-p1-plan-v3.json",
+      "plan_sha256": "0873f4cd5716f2c60ae57b45f6838778886b555265fb375ae37a2891af046e38",
+      "port": 1
+    },
+    {
+      "key": "10m",
+      "kind": "frisson",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-10m-p2-plan-v3.json",
+      "plan_sha256": "4c6cd1845408a024a5db124e157856f22e7b73d90093444446d7bd12ac47eb10",
+      "port": 2
+    },
+    {
+      "key": "fox_d21_ditto_v4",
+      "kind": "slippi",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d21_ditto_v4-p1-plan-v3.json",
+      "plan_sha256": "fb50dedd3e00a19907070f3a4701bb634607dfaf8a1635408cd365fa2f338db8",
+      "port": 1
+    },
+    {
+      "key": "fox_d21_ditto_v4",
+      "kind": "slippi",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d21_ditto_v4-p2-plan-v3.json",
+      "plan_sha256": "512838d6ecc3d517b9347c3a89c900fd9fdcf37a76845c7fef772f362f65a6a2",
+      "port": 2
+    },
+    {
+      "key": "fox_d24_ditto_v4",
+      "kind": "slippi",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d24_ditto_v4-p1-plan-v3.json",
+      "plan_sha256": "b7e915860af160c7a8ee5d20255e61cc3e4e6ae9d03fccf6fbe1cb5d0653d086",
+      "port": 1
+    },
+    {
+      "key": "fox_d24_ditto_v4",
+      "kind": "slippi",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d24_ditto_v4-p2-plan-v3.json",
+      "plan_sha256": "540e93ba3c4e7cf8496a31929330ddc9f5356b87ab950e85ff1df404d3dc946c",
+      "port": 2
+    },
+    {
+      "key": "gm",
+      "kind": "slippi",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-gm-p1-plan-v3.json",
+      "plan_sha256": "292f4a43649d340aab41069e5f9fa99c62869cb90be9021d9800676954879c02",
+      "port": 1
+    },
+    {
+      "key": "gm",
+      "kind": "slippi",
+      "plan": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-gm-p2-plan-v3.json",
+      "plan_sha256": "55e74ecdee2896f54bb61d1e02ab3867767d68ca6fe75da72fd66772392ba4ef",
+      "port": 2
+    }
+  ],
+  "comparison": "Complete receipts return for local native comparison at unchanged atol=rtol=1e-5; cloud success alone is not parity.",
+  "dependencies_complete": true,
+  "dependency_sha256": "4ee132c7fc168c1e0af7a02864cadb8281239a9aa7a08498287faea69e93b33c",
+  "frisson_destination": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/frisson-source-git",
+  "generated_sources": [
+    {
+      "bytes": 84243,
+      "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/frisson-source-git/melee-policy-frisson-ai/model.py",
+      "sha256": "2e61e7b27b1412c4becbd2dd93ee8d8bebad15c14cb7a2babaf954993205854d"
+    },
+    {
+      "bytes": 33632,
+      "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/frisson-source-git/melee-policy-frisson-ai/controller_codec.py",
+      "sha256": "4a51a6eb2bd1da48a1a7c852194d914ab6e5072b7d353096f351e89b24252286"
+    },
+    {
+      "bytes": 6995,
+      "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/frisson-source-git/melee-policy-frisson-ai/tensor_batch.py",
+      "sha256": "07c39e9e5d5152b9d8d73aa74edf77c690db53f45b6ec03c6d4e64c80f4814ed"
+    }
+  ],
+  "limits": {
+    "bootstrap_seconds": 600,
+    "case_seconds": 250,
+    "concurrent_workers": 1,
+    "cpu": [
+      4,
+      4
+    ],
+    "dependency_bytes": 4294967296,
+    "function_seconds": 3600,
+    "memory_mib": [
+      16384,
+      16384
+    ],
+    "output_reserve_seconds": 300,
+    "receipt_bytes": 134217728,
+    "return_bytes": 1375731712,
+    "session_seconds": 4500,
+    "upload_bytes": 1073741824
+  },
+  "no_gameplay": true,
+  "no_rom_secrets_volumes": true,
+  "output": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4",
+  "retry_semantics": {
+    "client_resubmissions": 0,
+    "platform_restarts_possible": true,
+    "user_exception_retry_policy": null
+  },
+  "root": "${BENCHMARK_ROOT}",
+  "runtime": {
+    "artifact_http_user_agent": "frisson-policy-metadata-audit/1",
+    "cpu_float32": true,
+    "image": "ubuntu:22.04",
+    "linux_tensorflow_backend": "standard operations; explicit oneDNN disable for numeric compatibility",
+    "native_environment_flags_unchanged": false,
+    "native_environment_overrides": {
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "nonpreemptible": true,
+    "py_ubjson_source_build_environment": {
+      "CC": "/usr/bin/gcc"
+    },
+    "python": "3.12",
+    "sdk": "1.5.4",
+    "sequential_fresh_processes": true,
+    "tls": {
+      "ca_bundle": "/etc/ssl/certs/ca-certificates.crt",
+      "ca_package": "ca-certificates",
+      "check_hostname": true,
+      "verify_mode": "CERT_REQUIRED"
+    }
+  },
+  "schema": "e011.modal-policy-pilot.v1",
+  "slippi": {
+    "branch": "main",
+    "destination": ".e001-cache/slippi-ai-source",
+    "revision": "577965a7731dc53e3472ea63d9e9853a4e9d65fa",
+    "url": "https://github.com/vladfi1/slippi-ai"
+  },
+  "uploads": [
+    {
+      "bytes": 3448,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-75m-p1-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-75m-p1-plan-v3.json",
+      "sha256": "19f26fbbcbd21f2ba5e37ae646dca8432989ca325c425f1c0b0f494f2123d3d2"
+    },
+    {
+      "bytes": 644283507,
+      "local": "${BENCHMARK_ROOT}/.e010-cache/post-rl-p21/frisson-melee-75m-rl-step222.pt",
+      "remote": "/opt/policy-root/.e010-cache/post-rl-p21/frisson-melee-75m-rl-step222.pt",
+      "sha256": "860b0d06789a5e52fcf44bf497c9f2838e387d7c20689bb455434048732883e0"
+    },
+    {
+      "bytes": 1894960,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+      "sha256": "c7c85408ce45e26916082ffa7456fb681273ec70d5be9d865a6edb7bda4e09af"
+    },
+    {
+      "bytes": 304629,
+      "local": "${BENCHMARK_ROOT}/.e000-cache/raw/039d70ae59bc37fc1fe5b72c1dadcd95d2b2877b9ad1964bf978aaa6662962ad.slp",
+      "remote": "/opt/policy-root/.e000-cache/raw/039d70ae59bc37fc1fe5b72c1dadcd95d2b2877b9ad1964bf978aaa6662962ad.slp",
+      "sha256": "039d70ae59bc37fc1fe5b72c1dadcd95d2b2877b9ad1964bf978aaa6662962ad"
+    },
+    {
+      "bytes": 32148,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_policy_canary.py",
+      "remote": "/opt/policy-root/scripts/modal_panel_policy_canary.py",
+      "sha256": "d97f4b9634eaa18f1a7b04114a679e685a26261c5923494b9e24792970e7f5be"
+    },
+    {
+      "bytes": 13936,
+      "local": "${BENCHMARK_ROOT}/scripts/slippi_panel_runtime.py",
+      "remote": "/opt/policy-root/scripts/slippi_panel_runtime.py",
+      "sha256": "239fb0d79a4586dfe111847ef62a8f8c9bb8754062e989be475bb103117ef5a5"
+    },
+    {
+      "bytes": 7127,
+      "local": "${BENCHMARK_ROOT}/scripts/slippi_panel_audit.py",
+      "remote": "/opt/policy-root/scripts/slippi_panel_audit.py",
+      "sha256": "0b49ff8743c1425da0aadd338f8197115260c9b702335286d8b08cb95d1aa79b"
+    },
+    {
+      "bytes": 60,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/__init__.py",
+      "remote": "/opt/policy-root/src/melee_policy/__init__.py",
+      "sha256": "7255d380f78c96124b5f40c80609b3a2a5e84f7c236884eea35f6f84da427e50"
+    },
+    {
+      "bytes": 47,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/__init__.py",
+      "remote": "/opt/policy-root/src/melee_policy/integration/__init__.py",
+      "sha256": "063b43d1dedbefc78c2152595ccf701f7c19f825e9adb6b3559fdd900369bd7f"
+    },
+    {
+      "bytes": 110279,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frisson_policy.py",
+      "remote": "/opt/policy-root/src/melee_policy/integration/frisson_policy.py",
+      "sha256": "fcdba59fc186b104689d20510d7a3d2b8fb4c2515cac6df587028926cf6025ca"
+    },
+    {
+      "bytes": 64440,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/slippi_ai_policy.py",
+      "remote": "/opt/policy-root/src/melee_policy/integration/slippi_ai_policy.py",
+      "sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a"
+    },
+    {
+      "bytes": 45116,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/slippi_compatibility.py",
+      "remote": "/opt/policy-root/src/melee_policy/integration/slippi_compatibility.py",
+      "sha256": "db287b9b16eae628b4190dda8d7b4ae71a88ee0a47f55ada24636829c1e6391a"
+    },
+    {
+      "bytes": 2259,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/post_rl_checkpoints.py",
+      "remote": "/opt/policy-root/src/melee_policy/integration/post_rl_checkpoints.py",
+      "sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f"
+    },
+    {
+      "bytes": 3448,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-75m-p2-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-75m-p2-plan-v3.json",
+      "sha256": "4676df52372bad1835c8a640fefe29493f7b9fab5165a60ed71685b8bb1a0dd1"
+    },
+    {
+      "bytes": 3448,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-10m-p1-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-10m-p1-plan-v3.json",
+      "sha256": "0873f4cd5716f2c60ae57b45f6838778886b555265fb375ae37a2891af046e38"
+    },
+    {
+      "bytes": 96448859,
+      "local": "${BENCHMARK_ROOT}/.e010-cache/post-rl-p21/frisson-melee-10m-rl-step1318.pt",
+      "remote": "/opt/policy-root/.e010-cache/post-rl-p21/frisson-melee-10m-rl-step1318.pt",
+      "sha256": "da1179d6319d2f9a805b1697d8176b66a455aa9f37b51e46ad5f2a3d3537a7da"
+    },
+    {
+      "bytes": 3448,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-10m-p2-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-frisson-10m-p2-plan-v3.json",
+      "sha256": "4c6cd1845408a024a5db124e157856f22e7b73d90093444446d7bd12ac47eb10"
+    },
+    {
+      "bytes": 3449,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d21_ditto_v4-p1-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d21_ditto_v4-p1-plan-v3.json",
+      "sha256": "fb50dedd3e00a19907070f3a4701bb634607dfaf8a1635408cd365fa2f338db8"
+    },
+    {
+      "bytes": 42332034,
+      "local": "${BENCHMARK_ROOT}/.e001-cache/slippi-ai/models/fox_d21_ditto_v4",
+      "remote": "/opt/policy-root/.e001-cache/slippi-ai/models/fox_d21_ditto_v4",
+      "sha256": "f4854fc783246b42d4bfc9309d6964c174a388f3425bb21f3f79355a4562e727"
+    },
+    {
+      "bytes": 3449,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d21_ditto_v4-p2-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d21_ditto_v4-p2-plan-v3.json",
+      "sha256": "512838d6ecc3d517b9347c3a89c900fd9fdcf37a76845c7fef772f362f65a6a2"
+    },
+    {
+      "bytes": 3449,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d24_ditto_v4-p1-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d24_ditto_v4-p1-plan-v3.json",
+      "sha256": "b7e915860af160c7a8ee5d20255e61cc3e4e6ae9d03fccf6fbe1cb5d0653d086"
+    },
+    {
+      "bytes": 42332052,
+      "local": "${BENCHMARK_ROOT}/.e001-cache/slippi-ai/models/fox_d24_ditto_v4",
+      "remote": "/opt/policy-root/.e001-cache/slippi-ai/models/fox_d24_ditto_v4",
+      "sha256": "38ff0851e920f30d15e9974b621aa730e4a13f0e117132596afa3ecd3161c4bb"
+    },
+    {
+      "bytes": 3449,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d24_ditto_v4-p2-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-fox_d24_ditto_v4-p2-plan-v3.json",
+      "sha256": "540e93ba3c4e7cf8496a31929330ddc9f5356b87ab950e85ff1df404d3dc946c"
+    },
+    {
+      "bytes": 3421,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-gm-p1-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-gm-p1-plan-v3.json",
+      "sha256": "292f4a43649d340aab41069e5f9fa99c62869cb90be9021d9800676954879c02"
+    },
+    {
+      "bytes": 95559733,
+      "local": "${BENCHMARK_ROOT}/.e001-cache/slippi-ai/models/gm",
+      "remote": "/opt/policy-root/.e001-cache/slippi-ai/models/gm",
+      "sha256": "f03b1ae18a0cce1ed7b7a5b6db6f8a1e49a35344d72e39463780adbba43b8e27"
+    },
+    {
+      "bytes": 3421,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-gm-p2-plan-v3.json",
+      "remote": "/opt/policy-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/native-canary-slippi-gm-p2-plan-v3.json",
+      "sha256": "55e74ecdee2896f54bb61d1e02ab3867767d68ca6fe75da72fd66772392ba4ef"
+    },
+    {
+      "bytes": 42396,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_policy_pilot.py",
+      "remote": "/opt/policy-root/scripts/modal_panel_policy_pilot.py",
+      "sha256": "fd7e12bf9eec55cd0be54dcbc538f155f0d08cb5907472fcbbcb8189ca8e428c"
+    },
+    {
+      "bytes": 11640,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_source_snapshot.py",
+      "remote": "/opt/policy-root/scripts/modal_panel_source_snapshot.py",
+      "sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507"
+    },
+    {
+      "bytes": 38811,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_build_pilot.py",
+      "remote": "/opt/policy-root/scripts/modal_panel_build_pilot.py",
+      "sha256": "d7cb2f8244bdb4926b9488d56bb12b1d0a4feffcba494921b33f3058e9c6d8fe"
+    },
+    {
+      "bytes": 32050,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_linux_build.py",
+      "remote": "/opt/policy-root/scripts/modal_panel_linux_build.py",
+      "sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e"
+    },
+    {
+      "bytes": 184808,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/frisson-source-snapshot.json",
+      "remote": "/opt/frisson-source-snapshot.json",
+      "sha256": "3a4a3972734124ec02ccdc217b3ec63abb13368bbcd9fffbc8e0793a0b1e2203"
+    },
+    {
+      "bytes": 42768,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/dependencies-v1/v2/execution-lock-v2.json",
+      "remote": "/opt/policy-lock.json",
+      "sha256": "4ee132c7fc168c1e0af7a02864cadb8281239a9aa7a08498287faea69e93b33c"
+    }
+  ]
+}

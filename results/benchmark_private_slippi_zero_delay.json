@@ -1,0 +1,150 @@
+{
+  "source": "data/zero_delay_sources/image_0_delay_slippi.png",
+  "provenance": "Author-supplied result table; one Slippi-AI checkpoint privately provided by its developers, evaluated with Master Player and Cody conditioning.",
+  "added_action_delay_frames": 0,
+  "protocol": [
+    {
+      "conditioning": "Master Player",
+      "stages": "Final Destination",
+      "games": 16
+    },
+    {
+      "conditioning": "Master Player",
+      "stages": "Six stages",
+      "games": 18
+    },
+    {
+      "conditioning": "Cody",
+      "stages": "Final Destination",
+      "games": 16
+    },
+    {
+      "conditioning": "Cody",
+      "stages": "Six stages",
+      "games": 18
+    }
+  ],
+  "checkpoints": [
+    {
+      "size": "10M",
+      "training_stage": "supervised",
+      "rl_step": null,
+      "scores": [
+        {
+          "wins": 6,
+          "losses": 10,
+          "games": 16
+        },
+        {
+          "wins": 9,
+          "losses": 9,
+          "games": 18
+        },
+        {
+          "wins": 3,
+          "losses": 13,
+          "games": 16
+        },
+        {
+          "wins": 5,
+          "losses": 13,
+          "games": 18
+        }
+      ],
+      "total_wins": 23,
+      "total_losses": 45,
+      "games": 68
+    },
+    {
+      "size": "10M",
+      "training_stage": "RL",
+      "rl_step": 632,
+      "scores": [
+        {
+          "wins": 16,
+          "losses": 0,
+          "games": 16
+        },
+        {
+          "wins": 18,
+          "losses": 0,
+          "games": 18
+        },
+        {
+          "wins": 16,
+          "losses": 0,
+          "games": 16
+        },
+        {
+          "wins": 18,
+          "losses": 0,
+          "games": 18
+        }
+      ],
+      "total_wins": 68,
+      "total_losses": 0,
+      "games": 68,
+      "four_stock_wins": 61
+    },
+    {
+      "size": "75M",
+      "training_stage": "supervised",
+      "rl_step": null,
+      "scores": [
+        {
+          "wins": 9,
+          "losses": 7,
+          "games": 16
+        },
+        {
+          "wins": 8,
+          "losses": 10,
+          "games": 18
+        },
+        {
+          "wins": 5,
+          "losses": 11,
+          "games": 16
+        },
+        {
+          "wins": 3,
+          "losses": 15,
+          "games": 18
+        }
+      ],
+      "total_wins": 25,
+      "total_losses": 43,
+      "games": 68
+    },
+    {
+      "size": "75M",
+      "training_stage": "RL",
+      "rl_step": 980,
+      "scores": [
+        {
+          "wins": 16,
+          "losses": 0,
+          "games": 16
+        },
+        {
+          "wins": 17,
+          "losses": 1,
+          "games": 18
+        },
+        {
+          "wins": 13,
+          "losses": 3,
+          "games": 16
+        },
+        {
+          "wins": 12,
+          "losses": 6,
+          "games": 18
+        }
+      ],
+      "total_wins": 58,
+      "total_losses": 10,
+      "games": 68
+    }
+  ]
+}

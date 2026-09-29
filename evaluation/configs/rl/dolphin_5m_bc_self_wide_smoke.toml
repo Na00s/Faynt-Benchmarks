@@ -1,0 +1,127 @@
+# The 20-minute shake-out for dolphin_5m_bc_self_wide_day.toml (session 15, 24 Aug 2026; BC-INIT-PLAN.md §6).
+# Same 64 Dolphins x 2 ports = 128 rows on the L4, same BC init and BC teacher, burn-in ladders cut to 3 steps
+# each and a token evaluation, so a launch reaches real PPO within about five minutes.  **Not optional**: a BC
+# init is a regime nothing here has been measured in -- the policy is peaked instead of near-uniform, so the
+# same learning rate produces a different KL (skipping the shake-out cost ~$26 on 23 Aug).  It must answer:
+#   1. loss/entropy at the first logged step -- the BC policy's real entropy (max 11.03; from-scratch 10.94);
+#   2. the median loss/actor_kl_mean over the PPO steps at lr 3e-5 -> lr_day = 3e-5 * sqrt(3e-4 / median),
+#      capped at 1e-4;
+#   3. ppo/clip_fraction -- above 0.4 already at 3e-5 means epsilon 1e-2 is too tight (raise epsilon, not lr);
+#   4. value/uev at the end of the value burn-in -- well below 1.0 before the policy moves;
+#   5. ppo/reverted -- must be 0 (reverts at 3e-5 mean max_mean_actor_kl 1e-3 is too tight);
+#   6. env/fps, step seconds, GPU memory (128 rows without microbatching plus the teacher forward);
+#   7. eval/other/* at step 0 -- about 0 on every stat, since the anchor *is* the starting policy.
+# About $1.15 for 20 minutes plus the end evaluation that at_end = true runs after the cap (estimate + yes).
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_bc_self_wide_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/5m_bc_smoke
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000
+max_runtime_s = 1200              # 20 minutes: boots + 3 + 3 burn-in steps + a couple of dozen real PPO steps
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M -- identical to Ali's run
+init = "checkpoint"
+checkpoint = "/runs/bc/5m-muon-aux-lr2x.pt"   # the STABLE path (day file header); the anchor below
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"         # RL precision: the file's bf16 compute / cache fields are overridden
+cache_dtype = "float32"
+fast_step = true                  # P7b (25 Aug 2026): vectorised ring step, as the day file deploys
+
+[teacher]
+source = "policy"                 # clone_frozen() of the just-loaded BC weights: no second file read
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 64                     # players is derived from opponent.type: ("policy", "policy") for self-play
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 8 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 64 two-phase boots on 32 cores (8 took ~29 s)
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group
+boot = "two_phase"
+worker_processes = 16             # P7a (25 Aug 2026): 4 Dolphins per spawned worker, as the day file deploys
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0                  # Ali's action_offset_frames = 1 (config.yaml data.delay = 1)
+context_mode = "ring"             # no re-prime; learner-side behaviour log-probs (PLAN.md §3.6 deviation 2)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: no opponent object, 2 x 64 = 128 rows
+seed = 1
+
+[learner]
+learning_rate = 3e-5              # the SEED the smoke measures at (BC-INIT-PLAN.md §6)
+kl_teacher_weight = 0.1           # slippi-ai's post-training recipe; the anti-collapse mechanism
+entropy_weight = 0.0              # deliberate: one change at a time (entropy is on the console line)
+value_burnin_steps = 3            # the day file uses 100
+optimizer_burnin_steps = 3        # the day file uses 50; 3 still warms |m/sqrt(v)| enough to read the KL
+# microbatch_envs omitted: 5m at 128 rows measured ~7 GB of the L4's 24 (plus one frozen teacher forward)
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2                    # slippi-ai's value; steps from a BC init are small, 0.1 is not needed
+beta = 0.0                        # slippi-ai's default
+max_mean_actor_kl = 1e-3          # a real backstop with headroom (slippi-ai's 1e-4 reverted 100 % of the
+                                  # updates at random init)
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "5m", "l4", "smoke", "wide",
+    "ring",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 7200.0         # two-hourly (user decision 23 Aug 2026) plus the start and end of a launch
+at_start = true
+at_end = true
+frames = 8192                     # two rollouts per opponent
+num_envs = 32
+rollout_length = 128
+# The fixed references: the CPU ladder at both ends and the BC checkpoint itself (zero-noise; picks best.pt).
+opponents = ["cpu1", "cpu9", "other:/runs/bc/5m-muon-aux-lr2x.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"       # the composite the learner actually optimises
+metric_opponent = "other"

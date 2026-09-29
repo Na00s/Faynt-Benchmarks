@@ -1,0 +1,133 @@
+# P32 CALIBRATION (18 Sep 2026): a released vladfi1/phillip agent against the released MIMIC Fox, 16 matches.
+#
+# The second anchor: MIMIC is the opponent every model in RESULTS.md is measured against, so this arm places
+# each Phillip agent on the same ladder (SmashBot > 10m RL 1318 > MIMIC > CPU 9) before our own weights are
+# pointed at it.  Phillip is the FIRST side (`--sides phillip,mimic`): environment player 0 = port 1, its
+# character FIRST in env.dolphin.characters; MIMIC plays Fox on port 2.  Runs on `external_match_phillip`,
+# the GPU image that carries MIMIC, SmashBot and the Phillip sidecar interpreter (MIMIC needs the L4).
+#
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::external \
+#       --config phillip_mimic --sides phillip:delay0/FoxFD,mimic --label phillip-foxfd-vs-mimic \
+#       --output-dir /runs/matches/p32-calibration/foxfd_mimic \
+#       --overrides "env.dolphin.characters=[1,1]" --spawn
+
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains in a recording job
+seed = 0
+deterministic = true
+device = "cuda"                   # MIMIC has no KV cache; the L4 is what makes a match finish
+threads = 8
+
+[policy]
+profile = "10m"                   # only a fallback; the recorded checkpoint carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 16                     # one Dolphin per match, 16 on one stage (VideoConfig.clips overrides it)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox, as in Ali's benchmark launcher
+costumes = [0, 1]
+stage = 25                        # Final Destination, like for like with every earlier FD arm
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # REQUIRED: SmashBot reads the raw gamestates, which only exist here
+chunk_frames = 1
+save_replays = true
+infinite_time = false             # a REAL match -- stocks fall and the game ends
+stop_timeout_s = 20.0             # SIGTERM Dolphin before Console.stop kills it (ENV.md §6.5)
+legacy_analog_ports = [1]        # P32: Phillip's port takes its sticks raw (two-decimal pipe values,
+                                  # as upstream's Dolphin read them), not libmelee 0.47.3's grid remap
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode: no history window (the deployment path)
+delay_frames = 0                  # matches action_offset_frames = 1 of the recorded checkpoints
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"                      # only fixes the default player layout; the recorder builds Phillip
+
+[learner]
+kl_teacher_weight = 0.0           # nothing trains here; without a teacher the weights must be zero
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # a recording job logs nothing
+
+[eval]
+at_start = false
+at_end = false
+
+[phillip]
+source_dir = "/opt/phillip/source"        # the pinned GPL-3.0 checkout baked into the image (114aea4c)
+python = "/opt/phillip/venv/bin/python"   # the sidecar interpreter: Debian's Python 3.11 + tensorflow-cpu 2.13.1
+agent = "delay0/FoxFD"            # WHICH AGENT PLAYS.  One arm per agent; the agent's own character must
+                                  # start on its port, so every arm sets both:
+                                  #   --overrides "phillip.agent=delay0/FalcoFD,env.dolphin.characters=[22,1]"
+                                  # (libmelee ids: fox 1, falco 22, marth 18, peach 9, sheik 7, falcon 2).
+                                  # The seven delay-0 agents in git: delay0/FoxFD, delay0/FalcoFD, FoxFD0,
+                                  # MarthFD0, PeachFD, SheikFD, FalconFalconBF (Battlefield-trained).
+player = 0                        # environment player 0 = Dolphin port 1 (the side order --sides phillip,... puts it first)
+epsilon = 0.0                     # upstream's README plays with --epsilon 0: no uniform exploration mix
+seed = 0                          # seeds numpy in the sidecar (upstream samples with numpy's global RNG)
+strict = true                     # THE GATE: an exception inside Agent.act stops the job
+save_cpu = true                   # one TensorFlow thread per agent session (upstream's --save_cpu)
+act_from_frame = -3               # upstream acts from its 121st in-game frame (cpu.py:256): Slippi frame -3
+call_timeout_s = 60.0
+load_timeout_s = 900.0            # 16-18 graphs + restores; measured by phillip_check before any Dolphin
+[mimic]
+source_dir = "/opt/mimic/source"          # the pinned checkout baked into the image
+asset_dir = "/opt/mimic/fox-master"       # model.pt + config.json + the normalisation bundle
+device = "cuda"
+temperature = 1.0                 # the released defaults of integration_mimic_vs_hal.toml [mimic]
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1                        # overridden by the side order (--sides smashbot,mimic)
+
+[video]
+mode = "match"                    # one real match per Dolphin, first replay kept
+matchups = ["policy:cpu9"]        # UNUSED by an external match; the sides come from --sides
+clips = 16                        # 16 matches per checkpoint, all on Final Destination
+seconds = 520.0                   # the per-match CAP, deliberately PAST Melee's 8-minute timer:
+                                  # the rollout starts at frame -123 while the timer starts at 0, so a
+                                  # 480 s budget stops 123 frames before a timed-out game writes its
+                                  # GAME_END and the result would read as "unfinished".  The cap is
+                                  # only a ceiling: match mode stops as soon as every Dolphin has
+                                  # begun a second game.  (The 29 Aug 2026 jobs ran at 480.)
+output_dir = "/runs/matches"
+rollout_length = 128
+temperature = 1.0                 # the training distribution, as in [eval]
+seed = 0
+port_offset = 0
+wandb = false

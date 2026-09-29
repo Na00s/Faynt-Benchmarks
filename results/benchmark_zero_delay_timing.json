@@ -1,0 +1,66 @@
+{
+  "repository": "https://github.com/vladfi1/phillip",
+  "commit": "114aea4c446b31359c5637b271db52b200440caa",
+  "identity": "Original Phillip deep-RL agents. Slippi-AI (Phillip II) is a successor project, per both official READMEs.",
+  "records": [
+    {
+      "checkpoint": "FalconFalconBF",
+      "added_action_queue_delay": 0,
+      "delay_source": "No explicit override in checkpoint params; RLConfig delay default=0",
+      "decision_interval_game_frames": 2,
+      "params_source": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/agents/FalconFalconBF/params"
+    },
+    {
+      "checkpoint": "FoxFD0",
+      "added_action_queue_delay": 0,
+      "delay_source": "No explicit override in checkpoint params; RLConfig delay default=0",
+      "decision_interval_game_frames": 3,
+      "params_source": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/agents/FoxFD0/params"
+    },
+    {
+      "checkpoint": "MarthFD0",
+      "added_action_queue_delay": 0,
+      "delay_source": "No explicit override in checkpoint params; RLConfig delay default=0",
+      "decision_interval_game_frames": 3,
+      "params_source": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/agents/MarthFD0/params"
+    },
+    {
+      "checkpoint": "PeachFD",
+      "added_action_queue_delay": 0,
+      "delay_source": "No explicit override in checkpoint params; RLConfig delay default=0",
+      "decision_interval_game_frames": 3,
+      "params_source": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/agents/PeachFD/params"
+    },
+    {
+      "checkpoint": "SheikFD",
+      "added_action_queue_delay": 0,
+      "delay_source": "No explicit override in checkpoint params; RLConfig delay default=0",
+      "decision_interval_game_frames": 3,
+      "params_source": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/agents/SheikFD/params"
+    },
+    {
+      "checkpoint": "delay0/FalcoFD",
+      "added_action_queue_delay": 0,
+      "delay_source": "No explicit override in checkpoint params; RLConfig delay default=0",
+      "decision_interval_game_frames": 4,
+      "params_source": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/agents/delay0/FalcoFD/params"
+    },
+    {
+      "checkpoint": "delay0/FoxFD",
+      "added_action_queue_delay": 0,
+      "delay_source": "No explicit override in checkpoint params; RLConfig delay default=0",
+      "decision_interval_game_frames": 2,
+      "params_source": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/agents/delay0/FoxFD/params"
+    }
+  ],
+  "semantics": {
+    "delay": "Extra queue delay in policy decisions; default 0 for all seven checkpoint configurations.",
+    "act_every": "Number of game frames between policy inference calls. Each chosen ActionChain may contain a sequence of different controller commands, so not necessarily repetition of one command.",
+    "runtime_qualification": "These are upstream release defaults. Benchmark screenshots and user description identify zero added delay, but do not supply a launcher configuration proving retention of every upstream decision interval."
+  },
+  "code_sources": {
+    "config": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/phillip/rl_common.py",
+    "agent": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/phillip/agent.py",
+    "action_chain": "https://github.com/vladfi1/phillip/blob/114aea4c446b31359c5637b271db52b200440caa/phillip/ssbm.py"
+  }
+}

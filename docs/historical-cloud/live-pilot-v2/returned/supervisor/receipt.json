@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/usr/local/bin/python",
+    "/opt/runtime-root/scripts/modal_panel_live_pilot.py",
+    "--owner",
+    "--sha",
+    "8c016126e6773bb666697a1c93b04f8bbd79329462f416b0bbe61eea1cc9f813",
+    "--expires",
+    "1789169893.1995132",
+    "--image-id",
+    "<historical-provider-id>"
+  ],
+  "ended_unix": 1789168357.6634436,
+  "exit_code": 0,
+  "expires_unix": 1789169893.1995132,
+  "log_bytes": 0,
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "native_user_environment": {
+    "HOME": "/root"
+  },
+  "pid": 4,
+  "started_unix": 1789168183.1997037,
+  "terminated_owned_process_group": true,
+  "unreaped_leader_group_guard": true
+}

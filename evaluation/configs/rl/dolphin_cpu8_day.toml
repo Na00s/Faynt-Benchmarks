@@ -1,0 +1,107 @@
+# P6b: the first real run -- the 3m profile from scratch against Dolphin's level-9 CPU (Fox vs Fox, Final
+# Destination) in eight headless Dolphins, T = C = 128, every slippi-ai reward term on, the in-loop evaluator every
+# hour, one *detached* launch per day (Modal caps a function call at 24 h: max_runtime_s = 23.5 h, then the next
+# launch of the same command resumes from latest.pt into the same W&B run).  Instructions: docs/rl-post-training/
+# P6B-RUNS.md.  Estimate + yes before every launch (CLAUDE.md rule 4): about $0.505/h = $11.9 per launch.
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_cpu8_day \
+#       --wandb-mode online --checkpoint-subdir p6b/cpu8_day --spawn
+# Random init and no teacher (user decision 22 Aug 2026: first runs from scratch); the actor-KL guard is 1e-2 (the
+# fine-tuning 1e-4 of the P6a files reverted every update at random init); RL precision fp32 (PLAN.md §3.9).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 1000000               # the wall-time limit below ends each launch
+max_runtime_s = 84600             # 23.5 h < Modal's 24 h function cap; the next launch resumes from latest.pt
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 4
+save_interval_steps = 20          # latest.pt every ~2 min (a stop loses at most that)
+snapshot_interval_steps = 1000    # step_<n>.pt every ~80 min (~62 MiB each)
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 8
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 16 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 120.0
+keepalive_seconds = 0.0
+step_threads = 0                  # one thread per Dolphin for send + advance + convert
+boot = "two_phase"
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"
+cpu_level = 9
+
+[learner]
+learning_rate = 1e-4
+kl_teacher_weight = 0.0
+reverse_kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-2          # from scratch: the P6a runs saw ~2e-3 per update at lr 1e-4 (1e-4 reverted all)
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "p6b", "cpu9", "from-scratch", "3m", "day"]
+print_interval_steps = 10
+
+[eval]
+enabled = true
+interval_seconds = 3600.0         # hourly, checked after the current step; plus the start and the end of each launch
+at_start = true
+at_end = true
+frames = 57600                    # per opponent: 8 eval Dolphins x 2 min (~2.5 min per eval incl. boots)
+num_envs = 8
+rollout_length = 128
+opponents = ["cpu9", "best"]      # best = this run's best.pt (skipped until it exists)
+temperature = 1.0
+seed = 0
+metric = "damage_dealt_per_minute"
+metric_opponent = "cpu9"

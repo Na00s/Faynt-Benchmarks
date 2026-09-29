@@ -1,0 +1,35 @@
+{
+  "schema": "e011.modal-policy-portability-limitation-approval.v1",
+  "recorded_at_utc": "2026-09-11T22:11:55Z",
+  "decision": "authorized-portability-limited-continuation",
+  "user_message": "great let's just proceed then",
+  "disclosed_before_approval": {
+    "numeric_scalar_occurrences_exceeding_tolerance": 9,
+    "unique_computed_outputs": 5,
+    "compared_float_occurrences": 23245056,
+    "flagged_absolute_difference_approximate_range": [0.0000105, 0.0000135],
+    "maximum_conditional_head_total_variation": 0.000002241726507853925,
+    "sampled_controller_command_mismatches": 0,
+    "sampled_controller_commands": 3840,
+    "strict_numeric_gate": "failed",
+    "benchmark_win_rate_effect": "unmeasured",
+    "future_closed_loop_trajectory_equivalence": "unproven"
+  },
+  "bound_evidence": {
+    "policy_plan_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9",
+    "policy_result_sha256": "f1a18ee4655e449951f7bc5131aca9a8d17191eef1e9ae03da894c184d6e270c",
+    "numeric_diagnostic_sha256": "2701ec7bc33af5d79e83aba6e82a41e1127c96f609914fe1b5b6efd4a0443d47"
+  },
+  "scope": {
+    "proceed_toward_modal_benchmark": true,
+    "preserve_original_failed_comparisons": true,
+    "change_original_numeric_tolerance": false,
+    "waive_other_behavior_source_controller_or_replay_checks": false,
+    "require_live_synchronization_and_replay_gates": true,
+    "claim_identical_future_trajectories": false,
+    "restart_local_games": false,
+    "save_slp": true,
+    "save_video": false,
+    "cloud_payload_and_resource_review": "required for each materially changed scoped plan"
+  }
+}

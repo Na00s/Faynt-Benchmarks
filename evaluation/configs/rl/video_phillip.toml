@@ -1,0 +1,162 @@
+# P32 (18 Sep 2026): 16 REAL four-stock matches against a released vladfi1/phillip agent on Final Destination.
+#
+# Phillip (GPL-3.0, revision 114aea4c) is the 2017-2019 deep-RL Melee agent that preceded slippi-ai: a small
+# actor-critic over a hand-built game-state embedding that picks one of 30-54 discrete controller actions
+# every act_every frames (2-4).  Its code needs tensorflow 2.13 and therefore Python 3.11, so upstream's own
+# Agent runs in a SIDECAR INTERPRETER (`melee_rl/phillip_sidecar.py`, /opt/phillip/venv) and this recorder
+# drives it over a line protocol (`melee_rl.phillip`): the libmelee gamestate is converted into upstream's
+# GameMemory fields, and the controller upstream pressed comes back on Phillip's port.  The difference to the
+# SmashBot files is `[phillip]`.  RUN THE CALIBRATION ARMS FIRST (`phillip_cpu9.toml`, `phillip_mimic.toml`)
+# and read `modal_app::phillip_check`: an agent whose variables did not all restore, or one that never leaves
+# a neutral input, flatters whatever it is measured against.
+#
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::video --phillip \
+#       --config video_phillip --checkpoint /runs/shared/fox-best-d0-d18/frisson-melee-10m-rl-leash-step632-d0.pt \
+#       --output-dir /runs/matches/p32-phillip --label 10m-leash-632-vs-phillip-foxfd-fd \
+#       --overrides "phillip.agent=delay0/FoxFD,env.dolphin.characters=[1,1]" --spawn
+#
+# Budget: the sidecar costs a millisecond or two per Dolphin-decision on one core, so a job is bounded by the
+# Dolphins and our own policy, as a SmashBot job is.
+
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains in a recording job
+seed = 0
+deterministic = true
+device = "cuda"                   # our checkpoint is on the L4; SmashBot is pure Python on the cores
+threads = 8
+
+[policy]
+profile = "10m"                   # only a fallback; the recorded checkpoint carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 16                     # one Dolphin per match, 16 on one stage (VideoConfig.clips overrides it)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox, as in Ali's benchmark launcher
+costumes = [0, 1]
+stage = 25                        # Final Destination, like for like with every earlier FD arm
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # REQUIRED: SmashBot reads the raw gamestates, which only exist here
+chunk_frames = 1
+save_replays = true
+infinite_time = false             # a REAL match -- stocks fall and the game ends
+stop_timeout_s = 20.0             # SIGTERM Dolphin before Console.stop kills it (ENV.md §6.5)
+legacy_analog_ports = [2]        # P32: Phillip's port takes its sticks raw (two-decimal pipe values,
+                                  # as upstream's Dolphin read them), not libmelee 0.47.3's grid remap
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode: no history window (the deployment path)
+delay_frames = 0                  # matches action_offset_frames = 1 of the recorded checkpoints
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"                      # only fixes the default player layout; the recorder builds Phillip
+
+[learner]
+kl_teacher_weight = 0.0           # nothing trains here; without a teacher the weights must be zero
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # a recording job logs nothing
+
+[eval]
+at_start = false
+at_end = false
+
+[phillip]
+source_dir = "/opt/phillip/source"        # the pinned GPL-3.0 checkout baked into the image (114aea4c)
+python = "/opt/phillip/venv/bin/python"   # the sidecar interpreter: Debian's Python 3.11 + tensorflow-cpu 2.13.1
+agent = "delay0/FoxFD"            # WHICH AGENT PLAYS.  One arm per agent; the agent's own character must
+                                  # start on its port, so every arm sets both:
+                                  #   --overrides "phillip.agent=delay0/FalcoFD,env.dolphin.characters=[1,22]"
+                                  # (libmelee ids: fox 1, falco 22, marth 18, peach 9, sheik 7, falcon 2).
+                                  # The seven delay-0 agents in git: delay0/FoxFD, delay0/FalcoFD, FoxFD0,
+                                  # MarthFD0, PeachFD, SheikFD, FalconFalconBF (Battlefield-trained).
+player = 1                        # environment player 1 = Dolphin port 2, as MIMIC and SmashBot are
+epsilon = 0.0                     # upstream's README plays with --epsilon 0: no uniform exploration mix
+seed = 0                          # seeds numpy in the sidecar (upstream samples with numpy's global RNG)
+strict = true                     # THE GATE: an exception inside Agent.act stops the job
+save_cpu = true                   # one TensorFlow thread per agent session (upstream's --save_cpu)
+act_from_frame = -3               # upstream acts from its 121st in-game frame (cpu.py:256): Slippi frame -3
+call_timeout_s = 60.0
+load_timeout_s = 900.0            # 16-18 graphs + restores; measured by phillip_check before any Dolphin
+[video]
+mode = "match"                    # one real match per Dolphin, first replay kept
+matchups = ["policy:phillip"]
+clips = 16                        # 16 matches per checkpoint, all on Final Destination
+seconds = 520.0                   # the per-match CAP, deliberately PAST Melee's 8-minute timer:
+                                  # the rollout starts at frame -123 while the timer starts at 0, so a
+                                  # 480 s budget stops 123 frames before a timed-out game writes its
+                                  # GAME_END and the result would read as "unfinished".  The cap is
+                                  # only a ceiling: match mode stops as soon as every Dolphin has
+                                  # begun a second game.  (The 29 Aug 2026 jobs ran at 480.)
+output_dir = "/runs/matches"
+rollout_length = 128
+temperature = 1.0                 # the training distribution, as in [eval]
+seed = 0
+port_offset = 0
+wandb = false
+
+[video.render]
+# Copied from `video_match_stages.toml`: without this block the recorder's render stage falls back
+# to RenderConfig defaults, which do not point at the Ishiiruka PLAYBACK build, and
+# `modal_app::render --config video_smashbot` silently renders nothing (measured 9 Sep 2026:
+# two render jobs completed and produced zero mp4s).
+# The Slippi PLAYBACK build, pinned into the video image only (26 Aug 2026 probe): the ExiAI Dolphin
+# we train with has no -i and no ffmpeg, both netplay builds reject -i, and this is the one binary
+# that accepted the comm file and actually wrote frames.  It needs an X server and does not exit when
+# the replay ends, so the call is bounded by the clip length x speed_factor and ffmpeg trims the dump.
+dolphin_path = "/opt/dolphin/ishiiruka-playback-3.5.2/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+backend = "OGL"
+platform = ""                     # wx build: no --platform flag (Xvfb supplies the display)
+xvfb = true
+internal_resolution = 1           # 1x native 640 x 480 -> GFX.ini EFBScale = SCALE_1X (P9b: Ishiiruka
+                                  # has no InternalResolution key, and its Linux default is SCALE_2X,
+                                  # so before the fix every render rasterised 1280 x 960)
+bitrate_kbps = 3000
+dump_format = "avi"
+emulation_speed = 0.0
+caption = true                    # "<checkpoint> step N (P1) vs CPU 9 (P2) - clip 1/2", burned in
+font_size = 18
+crf = 26                          # x264 quality of the caption pass. 20 gave ~4.7 Mbit/s at
+                                  # 642 x 528 (~71 MB per 2-min clip); 26 is visually close at
+                                  # this size and about a third of the bytes, which matters when
+                                  # a ten-clip job gets passed around a team.
+timeout_s = 1800.0                # the hard cap per render call
+speed_factor = 20.0               # only a safety net now: --cout frame markers end each render as
+min_timeout_s = 120.0             # soon as the replay does (render.run_playback)
+workers = 6                       # eight concurrent renders measured the wall clock of one, so the
+                                  # six fresh clips of a job are a single batch

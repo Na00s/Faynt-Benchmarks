@@ -1,0 +1,69 @@
+# Two learner steps of the real 3m profile (context 256, gradient checkpointing on) in the dummy env on CPU
+# (PLAN.md §6 P3 acceptance):
+#   .venv/bin/python -m melee_rl.train --config configs/rl/smoke_3m.toml --checkpoint-dir runs/smoke_3m
+# Random init (no BC checkpoint exists yet): the teacher is a frozen copy of the initial policy, so the
+# teacher-KL weight must be 0 (PLAN.md §5, §9.4); switch to init = "checkpoint" + kl_teacher_weight = 0.1
+# and learning_rate = 3e-5 once Ali's weights land.  RL precision fp32 (PLAN.md §3.9), W&B off.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 2
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 4
+save_interval_steps = 1
+snapshot_interval_steps = 0
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dummy"
+
+[env.dummy]
+num_envs = 2
+seed = 0
+
+[actor]
+rollout_length = 16
+context_frames = 16
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[opponent]
+type = "cpu"
+
+[learner]
+learning_rate = 1e-4
+kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 1e-4
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # cloud runs pass --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"           # shared W&B project: our runs are separable by group / tags / job_type
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dummy-env", "smoke", "3m"]
+print_interval_steps = 1

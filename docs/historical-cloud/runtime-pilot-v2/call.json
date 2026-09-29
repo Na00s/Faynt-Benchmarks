@@ -1,0 +1,9 @@
+{
+  "app_id": "<historical-provider-id>",
+  "call_id": "<historical-provider-id>",
+  "execution": {
+    "execution_id": "9a8fd97c21974f739b3555f4cd89919c",
+    "task_id": "<historical-provider-id>"
+  },
+  "expires_unix": 1789166960.699939
+}

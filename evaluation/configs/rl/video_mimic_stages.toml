@@ -1,0 +1,118 @@
+# P14 (2 Sep 2026): 18 REAL four-stock matches against the released MIMIC Fox across the SIX legal
+# stages -- the six-stage twin of `video_mimic.toml` (P12).
+#
+# Same recorder and the same MIMIC path (`melee_rl.mimic`, port 2, its own released inference code);
+# the one change is `[env.dolphin] stages`: cycled over the environment index, so 18 Dolphins are
+# exactly three matches per stage.  Checkpoints trained on every stage (Ali's 10m family checkpoint
+# and its RL results) are recorded twice -- 16 on FD with `video_mimic.toml`, like for like with the
+# P12 arms, and 18 with this file.  The stage of every kept match is read out of its `.slp`.
+#
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::video --mimic \
+#       --config video_mimic_stages --checkpoint /runs/bc/frisson-melee-10m-v1-best-val.pt \
+#       --output-dir /runs/matches/p14-10m --label 10m-bc-vs-mimic-stages --spawn
+#
+# Budget: MIMIC re-runs its 60-frame window every frame, so its cost is per Dolphin-frame (~5.5 env
+# frames/s per Dolphin at batch 16-18 on the L4); a job is ~45-55 min for matches of 2-3 minutes.
+
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains in a recording job
+seed = 0
+deterministic = true
+device = "cuda"                   # both models are on the L4; MIMIC is what needs it
+threads = 8
+
+[policy]
+profile = "10m"                   # only a fallback; the recorded checkpoint carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 18                     # one Dolphin per match, three per stage (VideoConfig.clips overrides it)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox, as in Ali's benchmark launcher
+costumes = [0, 1]
+stage = 25                        # unused while `stages` is set (the config's default path)
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- cycled over the env index: 3 each of 18
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # REQUIRED: MIMIC reads the raw gamestates, which only exist here
+chunk_frames = 1
+save_replays = true
+infinite_time = false             # a REAL match -- stocks fall and the game ends
+stop_timeout_s = 20.0             # SIGTERM Dolphin before Console.stop kills it (ENV.md §6.5)
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode: no history window (the deployment path)
+delay_frames = 0                  # matches action_offset_frames = 1 of the recorded checkpoints
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"                      # only fixes the default player layout; the recorder builds MIMIC
+
+[learner]
+kl_teacher_weight = 0.0           # nothing trains here; without a teacher the weights must be zero
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # a recording job logs nothing
+
+[eval]
+at_start = false
+at_end = false
+
+[mimic]
+source_dir = "/opt/mimic/source"          # the pinned checkout baked into the image
+asset_dir = "/opt/mimic/fox-master"       # model.pt + config.json + the normalisation bundle
+device = "cuda"
+temperature = 1.0                 # the released defaults of integration_mimic_vs_hal.toml [mimic]
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1                        # environment player 1 = Dolphin port 2, as in Ali's launcher
+
+[video]
+mode = "match"                    # one real match per Dolphin, first replay kept
+matchups = ["policy:mimic"]
+clips = 18                        # 18 matches per checkpoint: three per stage
+seconds = 520.0                   # the per-match CAP, deliberately PAST Melee's 8-minute timer:
+                                  # the rollout starts at frame -123 while the timer starts at 0, so a
+                                  # 480 s budget stops 123 frames before a timed-out game writes its
+                                  # GAME_END and the result would read as "unfinished".  The cap is
+                                  # only a ceiling: match mode stops as soon as every Dolphin has
+                                  # begun a second game.  (The 29 Aug 2026 jobs ran at 480.)
+output_dir = "/runs/matches"
+rollout_length = 128
+temperature = 1.0                 # the training distribution, as in [eval]
+seed = 0
+port_offset = 0
+wandb = false

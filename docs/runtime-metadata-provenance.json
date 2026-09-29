@@ -1,0 +1,30 @@
+[
+  {
+    "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-dependencies-v1/candidate-lock-94.json",
+    "original_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "release_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "bytes": 44661,
+    "transform": "unchanged metadata only"
+  },
+  {
+    "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-dependencies-v1/requirements-linux-live-94.lock",
+    "original_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "release_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "bytes": 1700,
+    "transform": "unchanged metadata only"
+  },
+  {
+    "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/returned/package-manifest.json",
+    "original_sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700",
+    "release_sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700",
+    "bytes": 55049,
+    "transform": "unchanged metadata only"
+  },
+  {
+    "path": "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/PACKAGE_AUDIT.json",
+    "original_sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05",
+    "release_sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05",
+    "bytes": 6365,
+    "transform": "unchanged metadata only"
+  }
+]

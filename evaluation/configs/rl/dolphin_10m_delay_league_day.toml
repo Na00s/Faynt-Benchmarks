@@ -1,0 +1,213 @@
+# The league run, hop 1 (17 Sep 2026, session 73; LEAGUE-PLAN.md): our delay-18 Fox trained against stronger and
+# different opponents.  The fork is hop 2's step 760 (Y8: 90-46, the best delay-18 total, fox_d18 FD +1.00 stocks
+# over hop 1's 1224, separated) with hop 2's own recipe (`dolphin_10m_delay_ema_day.toml`: the EMA anchor tau 0.01
+# at weight 0.03 forward, reverse 0, `teacher_prefix` on, the entropy floor 0.45, the KL-targeted lr at 1e-4, the
+# fork logged at weight 0), so THE OPPONENTS ARE THE ONE CHANGE (user decisions, LEAGUE-PLAN.md §0):
+#
+#   Dolphins  workers  arm            opponent (its delay)                          characters / tags        rows
+#   30        5        self           the current policy (18), both ports train     Fox                      60
+#   24        4        slippi_gm      gm (21) through the PyTorch port              all twelve, two each     24
+#   24        4        slippi_foxd18  fox_d18_ditto_v4 (18)                          Fox; Cody Hax Aklo SFAT  24
+#   12        2        other_d0       our delay-0 best, kl0p003 step 632 (0)        Fox                      12
+#    6        1        slippi_falco   falco_d18_vs_fox_v4 (18), the Fox-killer       Falco; its four tags      6
+#
+# * slippi-ai's agents run in the training process as a PyTorch port on the GPU (`melee_rl/slippi_ai_torch.py`),
+#   gated against their own TensorFlow agent by `modal_app::parity` (LEAGUE-PLAN.md §3.4) -- DO NOT LAUNCH before
+#   the parity report passes.  Every Dolphin keeps its matchup for the run: gm's characters go in consecutive pairs
+#   so each lands on two different stages of the six-stage cycle (`[opponent.arms.gm]`).
+# * The learner (after smoke 2, user decisions 17 Sep 2026): loss_weighting = "row" trains the arms at their row
+#   shares (48 / 19 / 19 / 10 / 5 %; the per-trajectory default gave each arm 20 %), and concat_arms joins each
+#   rollout's arms into one learner trajectory at microbatch 21 (smoke 2: 21 chunks per rollout at microbatch 6,
+#   the learner 60 s of a 172-s step, 1 140 fps).
+# * The in-loop evaluator: fox_d18 (through the port, at 18 vs 18 -- the one symmetric fight) replaces cpu9 and
+#   selects best.pt; MIMIC stays; the fork line stays (the fork at 18: ~0 at step 0, must move up).  The yardsticks
+#   stay the recorder rounds against their TensorFlow agents (LEAGUE-PLAN.md §4.3).
+# * The critic is unchanged (no opponent id).
+# Launch (its own yes, ~$64 for the hard 22-h directory cap):
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_10m_delay_league_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/10m_delay/d18_league1 --tags league1 --spawn
+# What to read (LEAGUE-PLAN.md §4.2 / §7): eval/fox_d18_ditto_v4/* (the selector), eval/mimic, eval/other; per arm
+# arm/<arm>/* and arm/slippi_gm/<character>/*; timing/<arm>/opponent_s (the port's cost per rollout); env/fps (stop
+# below 1 500); ppo/reverted, loss/actor_kl_mean, loss/teacher_kl, loss/reference_kl, value/uev.  Stop rules (re-based
+# on smoke 1's step-0 read, LEAGUE-PLAN.md §7): the delay-0 arm's stalling fraction above 0.28 (1.5x its 0.187 at the
+# fork) for two eval intervals while the self arm's stays near 0.089, or the self arm's damage dealt below 107/min
+# (-25 % of 142) -> fold the arm into self-play.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 79200             # 22 h per process
+max_total_runtime_s = 79200       # 22 h per DIRECTORY, restarts included: a single launch, hard-capped
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2
+snapshot_interval_steps = 8       # step_<n>.pt ladder: the yardstick checkpoints
+
+[policy]
+profile = "10m"
+init = "checkpoint"
+checkpoint = "/runs/selfplay/10m_delay/d18_ema1/step_00000760.pt"   # hop 2's step 760 (Y8's pick)
+init_value = true
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true
+fast_attention = "lean"
+fast_encoder = true
+graph_step = true
+model_overrides = {gradient_checkpointing = false}   # learner.compile needs it off (memory only)
+
+[teacher]
+source = "ema"                    # hop 2's anchor: a copy of the init, lerp'd after every accepted step
+ema_tau = 0.01
+delay_frames = 18
+reference_path = "/runs/selfplay/10m_delay/d18_ema1/step_00000760.pt"   # = the fork: its KL logged at weight 0
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # port 0 is our Fox everywhere; port 1 per arm ([opponent.arms.<alias>])
+costumes = [0, 1]
+stage = 25
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- every arm (a multiple of 6) covers them evenly
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 16
+mp_start_method = "spawn"
+chunk_frames = 1
+shared_memory = true
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 18                 # THE DELAY: the decision at frame k executes at k + 19 (slippi-ai's d18)
+context_mode = "prefix"
+batch_steps = 1
+packed_frames = true
+interleave_arms = true
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"
+mix = [
+    "self*30",
+    "slippi:gm*24@gm",
+    "slippi:fox_d18_ditto_v4*24@foxd18",
+    "other:/runs/selfplay/10m_leash/kl0p003/step_00000632.pt@d0*12@d0",
+    "slippi:falco_d18_vs_fox_v4*6@falco",
+]
+mix_workers = [5, 4, 4, 2, 1]     # 6 Dolphins per worker process everywhere
+seed = 1
+
+[opponent.arms.gm]
+characters = [1, 22, 18, 7, 15, 2, 9, 14, 10, 17, 12, 13]   # fox falco marth sheik puff falcon peach yoshi ics luigi pika samus
+character_repeat = 2              # Dolphins 2c and 2c + 1 play character c: two different stages each
+names = ["Master Player"]         # the tag gm trained with (all twelve of its agents)
+
+[opponent.arms.foxd18]
+names = ["Cody", "Hax", "Aklo", "SFAT"]   # four RL-shaped styles of one network (the name is a one-hot input)
+name_repeat = 6                   # six Dolphins each: every tag on all six stages
+
+[opponent.arms.falco]
+names = ["Ginger", "KJH", "Frenzy", "BBB"]   # cycled over its six Dolphins
+
+[learner]
+learning_rate = 1e-4              # the STARTING rate: actor_kl_target moves it inside [lr_min, lr_max]
+policy_gradient_weight = 3.0
+kl_teacher_weight = 0.03          # to the EMA anchor (hop 2)
+reverse_kl_teacher_weight = 0.0
+entropy_target = 0.45
+entropy_gain = 2e-3
+entropy_weight_max = 0.02
+actor_kl_target = 1.0e-4
+lr_min = 2.5e-5
+lr_max = 4e-4
+lr_adapt_factor = 1.5
+value_burnin_steps = 6
+optimizer_burnin_steps = 3
+microbatch_envs = 21              # of the 126 joined rows per rollout (concat_arms): 6 chunks, not 21
+loss_weighting = "row"            # every row weighs the same: the arms at 48 / 19 / 19 / 10 / 5 % (user, 17 Sep)
+concat_arms = true                # one learner trajectory per rollout (smoke 2: the learner took 60 s at 6)
+teacher_prefix = true
+fast_forward = true
+compile = true
+
+[learner.returns]
+reward_halflife = 8.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 5e-3
+
+[delay]
+allow_mismatch = true
+
+[mimic]
+source_dir = "/opt/mimic/source"
+asset_dir = "/opt/mimic/fox-master"
+device = "cuda"
+temperature = 1.0
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1
+
+[slippi_ai]
+model_dir = "/runs/external/slippi-ai"    # the staged release files (their registry sha256s are checked)
+verify_sha256 = true
+sample_temperature = 1.0          # their own default: the distribution they were trained to play
+torch_graph = true                # the port's step replays a CUDA graph (one per arm batch size)
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "rl-init", "pt-init", "cur6kd", "teacher-kl", "10m", "l4", "day",
+    "wide", "prefix", "teacher-prefix", "mp-workers", "fast-step", "nb16", "stages", "mimic-eval", "mix", "shm",
+    "interleave", "compile", "delay", "d18", "ema-anchor", "entropy-target", "kl-lr", "league", "league1",
+    "slippi-port", "gm12", "foxd18", "falco", "d0best",
+]
+print_interval_steps = 1
+jsonl = true
+
+[eval]
+enabled = true
+interval_seconds = 1e7            # off: the step interval below is restart-proof
+interval_steps = 120              # ~3-4 h at the league's planning 100-130 s/step
+at_start = true
+at_end = true
+frames = 46080
+num_envs = 30
+worker_processes = 10
+rollout_length = 128
+# fox_d18 at 18 vs 18 through the port selects best.pt (cpu9's old place); MIMIC stays; the fork line stays.
+opponents = ["slippi:fox_d18_ditto_v4", "mimic", "other:/runs/selfplay/10m_delay/d18_ema1/step_00000760.pt@d18"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "fox_d18_ditto_v4"

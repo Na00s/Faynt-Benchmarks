@@ -1,0 +1,111 @@
+# P8 wide bench, point 1 of 2: the delay pipeline at D = 5 with b = 4 frames per policy call and
+# k = 3 frames per worker message -- the full slack ((4-1) + (3-1) = 5 <= 5, runahead r = 2), maximum
+# per-call amortisation.  From-scratch delayed self-play (user decision 25 Aug 2026): a random init has
+# no trained-in delay, so training at D = 5 is in-distribution by construction and the entropy /
+# actor-KL / revert readings are legitimate -- but 15 minutes proves plumbing, not learning; the
+# decision criterion stays throughput.  Baseline after P7 (W&B bnpecevw): step 8.62 s = policy 2.63 +
+# env 3.15 + learner 1.83 at 950 env fps, env-bound.  Success: step <= ~6 s, env/fps >= ~1300, 0 worker
+# errors / faults; read timing/step_s / policy_s / env_s (= blocked wait in pipelined mode) and the
+# worker step_seconds / convert_seconds split.  About 15 minutes on the wide function (~$0.71).
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_delay_b4k3_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir p8/delay_b4k3
+# allow_mismatch: the model declares action_offset_frames = 1 (D = 0); at random init the flag only
+# acknowledges the declared field -- nothing trained is mismatched (P8-PLAN.md preamble).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000
+max_runtime_s = 900               # 15 minutes: boots + burn-ins + steady-state timing samples
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M
+init = "random"                   # from scratch: no delayed BC checkpoint exists yet (q12)
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 64                     # players is derived from opponent.type: ("policy", "policy")
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 4w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 64 boots, 4 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (4)
+boot = "two_phase"
+worker_processes = 16             # the P7 bench layout (groups of 4)
+mp_start_method = "spawn"
+chunk_frames = 3                  # k = 3: the workers emulate three frames per pipe message
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 5                  # D = 5 (Ali's q12 target: data.delay 6 <=> delay_frames 5)
+context_mode = "ring"
+batch_steps = 4                   # b = 4: four frames per policy call (b | T = 128)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: 2 x 64 = 128 rows
+seed = 1
+
+[learner]
+learning_rate = 2e-4              # the from-scratch rate the 5m self-play smoke measured (session 13)
+kl_teacher_weight = 0.0
+value_burnin_steps = 3
+optimizer_burnin_steps = 3
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 0.1                     # the from-scratch clip window (session 13 take two)
+beta = 0.0
+max_mean_actor_kl = 2e-2          # backstop, not throttle (session 13)
+
+[delay]
+allow_mismatch = true             # random init: the flag only acknowledges the declared offset (header)
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "from-scratch", "5m", "l4", "bench", "wide",
+    "ring", "mp-workers", "fast-step", "p8", "delay-pipeline", "b4k3",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = false                   # a timing benchmark: no eval boots between steps

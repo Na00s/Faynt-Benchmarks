@@ -1,0 +1,102 @@
+# Learning-signal run (PLAN.md §6 P3, tests/rl/test_learning_signal.py): the tiny fp32 policy (d_model 32,
+# 2 layers, context 32) learns to press the dummy env's target buttons label with PPO.
+#   .venv/bin/python -m melee_rl.train --config configs/rl/learn_tiny.toml
+# The env pays signal_reward whenever the executed buttons label equals target_buttons; the cpu neither
+# attacks nor jumps and damage_ratio = 0 so the frame reward is (almost) silent; a tiny reward half-life
+# makes the return immediate (the hit decision gets the advantage, not its predecessors); the teacher is
+# off, the actor-KL guard is off (lr 3e-3 moves far beyond 1e-4 per step).  target_buttons = 11 is the most
+# likely buttons label of this random init (policy seed 0, measured 21 Aug 2026); the test re-derives it.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 20
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 1
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[policy.model_overrides]
+d_model = 32
+n_layers = 2
+n_heads = 4
+n_kv_heads = 2
+head_dim = 8
+d_ff = 64
+context_length = 32
+encoder_hidden_size = 8
+item_mlp_layers = 1
+gradient_checkpointing = false
+
+[teacher]
+source = "none"
+
+[env]
+type = "dummy"
+
+[env.dummy]
+num_envs = 8
+seed = 0
+game_frames = 28800
+learnable_signal = true
+target_buttons = 11
+signal_reward = 1.0
+cpu_attack_every = 0
+cpu_jump_every = 0
+
+[actor]
+rollout_length = 16
+context_frames = 16
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.0
+nana_ratio = 0.5
+
+[opponent]
+type = "cpu"
+
+[learner]
+learning_rate = 3e-3
+kl_teacher_weight = 0.0
+value_burnin_steps = 0
+optimizer_burnin_steps = 0
+
+[learner.returns]
+reward_halflife = 0.003
+zero_discount_on_reset = true
+
+[learner.value]
+d_model = 32
+n_layers = 2
+n_heads = 4
+n_kv_heads = 2
+head_dim = 8
+d_ff = 64
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 2
+epsilon = 0.2
+beta = 0.0
+max_mean_actor_kl = inf
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # pass --wandb-mode online|offline to log the learning curve
+entity = "frisson-labs"           # shared W&B project: our runs are separable by group / tags / job_type
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dummy-env", "learning-signal"]
+print_interval_steps = 5

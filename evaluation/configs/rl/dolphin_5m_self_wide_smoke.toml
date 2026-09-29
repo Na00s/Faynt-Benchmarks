@@ -1,0 +1,117 @@
+# The 20-minute shake-out for dolphin_5m_self_wide_day.toml (session 13, 23 Aug 2026).  Same 64 Dolphins x
+# 2 ports = 128 rows on the L4, burn-in ladders cut to 3 steps each and a token evaluation, so a launch
+# reaches real PPO within about five minutes.  **Its job is to measure loss/actor_kl_mean at this learning
+# rate** -- the previous run's rate was extrapolated, every one of its 520 PPO updates was reverted, and
+# that cost ~$26.  Read the median actor KL over the PPO-stage steps and set the day file's rate to
+# lr * sqrt(4e-3 / measured_median).  It also proves the 128-row memory peak without microbatching.
+# About $0.94 for 20 minutes (estimate + yes).
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_self_wide_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/5m_smoke
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000
+max_runtime_s = 1200              # 20 minutes: boots + 3 + 3 burn-in steps + a dozen real PPO steps
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M -- 4x smaller than 20m
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 64                     # players is derived from opponent.type: ("policy", "policy") for self-play
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 8 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 64 two-phase boots on 32 cores (8 took ~29 s)
+keepalive_seconds = 0.0
+step_threads = 0                  # one thread per Dolphin for send + advance + convert
+boot = "two_phase"
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "ring"             # no re-prime; learner-side behaviour log-probs (PLAN.md §3.6 deviation 2)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: no opponent object, 2 x 64 = 128 rows
+seed = 1
+
+[learner]
+learning_rate = 2e-4              # SEEDED GUESS -- replace with the smoke run's measurement (header)
+kl_teacher_weight = 0.0
+value_burnin_steps = 3            # the day file uses 50
+optimizer_burnin_steps = 3        # the day file uses 50; 3 still warms |m/sqrt(v)| enough to read the KL
+# microbatch_envs omitted: 5m at 128 rows needs ~7 GB of the L4's 24 (20m at 64 rows measured 14.0 GB)
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 0.1                     # at 0.05 the measured clip fraction was 0.85: the 2nd epoch did nothing
+beta = 0.0                        # slippi-ai's default; 0.3 was extra damping on an already tiny step
+max_mean_actor_kl = 2e-2          # a backstop, not the throttle -- 1e-2 reverted 520 of 520 updates
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "self-play", "two-port", "from-scratch", "5m", "l4", "smoke", "wide", "ring"]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 7200.0         # two-hourly (user decision 23 Aug 2026): three opponents cost ~27 % of
+                                  # wall clock hourly; halving that buys ~19 % more training data, and the
+                                  # measured cpu9 noise floor (+-17 damage/min) makes hourly sampling of
+                                  # the CPU ladder worth little.  Plus the start and end of each launch.
+at_start = true
+at_end = true
+frames = 8192                     # two rollouts per opponent
+num_envs = 32
+rollout_length = 128
+# The fixed references: the CPU ladder at both ends and a frozen 20m random init (the previous run's own
+# step 0, on the volume).  "best" is deliberately absent -- it moves with the run and can cycle, so it
+# cannot tell real progress from rock-paper-scissors; best.pt is still written by the selector below.
+opponents = ["cpu1", "cpu9", "other:/runs/p6b/20m_day/step_00000000.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"       # the composite the learner actually optimises, against the weakest CPU
+metric_opponent = "cpu1"

@@ -1,0 +1,144 @@
+# Session 15 (24 Aug 2026): two-port self-play on the **5m** profile initialised from Ali's best 5m BC
+# checkpoint, with the same weights as a frozen teacher (BC-INIT-PLAN.md, approved by the user 24 Aug 2026).
+# 64 headless Dolphins x 2 trained ports = 128 learner rows, L4 + 32 cores / 64 GiB (--gpu --wide), ring mode,
+# one detached 23.5 h launch per day.  Fresh run directory selfplay/5m_bc: BC weights cannot resume the
+# from-scratch run's latest.pt.
+#
+# Why (measured on the from-scratch run b2dhwzro, 23-24 Aug 2026; SELFPLAY-RUNS.md): the policy changed a
+# great deal -- loss/entropy 10.94 -> 3.51 -> 5.68 -> 3.63 -> 5.41 against a maximum of ln 728 + ln 85 =
+# 11.03, CPU evaluations swinging far outside their measured noise floors -- but gained nothing against the
+# fixed anchor after step 406 (eval/other ko_diff +1.05 -> +1.11 -> +1.11, flat for 800 steps).  That is
+# strategy cycling in latest-vs-latest self-play with no entropy bonus and no teacher.  Starting from a
+# competent policy and anchoring to it with KL(pi || teacher) at 0.1 (slippi-ai's post-training recipe)
+# addresses both; entropy_weight stays 0 -- one change at a time, and entropy is now on the console line.
+#
+# The init (verified 24 Aug 2026): Ali's muon-transfer-laws-v1 run
+# 5m-muon_with_aux_adamw-lr1e-02-gb65536-aux-lr-2x-bb86b379c673, val NLL 0.9269 at 41.9 M frames (the curve
+# was still falling when cut), 5 053 805 parameters, all 54 ModelConfig fields identical to config.yaml's 5m
+# profile, load_state_dict(strict=True) clean.  Staged on the Volume at the STABLE path below, sha256
+# faa3367ded76df0eebb4bcd7fd300aa4ba79c5bfab7873c341e5925d367b1f33.  Never move or replace it: build_teacher
+# records {source, sha256} in every RL checkpoint and teacher_from_record re-verifies the hash on every
+# resume (day-2 launches and container restarts).
+#
+# Step size: the learning rate is set from dolphin_5m_bc_self_wide_smoke.toml's measurement,
+#   lr_day = 3e-5 * sqrt(3e-4 / median loss/actor_kl_mean over the smoke's PPO steps), capped at 1e-4.
+# The target per-update actor KL of 3e-4 is an order of magnitude below the 1e-3 guard and a fifth of the
+# from-scratch run's 1.53e-3: this is post-training -- the point is to refine the prior, not to leave it.
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_bc_self_wide_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/5m_bc --spawn
+# Cost: $2.82/h, about $66 per 23.5 h launch (estimate + yes).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 1000000               # the wall-time limit below ends each launch
+max_runtime_s = 84600             # 23.5 h < Modal's 24 h function cap; the next launch resumes latest.pt
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 10          # latest.pt every ~5 min at ~28 s per step; every save commits the Volume
+snapshot_interval_steps = 100     # step_<n>.pt every ~50 min (~60 MB each): a ladder of past selves
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M -- identical to Ali's run
+init = "checkpoint"
+checkpoint = "/runs/bc/5m-muon-aux-lr2x.pt"   # the STABLE path (header); also the eval anchor below
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"         # RL precision: the file's bf16 compute / cache fields are overridden
+cache_dtype = "float32"
+fast_step = true                  # P7b (25 Aug 2026): vectorised ring step; measured policy_s 13.9 -> 2.6 s
+
+[teacher]
+source = "policy"                 # clone_frozen() of the just-loaded BC weights: no second file read
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 64                     # players is derived from opponent.type: ("policy", "policy") for self-play
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 8 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 64 two-phase boots on 32 cores (8 took ~29 s)
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group
+boot = "two_phase"
+worker_processes = 16             # P7a (25 Aug 2026): 4 Dolphins per spawned worker; measured env_s 7.3 -> 3.1 s
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0                  # Ali's action_offset_frames = 1 (config.yaml data.delay = 1)
+context_mode = "ring"             # no re-prime; learner-side behaviour log-probs (PLAN.md §3.6 deviation 2)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: no opponent object, 2 x 64 = 128 rows
+seed = 1
+
+[learner]
+learning_rate = 1e-4              # MEASURED 24 Aug 2026 (smoke, W&B g0ldktr2): median actor KL 2.41e-5 over
+                                  # 22 PPO steps at 3e-5 -> formula 3e-5*sqrt(3e-4/2.41e-5) = 1.06e-4, capped
+                                  # at 1e-4 (BC-INIT-PLAN.md section 6); projected KL/update ~2.7e-4
+kl_teacher_weight = 0.1           # slippi-ai's post-training recipe; the anti-collapse mechanism
+entropy_weight = 0.0              # deliberate: one change at a time (entropy is on the console line)
+value_burnin_steps = 100          # raised from 50: the value net is random while the policy is competent,
+                                  # so let it fit the returns of a good policy before the policy moves
+optimizer_burnin_steps = 50       # one epoch at lr 0: Adam's moments warm up before the policy moves
+# microbatch_envs omitted: 5m at 128 rows measured ~7 GB of the L4's 24 (plus one frozen teacher forward)
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2                    # slippi-ai's value; steps from a BC init are small, 0.1 is not needed
+beta = 0.0                        # slippi-ai's default
+max_mean_actor_kl = 1e-3          # a real backstop with headroom (slippi-ai's 1e-4 reverted 100 % of the
+                                  # updates at random init)
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "5m", "l4", "day", "wide", "ring",
+]
+print_interval_steps = 5          # ~2.5 min between lines at ~28 s per step
+
+[eval]
+enabled = true
+interval_seconds = 7200.0         # two-hourly (user decision 23 Aug 2026) plus the start and end of a launch
+at_start = true
+at_end = true
+frames = 57600                    # per opponent: 32 eval Dolphins x 30 s (cpu ~4.5 min, a policy ~8 min)
+num_envs = 32
+rollout_length = 128
+# The fixed references: the CPU ladder at both ends and the BC checkpoint itself.  Policy-vs-policy consumes
+# no Melee RNG, so eval/other is a zero-noise change detector that literally measures "am I better than what
+# I started as"; it selects best.pt.  Only one `other` fits (every other: spec is named "other").
+opponents = ["cpu1", "cpu9", "other:/runs/bc/5m-muon-aux-lr2x.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"       # the composite the learner actually optimises
+metric_opponent = "other"

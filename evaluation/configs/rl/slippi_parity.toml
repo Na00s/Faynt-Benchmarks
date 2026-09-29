@@ -1,0 +1,100 @@
+# The parity gate of the slippi-ai port (17 Sep 2026, session 73; LEAGUE-PLAN.md §3.4): our fork on port 1 against a
+# release's TensorFlow agent exactly as the recorder plays it, with the PyTorch port (`melee_rl/slippi_ai_torch.py`)
+# shadowing that agent teacher-forced on its own fresh sample every frame (`melee_rl/slippi_ai_parity.py`).
+# Cases (`slippi_ai_parity.DEFAULT_CASES`): gm as Fox / Ice Climbers / Peach / Samus on Fountain of Dreams and
+# Yoshi's Story (8 Dolphins, 6 144 frames), fox_d18_ditto_v4 and falco_d18_vs_fox_v4 (4 Dolphins, 4 096 frames each).
+# Pass: |Δ logit| <= 1e-3 * max(1, |logit|) and mean KL <= 1e-6 on every component of every case (relative since the
+# first run: its absolute bar read float32 rounding at a logit of -494 as a failure).  A failure is a port bug.
+# Launch (its own yes, ~$0.5):
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::parity \
+#       --checkpoint /runs/selfplay/10m_delay/d18_ema1/step_00000760.pt --output /runs/parity/league-port.json --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains
+seed = 0
+deterministic = true
+device = "cuda"                   # our fork and the port on the L4; TensorFlow on the cores (use_gpu = false)
+threads = 8
+
+[policy]
+profile = "10m"                   # only a fallback; the fork carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true
+fast_attention = "lean"
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 8                      # per case: the case's character list sets the count
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # port 0 is our Fox; port 1 per case
+costumes = [0, 1]
+stage = 25
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # REQUIRED: the TensorFlow agent reads the raw gamestates, which only exist here
+chunk_frames = 1
+save_replays = false
+infinite_time = true              # training's rules: no game ends inside a case
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode (the harness plays the fork at its own trained delay)
+delay_frames = 18
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"                     # only fixes the default player layout: the harness builds its own opponent
+train = true
+
+[learner]
+kl_teacher_weight = 0.0
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = true
+
+[logging]
+mode = "disabled"
+
+[eval]
+at_start = false
+at_end = false
+
+[slippi_ai]
+model = "gm"                      # per case (the harness replaces it)
+model_dir = "/runs/external/slippi-ai"
+source_dir = "/opt/slippi-ai/source"
+player = 1
+character = 1
+name = ""                         # upstream's own pick: the first tag the release trained with
+console_delay = 0
+sample_temperature = 1.0
+use_gpu = false                   # TensorFlow stays on the cores
+jit_compile = false
+async_inference = false
+verify_sha256 = true
+strict = true

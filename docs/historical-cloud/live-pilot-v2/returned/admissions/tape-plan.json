@@ -1,0 +1,10124 @@
+{
+  "cases": [
+    {
+      "a_port": 1,
+      "b_port": 2,
+      "index": 0,
+      "slippi_port": 51441
+    },
+    {
+      "a_port": 2,
+      "b_port": 1,
+      "index": 1,
+      "slippi_port": 51442
+    }
+  ],
+  "claims": {
+    "competitive_games": 0,
+    "cross_host_trajectory_equivalence": "requires-matched-start-and-emulator-RNG",
+    "gameplay_admitted": false,
+    "policy_inference_calls": 0
+  },
+  "created_at": 1789168307,
+  "execution": {
+    "benchmark_ledger_writes": false,
+    "external_absolute_deadline_required": true,
+    "fresh_owned_host_required": true,
+    "leader_pid_pgid_sid_equal": true,
+    "max_total_output_bytes": 134217728,
+    "max_trace_bytes_per_case": 16777216,
+    "parallel_cases": 1,
+    "parent_waitid_wnowait_required": true,
+    "partial_evidence": "retain-unadmitted",
+    "process_ownership": "reviewed-Runner-parent-single-child-session-descendants-inherit",
+    "retry": false,
+    "sequential": true
+  },
+  "expires_at": 1789168907,
+  "game_image": {
+    "byte_length": 1459978240,
+    "disc_game_id": "GALE01",
+    "disc_revision": 2,
+    "sha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464"
+  },
+  "label": "controller-tape",
+  "package": {
+    "archive": {
+      "bytes": 23284133,
+      "sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19"
+    },
+    "audit_receipt": {
+      "bytes": 6365,
+      "sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05"
+    },
+    "manifest": {
+      "bytes": 55049,
+      "sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700"
+    }
+  },
+  "required_admissions": {
+    "game_image_access": {
+      "bytes": 767,
+      "sha256": "117925c873d538037155533f16543e6cfea3ace6ffd80d026ffeaf987ce8675f"
+    },
+    "linux_runtime": {
+      "bytes": 1438,
+      "sha256": "95dc33068ea2f44666f660a9b2c4e0354ade95c3124415762d1195d374032030"
+    },
+    "live_execution": {
+      "bytes": 902,
+      "sha256": "fd2accff646d4593b7c05ebb1524763af57ac3d89ad7d0d7e489a285e781abe1"
+    },
+    "policy_parity": {
+      "bytes": 2600,
+      "sha256": "6a9c5439cdea26dc9c60fb03acc372e1d612a249dafe529c7a7fd4f130c3a6b3"
+    }
+  },
+  "runtime_image": {
+    "image_id": "<historical-provider-id>",
+    "manifest_sha256": "8c016126e6773bb666697a1c93b04f8bbd79329462f416b0bbe61eea1cc9f813",
+    "platform": "linux_x86_64"
+  },
+  "schema": "e011.modal-panel-live-tape.plan.v1",
+  "scientific": {
+    "characters": {
+      "p1": "FOX",
+      "p2": "FOX"
+    },
+    "controller_dispatch": "native-send_canonical_controller-flush-false",
+    "controller_replay_lag_frames": 1,
+    "cpu_level": 0,
+    "final_source_frame": 196,
+    "frozen_stadium": true,
+    "menu_autostart_port": 2,
+    "menu_timeout_seconds": 120.0,
+    "policy_inference_calls": 0,
+    "replay_finalize_timeout_seconds": 30.0,
+    "required_observed_and_replay_frame": 197,
+    "save_slp": true,
+    "save_video": false,
+    "shutdown": "native-_stop_console-first-SIGINT-input-drain",
+    "stage": "FINAL_DESTINATION",
+    "transport": "native-_ControllerPipeLockstep-v7"
+  },
+  "source_identities": {
+    "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json": {
+      "bytes": 1894960,
+      "sha256": "c7c85408ce45e26916082ffa7456fb681273ec70d5be9d865a6edb7bda4e09af"
+    },
+    "configs/integration_mimic_vs_hal.toml": {
+      "bytes": 7883,
+      "sha256": "ebdc6abf3443d115580207b4351b2cb865b87f45d336c96c00058ab7f7a020f8"
+    },
+    "patches/slippi-dolphin-two-pipe-frame-sync.patch": {
+      "bytes": 11412,
+      "sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e"
+    },
+    "scripts/modal_panel_linux_build.py": {
+      "bytes": 32050,
+      "sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e"
+    },
+    "scripts/modal_panel_linux_host.py": {
+      "bytes": 16558,
+      "sha256": "8bc70d4ff7f43083ca7c763b3ea824755ca1685baa767a690d8076ede4bd4f7d"
+    },
+    "scripts/modal_panel_live_canary.py": {
+      "bytes": 30409,
+      "sha256": "28ba293c1c20aed73d51b847682b43aaa1d46d9d24a7c4ffc780f88af2431caa"
+    },
+    "scripts/modal_panel_live_context.py": {
+      "bytes": 38939,
+      "sha256": "8d6a7ba10b83f4ef350f3a4264a717f2c1b6eb75c6f81bb242ee3451e4eea8f8"
+    },
+    "scripts/modal_panel_package_audit.py": {
+      "bytes": 18433,
+      "sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61"
+    },
+    "src/melee_policy/integration/frisson_match.py": {
+      "bytes": 78691,
+      "sha256": "d536c7f87c2c6ee5bceeb6973d910a27758c2c89b663f82439842fa76248fa76"
+    },
+    "src/melee_policy/integration/frisson_slippi_match.py": {
+      "bytes": 68740,
+      "sha256": "4c73dd81152307bb7a44302c09f6c29f46719230ea8656a111e2dc45c7a07399"
+    },
+    "src/melee_policy/integration/mimic_vs_hal.py": {
+      "bytes": 203556,
+      "sha256": "24ed6cb674de7242009c7e07fb0b9e7657c348168fa5723551a3aa40fcd1cb42"
+    },
+    "src/melee_policy/integration/slippi_ai_policy.py": {
+      "bytes": 64440,
+      "sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a"
+    },
+    "src/melee_policy/integration/slippi_match.py": {
+      "bytes": 214774,
+      "sha256": "e41af721dd6e53a7e4592c3a7e2a273ad68159494344af21c64e4fde20be4b69"
+    }
+  },
+  "source_identity_scope": "entry-hooks-and-owner; complete-import-closure-required-in-linux-runtime-admission",
+  "tape": {
+    "encoding": "canonical-complete-controller-before-native-analog-correction",
+    "first_source_frame": -123,
+    "frames": 320,
+    "policy_inference_calls": 0,
+    "rows": [
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 0,
+        "source_frame": -123
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 1,
+        "source_frame": -122
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 2,
+        "source_frame": -121
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 3,
+        "source_frame": -120
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 4,
+        "source_frame": -119
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 5,
+        "source_frame": -118
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 6,
+        "source_frame": -117
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 7,
+        "source_frame": -116
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 8,
+        "source_frame": -115
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 9,
+        "source_frame": -114
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 10,
+        "source_frame": -113
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 11,
+        "source_frame": -112
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 12,
+        "source_frame": -111
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 13,
+        "source_frame": -110
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 14,
+        "source_frame": -109
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 15,
+        "source_frame": -108
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 16,
+        "source_frame": -107
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 17,
+        "source_frame": -106
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 18,
+        "source_frame": -105
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 19,
+        "source_frame": -104
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 20,
+        "source_frame": -103
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 21,
+        "source_frame": -102
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 22,
+        "source_frame": -101
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 23,
+        "source_frame": -100
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 24,
+        "source_frame": -99
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 25,
+        "source_frame": -98
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 26,
+        "source_frame": -97
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 27,
+        "source_frame": -96
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 28,
+        "source_frame": -95
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 29,
+        "source_frame": -94
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 30,
+        "source_frame": -93
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 31,
+        "source_frame": -92
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 32,
+        "source_frame": -91
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 33,
+        "source_frame": -90
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 34,
+        "source_frame": -89
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 35,
+        "source_frame": -88
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 36,
+        "source_frame": -87
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 37,
+        "source_frame": -86
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 38,
+        "source_frame": -85
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 39,
+        "source_frame": -84
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 40,
+        "source_frame": -83
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 41,
+        "source_frame": -82
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 42,
+        "source_frame": -81
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 43,
+        "source_frame": -80
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 44,
+        "source_frame": -79
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 45,
+        "source_frame": -78
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 46,
+        "source_frame": -77
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 47,
+        "source_frame": -76
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 48,
+        "source_frame": -75
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 49,
+        "source_frame": -74
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 50,
+        "source_frame": -73
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 51,
+        "source_frame": -72
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 52,
+        "source_frame": -71
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 53,
+        "source_frame": -70
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 54,
+        "source_frame": -69
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 55,
+        "source_frame": -68
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 56,
+        "source_frame": -67
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 57,
+        "source_frame": -66
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 58,
+        "source_frame": -65
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 59,
+        "source_frame": -64
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 60,
+        "source_frame": -63
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 61,
+        "source_frame": -62
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 62,
+        "source_frame": -61
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 63,
+        "source_frame": -60
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 64,
+        "source_frame": -59
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 65,
+        "source_frame": -58
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 66,
+        "source_frame": -57
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 67,
+        "source_frame": -56
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 68,
+        "source_frame": -55
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 69,
+        "source_frame": -54
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 70,
+        "source_frame": -53
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 71,
+        "source_frame": -52
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 72,
+        "source_frame": -51
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 73,
+        "source_frame": -50
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 74,
+        "source_frame": -49
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 75,
+        "source_frame": -48
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 76,
+        "source_frame": -47
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 77,
+        "source_frame": -46
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 78,
+        "source_frame": -45
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 79,
+        "source_frame": -44
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 80,
+        "source_frame": -43
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 81,
+        "source_frame": -42
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 82,
+        "source_frame": -41
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 83,
+        "source_frame": -40
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 84,
+        "source_frame": -39
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 85,
+        "source_frame": -38
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 86,
+        "source_frame": -37
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 87,
+        "source_frame": -36
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 88,
+        "source_frame": -35
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 89,
+        "source_frame": -34
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 90,
+        "source_frame": -33
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 91,
+        "source_frame": -32
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 92,
+        "source_frame": -31
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 93,
+        "source_frame": -30
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 94,
+        "source_frame": -29
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 95,
+        "source_frame": -28
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 96,
+        "source_frame": -27
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 97,
+        "source_frame": -26
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 98,
+        "source_frame": -25
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 99,
+        "source_frame": -24
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 100,
+        "source_frame": -23
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 101,
+        "source_frame": -22
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 102,
+        "source_frame": -21
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 103,
+        "source_frame": -20
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 104,
+        "source_frame": -19
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 105,
+        "source_frame": -18
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 106,
+        "source_frame": -17
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 107,
+        "source_frame": -16
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 108,
+        "source_frame": -15
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 109,
+        "source_frame": -14
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 110,
+        "source_frame": -13
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 111,
+        "source_frame": -12
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 112,
+        "source_frame": -11
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 113,
+        "source_frame": -10
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 114,
+        "source_frame": -9
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 115,
+        "source_frame": -8
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 116,
+        "source_frame": -7
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 117,
+        "source_frame": -6
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 118,
+        "source_frame": -5
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 119,
+        "source_frame": -4
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 120,
+        "source_frame": -3
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 121,
+        "source_frame": -2
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 122,
+        "source_frame": -1
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 123,
+        "source_frame": 0
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 124,
+        "source_frame": 1
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 125,
+        "source_frame": 2
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 126,
+        "source_frame": 3
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 127,
+        "source_frame": 4
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 128,
+        "source_frame": 5
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 129,
+        "source_frame": 6
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 130,
+        "source_frame": 7
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 131,
+        "source_frame": 8
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 132,
+        "source_frame": 9
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 133,
+        "source_frame": 10
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 134,
+        "source_frame": 11
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 135,
+        "source_frame": 12
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 136,
+        "source_frame": 13
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 137,
+        "source_frame": 14
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 138,
+        "source_frame": 15
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 139,
+        "source_frame": 16
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 140,
+        "source_frame": 17
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 141,
+        "source_frame": 18
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 142,
+        "source_frame": 19
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 143,
+        "source_frame": 20
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 144,
+        "source_frame": 21
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 145,
+        "source_frame": 22
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 146,
+        "source_frame": 23
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 147,
+        "source_frame": 24
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 148,
+        "source_frame": 25
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 149,
+        "source_frame": 26
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 150,
+        "source_frame": 27
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 151,
+        "source_frame": 28
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 152,
+        "source_frame": 29
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 153,
+        "source_frame": 30
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 154,
+        "source_frame": 31
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 155,
+        "source_frame": 32
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 156,
+        "source_frame": 33
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 157,
+        "source_frame": 34
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 158,
+        "source_frame": 35
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 159,
+        "source_frame": 36
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 160,
+        "source_frame": 37
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 161,
+        "source_frame": 38
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 162,
+        "source_frame": 39
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 163,
+        "source_frame": 40
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 164,
+        "source_frame": 41
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 165,
+        "source_frame": 42
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 166,
+        "source_frame": 43
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 167,
+        "source_frame": 44
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 168,
+        "source_frame": 45
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 169,
+        "source_frame": 46
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 170,
+        "source_frame": 47
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 171,
+        "source_frame": 48
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 172,
+        "source_frame": 49
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 173,
+        "source_frame": 50
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 174,
+        "source_frame": 51
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 175,
+        "source_frame": 52
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 176,
+        "source_frame": 53
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 177,
+        "source_frame": 54
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 178,
+        "source_frame": 55
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 179,
+        "source_frame": 56
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 180,
+        "source_frame": 57
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 181,
+        "source_frame": 58
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 182,
+        "source_frame": 59
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "B"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 183,
+        "source_frame": 60
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 184,
+        "source_frame": 61
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 185,
+        "source_frame": 62
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 186,
+        "source_frame": 63
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 187,
+        "source_frame": 64
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 188,
+        "source_frame": 65
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 189,
+        "source_frame": 66
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 190,
+        "source_frame": 67
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 191,
+        "source_frame": 68
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 192,
+        "source_frame": 69
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 193,
+        "source_frame": 70
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 194,
+        "source_frame": 71
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 195,
+        "source_frame": 72
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 196,
+        "source_frame": 73
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 197,
+        "source_frame": 74
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 198,
+        "source_frame": 75
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "X"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Y"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 199,
+        "source_frame": 76
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 200,
+        "source_frame": 77
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 201,
+        "source_frame": 78
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 202,
+        "source_frame": 79
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 203,
+        "source_frame": 80
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 204,
+        "source_frame": 81
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 205,
+        "source_frame": 82
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 206,
+        "source_frame": 83
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 207,
+        "source_frame": 84
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 208,
+        "source_frame": 85
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 209,
+        "source_frame": 86
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 210,
+        "source_frame": 87
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 211,
+        "source_frame": 88
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 212,
+        "source_frame": 89
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 213,
+        "source_frame": 90
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 214,
+        "source_frame": 91
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.5
+          ]
+        },
+        "index": 215,
+        "source_frame": 92
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 216,
+        "source_frame": 93
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 217,
+        "source_frame": 94
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 218,
+        "source_frame": 95
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 219,
+        "source_frame": 96
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 220,
+        "source_frame": 97
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 221,
+        "source_frame": 98
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 222,
+        "source_frame": 99
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 223,
+        "source_frame": 100
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 224,
+        "source_frame": 101
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 225,
+        "source_frame": 102
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 226,
+        "source_frame": 103
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 227,
+        "source_frame": 104
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 228,
+        "source_frame": 105
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 229,
+        "source_frame": 106
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 230,
+        "source_frame": 107
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.0
+          ]
+        },
+        "index": 231,
+        "source_frame": 108
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 232,
+        "source_frame": 109
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 233,
+        "source_frame": 110
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 234,
+        "source_frame": 111
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 235,
+        "source_frame": 112
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 236,
+        "source_frame": 113
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 237,
+        "source_frame": 114
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 238,
+        "source_frame": 115
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 239,
+        "source_frame": 116
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 240,
+        "source_frame": 117
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 241,
+        "source_frame": 118
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 242,
+        "source_frame": 119
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 243,
+        "source_frame": 120
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 244,
+        "source_frame": 121
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 245,
+        "source_frame": 122
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 246,
+        "source_frame": 123
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.0,
+            1.0
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            1.0,
+            0.0
+          ]
+        },
+        "index": 247,
+        "source_frame": 124
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 248,
+        "source_frame": 125
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 249,
+        "source_frame": 126
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 250,
+        "source_frame": 127
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 251,
+        "source_frame": 128
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 252,
+        "source_frame": 129
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 253,
+        "source_frame": 130
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 254,
+        "source_frame": 131
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 255,
+        "source_frame": 132
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 256,
+        "source_frame": 133
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 257,
+        "source_frame": 134
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 258,
+        "source_frame": 135
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 259,
+        "source_frame": 136
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 260,
+        "source_frame": 137
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 261,
+        "source_frame": 138
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 262,
+        "source_frame": 139
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.0,
+            1.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            1.0,
+            0.0
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 263,
+        "source_frame": 140
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 264,
+        "source_frame": 141
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 265,
+        "source_frame": 142
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 266,
+        "source_frame": 143
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 267,
+        "source_frame": 144
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 268,
+        "source_frame": 145
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 269,
+        "source_frame": 146
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 270,
+        "source_frame": 147
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 271,
+        "source_frame": 148
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 272,
+        "source_frame": 149
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 273,
+        "source_frame": 150
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 274,
+        "source_frame": 151
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 275,
+        "source_frame": 152
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 276,
+        "source_frame": 153
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 277,
+        "source_frame": 154
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 278,
+        "source_frame": 155
+      },
+      {
+        "a": {
+          "analog_l": 0.5,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 1.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 279,
+        "source_frame": 156
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 280,
+        "source_frame": 157
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 281,
+        "source_frame": 158
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 282,
+        "source_frame": 159
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 283,
+        "source_frame": 160
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 284,
+        "source_frame": 161
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 285,
+        "source_frame": 162
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 286,
+        "source_frame": 163
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 287,
+        "source_frame": 164
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 288,
+        "source_frame": 165
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 289,
+        "source_frame": 166
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 290,
+        "source_frame": 167
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 291,
+        "source_frame": 168
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 292,
+        "source_frame": 169
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 293,
+        "source_frame": 170
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 294,
+        "source_frame": 171
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "L"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "Z",
+            "R"
+          ],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 295,
+        "source_frame": 172
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 296,
+        "source_frame": 173
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 297,
+        "source_frame": 174
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 298,
+        "source_frame": 175
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 299,
+        "source_frame": 176
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 300,
+        "source_frame": 177
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 301,
+        "source_frame": 178
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 302,
+        "source_frame": 179
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 303,
+        "source_frame": 180
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 304,
+        "source_frame": 181
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 305,
+        "source_frame": 182
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 306,
+        "source_frame": 183
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 307,
+        "source_frame": 184
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 308,
+        "source_frame": 185
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 309,
+        "source_frame": 186
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 310,
+        "source_frame": 187
+      },
+      {
+        "a": {
+          "analog_l": 1.0,
+          "analog_r": 0.0,
+          "buttons": [
+            "A",
+            "X",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.75,
+            0.25
+          ],
+          "main_stick": [
+            0.25,
+            0.75
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.5,
+          "buttons": [
+            "B",
+            "Y",
+            "D_UP"
+          ],
+          "c_stick": [
+            0.25,
+            0.75
+          ],
+          "main_stick": [
+            0.75,
+            0.25
+          ]
+        },
+        "index": 311,
+        "source_frame": 188
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 312,
+        "source_frame": 189
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 313,
+        "source_frame": 190
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 314,
+        "source_frame": 191
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 315,
+        "source_frame": 192
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 316,
+        "source_frame": 193
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 317,
+        "source_frame": 194
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 318,
+        "source_frame": 195
+      },
+      {
+        "a": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "b": {
+          "analog_l": 0.0,
+          "analog_r": 0.0,
+          "buttons": [],
+          "c_stick": [
+            0.5,
+            0.5
+          ],
+          "main_stick": [
+            0.5,
+            0.5
+          ]
+        },
+        "index": 319,
+        "source_frame": 196
+      }
+    ],
+    "schema": "e011.modal-panel-controller-tape.v1"
+  },
+  "tape_identity": {
+    "bytes": 70426,
+    "sha256": "b157de0e146c2b66a93ac9beb717898fb3d6f00b6841e01c43e206ea75f5b792"
+  }
+}

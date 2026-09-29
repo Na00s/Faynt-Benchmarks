@@ -1,0 +1,192 @@
+# Delay fine-tuning at D = 18, hop 2 with the adaptive levers (15 Sep 2026, session 69; `STRENGTH-LEVERS.md`
+# §2.2 / §2.3 / §2.5, `DELAY-PLAN.md` §17): the Stage-2 PPO recipe (`dolphin_10m_delay_ppo_day.toml`) forked
+# from hop 1's measured-best snapshot with THREE changes to how the policy is held and stepped, and two
+# housekeeping fixes hop 1 paid for.
+#   1. [teacher] source = "ema" -- the anchor is an exponential moving average of the policy (tau 0.01: a
+#      ~100-step, ~2-h lag), updated after every accepted PPO step, so the leash bounds the policy's SPEED
+#      instead of its distance from a fixed file.  Every fixed-anchor run so far walked 0.1-0.17 nats from
+#      its anchor and stalled (the control, the 0.003 lineage, hop 1: DELAY-PLAN.md §14-§15); the manual
+#      "re-anchor hop" is this, continuous, without the stop-measure-relaunch cycle and the wasted second
+#      halves.  Weight 0.03: the KL to a ~100-step-old self is ~0.006 nats at hop 1's opening speed, so
+#      0.03 x 0.006 ~ 2e-4 of pull ~ two thirds of hop 1's end-of-run pull (0.003 x 0.098) -- the damping
+#      of a mid-hop, kept forever.  Reverse KL 0: the mass-covering job goes to the entropy floor (2).
+#      `teacher_prefix` back ON: the anchor's cache mismatch is bounded by that ~0.006 nats (below
+#      GM-PLAN.md §4.3's ~0.02 threshold), and the prefix path is ~25 % more throughput than the eager
+#      teacher window (arm A: 83 -> 66 s/step).  The fork file is kept as `reference_path`: its forward /
+#      reverse KL are logged at weight 0 (`loss/reference_kl`, `loss/reverse_reference_kl`) -- the
+#      distance-from-fork read that `loss/teacher_kl` used to be.
+#   2. [learner] entropy_target = 0.45 -- a target-entropy controller on the entropy bonus: zero while the
+#      policy's mean entropy per decision is above 0.45 nats, growing by 2e-3 x (0.45 - H) per accepted step
+#      below it, clamped to 0.02.  Every hop costs ~0.05 nats of entropy (0.70 -> 0.56 -> 0.51) and a
+#      forward-only leash has no floor; hop 1 ended at 0.51.
+#   3. [learner] actor_kl_target = 1.0e-4 -- a KL-targeted policy learning rate (rsl_rl's rule): / 1.5 when
+#      the post-update actor KL is above 2e-4, x 1.5 when below 5e-5, clamped to [2.5e-5, 4e-4].  Hop 1 ran
+#      at 7-8e-5 per update at lr 1e-4, so the target is a nudge (~+30 % KL per update), not a leap: the
+#      policy-gradient push at delay 18 is a third of delay 0's (DELAY-PLAN.md §14.4) and this is the direct
+#      knob on it.  `max_mean_actor_kl` 5e-3 still guards.
+#   Housekeeping: [runtime] max_total_runtime_s = 22 h -- it accumulates across container restarts (hop 1's
+#   restart at step 333 re-based the per-process cap and the run went 31.6 h, ~$92 against ~$64 approved);
+#   [eval] interval_steps = 120 -- a round every ~2.3 h that a restart cannot skip (hop 1 lost its step-350
+#   round to the re-based wall clock).  The fork line (`other:`) is the FORK FILE at 18: it reads ~0 at
+#   step 0 and must move up (hop 1's 584 line sat at +1 all run and could not rank anything).
+# Launch (needs its own yes, ~$64 per 22-h launch; override policy.checkpoint / teacher.reference_path /
+# eval.opponents together if the fork is not step 1224):
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_10m_delay_ema_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/10m_delay/d18_ema1 --spawn
+# What to read: loss/teacher_kl (to the EMA: the policy's speed, expected ~0.005-0.02 and flat),
+# loss/reference_kl (from the fork: must keep rising -- if it plateaus the EMA leash is too tight),
+# loss/entropy against 0.45 and opt/entropy_weight (0 until the floor is touched), opt/lr_policy (the live
+# rate), loss/actor_kl_mean against the 1e-4 target, ppo/reverted 0, eval/other from ~0 upward; the decision
+# is the yardstick round (Y8: fox_d18 at 18, diamond / master / gm at 21, FD + six) on the final.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 79200             # 22 h per process
+max_total_runtime_s = 79200       # 22 h per DIRECTORY, restarts included: a single launch, hard-capped
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2
+snapshot_interval_steps = 8       # step_<n>.pt ladder: the yardstick checkpoints
+
+[policy]
+profile = "10m"
+init = "checkpoint"
+checkpoint = "/runs/selfplay/10m_delay/d18_ppo_ra1/step_00001224.pt"   # hop 1's final (Y7 picks: 1224 / 939 / 576)
+init_value = true
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true
+fast_attention = "lean"
+fast_encoder = true
+graph_step = true
+model_overrides = {gradient_checkpointing = false}   # learner.compile needs it off (memory only)
+
+[teacher]
+source = "ema"                    # the anchor tracks the policy: a copy of the init, lerp'd after every accepted step
+ema_tau = 0.01                    # ~100-step lag (~2 h at 70 s/step)
+delay_frames = 18                 # at the run's delay (the only choice for an EMA; spelled out for the record)
+reference_path = "/runs/selfplay/10m_delay/d18_ppo_ra1/step_00001224.pt"   # = the fork: its KL logged at weight 0
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox
+costumes = [0, 1]
+stage = 25
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- 16 each
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 16
+mp_start_method = "spawn"
+chunk_frames = 1
+shared_memory = true
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 18                 # THE DELAY: the decision at frame k executes at k + 19 (slippi-ai's d18)
+context_mode = "prefix"
+batch_steps = 1
+packed_frames = true
+interleave_arms = true
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"                      # 100 % self-play at 18 vs 18
+mix = ["self*48@a", "self*48@b"]
+mix_workers = [8, 8]
+seed = 1
+
+[learner]
+learning_rate = 1e-4              # the STARTING rate: actor_kl_target moves it inside [lr_min, lr_max]
+policy_gradient_weight = 3.0
+kl_teacher_weight = 0.03          # to the EMA anchor (see the header for the arithmetic)
+reverse_kl_teacher_weight = 0.0
+entropy_target = 0.45             # the floor (nats per decision); hop 1 ended at 0.51
+entropy_gain = 2e-3
+entropy_weight_max = 0.02
+actor_kl_target = 1.0e-4          # per-update actor KL target (hop 1: 7-8e-5 at lr 1e-4)
+lr_min = 2.5e-5
+lr_max = 4e-4
+lr_adapt_factor = 1.5
+value_burnin_steps = 6
+optimizer_burnin_steps = 3
+microbatch_envs = 24
+teacher_prefix = true             # back on: the EMA anchor's cache mismatch is ~0.006 nats
+fast_forward = true
+compile = true
+
+[learner.returns]
+reward_halflife = 8.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 5e-3
+
+[delay]
+allow_mismatch = true
+
+[mimic]
+source_dir = "/opt/mimic/source"
+asset_dir = "/opt/mimic/fox-master"
+device = "cuda"
+temperature = 1.0
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "rl-init", "pt-init", "cur6kd", "teacher-kl", "10m", "l4", "day",
+    "wide", "prefix", "teacher-prefix", "mp-workers", "fast-step", "nb16", "stages", "mimic-eval", "mix", "self100",
+    "shm", "interleave", "compile", "delay", "d18", "ema-anchor", "entropy-target", "kl-lr", "hop2",
+]
+print_interval_steps = 1
+jsonl = true
+
+[eval]
+enabled = true
+interval_seconds = 1e7            # off: the step interval below is restart-proof
+interval_steps = 120              # ~2.3 h at 70 s/step
+at_start = true
+at_end = true
+frames = 46080
+num_envs = 30
+worker_processes = 10
+rollout_length = 128
+# The zero-noise line is the fork itself at 18: eval/other reads ~0 at step 0 and must move up.
+opponents = ["cpu9", "mimic", "other:/runs/selfplay/10m_delay/d18_ppo_ra1/step_00001224.pt@d18"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "other"

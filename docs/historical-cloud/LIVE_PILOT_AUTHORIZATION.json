@@ -1,0 +1,22 @@
+{
+  "schema": "e011.modal-live-pilot-authorization.v1",
+  "decision": "authorized",
+  "scope": {
+    "controller_cases": 2,
+    "command_frames_per_case": 320,
+    "reversed_physical_ports": true,
+    "save_slp": true,
+    "save_video": false,
+    "checkpoints": 0,
+    "policy_inference_calls": 0,
+    "benchmark_ledger_writes": false,
+    "numeric_classification": "portability-limited-v4-approved-exact-command-parity",
+    "cross_host_trajectory_equivalence": "unassessed"
+  },
+  "bindings": {
+    "game_image_sha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464",
+    "package_archive_sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19",
+    "runtime_plan_sha256": "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02",
+    "policy_plan_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9"
+  }
+}

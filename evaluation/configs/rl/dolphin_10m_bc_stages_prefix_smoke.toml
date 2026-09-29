@@ -1,0 +1,130 @@
+# The like-for-like smoke of INTERFACE.md patch #1 (session 39, 3 Sep 2026): `dolphin_10m_bc_stages_smoke.toml`
+# -- the session-34 shake-out of the 10m six-stage run (96 Dolphins x nb16, 72 self-play + 24 cpu9, D = 0,
+# teacher KL 0.1, lr 4e-5) -- with ONE change to the training recipe: `context_mode = "prefix"`.  The actor
+# keeps its rolling KV cache (as in ring mode) and stores a detached snapshot of it on every trajectory; the
+# learner forwards only the 128 rollout rows against that snapshot instead of re-forwarding 128 history +
+# 128 rollout rows, so every trained decision sees exactly what the actor saw (slippi-ai's
+# `trajectory.initial_state` for a KV-cache transformer).  It MEASURES, against the ring smoke's numbers:
+# `loss/actor_kl_pre` (the exactness monitor -- read ~0 instead of the ring's off-policy mismatch),
+# `timing/learner_s` / `timing/learner_ppo_s` per 16-rollout step (250-296 s/step in the ring smoke), the
+# container RAM with 16 stored prefixes per update (640 KiB per row in fp32, 1.6 GiB per update) and the GPU
+# peak at microbatch 24, `ppo/reverted` 0 and `weights/drift_step` > 0.
+#
+# Lean shape (user decision 3 Sep 2026): no start eval and no MIMIC -- one end eval vs cpu9 and the BC anchor on
+# the standard GPU image -- and a 25-min training cap (~5 learner steps), about 35-45 min in all.
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_10m_bc_stages_prefix_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir p15/10m_stages_prefix_smoke --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 1500              # 25 min: boots + 3 burn-in steps + ~2-3 measured PPO steps; the end eval runs after
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2
+snapshot_interval_steps = 0
+
+[policy]
+profile = "10m"                   # config.yaml: 10.16 M params; the checkpoint's summary names this profile
+init = "checkpoint"
+checkpoint = "/runs/bc/frisson-melee-10m-v1-best-val.pt"   # the STABLE path (staged 2 Sep 2026)
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"
+cache_dtype = "float32"           # the stored prefixes are fp32 copies of this cache (exactness)
+fast_step = true                  # P7b: the vectorised ring step (its cache layout is what the prefix reads)
+
+[teacher]
+source = "policy"                 # clone_frozen() of the just-loaded BC weights: no second file read
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 72 self + 24 cpu9 (the mix groups must sum to this)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # unused while `stages` is set (kept for the config's default path)
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- cycled over the global env index: 16 each
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 6w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 96 boots, 6 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (6)
+boot = "two_phase"
+worker_processes = 16             # split 12 + 4 across the arms (opponent.mix_workers)
+mp_start_method = "spawn"
+chunk_frames = 1                  # D = 0: the slack (b-1)+(k-1) <= D forces lockstep stepping
+
+[actor]
+rollout_length = 128
+context_frames = 128              # still recorded: the teacher and the value net read the C + T window
+delay_frames = 0                  # matches the model's action_offset_frames = 1 (no mismatch flag)
+context_mode = "prefix"           # THE change: rolling cache + its snapshot on the trajectory (patch #1)
+batch_steps = 1                   # D = 0: no pipeline (P8 stays dormant by construction)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"                      # 85/15 self-play vs cpu9 by TRAINED ROWS (user decision 2 Sep 2026)
+mix = ["self*72", "cpu9*24"]      # 72 self Dolphins = 144 rows (both ports) + 24 cpu9 rows: 86 % / 14 %
+mix_workers = [12, 4]             # 6 Dolphins per worker in both arms; 72 and 24 are multiples of 6 stages
+seed = 1
+
+[learner]
+learning_rate = 4e-5              # the ring smoke's rate, so the actor KL numbers compare like for like
+kl_teacher_weight = 0.1           # slippi-ai's post-training recipe; the anti-collapse mechanism
+value_burnin_steps = 2            # enough to damp the value-mismatch transient; the day file uses 6
+optimizer_burnin_steps = 1
+microbatch_envs = 24              # must divide every arm's rows (144 and 24): 6 chunks + 1 chunk per update
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16                  # slippi-ai's production regime: accumulate 16 rollouts per update
+epsilon = 1e-2                    # the BC regime's measured clip window
+beta = 0.0
+max_mean_actor_kl = 5e-3          # loose on purpose: the smoke measures, the day file enforces
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "10m", "l4", "smoke",
+    "wide", "prefix", "mp-workers", "fast-step", "nb16", "stages", "mix", "cpu9-arm", "self85",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 86400.0        # never inside the 25-min cap: only the end round runs
+at_start = false                  # lean: the step-0 baselines are the ring smoke's (session 34)
+at_end = true                     # one round after the measured PPO steps (runs AFTER the cap)
+frames = 15360                    # per opponent: 30 eval Dolphins x 512 frames (8.5 s of game each)
+num_envs = 30                     # 5 per stage: every stage is covered
+worker_processes = 10             # the eval Dolphins' own layout (3 per worker; 30 does not divide by the 16 training workers)
+rollout_length = 128
+opponents = ["cpu9", "other:/runs/bc/frisson-melee-10m-v1-best-val.pt"]   # no MIMIC: the standard GPU image
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "other"         # best.pt selects on progress against the fixed BC anchor (zero-noise)

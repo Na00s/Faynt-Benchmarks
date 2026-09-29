@@ -1,0 +1,108 @@
+# P7a + P7b wide benchmark: the mp bench shape with the vectorised fast policy step ON and sixteen
+# env workers (groups of 4: the P7a bench measured env_s 3.58 s at 8 workers -- the residual is the
+# per-worker GIL share, halved by halving the group).  Eval off; every step is a steady-state timing
+# sample (P7-PLAN.md 3.4).  Baselines: original 23.6 s = policy 13.9 + env 7.3 + learner 1.8 (347
+# fps); after P7a (W&B t1wu8jmr) 21.2 s = policy 15.0 + env 3.6 + learner 1.8 (386 fps).  Success:
+# timing/policy_s <= ~5 s, timing/step_s <= ~9 s, env/fps >= ~900, ppo/reverted 0, sane entropy /
+# teacher_kl (the BC regime: entropy ~1.0).  Local CUDA parity + 14.8x micro-bench measured first
+# (bench_step.py).  About 15 minutes.
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_bc_self_wide_fast_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir p7b/fast_bench
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000
+max_runtime_s = 900               # 15 minutes: boots + burn-ins + about 25 steady-state steps
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M
+init = "checkpoint"
+checkpoint = "/runs/bc/5m-muon-aux-lr2x.pt"   # the STABLE path (SELFPLAY-RUNS.md "BC init")
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step (melee_rl/fast_step.py; parity-tested)
+
+[teacher]
+source = "policy"                 # clone_frozen() of the just-loaded BC weights (baseline parity)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 64                     # players is derived from opponent.type: ("policy", "policy")
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 4w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 64 boots, 8 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (8)
+boot = "two_phase"
+worker_processes = 16             # P7b bench: groups of 4 (halves the per-worker GIL share)
+mp_start_method = "spawn"
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "ring"
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: 2 x 64 = 128 rows
+seed = 1
+
+[learner]
+learning_rate = 3e-5
+kl_teacher_weight = 0.1
+entropy_weight = 0.0
+value_burnin_steps = 3
+optimizer_burnin_steps = 3
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 1e-3
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "5m", "l4", "bench", "wide",
+    "ring", "mp-workers", "fast-step", "p7b",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = false                   # a pure timing benchmark: no eval boots between steps

@@ -1,0 +1,1988 @@
+{
+  "schema": "faynt.benchmark-release-audit.v1",
+  "source_root": "melee-policy",
+  "source_repository": "https://github.com/bicro/research_playground",
+  "source_local_branch": "benchmark-launcher",
+  "source_local_head": "1e314880011a0be7af99e41542c1bd2582387b3b",
+  "note": "Current dirty source snapshot. This inventory is an audit, not evidence of an already runnable or approved release. No assets, checkpoints, replays, emulator binaries, game images, or cloud deployment state are included.",
+  "source_files": [
+    {
+      "path": "scripts/faynt_d0_benchmark_plan.py",
+      "sha256": "6ede07052a686d145574a84ab0a997affdfdd3ba3d0b8631f70ca2bb40e79140",
+      "bytes": 12089,
+      "role": "benchmark_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "collections",
+        "copy",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/faynt_d0_durable_game.py",
+      "sha256": "1a1560f088599889d1fce5b52d0b289ab6b9238cf832ec80bf1f48fdbdfbea67",
+      "bytes": 16838,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/faynt_d0_benchmark_plan.py",
+        "scripts/modal_panel_durable_game.py",
+        "scripts/modal_panel_game_pilot.py",
+        "scripts/modal_panel_pair_binding.py",
+        "src/melee_policy/integration/faynt_d0_checkpoints.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "ast",
+        "copy",
+        "functools",
+        "importlib.util",
+        "inspect",
+        "melee_policy.integration",
+        "pathlib",
+        "re",
+        "textwrap",
+        "types"
+      ],
+      "review_findings": [
+        {
+          "line": 329,
+          "kind": "network_or_bootstrap",
+          "text": "\"remote_durable\", \"download_result\", \"recover_saved\","
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/final_winner_batch_common.py",
+      "sha256": "c53e3a630f65104db0c7de853de3f76b2f674bd8489f0bafca7e8e203aa45d2e",
+      "bytes": 15661,
+      "role": "benchmark_source",
+      "local_imports": [
+        "src/melee_policy/integration/frisson_policy.py",
+        "src/melee_policy/integration/mimic_vs_hal.py",
+        "src/melee_policy/integration/post_rl_checkpoints.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "dataclasses",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "typing"
+      ],
+      "review_findings": [
+        {
+          "line": 19,
+          "kind": "HAL_reference",
+          "text": "from melee_policy.integration.mimic_vs_hal import _validate_mimic_bundle  # noqa: E402"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/finalize_paused_slippi_panel_attempt.py",
+      "sha256": "1390eb8bc9be02709ade1916d7494341a2575a384dfc183342c5a602c4cd5945",
+      "bytes": 9194,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/run_slippi_public_panel.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "contextlib",
+        "copy",
+        "fcntl",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "stat",
+        "time"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/ingest_modal_durable_game.py",
+      "sha256": "4f9b7377c175477408c7ad1b82045c5d319b538e507a69643b91de1335e561ee",
+      "bytes": 3930,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/ingest_modal_panel_pair.py",
+        "scripts/modal_panel_durable_game.py",
+        "scripts/modal_panel_queue.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "json",
+        "pathlib"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/ingest_modal_panel_pair.py",
+      "sha256": "7a194402ba2ab872c47e080d4f4883670877256aec299e2c4bc9ef9b1cd4f381",
+      "bytes": 5355,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/modal_panel_batch_pilot.py",
+        "scripts/modal_panel_queue.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_batch_pilot.py",
+      "sha256": "5eb7235cb7e3e3910462e927f60f75007e10a381810511ffdc16ff1dd4b94f9a",
+      "bytes": 5915,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_game_pilot.py",
+        "scripts/modal_panel_pair_binding.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "fcntl",
+        "importlib.metadata",
+        "json",
+        "modal",
+        "os",
+        "pathlib",
+        "sys",
+        "time"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_budget.py",
+      "sha256": "26aa1a018ce719c91b459c956389a8758e0488cd26694bb723fa903100af5890",
+      "bytes": 26212,
+      "role": "historical_cloud_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "contextlib",
+        "datetime",
+        "google.protobuf.empty_pb2",
+        "hashlib",
+        "json",
+        "math",
+        "modal.client",
+        "modal_proto",
+        "os",
+        "re",
+        "threading",
+        "time"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_build_pilot.py",
+      "sha256": "d7cb2f8244bdb4926b9488d56bb12b1d0a4feffcba494921b33f3058e9c6d8fe",
+      "bytes": 38811,
+      "role": "historical_cloud_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "ast",
+        "contextlib",
+        "fcntl",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "math",
+        "modal",
+        "os",
+        "pathlib",
+        "pickle",
+        "platform",
+        "re",
+        "signal",
+        "stat",
+        "subprocess",
+        "sys",
+        "tarfile",
+        "time",
+        "urllib.request",
+        "uuid"
+      ],
+      "review_findings": [
+        {
+          "line": 139,
+          "kind": "network_or_bootstrap",
+          "text": "\"network_note\": \"Public Ubuntu packages, exact public source git fetches, locked Cargo dependencies and one checksum-bound official Rust archive. Rust body is capped; apt/git/Cargo traffic has deadlines and no aggregate "
+        },
+        {
+          "line": 385,
+          "kind": "network_or_bootstrap",
+          "text": "for argv in ([\"apt-get\", \"-o\", \"Acquire::Retries=0\", \"-o\", \"Acquire::http::Timeout=30\", \"update\"],"
+        },
+        {
+          "line": 386,
+          "kind": "network_or_bootstrap",
+          "text": "[\"apt-get\", \"-o\", \"Acquire::Retries=0\", \"-o\", \"Acquire::http::Timeout=30\", \"install\", \"-y\", \"--no-install-recommends\", *plan[\"builder_constants\"][\"APT_PACKAGES\"]]):"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_cloud_app.py",
+      "sha256": "4ad582bafe9a4464dc142f974bf59646f1d3a3eabb471f48c9ef670b47271cdb",
+      "bytes": 74731,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_budget.py",
+        "scripts/modal_panel_cloud_queue.py",
+        "scripts/modal_panel_queue.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "asyncio",
+        "hashlib",
+        "importlib",
+        "json",
+        "math",
+        "modal",
+        "modal._utils.async_utils",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "sys",
+        "tarfile",
+        "time"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_cloud_queue.py",
+      "sha256": "d894d62e578040fdda943ac8047e98a02869ea38be4101fc31c9592974e18322",
+      "bytes": 46369,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_budget.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "copy",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "re",
+        "shutil"
+      ],
+      "review_findings": [
+        {
+          "line": 327,
+          "kind": "network_or_bootstrap",
+          "text": "\"\"\"Match the reviewed public Git fetch failure before any game was started.\"\"\""
+        },
+        {
+          "line": 374,
+          "kind": "network_or_bootstrap",
+          "text": "['apt-get','-o','Acquire::Retries=0','-o','Acquire::http::Timeout=30',"
+        },
+        {
+          "line": 378,
+          "kind": "network_or_bootstrap",
+          "text": "['git','-C',public,'fetch','--depth','1','--no-tags','origin',"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_cohort.py",
+      "sha256": "f0a7ef768176e36b3a6c29afe60a71b99cbd1493197ea8b19d6a82ed0542df9b",
+      "bytes": 4365,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/ingest_modal_panel_pair.py",
+        "scripts/modal_panel_batch_pilot.py",
+        "scripts/modal_panel_queue.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "concurrent.futures",
+        "fcntl",
+        "json",
+        "pathlib",
+        "subprocess",
+        "sys"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_durable_canary.py",
+      "sha256": "4861d5d2901b28280d5f539c36766c6aef0683cb0622f13ba8dc7c11269b03ae",
+      "bytes": 5032,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_durable_game.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "hashlib",
+        "json",
+        "modal",
+        "os",
+        "pathlib",
+        "time",
+        "uuid"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_durable_cohort.py",
+      "sha256": "94e2daa127e6c70eaa1606c0cf42b5c995d487c505b592c735d2839c2613ef98",
+      "bytes": 8383,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/ingest_modal_durable_game.py",
+        "scripts/modal_panel_durable_game.py",
+        "scripts/modal_panel_queue.py"
+      ],
+      "external_imports": [
+        "argparse",
+        "concurrent.futures",
+        "fcntl",
+        "json",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_durable_game.py",
+      "sha256": "dfbe3ba66252b86e710801fc27255f2a4cbbc35da9e7ea7e4cf08f37ea4d9594",
+      "bytes": 20365,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_batch_pilot.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "ast",
+        "fcntl",
+        "hashlib",
+        "importlib.metadata",
+        "inspect",
+        "json",
+        "modal",
+        "os",
+        "pathlib",
+        "re",
+        "textwrap",
+        "time",
+        "types",
+        "uuid"
+      ],
+      "review_findings": [
+        {
+          "line": 237,
+          "kind": "network_or_bootstrap",
+          "text": "def download_result(volume, manifest, output, sha, bound):"
+        },
+        {
+          "line": 335,
+          "kind": "network_or_bootstrap",
+          "text": "native, files = download_result(volume, manifest, output, sha, bound)"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_first_op_diagnostic.py",
+      "sha256": "4835400bb1b9c3cf64f0bfed084dfccf8444e2371612e2c42dabed4c12077c29",
+      "bytes": 17988,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_policy_canary.py",
+        "src/melee_policy/integration/slippi_compatibility.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "contextlib",
+        "hashlib",
+        "json",
+        "melee_policy.integration",
+        "numpy",
+        "os",
+        "pathlib",
+        "platform",
+        "re",
+        "resource",
+        "signal",
+        "slippi_ai.tf.agents",
+        "stat",
+        "struct",
+        "subprocess",
+        "sys",
+        "tensorflow",
+        "tensorflow.python.debug.lib.debug_events_reader",
+        "tensorflow.python.util",
+        "time",
+        "torch"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_game_pilot.py",
+      "sha256": "6459449d21a7976ed083127c39ba34203cfe089b3a695e9a6a6ef940e319db11",
+      "bytes": 44601,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_build_pilot.py",
+        "scripts/modal_panel_linux_build.py",
+        "scripts/modal_panel_linux_host.py",
+        "scripts/modal_panel_live_canary.py",
+        "scripts/modal_panel_live_context.py",
+        "scripts/modal_panel_live_pilot.py",
+        "scripts/modal_panel_match_host.py",
+        "scripts/modal_panel_match_source.py",
+        "scripts/modal_panel_policy_pilot.py",
+        "scripts/modal_panel_runtime_pilot.py",
+        "scripts/slippi_panel_runtime.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "copy",
+        "fcntl",
+        "hashlib",
+        "importlib.metadata",
+        "importlib.util",
+        "json",
+        "melee_policy.integration",
+        "modal",
+        "os",
+        "pathlib",
+        "re",
+        "sys",
+        "time",
+        "types",
+        "uuid"
+      ],
+      "review_findings": [
+        {
+          "line": 337,
+          "kind": "network_or_bootstrap",
+          "text": "runner.run([\"apt-get\", \"-o\", \"Acquire::Retries=0\", \"-o\", \"Acquire::http::Timeout=30\", \"install\", \"-y\", \"--no-install-recommends\", \"git\"], WORK)"
+        },
+        {
+          "line": 346,
+          "kind": "network_or_bootstrap",
+          "text": "runner.run([\"git\", \"-C\", str(public), \"fetch\", \"--depth\", \"1\", \"--no-tags\", \"origin\", SOURCE_REVISION], WORK)"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_linux_build.py",
+      "sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e",
+      "bytes": 32050,
+      "role": "historical_cloud_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "shlex",
+        "shutil",
+        "signal",
+        "subprocess",
+        "tarfile",
+        "time"
+      ],
+      "review_findings": [
+        {
+          "line": 103,
+          "kind": "network_or_bootstrap",
+          "text": "``source=None`` permits three exact public Git fetches during run_build."
+        },
+        {
+          "line": 137,
+          "kind": "network_or_bootstrap",
+          "text": "\"network_note\": \"Three explicit Git fetches if source is null; Cargo may acquire locked dependencies. No transfer-byte cap; all work has the total deadline.\","
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_linux_host.py",
+      "sha256": "8bc70d4ff7f43083ca7c763b3ea824755ca1685baa767a690d8076ede4bd4f7d",
+      "bytes": 16558,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_package_audit.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "hashlib",
+        "os",
+        "pathlib",
+        "platform",
+        "stat",
+        "tarfile",
+        "types"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_live_canary.py",
+      "sha256": "28ba293c1c20aed73d51b847682b43aaa1d46d9d24a7c4ffc780f88af2431caa",
+      "bytes": 30409,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_linux_host.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "copy",
+        "hashlib",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "re",
+        "time"
+      ],
+      "review_findings": [
+        {
+          "line": 34,
+          "kind": "HAL_reference",
+          "text": "\"src/melee_policy/integration/mimic_vs_hal.py\","
+        },
+        {
+          "line": 39,
+          "kind": "HAL_reference",
+          "text": "\"configs/integration_mimic_vs_hal.toml\","
+        },
+        {
+          "line": 54,
+          "kind": "network_or_bootstrap",
+          "text": "\"controller_pipe_lockstep_installed\", \"controller_pipe_registration_exact\", \"controller_pipe_primed_exactly_once\","
+        },
+        {
+          "line": 405,
+          "kind": "network_or_bootstrap",
+          "text": "transport = m._ControllerPipeLockstep.install(console, raw)"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_live_context.py",
+      "sha256": "8d6a7ba10b83f4ef350f3a4264a717f2c1b6eb75c6f81bb242ee3451e4eea8f8",
+      "bytes": 38939,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_linux_host.py",
+        "scripts/modal_panel_live_canary.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "hashlib",
+        "importlib",
+        "importlib.metadata",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "re",
+        "select",
+        "signal",
+        "subprocess",
+        "sys",
+        "threading",
+        "time",
+        "types"
+      ],
+      "review_findings": [
+        {
+          "line": 439,
+          "kind": "HAL_reference",
+          "text": "(\"mimic\", \"mimic_vs_hal\"), (\"dispatch\", \"slippi_ai_policy\"),"
+        },
+        {
+          "line": 571,
+          "kind": "HAL_reference",
+          "text": "config, root = self.native.mimic._load_config(self.project_root / \"configs/integration_mimic_vs_hal.toml\")"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_live_dependencies.py",
+      "sha256": "c2f3938d3fd9d1ea8f112d65b77c977862ed5065aacac43fa4185e9b14b0ef8a",
+      "bytes": 10612,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_policy_dependencies.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "copy",
+        "importlib.metadata",
+        "json",
+        "packaging.requirements",
+        "packaging.specifiers",
+        "packaging.utils",
+        "packaging.version",
+        "pathlib",
+        "signal",
+        "time",
+        "urllib.parse"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_live_pilot.py",
+      "sha256": "3ed3b555993b376df43467bbbdac8d25cc70c3d7585aaf25ec54e78325bbab1a",
+      "bytes": 42019,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_build_pilot.py",
+        "scripts/modal_panel_linux_build.py",
+        "scripts/modal_panel_linux_host.py",
+        "scripts/modal_panel_live_canary.py",
+        "scripts/modal_panel_live_context.py",
+        "scripts/modal_panel_policy_pilot.py",
+        "scripts/modal_panel_runtime_pilot.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "contextlib",
+        "fcntl",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "modal",
+        "os",
+        "pathlib",
+        "platform",
+        "pwd",
+        "re",
+        "signal",
+        "subprocess",
+        "sys",
+        "time",
+        "uuid"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_match_host.py",
+      "sha256": "16b54c5dced4603f1505bf988e11ba9df615e79cb67d52a082e8773f7071de31",
+      "bytes": 12339,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_linux_host.py",
+        "scripts/modal_panel_live_context.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "copy",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "types"
+      ],
+      "review_findings": [
+        {
+          "line": 25,
+          "kind": "HAL_reference",
+          "text": "\"src/melee_policy/integration/mimic_vs_hal.py\": \"24ed6cb674de7242009c7e07fb0b9e7657c348168fa5723551a3aa40fcd1cb42\","
+        },
+        {
+          "line": 109,
+          "kind": "HAL_reference",
+          "text": "verify_function(function, self.root, \"src/melee_policy/integration/mimic_vs_hal.py\")"
+        },
+        {
+          "line": 118,
+          "kind": "HAL_reference",
+          "text": "verify_function(native._disable_attested_dolphin_stop_hotkey, self.root, \"src/melee_policy/integration/mimic_vs_hal.py\")"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_match_source.py",
+      "sha256": "79659ee055d9982031539ee1c3ea14427273596c7c0b72b5c64cb3c28cce815d",
+      "bytes": 10672,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_source_snapshot.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "base64",
+        "hashlib",
+        "json",
+        "pathlib",
+        "zlib"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_package_audit.py",
+      "sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61",
+      "bytes": 18433,
+      "role": "historical_cloud_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "hashlib",
+        "json",
+        "pathlib",
+        "re",
+        "stat",
+        "struct",
+        "tarfile",
+        "time",
+        "zlib"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_pair_binding.py",
+      "sha256": "f1850d3170ba5ae5f2a5f9f88f460842c883052d51098d924402a74cc3b29e79",
+      "bytes": 7036,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_game_pilot.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "copy",
+        "hashlib",
+        "pathlib",
+        "re",
+        "types"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_policy_canary.py",
+      "sha256": "d97f4b9634eaa18f1a7b04114a679e685a26261c5923494b9e24792970e7f5be",
+      "bytes": 32148,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/slippi_panel_runtime.py",
+        "src/melee_policy/integration/frisson_policy.py",
+        "src/melee_policy/integration/slippi_ai_policy.py",
+        "src/melee_policy/integration/slippi_compatibility.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "collections.abc",
+        "copy",
+        "dataclasses",
+        "hashlib",
+        "importlib.metadata",
+        "itertools",
+        "json",
+        "melee_policy.integration",
+        "numpy",
+        "os",
+        "pathlib",
+        "platform",
+        "signal",
+        "sys",
+        "time",
+        "torch"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_policy_dependencies.py",
+      "sha256": "69a4faa16d801f7186877d936830c754bc6b6f227c96af1debca0d4dc55fa142",
+      "bytes": 20096,
+      "role": "historical_cloud_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "email.parser",
+        "hashlib",
+        "html.parser",
+        "importlib.metadata",
+        "json",
+        "os",
+        "packaging.markers",
+        "packaging.requirements",
+        "packaging.specifiers",
+        "packaging.tags",
+        "packaging.utils",
+        "packaging.version",
+        "pathlib",
+        "re",
+        "signal",
+        "time",
+        "urllib.error",
+        "urllib.parse",
+        "urllib.request"
+      ],
+      "review_findings": [
+        {
+          "line": 44,
+          "kind": "network_or_bootstrap",
+          "text": "CPU_INDEX = \"https://download.pytorch.org/whl/cpu/torch/\""
+        },
+        {
+          "line": 131,
+          "kind": "network_or_bootstrap",
+          "text": "if value.hostname in (\"download.pytorch.org\", \"download-r2.pytorch.org\"):"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_policy_pilot.py",
+      "sha256": "fd7e12bf9eec55cd0be54dcbc538f155f0d08cb5907472fcbbcb8189ca8e428c",
+      "bytes": 42396,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_build_pilot.py",
+        "scripts/modal_panel_linux_build.py",
+        "scripts/modal_panel_policy_canary.py",
+        "scripts/modal_panel_source_snapshot.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "fcntl",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "modal",
+        "os",
+        "pathlib",
+        "platform",
+        "re",
+        "ssl",
+        "sys",
+        "time",
+        "urllib.parse",
+        "urllib.request",
+        "uuid"
+      ],
+      "review_findings": [
+        {
+          "line": 111,
+          "kind": "network_or_bootstrap",
+          "text": "or url.scheme != \"https\" or url.hostname not in {\"files.pythonhosted.org\", \"download.pytorch.org\", \"download-r2.pytorch.org\"}"
+        },
+        {
+          "line": 123,
+          "kind": "network_or_bootstrap",
+          "text": "if name == \"torch\" and (row[\"version\"] != \"2.7.1+cpu\" or url.hostname not in {\"download.pytorch.org\", \"download-r2.pytorch.org\"} or not url.path.startswith(\"/whl/cpu/\")):"
+        },
+        {
+          "line": 308,
+          "kind": "network_or_bootstrap",
+          "text": "command([\"apt-get\", \"-o\", \"Acquire::Retries=0\", \"-o\", \"Acquire::http::Timeout=30\", \"update\"], bootstrap)"
+        },
+        {
+          "line": 309,
+          "kind": "network_or_bootstrap",
+          "text": "command([\"apt-get\", \"-o\", \"Acquire::Retries=0\", \"-o\", \"Acquire::http::Timeout=30\", \"install\", \"-y\", \"--no-install-recommends\", \"git\", \"build-essential\", \"ca-certificates\"], bootstrap)"
+        },
+        {
+          "line": 340,
+          "kind": "network_or_bootstrap",
+          "text": "command([python, \"-m\", \"pip\", \"install\", *( [\"--verbose\"] if role == \"runtime-source\" else []),"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_prefix_validation.py",
+      "sha256": "a4e65a1c2320836ef512f51e4a2b1a84571a5237c8a56220cb2d158c0f6d19d5",
+      "bytes": 1237,
+      "role": "historical_cloud_source",
+      "local_imports": [],
+      "external_imports": [
+        "ast",
+        "inspect",
+        "textwrap"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_queue.py",
+      "sha256": "56626e4e96453eabce6fdd6583872141669bb2fe6edc5c5bbe3d10b9960e6b3a",
+      "bytes": 32524,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/finalize_paused_slippi_panel_attempt.py",
+        "scripts/run_slippi_public_panel.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "copy",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "stat",
+        "time",
+        "uuid"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_runtime_pilot.py",
+      "sha256": "1d7c7fc2abc262c0d6584670ed760167a3b3721e1fa17fc6532298b9c978dbc6",
+      "bytes": 34365,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_build_pilot.py",
+        "scripts/modal_panel_linux_build.py",
+        "scripts/modal_panel_linux_host.py",
+        "scripts/modal_panel_live_context.py",
+        "scripts/modal_panel_policy_pilot.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "_ubjson",
+        "argparse",
+        "fcntl",
+        "hashlib",
+        "importlib.metadata",
+        "json",
+        "modal",
+        "os",
+        "pathlib",
+        "platform",
+        "re",
+        "sys",
+        "time",
+        "ubjson",
+        "uuid"
+      ],
+      "review_findings": [
+        {
+          "line": 47,
+          "kind": "HAL_reference",
+          "text": "\"frame_watchdog\", \"frisson_match\", \"frisson_policy\", \"mimic_bundle_manifest\", \"mimic_vs_hal\","
+        },
+        {
+          "line": 233,
+          "kind": "network_or_bootstrap",
+          "text": "command([\"apt-get\", \"-o\", \"Acquire::Retries=0\", \"-o\", \"Acquire::http::Timeout=30\", \"update\"])"
+        },
+        {
+          "line": 234,
+          "kind": "network_or_bootstrap",
+          "text": "command([\"apt-get\", \"-o\", \"Acquire::Retries=0\", \"-o\", \"Acquire::http::Timeout=30\", \"install\", \"-y\", \"--no-install-recommends\","
+        },
+        {
+          "line": 250,
+          "kind": "network_or_bootstrap",
+          "text": "command([python, \"-m\", \"pip\", \"install\", *([\"--verbose\"] if role == \"runtime-source\" else []),"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_single_pilot.py",
+      "sha256": "039be4ab1118795d78ddc5fb798af19e0d12c1898713f9332fc0d69d25b365f4",
+      "bytes": 4830,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_batch_pilot.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "ast",
+        "inspect",
+        "json",
+        "pathlib",
+        "textwrap",
+        "types"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/modal_panel_source_snapshot.py",
+      "sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507",
+      "bytes": 11640,
+      "role": "historical_cloud_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "base64",
+        "hashlib",
+        "json",
+        "pathlib",
+        "subprocess",
+        "zlib"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/prepare_faynt_d0_benchmark.py",
+      "sha256": "0c1a846adc86b05bd9bbfb20dfbc893132096d65424a97640ffce7c4bd863b2f",
+      "bytes": 797,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/faynt_d0_benchmark_plan.py",
+        "src/melee_policy/integration/faynt_d0_checkpoints.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "json",
+        "pathlib",
+        "sys"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/prepare_faynt_d0_cloud.py",
+      "sha256": "48af52a6b70db2aa42f24d76a7fe58ded4d46db971010ce86386e4bc6b7ed256",
+      "bytes": 15611,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/faynt_d0_benchmark_plan.py",
+        "scripts/faynt_d0_durable_game.py",
+        "scripts/modal_panel_budget.py",
+        "scripts/modal_panel_cloud_app.py",
+        "scripts/modal_panel_cloud_queue.py",
+        "scripts/modal_panel_queue.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "copy",
+        "gzip",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "stat",
+        "tarfile",
+        "tempfile",
+        "time"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/report_modal_cloud_queue.py",
+      "sha256": "f8d4b0f9ee2fd91126fd46d17be9b1ad026d8764793e5269ed3c5ba95b8167a6",
+      "bytes": 5546,
+      "role": "historical_cloud_source",
+      "local_imports": [
+        "scripts/modal_panel_cloud_app.py",
+        "scripts/modal_panel_cloud_queue.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "copy",
+        "json",
+        "modal",
+        "pathlib",
+        "time"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/run_final_winner_benchmark.py",
+      "sha256": "3e0b5868dfdd6d29b57afac4f2d5bb46d2e0e018b3b020b16b81e0e1176496b2",
+      "bytes": 23781,
+      "role": "benchmark_source",
+      "local_imports": [
+        "src/melee_policy/integration/final_benchmark_suite.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "contextlib",
+        "fcntl",
+        "hashlib",
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "typing"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/run_frisson_dual_oneoff.py",
+      "sha256": "d8df2fcebd1bd300abffee602ec3425892c060403ff12910fa42c36c389b323f",
+      "bytes": 31249,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/final_winner_batch_common.py",
+        "src/melee_policy/integration/frame_watchdog.py",
+        "src/melee_policy/integration/frisson_match.py",
+        "src/melee_policy/integration/frisson_policy.py",
+        "src/melee_policy/integration/mimic_vs_hal.py",
+        "src/melee_policy/integration/natural_game_end.py",
+        "src/melee_policy/integration/slippi_ai_policy.py",
+        "src/melee_policy/integration/slippi_match.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "concurrent.futures",
+        "dataclasses",
+        "json",
+        "melee",
+        "numpy",
+        "pathlib",
+        "platform",
+        "random",
+        "signal",
+        "time",
+        "torch",
+        "typing"
+      ],
+      "review_findings": [
+        {
+          "line": 49,
+          "kind": "HAL_reference",
+          "text": "from melee_policy.integration.mimic_vs_hal import ("
+        },
+        {
+          "line": 108,
+          "kind": "HAL_reference",
+          "text": "default=Path(\"configs/integration_mimic_vs_hal.toml\"),"
+        },
+        {
+          "line": 349,
+          "kind": "network_or_bootstrap",
+          "text": "transport = _ControllerPipeLockstep.install(console, raw_controllers)"
+        },
+        {
+          "line": 511,
+          "kind": "network_or_bootstrap",
+          "text": "transport_checks = {\"controller_pipe_lockstep_installed\": False}"
+        },
+        {
+          "line": 780,
+          "kind": "HAL_reference",
+          "text": "\"src/melee_policy/integration/mimic_vs_hal.py\","
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/run_post_rl_benchmark.py",
+      "sha256": "fcb414e49bf39d7533266ba482406feef03bab29c930a3173e97bf11105b2cde",
+      "bytes": 250,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/run_final_winner_benchmark.py"
+      ],
+      "external_imports": [
+        "os"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/run_posttraining_winner_benchmark.py",
+      "sha256": "16038a8cf409ce5325e2029c3f971915c7a013c8aaa626dfa8a54e28368b58f3",
+      "bytes": 340,
+      "role": "benchmark_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "importlib",
+        "os"
+      ],
+      "review_findings": [],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/run_slippi_public_panel.py",
+      "sha256": "e8f896b3bc420f2e9e2dd9456515a9a75fc4f4215fbae82364db340430c70fd4",
+      "bytes": 28506,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/slippi_panel_runtime.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "collections",
+        "fcntl",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "shlex",
+        "signal",
+        "subprocess",
+        "sys",
+        "time"
+      ],
+      "review_findings": [
+        {
+          "line": 53,
+          "kind": "HAL_reference",
+          "text": "ROOT / \"configs/integration_mimic_vs_hal.toml\", ROOT / \"requirements-e010.lock\", OUTPUT / \"manifest.json\"]"
+        },
+        {
+          "line": 69,
+          "kind": "HAL_reference",
+          "text": "phases = [\"75m-suite\", \"75m-hal-bo5\", \"rl-head-to-head\", \"10m-suite\", \"10m-hal-bo5\"]"
+        },
+        {
+          "line": 74,
+          "kind": "HAL_reference",
+          "text": "return all(read(EXISTING / \"hal-bo5\" / p / \"series.json\")[\"record\"][\"complete\"] for p in (\"75m\", \"10m\"))"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/slippi_panel_audit.py",
+      "sha256": "0b49ff8743c1425da0aadd338f8197115260c9b702335286d8b08cb95d1aa79b",
+      "bytes": 7127,
+      "role": "benchmark_source",
+      "local_imports": [],
+      "external_imports": [
+        "__future__",
+        "argparse",
+        "concurrent.futures",
+        "enum",
+        "hashlib",
+        "json",
+        "melee",
+        "numpy",
+        "numpy.core",
+        "numpy.core.numeric",
+        "os",
+        "pathlib",
+        "pickle",
+        "time",
+        "urllib.request"
+      ],
+      "review_findings": [
+        {
+          "line": 2,
+          "kind": "network_or_bootstrap",
+          "text": "\"\"\"Download and safely inventory the explicitly named public Slippi panel.\"\"\""
+        },
+        {
+          "line": 131,
+          "kind": "network_or_bootstrap",
+          "text": "temp = path.with_name(name + \".download\")"
+        },
+        {
+          "line": 132,
+          "kind": "network_or_bootstrap",
+          "text": "with urllib.request.urlopen(url, timeout=90) as response, temp.open(\"wb\") as stream:"
+        },
+        {
+          "line": 137,
+          "kind": "network_or_bootstrap",
+          "text": "raise RuntimeError(\"checkpoint exceeds declared 512 MiB per-file download cap\")"
+        },
+        {
+          "line": 140,
+          "kind": "network_or_bootstrap",
+          "text": "raise RuntimeError(f\"{name}: download is not a supported pickle file\")"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/slippi_panel_runtime.py",
+      "sha256": "239fb0d79a4586dfe111847ef62a8f8c9bb8754062e989be475bb103117ef5a5",
+      "bytes": 13936,
+      "role": "benchmark_source",
+      "local_imports": [
+        "scripts/slippi_panel_audit.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "copy",
+        "dataclasses",
+        "functools",
+        "importlib",
+        "json",
+        "melee",
+        "melee_policy.integration",
+        "numpy",
+        "pathlib",
+        "sys"
+      ],
+      "review_findings": [
+        {
+          "line": 233,
+          "kind": "HAL_reference",
+          "text": "summary = match.run_frisson_slippi_match(ROOT / \"configs/integration_mimic_vs_hal.toml\", request=request)"
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "src/melee_policy/integration/final_benchmark_suite.py",
+      "sha256": "ef420ff43d1da9606b471883b9d76c41572c7797f3f0235b151aeff2977617b6",
+      "bytes": 115166,
+      "role": "benchmark_source",
+      "local_imports": [
+        "src/melee_policy/integration/post_rl_checkpoints.py"
+      ],
+      "external_imports": [
+        "__future__",
+        "collections.abc",
+        "contextlib",
+        "dataclasses",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "tempfile",
+        "tomllib",
+        "torch",
+        "typing"
+      ],
+      "review_findings": [
+        {
+          "line": 1266,
+          "kind": "HAL_reference",
+          "text": "ROOT / \"configs\" / \"integration_mimic_vs_hal.toml\""
+        }
+      ],
+      "publication_status": "requires_release_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/slippi_panel_plan.py",
+      "sha256": "04eeaf45362fe682a42c3ebc3c1574b4fcc2993a92e1aa42956f8b7deae6cc00",
+      "bytes": 7340,
+      "role": "benchmark_schedule_or_reporting",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/report_slippi_public_panel.py",
+      "sha256": "fd6f269565d2d77158cf75a8f1d811230d4d309d7505ab60dcc899c54093f296",
+      "bytes": 22756,
+      "role": "benchmark_schedule_or_reporting",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/slippi_panel_canary.py",
+      "sha256": "c924859170693c133cef70e7a5a54dbe3d4505c52d5ddd867cfdea1b940fcf0c",
+      "bytes": 5103,
+      "role": "native_canary_or_frozen_deployment",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "scripts/slippi_panel_deploy.py",
+      "sha256": "dc0e0d85e1acff4800853e88f6d192b84091a19d4e29bdf54ef5cc0ea4e8efbd",
+      "bytes": 5659,
+      "role": "native_canary_or_frozen_deployment",
+      "tracked_in_local_checkout": false
+    }
+  ],
+  "tests": [
+    {
+      "path": "tests/integration/test_faynt_d0_benchmark_plan.py",
+      "sha256": "98c24ed6fbeb5249b93badcdcc8a7013adfd6c6c9db9d3af4a1b3ec5efe1a41f",
+      "bytes": 9109,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_faynt_d0_checkpoints.py",
+      "sha256": "1af3ce166f1cb92105030006c4a581c751b339788d6b4302f3d80ec417031f0f",
+      "bytes": 11758,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_faynt_d0_durable_game.py",
+      "sha256": "4dd40e1438e6002a20d53b703bca65fbafbb9d37b4810b2c6cc3b3ffa7c604d3",
+      "bytes": 6223,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_final_benchmark_runner.py",
+      "sha256": "fd25024dfdc9300ae6371a70fdff0b30db0f79f54d225e589683498c8962c1c2",
+      "bytes": 20341,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_final_benchmark_suite.py",
+      "sha256": "0c42b8bfbdc4116daffcb135d1d1eb2e9147571d0817cb552d97aa803075085a",
+      "bytes": 44165,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_final_benchmark_video_finalizer.py",
+      "sha256": "0bef63a1b748b5c7ec48c9384a35e62d90b6b6103ee6abc0fe9a468b9c10b243",
+      "bytes": 32694,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_ingest_modal_panel_pair.py",
+      "sha256": "f54e02f0cf8f73149a85a801ed4755992834651ea4fcfa4298ce0da30ac57437",
+      "bytes": 1585,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_apt_timeout_review.py",
+      "sha256": "4f58be037993b6e8021c92a5c5359c679eaa4376c8b3b6de707185fe9f264ea8",
+      "bytes": 4990,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_bootstrap_deadline_review.py",
+      "sha256": "f62c261c2e25e8f8fedc73a56ec8b9751d0db478812a85a1da5172cbf44bbf99",
+      "bytes": 8681,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_budget.py",
+      "sha256": "56ed0d41bc6ea3459960a6f876faa4385bf3f882681a6ed3fc993175caa7c271",
+      "bytes": 22671,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_budget_resume.py",
+      "sha256": "3732fa57f10dd665630a0cc308d011787164e0847843da5b1db9b9dc2fc84f19",
+      "bytes": 24537,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_build_pilot.py",
+      "sha256": "9ac028ff4a7bc3b223df22dad927e5f9e3d99236fabc0684ca76cbe5bbb38c36",
+      "bytes": 27808,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_cloud_queue.py",
+      "sha256": "bcf2fc7f006b8e9a9bd4bbbed9557d463b161b610bd39bb95a1d4989dd70a4bb",
+      "bytes": 31023,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_cohort.py",
+      "sha256": "e8c0a018295d03d40284733e5c4136291e40570e81fec811270ba96e92cb38ac",
+      "bytes": 1189,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_dead_call_dispatch.py",
+      "sha256": "98eed5259c0ccbd77021e308acd91a1d9439f8ac37cbd4539346c38ea9f5e0a8",
+      "bytes": 33355,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_deferred_renewal_dispatch.py",
+      "sha256": "75548f38b7690a565f0f25e4d9a679e27e92004287f89caa82996144f143fac4",
+      "bytes": 10173,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_deployment.py",
+      "sha256": "846f2e985d81883831838487be8d75c7efe74c8fca7d8b20d2a16b515f014365",
+      "bytes": 15895,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_durable_game.py",
+      "sha256": "d5a16643de6dca37b8ac9113ba41491779c9b06d7c0e4f6f79547f79178af906",
+      "bytes": 10610,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_empty_startup.py",
+      "sha256": "da58047af07927fc93e381e539cdff1fe171126e935dcc650324324d50cdd905",
+      "bytes": 2176,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_exclusion_lineage.py",
+      "sha256": "6b44921856e966c5fe2b427fae045ded83830683e5efb5cf0bfb287825a9b9f2",
+      "bytes": 10596,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_first_op_diagnostic.py",
+      "sha256": "96cc0313f605dcc2b60e28fe327eb31f31535a4137102a684d1f2a9212b20fc9",
+      "bytes": 10188,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_game_pilot.py",
+      "sha256": "37ead221d8b44f185e61322a8ce912c28c9c6b1def34813bee8e378ddd3ae5df",
+      "bytes": 25529,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_gui_compile.py",
+      "sha256": "487ce5eb0c78542a34d1dc24a69a72e1bd3870a9f38b88788bd5605e3708d8b3",
+      "bytes": 10771,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_historical_retry_budget.py",
+      "sha256": "14260ae034ed3ed6304cabc6fb543d6ebc22302606705f01e36b2cb910451338",
+      "bytes": 3331,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_interrupted_retry.py",
+      "sha256": "b0855b1102ed13d92e7acc84694f0613a614690cf13f2de9aa9cf4a10055db7f",
+      "bytes": 32293,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_late_admission.py",
+      "sha256": "10eaccbb8cca906c47507638539633c4aa400b42fc6f46e8e3e071ec7486a5e8",
+      "bytes": 6340,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_legacy_prior_binding.py",
+      "sha256": "c63f947956fde943c251446815ad4b14a7229077c3f373980773774a51027c27",
+      "bytes": 3437,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_linux_build.py",
+      "sha256": "a503ebd716169b5b8a1f476bc672c8775225bc637fcdaf20ad0f90655531b359",
+      "bytes": 26385,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_linux_host.py",
+      "sha256": "2441ac8789f8ac4cbdaf92b2f8641e79f57a859ba013929dda19816c8002ca40",
+      "bytes": 11869,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_live_canary.py",
+      "sha256": "567524e2dc13190f300f53c1159d88eabf47e457ef028ec6d1729c3efca2e16b",
+      "bytes": 22237,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_live_context.py",
+      "sha256": "e70e0ba7156ae291371a6232d8e89dc492bb7b39fef36086b026773fdd23f2f6",
+      "bytes": 25708,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_live_dependencies.py",
+      "sha256": "01cde19090087c33133fd75d180e2327e4ff687e1174e08e3191130fed3241c7",
+      "bytes": 6135,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_live_pilot.py",
+      "sha256": "848303f3d7d4f495f1051e352fbd7fcad8334cb2a0dbe09d9a475fea5f9e2b20",
+      "bytes": 13007,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_match_host.py",
+      "sha256": "9f3b1f600f97ef47489acd7140e29adc98fc97437652e0ce11ab96e4c73b6c0d",
+      "bytes": 11177,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_match_source.py",
+      "sha256": "18c9dabf6a8f4cb7eb51ed7d910e851ea87a8c28ec9bf48f3ca1971f9de0a582",
+      "bytes": 4146,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_package_audit.py",
+      "sha256": "041842d23423453ba165c61322a515a6d3a1902ff9910165532fcd6bdd3b61ad",
+      "bytes": 13226,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_pair_binding.py",
+      "sha256": "b237052e8cdb4f6e0053ef431239b2eab83a0b55f8d550a042b151beb1e52ace",
+      "bytes": 3991,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_policy_canary.py",
+      "sha256": "5c1aceae7f153c0f15b98f8baf00da71f8659aadbc292bb2ee55a4dc19ed7005",
+      "bytes": 22985,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_policy_dependencies.py",
+      "sha256": "34024831b6831e3117aaa3d9903473cca08995dc3d8e8ddf8e517dcc70368afc",
+      "bytes": 9700,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_policy_pilot.py",
+      "sha256": "1a189f89c5b73c41b8175664e962ff64baae2d1551a089e525caba1aa11c6f4d",
+      "bytes": 23478,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_queue.py",
+      "sha256": "5e386a607f0c58e8ac3f5af6cf8c74f232ed0bea9b8273d629d787db69b4932e",
+      "bytes": 17828,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_retry_renewal.py",
+      "sha256": "7375cb40da75739c1d082bd9c88e0827525f7a994bc95696f697673fd8dcceda",
+      "bytes": 21541,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_runtime_pilot.py",
+      "sha256": "7b1b48bb751625bad0ce04004fc6a01a4ce582e0a97473a704cb7cedf3455378",
+      "bytes": 24165,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_single_pilot.py",
+      "sha256": "a8569a0c2c4a839ccd925e52acdc26a92a6f023cc41ed26234d750278ca79106",
+      "bytes": 2012,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_source_snapshot.py",
+      "sha256": "c087c90e8698d4d84328c17d3a5a2367f4243fa7871c4a9c73ce5827667fc806",
+      "bytes": 4529,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_modal_panel_stale_deferral_dispatch.py",
+      "sha256": "fe8c6f12dcc6323a5bdb69e55bdd08d4e368d3f50074df371ad48debf27b21d3",
+      "bytes": 14671,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_post_rl_benchmark.py",
+      "sha256": "77060400822f057315a97494a62e8643fce868ae3073fec8da2d4e16d9a34c27",
+      "bytes": 4724,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_posttraining_benchmark_variant.py",
+      "sha256": "2feede5fa091d091f5be8d5e4b27ba38e25b434f3d0c6b41cc54619339af4ea8",
+      "bytes": 19330,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_prepare_faynt_d0_cloud.py",
+      "sha256": "390748299f8c5c224ccff821f0bb7d5cc09085bdb88cdbe4a382ef6c311b82cb",
+      "bytes": 13200,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_public_panel_report.py",
+      "sha256": "3226bc0029c0718c5cfd3f39c0f06da88bbc6d64880e61d9d63ce1c63ee9713b",
+      "bytes": 15833,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_public_panel_scalar_context.py",
+      "sha256": "9d961dcafc81a4fcbe9e83e65447db6b709737716956dd70c431ff3fa3ab00a2",
+      "bytes": 3445,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    },
+    {
+      "path": "tests/integration/test_slippi_public_panel.py",
+      "sha256": "755b29a50fdca1ab4710e071a46170d4d4bbb4309694c56612d55468cb2339e3",
+      "bytes": 23374,
+      "role": "existing_test",
+      "publication_status": "requires_fixture_and_import_review",
+      "tracked_in_local_checkout": false
+    }
+  ],
+  "shared_runtime_owner": "methodology_review",
+  "direct_shared_runtime_dependencies": [
+    "src/melee_policy/integration/faynt_d0_checkpoints.py",
+    "src/melee_policy/integration/frame_watchdog.py",
+    "src/melee_policy/integration/frisson_match.py",
+    "src/melee_policy/integration/frisson_policy.py",
+    "src/melee_policy/integration/frisson_slippi_match.py",
+    "src/melee_policy/integration/game_bundle.py",
+    "src/melee_policy/integration/mimic_vs_hal.py",
+    "src/melee_policy/integration/natural_game_end.py",
+    "src/melee_policy/integration/post_rl_checkpoints.py",
+    "src/melee_policy/integration/runtime_identity.py",
+    "src/melee_policy/integration/slippi_ai_policy.py",
+    "src/melee_policy/integration/slippi_compatibility.py",
+    "src/melee_policy/integration/slippi_match.py"
+  ],
+  "unresolved_local_modules": {},
+  "coverage": {
+    "initial_base_expert": "Existing schedule and runner source located. Shared runtime extraction and path parameterization required.",
+    "expanded_arena": "Existing D0 preparation and full local/cloud execution source located. Bootstrap must be separated from execution while preserving native policy timing.",
+    "phillip_zero_delay": "Aggregate result/protocol records located in paper source. Dedicated execution source absent in focused local search; remote branch audit pending.",
+    "private_slippi_zero_delay": "Aggregate result/protocol records located in paper source. Dedicated execution source absent in focused local search; remote branch audit pending."
+  },
+  "literal_source_path_dependencies": [
+    "scripts/faynt_d0_benchmark_plan.py",
+    "scripts/faynt_d0_durable_game.py",
+    "scripts/modal_panel_batch_pilot.py",
+    "scripts/modal_panel_build_pilot.py",
+    "scripts/modal_panel_durable_canary.py",
+    "scripts/modal_panel_durable_game.py",
+    "scripts/modal_panel_first_op_diagnostic.py",
+    "scripts/modal_panel_game_pilot.py",
+    "scripts/modal_panel_linux_build.py",
+    "scripts/modal_panel_linux_host.py",
+    "scripts/modal_panel_live_canary.py",
+    "scripts/modal_panel_live_context.py",
+    "scripts/modal_panel_live_pilot.py",
+    "scripts/modal_panel_package_audit.py",
+    "scripts/modal_panel_pair_binding.py",
+    "scripts/modal_panel_policy_canary.py",
+    "scripts/modal_panel_policy_pilot.py",
+    "scripts/modal_panel_runtime_pilot.py",
+    "scripts/modal_panel_single_pilot.py",
+    "scripts/modal_panel_source_snapshot.py",
+    "scripts/run_frisson_dual_oneoff.py",
+    "scripts/run_slippi_public_panel.py",
+    "scripts/slippi_panel_audit.py",
+    "scripts/slippi_panel_runtime.py",
+    "src/melee_policy/__init__.py",
+    "src/melee_policy/e000/__init__.py",
+    "src/melee_policy/e000/enums.py",
+    "src/melee_policy/integration/__init__.py",
+    "src/melee_policy/integration/faynt_d0_checkpoints.py",
+    "src/melee_policy/integration/frisson_match.py",
+    "src/melee_policy/integration/frisson_policy.py",
+    "src/melee_policy/integration/frisson_slippi_match.py",
+    "src/melee_policy/integration/game_bundle.py",
+    "src/melee_policy/integration/mimic_vs_hal.py",
+    "src/melee_policy/integration/post_rl_checkpoints.py",
+    "src/melee_policy/integration/replay_video.py",
+    "src/melee_policy/integration/runtime_identity.py",
+    "src/melee_policy/integration/slippi_ai_policy.py",
+    "src/melee_policy/integration/slippi_compatibility.py",
+    "src/melee_policy/integration/slippi_match.py"
+  ]
+}

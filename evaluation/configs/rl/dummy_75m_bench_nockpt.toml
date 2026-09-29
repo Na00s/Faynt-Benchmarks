@@ -1,0 +1,101 @@
+# A/B: Ali's gradient checkpointing off (no recompute forward in the backward; bit-identical; costs memory).
+# One of the /rl-speedup A/B bench files (5 Sep 2026): dummy_75m_bench with profiling off (clean step times) and
+# metrics.jsonl on; compare timing/* and the KLs at unchanged weights against dummy_75m_bench_base.
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dummy_75m_bench_nockpt --gpu --wandb-mode disabled --checkpoint-subdir p17/dummy_75m_bench_nockpt --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 6                     # 1 value burn-in + 1 optimizer burn-in + 4 PPO steps (steps 2 and 3 profiled)
+max_runtime_s = 1200              # 20 min: the planned row allows 25
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 100         # only the final save (~1 GB at 75m); the profile files are the record
+snapshot_interval_steps = 0
+
+[policy]
+profile = "75m"                   # Ali's family profile, filled in by melee_rl.checkpoint.EXTRA_PROFILES
+init = "checkpoint"
+checkpoint = "/runs/bc/frisson-melee-75m.pt"   # the STABLE path (staged 4 Sep 2026, sha256 8662de0c...c648)
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[policy.model_overrides]
+gradient_checkpointing = false    # A/B: keep the activations instead of recomputing the forward in the backward
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dummy"
+
+[env.dummy]
+num_envs = 96                     # 72 self + 24 cpu9 (the mix groups must sum to this)
+seed = 0
+game_frames = 28800               # games restart every 8 min of play, roughly a real match
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "prefix"           # the rolling cache + its snapshot on the trajectory (patch #1)
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"
+mix = ["self*72", "cpu9*24"]      # 144 + 24 = 168 rows: the production layout (mb 12 -> 12 + 2 chunks)
+seed = 1
+
+[learner]
+learning_rate = 4e-5
+kl_teacher_weight = 0.1
+value_burnin_steps = 1
+optimizer_burnin_steps = 1
+microbatch_envs = 12
+teacher_prefix = true
+prefix_on_host = true             # 4 x 168 fp32 75m prefixes = 2.7 GiB per update on the host
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 4                   # 4 x 2 arms = 8 trajectories per step (production: 16 x 2)
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 5e-3
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the profile summary is the record; pass --wandb-mode online to log too
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dummy-env", "bench", "profile", "75m", "l4", "prefix", "teacher-prefix", "host-prefix", "mb12",
+    "fast-step", "nb4", "mix", "cpu9-arm", "self85",
+]
+print_interval_steps = 1
+jsonl = true                      # metrics.jsonl in the run dir: timing/*, loss/actor_kl_pre, pre/teacher_kl per step
+
+[profiling]
+enabled = false           # clean timing/*: no trace processing inside the steps
+steps = [2, 3]                    # the first two PPO steps (after the 1 + 1 burn-in ladder)
+actor_frames = 32                 # the first 32 frames of each arm's first rollout of the step
+learner_chunks = 4                # the first 4 microbatch passes of each learner phase

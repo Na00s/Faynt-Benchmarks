@@ -1,0 +1,43 @@
+{
+  "schema": "faynt.paper-benchmark-records.v1",
+  "source_report": "Faynt: Scaling and Optimizing Policies for Competitive Melee",
+  "source_archive": "Faynt_Paper.zip",
+  "copy_policy": "Original result JSON files copied byte for byte from the supplied paper source bundle.",
+  "files": [
+    {
+      "file": "benchmark_fixed_panel.json",
+      "bytes": 2410,
+      "sha256": "efb25d770915d780d5b6596a4c6243f8fb61aab885ab753d403011a60f2dfb27",
+      "source_archive_path": "data/benchmark_fixed_panel.json"
+    },
+    {
+      "file": "rl_current_scores.json",
+      "bytes": 2398757,
+      "sha256": "77f362c0c8e1b5f9aac735e62b3227c1ce99658fe0541a9fb438ffaea33286e4",
+      "source_archive_path": "data/rl_current_scores.json"
+    },
+    {
+      "file": "benchmark_zero_delay.json",
+      "bytes": 15829,
+      "sha256": "3ecf94783742229f9b4bb18ccb721aaf351cf33c8740618e56b01add02d63c8c",
+      "source_archive_path": "data/benchmark_zero_delay.json"
+    },
+    {
+      "file": "benchmark_zero_delay_timing.json",
+      "bytes": 3644,
+      "sha256": "2cc97dd07bd9ab1d530a67f256077bcb2555482cf96cd9dcd3477f711077051a",
+      "source_archive_path": "data/benchmark_zero_delay_timing.json"
+    },
+    {
+      "file": "benchmark_private_slippi_zero_delay.json",
+      "bytes": 2876,
+      "sha256": "ddb3cf6676ee00d2cdfffeddd0d0c7d47a26b6e352358671f3b580febc4fdecf",
+      "source_archive_path": "data/benchmark_private_slippi_zero_delay.json"
+    }
+  ],
+  "scope": {
+    "initial": "Reported block aggregates for four Base/Expert checkpoints, 152 games per policy.",
+    "expanded": "Accepted result ledger for two Arena checkpoints, 1312 games per policy.",
+    "zero_delay": "Reported result-table transcriptions and public opponent timing configuration; separate from the expanded suite."
+  }
+}

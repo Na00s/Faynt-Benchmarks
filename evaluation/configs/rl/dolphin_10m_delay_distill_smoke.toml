@@ -1,0 +1,156 @@
+# Delay fine-tuning, the STAGE-1 SMOKE (11 Sep 2026, session 60): `dolphin_10m_delay_distill_day.toml` -- see its
+# header -- capped at 55 min of `Trainer.run` with a shorter eval window.  The cap counts the START EVAL (22 min on a
+# fresh process at this window: the first run of this file at 2100 s got 12 distillation steps of its 24) plus the
+# two compiles (~5 min), so 55 min leaves ~25 min of distillation (~65 learner steps at the measured 22 s); the whole
+# job is about 75 min (~$3.5 on the wide MIMIC box).  Measured 11 Sep 2026 (`DELAY-PLAN.md` §10): the reverse KL fell
+# 0.76 -> 0.25 nats in three distillation steps, self-play deaths halved, cpu9 KO diff -1.52 -> -1.05 by step 24.
+# What it must answer before the 8-h
+# Stage 1 is paid for: the step-0 eval (the naive D = 18 base against cpu9, MIMIC and itself at 18);
+# pre/reverse_teacher_kl at step 0 and its slope per step; hindsight/top1, hindsight/teacher_entropy beside
+# loss/entropy and hindsight/masked_fraction; loss/actor_kl per update with the guard parked (a supervised
+# step should move the policy far more than PPO's 1e-5 -- if it reverts nothing and diverges, lower the lr);
+# env/fps, timing/learner_s (the teacher's eager 256-row window) and the container's RAM.  Same directory
+# layout as the day file, its own directory:
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_10m_delay_distill_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/10m_delay/smoke --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 3300              # 55 min of Trainer.run: the 22-min start eval + the compiles + ~25 min of distillation
+max_total_runtime_s = 3300
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 8
+snapshot_interval_steps = 32
+
+[policy]
+profile = "10m"
+init = "checkpoint"
+checkpoint = "/runs/selfplay/10m_delay/base/kl0p01_final.pt"   # frozen 11 Sep 2026: kl0p01's final latest.pt (gate 1)
+init_value = true
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true
+fast_attention = "lean"
+fast_encoder = true
+graph_step = true
+model_overrides = {gradient_checkpointing = false}
+
+[teacher]
+source = "policy"
+delay_frames = 0                  # the hindsight teacher
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]
+costumes = [0, 1]
+stage = 25
+stages = [25, 24, 18, 26, 8, 6]
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 16
+mp_start_method = "spawn"
+chunk_frames = 1
+shared_memory = true
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 18                 # THE DELAY
+context_mode = "prefix"
+batch_steps = 1
+packed_frames = true
+interleave_arms = true
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"
+mix = ["self*48@a", "self*48@b"]
+mix_workers = [8, 8]
+seed = 1
+
+[learner]
+learning_rate = 1e-4
+policy_gradient_weight = 0.0
+kl_teacher_weight = 0.0
+reverse_kl_teacher_weight = 1.0
+value_burnin_steps = 8
+optimizer_burnin_steps = 4
+microbatch_envs = 24
+teacher_prefix = false
+fast_forward = true
+compile = true
+
+[learner.returns]
+reward_halflife = 8.0
+
+[learner.ppo]
+num_epochs = 4
+num_batches = 4
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 1e3
+
+[delay]
+allow_mismatch = true
+
+[mimic]
+source_dir = "/opt/mimic/source"
+asset_dir = "/opt/mimic/fox-master"
+device = "cuda"
+temperature = 1.0
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1
+
+[logging]
+mode = "disabled"
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "rl-init", "pt-init", "cur6kd", "10m", "l4", "smoke", "wide",
+    "prefix", "mp-workers", "fast-step", "nb4", "stages", "mimic-eval", "mix", "self100", "shm", "interleave",
+    "compile", "delay", "d18", "distill", "hindsight", "stage1", "kl0p01-base",
+]
+print_interval_steps = 1
+jsonl = true
+
+[eval]
+enabled = true
+interval_seconds = 3600.0         # never due inside the 35-min cap: the start and end rounds are the reads
+at_start = true
+at_end = true
+frames = 30720                    # per opponent: 30 eval Dolphins x 1024 frames (17 s of game each)
+num_envs = 30
+worker_processes = 10
+rollout_length = 128
+opponents = ["cpu9", "mimic", "other:/runs/selfplay/10m_delay/base/kl0p01_final.pt@d18"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "other"

@@ -1,0 +1,147 @@
+# P11 probe, arms B-D (28 Aug 2026): can we choose the Melee RNG seed a match starts from?
+#
+# Nothing in libmelee exposes the seed and there is no savestate support, but the replay records it
+# (game-start payload 0x13D, ``melee_rl.slp``) and two knobs plausibly move it: Dolphin's custom RTC
+# (the emulated console clock) and the number of character-select frames we hold before pressing
+# START (Melee's RNG advances every frame from boot).  Six Dolphins, one cell each:
+#
+#   env 0   clock T0, hold 0    |  0 vs 1: is a boot with identical settings reproducible at all?
+#   env 1   clock T0, hold 0    |
+#   env 2   clock T1, hold 0    |  2, 3 vs 0: does the seed follow the console clock?
+#   env 3   clock T2, hold 0    |
+#   env 4   clock T0, hold 45   |  4, 5 vs 0: does the seed follow the hold?
+#   env 5   clock T0, hold 90   |
+#
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::video \
+#       --config video_seed_probe --checkpoint /runs/selfplay/20m_bc_mix_dmg005/best_127.pt \
+#       --no-render --spawn
+#
+# Ten seconds of play per Dolphin: the seed is in the game-start block, so the match only has to
+# start.  ``infinite_time`` stays true (the training/eval mode) -- the seed question is independent of
+# the rules, and the answer has to carry over to evaluation.
+#
+# RESULT (28 Aug 2026, app ap-nghion2h627wjE8RIh710u, control ap-LmS8SpMJ91KYTkvUHCjX0z):
+# INCONCLUSIVE -- do not reuse these knobs believing they work.  The seeds split 3/3 across the
+# six cells but along neither knob cleanly (T0 appears against both values), and the holds of 45
+# and 90 frames sit BELOW the natural menu length (~366 frames, ENV.md 5), so they were probably
+# no-ops.  What the control DID establish: six Dolphins with no knobs at all returned one
+# identical seed (0x7ff88b50), so a job's matches are paired by construction.  User decision the
+# same day: skip seed control, record and report the seeds instead (P11-PLAN.md 2).
+
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains in a recording job
+seed = 0
+deterministic = true
+device = "cpu"                    # batch 2: the policy forward is latency-bound (the L4 measured worse)
+threads = 8
+
+[policy]
+profile = "20m"                   # only a fallback; the recorded checkpoint carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 6                      # one Dolphin per probe cell (VideoConfig.clips overrides it)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # in-process: two Dolphins do not need worker processes
+chunk_frames = 1
+save_replays = true               # the recorder overrides this per matchup; true documents the intent
+# P11 seed knobs, per Dolphin (off everywhere else: training must keep a random start).
+rtc_values = [1600000000, 1600000000, 1600003600, 1600086400, 1600000000, 1600000000]
+menu_idle_frames = [0, 0, 0, 0, 45, 90]
+stop_timeout_s = 20.0             # SIGTERM Dolphin before Console.stop kills it: a killed .slp has no
+                                  # trailing metadata block (ENV.md §6.5)
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode: no history window (the deployment path)
+delay_frames = 0                  # matches action_offset_frames = 1 of the recorded checkpoints
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"                      # per matchup the recorder builds its own opponent; this only fixes
+                                  # the default player layout of [env.dolphin]
+
+[learner]
+kl_teacher_weight = 0.0           # nothing trains here; without a teacher the weights must be zero
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # no W&B: a recording job logs nothing (the uploader is --wandb, off)
+
+[video]
+matchups = ["policy:cpu9"]        # one matchup: six Dolphins of it, one per cell
+clips = 6                         # six Dolphins: one per probe cell (must match num_envs above)
+seconds = 10.0                    # the seed is in the game-start block: the match only has to start
+bc = "/runs/bc/20m-muon-scaling-c3.pt"   # the run's own BC start: opponent and baseline player
+output_dir = "/runs/videos"
+baseline_subdir = "baseline"
+rollout_length = 128
+temperature = 1.0                 # the training distribution, as in [eval]
+seed = 0
+port_offset = 0                   # a recording job has the container to itself
+wandb = false                     # user decision 26 Aug 2026: keep the clips on the Volume for now
+wandb_seconds = 30.0
+wandb_bitrate_kbps = 1200
+
+[video.render]
+# The Slippi PLAYBACK build, pinned into the video image only (26 Aug 2026 probe): the ExiAI Dolphin
+# we train with has no -i and no ffmpeg, both netplay builds reject -i, and this is the one binary
+# that accepted the comm file and actually wrote frames.  It needs an X server and does not exit when
+# the replay ends, so the call is bounded by the clip length x speed_factor and ffmpeg trims the dump.
+dolphin_path = "/opt/dolphin/ishiiruka-playback-3.5.2/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+backend = "OGL"
+platform = ""                     # wx build: no --platform flag (Xvfb supplies the display)
+xvfb = true
+internal_resolution = 1           # 1x native 640 x 480 -> GFX.ini EFBScale = SCALE_1X (P9b: Ishiiruka
+                                  # has no InternalResolution key, and its Linux default is SCALE_2X,
+                                  # so before the fix every render rasterised 1280 x 960)
+bitrate_kbps = 3000
+dump_format = "avi"
+emulation_speed = 0.0
+caption = true                    # "<checkpoint> step N (P1) vs CPU 9 (P2) - clip 1/2", burned in
+font_size = 18
+crf = 26                          # x264 quality of the caption pass. 20 gave ~4.7 Mbit/s at
+                                  # 642 x 528 (~71 MB per 2-min clip); 26 is visually close at
+                                  # this size and about a third of the bytes, which matters when
+                                  # a ten-clip job gets passed around a team.
+timeout_s = 1800.0                # the hard cap per render call
+speed_factor = 20.0               # only a safety net now: --cout frame markers end each render as
+min_timeout_s = 120.0             # soon as the replay does (render.run_playback)
+workers = 6                       # eight concurrent renders measured the wall clock of one, so the
+                                  # six fresh clips of a job are a single batch

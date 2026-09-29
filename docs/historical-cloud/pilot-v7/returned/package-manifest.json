@@ -1,0 +1,1722 @@
+[
+  {
+    "bytes": 19996344,
+    "path": "dolphin-emu",
+    "sha256": "de76b9e141d35b9f81bc335a5d5a0ccb875ad43d9dcb91f27b412b0a07d17a43"
+  },
+  {
+    "bytes": 56535656,
+    "path": "libslippi_rust_extensions.so",
+    "sha256": "cbee3d3750f9690cb5beb630a362656ae0ada6a47bfedefa530d4b688a0e1a69"
+  },
+  {
+    "bytes": 17987,
+    "path": "license.txt",
+    "sha256": "ab15fd526bd8dd18a9e77ebc139656bf4d33e97fc7238cd11bf60e2b9b8666c6"
+  },
+  {
+    "bytes": 651,
+    "path": "Sys/Config/Profiles/GCPad/B0XX.ini",
+    "sha256": "4d3d8be936a10a4b078908722e9d1a82b0ba02fec53a85e202d280846d35f510"
+  },
+  {
+    "bytes": 655,
+    "path": "Sys/Config/Profiles/GCPad/B0XX_Linux.ini",
+    "sha256": "abffe1261f2f699a979b039c26e31b111707b16521e34263939c7be7356be579"
+  },
+  {
+    "bytes": 650,
+    "path": "Sys/Config/Profiles/GCPad/B0XX_macOS.ini",
+    "sha256": "4ccfe0f78cc0441873b7b825bb06dbebcf87c4b4a1427ea116d6a7bccd48e893"
+  },
+  {
+    "bytes": 669,
+    "path": "Sys/Config/Profiles/GCPad/Frame1.ini",
+    "sha256": "98ac163db4843142fd7b81165ca1da7c81b27470c0a04267d8dbf97a7377384a"
+  },
+  {
+    "bytes": 770,
+    "path": "Sys/Config/Profiles/GCPad/slippibot.ini",
+    "sha256": "e8146b53ba0cc2d23d7fc95d7580a85fb199b8a5a2352b009fe7085177e4ea3d"
+  },
+  {
+    "bytes": 4096,
+    "path": "Sys/GC/dsp_coef.bin",
+    "sha256": "c41e7d9f763da40983e83a5291cbecec1f536fd8b08ac6dda05eab33f57501ea"
+  },
+  {
+    "bytes": 8192,
+    "path": "Sys/GC/dsp_rom.bin",
+    "sha256": "bb52f4ee9616dacb001b10175af991597382fa7da868f5920c34b66056b461ca"
+  },
+  {
+    "bytes": 11656,
+    "path": "Sys/GC/font-licenses.txt",
+    "sha256": "5cf813ce581cbd1e8dc7d024f7190754842900d66300488bca6f1531fc1be86e"
+  },
+  {
+    "bytes": 6478,
+    "path": "Sys/GC/font_ansi.bin",
+    "sha256": "4ad991be2b0aa305f09b90a79fc50f57833b30b008890b5ef1336cc3d9d0bae0"
+  },
+  {
+    "bytes": 259626,
+    "path": "Sys/GC/font_japanese.bin",
+    "sha256": "38f9f59d505bc4e2d86b0196706195f33ad72b7fe9d029cf263072cde19d044f"
+  },
+  {
+    "bytes": 259626,
+    "path": "Sys/GC/font_sjis.bin",
+    "sha256": "38f9f59d505bc4e2d86b0196706195f33ad72b7fe9d029cf263072cde19d044f"
+  },
+  {
+    "bytes": 6478,
+    "path": "Sys/GC/font_western.bin",
+    "sha256": "4ad991be2b0aa305f09b90a79fc50f57833b30b008890b5ef1336cc3d9d0bae0"
+  },
+  {
+    "bytes": 28971,
+    "path": "Sys/GameFiles/GALE01/GameSetup.dat",
+    "sha256": "2c7842f8864c962ea0e8b9e629552b36e2669b739c86d17ba5dae53d75ed9acc"
+  },
+  {
+    "bytes": 1031905,
+    "path": "Sys/GameFiles/GALE01/GameSetup_gui.dat",
+    "sha256": "aa083e7ec6a7ad96c32efb474b6915242aeb0627c2fa6369b205783b844d701e"
+  },
+  {
+    "bytes": 149,
+    "path": "Sys/GameFiles/GALE01/MnExtAll.dat.diff",
+    "sha256": "b6df247ddf12d0118d4b1deaf1d3cf8878ebb4d60b29fda7ad6a324246b05e22"
+  },
+  {
+    "bytes": 150,
+    "path": "Sys/GameFiles/GALE01/MnExtAll.usd.diff",
+    "sha256": "c729c61a65d92aeaf4ab15ca7ec5a40ead336055b0defce9c74503e2651c9b18"
+  },
+  {
+    "bytes": 185895,
+    "path": "Sys/GameFiles/GALE01/MnMaAll.dat.diff",
+    "sha256": "4f38bfa9716064fd59315c26210ec6383b62ee0d4445beb9b6cca1f09134ea75"
+  },
+  {
+    "bytes": 186319,
+    "path": "Sys/GameFiles/GALE01/MnMaAll.usd.diff",
+    "sha256": "e0e261203e013f7e51c29f808165ca36dca10296c3e613b1b225e0a6d4978263"
+  },
+  {
+    "bytes": 59031,
+    "path": "Sys/GameFiles/GALE01/MnSlMap.dat.diff",
+    "sha256": "43860c806406b85e05d312401548ef7b0da15e62d44bbd279ff2885e4ea3ec27"
+  },
+  {
+    "bytes": 58850,
+    "path": "Sys/GameFiles/GALE01/MnSlMap.usd.diff",
+    "sha256": "dcf99eeaab8f981a2aad25e341eda79bc9b417dd098fc39ff20cb328fbc1510d"
+  },
+  {
+    "bytes": 444957,
+    "path": "Sys/GameFiles/GALE01/MxDb.dat",
+    "sha256": "58e96852c9b6a1ec1fe53b5de6c307465a72684094d6dbcd16dd89f6a29b76c5"
+  },
+  {
+    "bytes": 10060,
+    "path": "Sys/GameFiles/GALE01/MxScn.dat",
+    "sha256": "7012066e3e039b8f022582d59657d8206eebf13e4c39f4a56fe3b313cc9942bb"
+  },
+  {
+    "bytes": 33387,
+    "path": "Sys/GameFiles/GALE01/SdMenu.dat.diff",
+    "sha256": "b284732a79b787129704e81c110d9ac11210bc3e8f579e27e8e38525b656fe50"
+  },
+  {
+    "bytes": 34990,
+    "path": "Sys/GameFiles/GALE01/SdMenu.usd.diff",
+    "sha256": "00a92643e41af867dd22ba159f7ec022e6aa3b7288b537b2ba00cf162f5579cb"
+  },
+  {
+    "bytes": 2669,
+    "path": "Sys/GameFiles/GALE01/SdSlChr.dat.diff",
+    "sha256": "0194bcbb4fd26df4e499edd52ea7a64743a493515b07d6114cf378c8720a9405"
+  },
+  {
+    "bytes": 2513,
+    "path": "Sys/GameFiles/GALE01/SdSlChr.usd.diff",
+    "sha256": "fde2f393c405244f9100a0522a769d4fcce9e892dd9b87b0e0c38670ef132f38"
+  },
+  {
+    "bytes": 24143,
+    "path": "Sys/GameFiles/GALE01/SlippiCSS.dat",
+    "sha256": "f864eed3f494f1a1710760973f25a7f5be4bb3dc4fc4734c2a721ca62f4916f3"
+  },
+  {
+    "bytes": 254495,
+    "path": "Sys/GameFiles/GALE01/slpCSS.dat",
+    "sha256": "3b1a3f254b37cf5ce4f56b38d237d9809d0b11e72d05320f0e56fa3abd7a1692"
+  },
+  {
+    "bytes": 480,
+    "path": "Sys/GameSettings/GAL.ini",
+    "sha256": "577d0c66f966ec38f28aaef5ed9cba4918d259ed82038b99b0ff1680c66a1fff"
+  },
+  {
+    "bytes": 145690,
+    "path": "Sys/GameSettings/GALE01r2.ini",
+    "sha256": "b30b294df5c0d92deb3129afdfbc894a48aabeb1bce0cf92cce8c4e5408a2587"
+  },
+  {
+    "bytes": 7998,
+    "path": "Sys/GameSettings/GALEXX.ini",
+    "sha256": "0bc591dd50232e85fa74d67709cd19d9ede47302fef8b97c9d414da6551879fa"
+  },
+  {
+    "bytes": 145655,
+    "path": "Sys/GameSettings/GALJ01r2.ini",
+    "sha256": "24b3ee8c33bacb2873f80e99435def5e7bcbf3ebd11856a8cb9cc42d1da66df8"
+  },
+  {
+    "bytes": 5321,
+    "path": "Sys/GameSettings/GTME01.ini",
+    "sha256": "ee1821ecb340b6128c4e9437732302411da66605a854b234f9a573b21353842e"
+  },
+  {
+    "bytes": 1777,
+    "path": "Sys/Maps/GFZE01.map",
+    "sha256": "951d2598ae5a46d3258b60f38d9c3d4b075d36077f531bcae1ce70c8f9097078"
+  },
+  {
+    "bytes": 1563,
+    "path": "Sys/Maps/GMBE8P.map",
+    "sha256": "4d9e3bdbe508b0013289100c2a6146847a4dc234aa85c49d246e1ccc6ea30a88"
+  },
+  {
+    "bytes": 14112,
+    "path": "Sys/OpenCL/TextureDecoder.cl",
+    "sha256": "7dc8036dd9425572cc79a0673af38c76100d650ef79e9c810a7d941f74b6eaf9"
+  },
+  {
+    "bytes": 4726,
+    "path": "Sys/Resources/Dolphin.png",
+    "sha256": "ebd7bc560b6a178c9bf427e4d90b206d30a20040999495ea55e8b0aeb1c470cf"
+  },
+  {
+    "bytes": 500,
+    "path": "Sys/Resources/Flag_Australia.png",
+    "sha256": "e19bb6f118d5f5950502420622c18b44db1e9608d82a5f48c49834029ac56e4e"
+  },
+  {
+    "bytes": 1067,
+    "path": "Sys/Resources/Flag_Australia@2x.png",
+    "sha256": "5f9b0b662b68a030b63c93d6b0956f87ce129326dfa367390a4a401f68a96db9"
+  },
+  {
+    "bytes": 1267,
+    "path": "Sys/Resources/Flag_Australia@4x.png",
+    "sha256": "fc3b297c4bde072950a70e367a67ffd72c1d56059a7580b320827dbcb99db357"
+  },
+  {
+    "bytes": 356,
+    "path": "Sys/Resources/Flag_Europe.png",
+    "sha256": "097b83a4e606688fd8523ce99de370d09112da0aa7ffda070f48b8963ae162c0"
+  },
+  {
+    "bytes": 549,
+    "path": "Sys/Resources/Flag_Europe@2x.png",
+    "sha256": "314258817715edf5c1f178c658932508b53a86c44e930dcd983255b0e8d0a4ba"
+  },
+  {
+    "bytes": 1044,
+    "path": "Sys/Resources/Flag_Europe@4x.png",
+    "sha256": "81f78e1a42d3ea71bf64d4fbd7adce5b99638d0b1d46ecd3cd2201340b7576df"
+  },
+  {
+    "bytes": 97,
+    "path": "Sys/Resources/Flag_France.png",
+    "sha256": "21d283e8ef273640a8b3a7a652f3d171c08ba1a25d1ecf85c7521f871334a781"
+  },
+  {
+    "bytes": 102,
+    "path": "Sys/Resources/Flag_France@2x.png",
+    "sha256": "3c0223daede3ef480002feb8a8328c641024d4a2b9f56e404239d4fdce9ca615"
+  },
+  {
+    "bytes": 120,
+    "path": "Sys/Resources/Flag_France@4x.png",
+    "sha256": "5a1ca37fa246ec997f7394628f67f7b163f1a736532e2175f4a8126e93ed4223"
+  },
+  {
+    "bytes": 93,
+    "path": "Sys/Resources/Flag_Germany.png",
+    "sha256": "968d370023d37f5574da84aafe267567fe34a36c25b6fb7a15de70658436a80b"
+  },
+  {
+    "bytes": 99,
+    "path": "Sys/Resources/Flag_Germany@2x.png",
+    "sha256": "f5276a8f6feb11f4baab1173a068e8b460dc88f8d5919bd63de209f443d9d69b"
+  },
+  {
+    "bytes": 145,
+    "path": "Sys/Resources/Flag_Germany@4x.png",
+    "sha256": "1970a6e3a368bfea943cdfdd10a4f01f744f3d95ca6901189e7e3348762b5436"
+  },
+  {
+    "bytes": 433,
+    "path": "Sys/Resources/Flag_International.png",
+    "sha256": "c88e25ad86c043fcbdaf852fb2389bb0a775dfa7d65d8f9330c8a0f27f2352f1"
+  },
+  {
+    "bytes": 667,
+    "path": "Sys/Resources/Flag_International@2x.png",
+    "sha256": "15185c6e3b0e78512d84f897dc4ff44ecbda884245296d8bd29b5fd56d538c0b"
+  },
+  {
+    "bytes": 1715,
+    "path": "Sys/Resources/Flag_International@4x.png",
+    "sha256": "7b621254d682eb643678aa3f74976f9a206d72d4b1c6e5215ce2c0ed360d02c8"
+  },
+  {
+    "bytes": 97,
+    "path": "Sys/Resources/Flag_Italy.png",
+    "sha256": "074346b378aecb4f2370e2f84d116ef88affbcc7f9107facb5946dc94ea87714"
+  },
+  {
+    "bytes": 103,
+    "path": "Sys/Resources/Flag_Italy@2x.png",
+    "sha256": "009e281ab449b74843d4ca0c2c6491ed640d9ff15d8818c25f538f92ceadad31"
+  },
+  {
+    "bytes": 120,
+    "path": "Sys/Resources/Flag_Italy@4x.png",
+    "sha256": "92813180864b5b9c47cd6b8b44fc1b7f41ad37e5b0c5607d5af0c377467b922f"
+  },
+  {
+    "bytes": 289,
+    "path": "Sys/Resources/Flag_Japan.png",
+    "sha256": "d7188b4e11af7260e64364a25d5fabb1c8c0647661ad0e0e2549b7ae3e03455d"
+  },
+  {
+    "bytes": 389,
+    "path": "Sys/Resources/Flag_Japan@2x.png",
+    "sha256": "18f90c4fcd08438f657a5329bcc0f5616a07cdac368f47becd7c09d0d5d5449c"
+  },
+  {
+    "bytes": 589,
+    "path": "Sys/Resources/Flag_Japan@4x.png",
+    "sha256": "273e5bbafc08a379cea23e909eddc179d459662e38a6f630bc2953a381e8df7d"
+  },
+  {
+    "bytes": 530,
+    "path": "Sys/Resources/Flag_Korea.png",
+    "sha256": "d62ab7bb62a5b99c57c54fd0bb5b0d541eb077f78295a12121f49d6fdfd6df9c"
+  },
+  {
+    "bytes": 859,
+    "path": "Sys/Resources/Flag_Korea@2x.png",
+    "sha256": "0390b919a0b8f1f643b6de4d991c831c752b746c77c9c2b058ea96887d88efdc"
+  },
+  {
+    "bytes": 1882,
+    "path": "Sys/Resources/Flag_Korea@4x.png",
+    "sha256": "7b5b4b1d84991e56e87614cf63e3dfb95a09bbdb18a45e972902bb1b37844363"
+  },
+  {
+    "bytes": 99,
+    "path": "Sys/Resources/Flag_Netherlands.png",
+    "sha256": "d19d63959be24a168c50ed587deac450be3fc4f826ce40e8cb63fe61e926e24d"
+  },
+  {
+    "bytes": 101,
+    "path": "Sys/Resources/Flag_Netherlands@2x.png",
+    "sha256": "84d92fd3e4c64e882a9c8b790669d474e790cceba4d7c5d054e6ab3359134b74"
+  },
+  {
+    "bytes": 117,
+    "path": "Sys/Resources/Flag_Netherlands@4x.png",
+    "sha256": "35adfa373d95f514e3087c4a82f2b216c92555f145e4939175e264cbf1d5ed5d"
+  },
+  {
+    "bytes": 99,
+    "path": "Sys/Resources/Flag_Russia.png",
+    "sha256": "03da97b0b03044d5ec562d74c238b21fcfe587f46062c400f21ac7dbb8ff5129"
+  },
+  {
+    "bytes": 99,
+    "path": "Sys/Resources/Flag_Russia@2x.png",
+    "sha256": "200d26de3ffb6bc70ba18c288d064df0fbfc203911788b81f33b8ac9b919a380"
+  },
+  {
+    "bytes": 117,
+    "path": "Sys/Resources/Flag_Russia@4x.png",
+    "sha256": "16be7e8017cd640200750606c75ed86589a94f107a1742ee385f1fab5769b0a2"
+  },
+  {
+    "bytes": 352,
+    "path": "Sys/Resources/Flag_Spain.png",
+    "sha256": "9e98a8924817d5614bf947bb531eede5e07aec68d7dab1ae5f2aaa65519815bc"
+  },
+  {
+    "bytes": 785,
+    "path": "Sys/Resources/Flag_Spain@2x.png",
+    "sha256": "abce1be3bd22968c600e95ce67c3ee725e2bc5f7f3e8d0c53800fb1459141126"
+  },
+  {
+    "bytes": 1933,
+    "path": "Sys/Resources/Flag_Spain@4x.png",
+    "sha256": "94896ab95932e81550639674e3294c711402009c59f122988a25f570e41e4979"
+  },
+  {
+    "bytes": 282,
+    "path": "Sys/Resources/Flag_Taiwan.png",
+    "sha256": "d1b43e4462a4eae87775abc092a4706f7def9b269505f8eafd5d93ef586d89d8"
+  },
+  {
+    "bytes": 367,
+    "path": "Sys/Resources/Flag_Taiwan@2x.png",
+    "sha256": "2bf116692744d904cf496e7ce452b80f39d03129349bc79ab2c677a178a1bbd3"
+  },
+  {
+    "bytes": 697,
+    "path": "Sys/Resources/Flag_Taiwan@4x.png",
+    "sha256": "670b54b7d2ed164ab74ae9e86d3ff9b20537b1fcc1a5eb1332f2a8ae94028d10"
+  },
+  {
+    "bytes": 486,
+    "path": "Sys/Resources/Flag_USA.png",
+    "sha256": "5bc6b5d33ca759c954f987c5d37606b5279232f3e91f0b6ac0fb73ae9ffd03a2"
+  },
+  {
+    "bytes": 878,
+    "path": "Sys/Resources/Flag_USA@2x.png",
+    "sha256": "d88d9f0603468c24d5df09e94377f72ddb158e76025c87ca69042304a1957f99"
+  },
+  {
+    "bytes": 1909,
+    "path": "Sys/Resources/Flag_USA@4x.png",
+    "sha256": "6e74aefeaa801d121631458e4a662b6f4553c0fdd702c3dd07144d07101a82b9"
+  },
+  {
+    "bytes": 129,
+    "path": "Sys/Resources/Flag_Unknown.png",
+    "sha256": "a856f302c666ec564cfa166d0b88509903f6e99bea767fb5e77413bcebcc29f2"
+  },
+  {
+    "bytes": 205,
+    "path": "Sys/Resources/Flag_Unknown@2x.png",
+    "sha256": "cb07489870743ec84d8099589ac630531ee70c35fd288b1c8b139835e1206acc"
+  },
+  {
+    "bytes": 313,
+    "path": "Sys/Resources/Flag_Unknown@4x.png",
+    "sha256": "8ffab910843599b0c07abfc3607661f2020dd825d0e2afb9696ab0c88453faa1"
+  },
+  {
+    "bytes": 146,
+    "path": "Sys/Resources/Platform_File.png",
+    "sha256": "91fce2801245e2eabd46a1d09ad6461af8539c71b11fd4544ab94fc7337760f0"
+  },
+  {
+    "bytes": 211,
+    "path": "Sys/Resources/Platform_File@2x.png",
+    "sha256": "4a7d61045b25034213e23b8f819e9780d76afb942c70ed35efa09611ba46df9e"
+  },
+  {
+    "bytes": 431,
+    "path": "Sys/Resources/Platform_File@4x.png",
+    "sha256": "641db9849e58aa31772beb27b26d9a76e16c8017e257044e6cde1ffc8b3a88b0"
+  },
+  {
+    "bytes": 1600,
+    "path": "Sys/Resources/Platform_Gamecube.png",
+    "sha256": "541b51d5c3b9d6263a58a24b242c2b250dacc351615232b90909cd48959abe45"
+  },
+  {
+    "bytes": 4354,
+    "path": "Sys/Resources/Platform_Gamecube@2x.png",
+    "sha256": "b84e98a3a11e84ed17e74fb3aa57ebd1ead381f731cbab1e0decd832d186fa00"
+  },
+  {
+    "bytes": 11674,
+    "path": "Sys/Resources/Platform_Gamecube@4x.png",
+    "sha256": "6937817054caf614205295aafae882951864d7c8164916d3ce49472633ac97f0"
+  },
+  {
+    "bytes": 507,
+    "path": "Sys/Resources/Platform_Wad.png",
+    "sha256": "f121451fe907455a8b8bd746cc65af8599b68df52293641706455c6703f5d6fb"
+  },
+  {
+    "bytes": 912,
+    "path": "Sys/Resources/Platform_Wad@2x.png",
+    "sha256": "4b46eee383b910bc11a15aca92780af764b0f5920f55cc2dbf86303eb3fb7bff"
+  },
+  {
+    "bytes": 1460,
+    "path": "Sys/Resources/Platform_Wad@4x.png",
+    "sha256": "7ae1d573f045001182e17ea51f0f951f51c148dbd4261107e1acf7454f0b1741"
+  },
+  {
+    "bytes": 353,
+    "path": "Sys/Resources/Platform_Wii.png",
+    "sha256": "381da5908cc801b669c2fe17b7cfa460620ab69b3b8a94dbe61cb3d6d0da81fb"
+  },
+  {
+    "bytes": 617,
+    "path": "Sys/Resources/Platform_Wii@2x.png",
+    "sha256": "18a928aac0302df957c633a4f52666221499c40791099bc2bc5d20be99c8b487"
+  },
+  {
+    "bytes": 1241,
+    "path": "Sys/Resources/Platform_Wii@4x.png",
+    "sha256": "7d3c84a5411cc6c9b7bd06893c656e656460826ea6fb6ac5489c8486475be723"
+  },
+  {
+    "bytes": 12861,
+    "path": "Sys/Resources/dolphin_logo.png",
+    "sha256": "fe117264ce6570bf575066fe6fa377f5ba18c5726fe44eb949bfb02e8adaeaaf"
+  },
+  {
+    "bytes": 26210,
+    "path": "Sys/Resources/dolphin_logo@2x.png",
+    "sha256": "ebdded5a67b8df485bf1b68ba9912f3c0f552fa552523af8c228fcf3c314751e"
+  },
+  {
+    "bytes": 534,
+    "path": "Sys/Resources/isoproperties_disc.png",
+    "sha256": "09fcce070ba2c46bd5dfb1af5bce46df94454bfe071be7f6fdf0981d77065cb7"
+  },
+  {
+    "bytes": 214,
+    "path": "Sys/Resources/isoproperties_file.png",
+    "sha256": "34d50321a6e094df1157045205f4b6a4b0054870af2fad09ad44cb8ea0fe4278"
+  },
+  {
+    "bytes": 487,
+    "path": "Sys/Resources/isoproperties_folder.png",
+    "sha256": "d64e3bcdb74f157a6e4bf1bc91563b5e51250fd0ba873f42f6a0d294ffe17db1"
+  },
+  {
+    "bytes": 215,
+    "path": "Sys/Resources/nobanner.png",
+    "sha256": "030b47b582facd0fce7a34717329b2a1d6e95d5759414fb8575d0decf910a51e"
+  },
+  {
+    "bytes": 308,
+    "path": "Sys/Resources/nobanner@2x.png",
+    "sha256": "ff18edc8c168c70651b7c392c9b680c3540ced00f9736b3ad542ae958dc55819"
+  },
+  {
+    "bytes": 140,
+    "path": "Sys/Resources/rating0.png",
+    "sha256": "4306a5b01d6604a57186bda501e135f5fd1afd1f39be50f1da55684b346ef5db"
+  },
+  {
+    "bytes": 315,
+    "path": "Sys/Resources/rating1.png",
+    "sha256": "3ca95cbe1848ad1455d4c1f0c112c9f7e6037e798b9cf23fcd9eb04425359fa2"
+  },
+  {
+    "bytes": 321,
+    "path": "Sys/Resources/rating2.png",
+    "sha256": "a5ac460175f277002ff77aa52631303348f008b48459ae366ac6941f78986d1e"
+  },
+  {
+    "bytes": 323,
+    "path": "Sys/Resources/rating3.png",
+    "sha256": "b8637f7e001501358c0bbecbfbe806099e0ecd3fc24388302b3b1b38e3c26a4d"
+  },
+  {
+    "bytes": 316,
+    "path": "Sys/Resources/rating4.png",
+    "sha256": "2b1894d3a928e0b942978f39d7bb48c29d53ac716d730a337115088b6f582d16"
+  },
+  {
+    "bytes": 238,
+    "path": "Sys/Resources/rating5.png",
+    "sha256": "0705d88213647628e8511454346d03b6a671c59b962bec2ad2bba0493f8c9362"
+  },
+  {
+    "bytes": 176,
+    "path": "Sys/Resources/toolbar_add_breakpoint.png",
+    "sha256": "2cd26021cc84ca4316c39ef00134fa7326911d25edb2d5db4652ed16a12ca7a0"
+  },
+  {
+    "bytes": 176,
+    "path": "Sys/Resources/toolbar_add_memorycheck.png",
+    "sha256": "2cd26021cc84ca4316c39ef00134fa7326911d25edb2d5db4652ed16a12ca7a0"
+  },
+  {
+    "bytes": 176,
+    "path": "Sys/Resources/toolbar_debugger_delete.png",
+    "sha256": "2cd26021cc84ca4316c39ef00134fa7326911d25edb2d5db4652ed16a12ca7a0"
+  },
+  {
+    "bytes": 234,
+    "path": "Sys/Resources/toolbar_debugger_goto_pc.png",
+    "sha256": "b0a0511f1287fb42fd959536af0a86b64ec3ac39969ea4934614bdd167831ccd"
+  },
+  {
+    "bytes": 234,
+    "path": "Sys/Resources/toolbar_debugger_set_pc.png",
+    "sha256": "b0a0511f1287fb42fd959536af0a86b64ec3ac39969ea4934614bdd167831ccd"
+  },
+  {
+    "bytes": 234,
+    "path": "Sys/Resources/toolbar_debugger_skip.png",
+    "sha256": "b0a0511f1287fb42fd959536af0a86b64ec3ac39969ea4934614bdd167831ccd"
+  },
+  {
+    "bytes": 234,
+    "path": "Sys/Resources/toolbar_debugger_step.png",
+    "sha256": "b0a0511f1287fb42fd959536af0a86b64ec3ac39969ea4934614bdd167831ccd"
+  },
+  {
+    "bytes": 234,
+    "path": "Sys/Resources/toolbar_debugger_step_out.png",
+    "sha256": "b0a0511f1287fb42fd959536af0a86b64ec3ac39969ea4934614bdd167831ccd"
+  },
+  {
+    "bytes": 234,
+    "path": "Sys/Resources/toolbar_debugger_step_over.png",
+    "sha256": "b0a0511f1287fb42fd959536af0a86b64ec3ac39969ea4934614bdd167831ccd"
+  },
+  {
+    "bytes": 943,
+    "path": "Sys/Shaders/Postprocessing/16bit.glsl",
+    "sha256": "646c2894400b854efe16a3cede4fba13528efac57108190538fd78e3e470c188"
+  },
+  {
+    "bytes": 1406,
+    "path": "Sys/Shaders/Postprocessing/32bit.glsl",
+    "sha256": "2ebd36db2f9f2eb487ca70cae75ebdc6bcf3cc21e1940e8121e2584f4e79a9e4"
+  },
+  {
+    "bytes": 2829,
+    "path": "Sys/Shaders/Postprocessing/Barrel.glsl",
+    "sha256": "5d3518c73e8d3f415e87b7ef8cfa57ded4e69edcab1cd6db7e8bad41c91d3973"
+  },
+  {
+    "bytes": 1024,
+    "path": "Sys/Shaders/Postprocessing/DOF.glsl",
+    "sha256": "7841e5769ef550f8c1e52b450bf6b533a0843d477a306f0ae0da27c5bf075be2"
+  },
+  {
+    "bytes": 310,
+    "path": "Sys/Shaders/Postprocessing/Depth.glsl",
+    "sha256": "ece5dc8904c10066a09c71f3ced7c3faa9ac05d0e8bfb2ec6732cf7f06f399d4"
+  },
+  {
+    "bytes": 65653,
+    "path": "Sys/Shaders/Postprocessing/DolphinFX.glsl",
+    "sha256": "91b6ea9a0f0b0fcf94aae1b5dda547a4f0f3376eb4278c32cc55c5f961ad5ca5"
+  },
+  {
+    "bytes": 2373,
+    "path": "Sys/Shaders/Postprocessing/FXAA.glsl",
+    "sha256": "f8b8ef2eda3c3a280d3d3a495930319e990c3012d564611394814118ee2c1714"
+  },
+  {
+    "bytes": 57,
+    "path": "Sys/Shaders/Postprocessing/HQResampling.glsl",
+    "sha256": "3439bca10984c14e73acec879ed520dd5cec7407be383b24a0e13bcf177dae5c"
+  },
+  {
+    "bytes": 58910,
+    "path": "Sys/Shaders/Postprocessing/IshiirukaFX-Light.glsl",
+    "sha256": "d02133757fe702d2e2b13f8921267e032a0907dcb523f03ddefa815973f956ac"
+  },
+  {
+    "bytes": 58874,
+    "path": "Sys/Shaders/Postprocessing/IshiirukaFX.glsl",
+    "sha256": "0888203fb404144eee4ad9b6c9759c769c75db82055c7c762169b0396ee85d30"
+  },
+  {
+    "bytes": 5476,
+    "path": "Sys/Shaders/Postprocessing/MATSODOF.glsl",
+    "sha256": "7cc55a0811e4a88d63e24c17d025fde733751e7f7f8a1735b3dd16623d053b4f"
+  },
+  {
+    "bytes": 10853,
+    "path": "Sys/Shaders/Postprocessing/SSAO.glsl",
+    "sha256": "7dfc42cde13beb4b797f23fdfb915504dae928d19639b6d0c13271284cbe5bda"
+  },
+  {
+    "bytes": 9086,
+    "path": "Sys/Shaders/Postprocessing/SSAO2.glsl",
+    "sha256": "2941c917c5efc20da6a5c4589dadaa361e7bcb99638b38d927e2c0dd713438ac"
+  },
+  {
+    "bytes": 7330,
+    "path": "Sys/Shaders/Postprocessing/SSGI.glsl",
+    "sha256": "04f5e9a6b128d52da633b24e62c6021925a81a1aa4c6a8c7241a8a953baa8467"
+  },
+  {
+    "bytes": 11025,
+    "path": "Sys/Shaders/Postprocessing/SuperDepth3D.glsl",
+    "sha256": "3b3fa0105d1debf4c6641aab247fb648ca9399c5af76819aed7495f9e8a4b23c"
+  },
+  {
+    "bytes": 227,
+    "path": "Sys/Shaders/Postprocessing/acidmetal.glsl",
+    "sha256": "e9400469ebbd1419e20c79880671e42e086d42d5c7214fb3094cb1625e9372c5"
+  },
+  {
+    "bytes": 91,
+    "path": "Sys/Shaders/Postprocessing/acidtrip.glsl",
+    "sha256": "d4f29b6a32b3c4da2ba610dd5e30a02b7a334c893626ad37dce8834c6727f6c4"
+  },
+  {
+    "bytes": 131,
+    "path": "Sys/Shaders/Postprocessing/acidtrip2.glsl",
+    "sha256": "dd97f6085ce625a97b2d6e9883f1daf38825521b8d7d8285716d3a2d31f62365"
+  },
+  {
+    "bytes": 13203,
+    "path": "Sys/Shaders/Postprocessing/adaptive-sharpen.glsl",
+    "sha256": "c03bb5543199668a82010ab97c8534d2408ca8336b14e0d621f117b20b88e880"
+  },
+  {
+    "bytes": 421,
+    "path": "Sys/Shaders/Postprocessing/auto_toon.glsl",
+    "sha256": "741635cf4e1334691783a5c7e62ec3ad0d346e69dbb67bb6c197031af489fa84"
+  },
+  {
+    "bytes": 1658,
+    "path": "Sys/Shaders/Postprocessing/auto_toon2.glsl",
+    "sha256": "4de5cde868960913b16f698894da431da2cf6ffe059f94cc64f06b0e62f68100"
+  },
+  {
+    "bytes": 1587,
+    "path": "Sys/Shaders/Postprocessing/bad_bloom.glsl",
+    "sha256": "9e53b43b07020677a8de17824b6b438f23e68e0a7c36113b05304b6ffe788873"
+  },
+  {
+    "bytes": 43,
+    "path": "Sys/Shaders/Postprocessing/brighten.glsl",
+    "sha256": "a96cff0566d65304a9e4763e5c338c292390f79eecfb0faea26a32f7c8b0253e"
+  },
+  {
+    "bytes": 211,
+    "path": "Sys/Shaders/Postprocessing/chrismas.glsl",
+    "sha256": "ce20d37d26ce00fb022d9078bd0ccf6557abf5fdec56429f9a282ad475a41a67"
+  },
+  {
+    "bytes": 251,
+    "path": "Sys/Shaders/Postprocessing/cool1.glsl",
+    "sha256": "9dad097360912969ca8a80ba649b9c13929c06fe12e71d6006d89861419e3eb0"
+  },
+  {
+    "bytes": 702,
+    "path": "Sys/Shaders/Postprocessing/darkerbrighter.glsl",
+    "sha256": "962d95eb68f18a9c214d9b04c6b28af3390bd69633d37a3d96d30d2d54babe99"
+  },
+  {
+    "bytes": 423,
+    "path": "Sys/Shaders/Postprocessing/emboss.glsl",
+    "sha256": "4713e09fc8fa1f930ddea2e8ac93a5a65029f2cad664bca51fb144bfd6a3b619"
+  },
+  {
+    "bytes": 441,
+    "path": "Sys/Shaders/Postprocessing/fire.glsl",
+    "sha256": "ccbbecedd7fedab142906f87d5c570136585c0a13f45a07d437324ec2c4ab4be"
+  },
+  {
+    "bytes": 246,
+    "path": "Sys/Shaders/Postprocessing/fire2.glsl",
+    "sha256": "a0adeb0e8455a4d33895daea88393cb92f8b67563747e72e1f15fa13934970c0"
+  },
+  {
+    "bytes": 304,
+    "path": "Sys/Shaders/Postprocessing/firewater.glsl",
+    "sha256": "acab341f574f484141d55e0ce905c60e1234e89ad430dec36ddf0ed2aa8146cc"
+  },
+  {
+    "bytes": 121,
+    "path": "Sys/Shaders/Postprocessing/grayscale.glsl",
+    "sha256": "4545e8bbab8df0832d6e8e0c56668995c888f62275fc8f66182a36b0cd6db866"
+  },
+  {
+    "bytes": 204,
+    "path": "Sys/Shaders/Postprocessing/grayscale2.glsl",
+    "sha256": "8a1629a2c50105fae34b7aa7611d19742e2bcd4eae71ec64bf9612c753a01466"
+  },
+  {
+    "bytes": 67,
+    "path": "Sys/Shaders/Postprocessing/invert.glsl",
+    "sha256": "012d0407b3d5cc05e496c471175819ef9ec4cc5f25788812f17d0621a2f639db"
+  },
+  {
+    "bytes": 67,
+    "path": "Sys/Shaders/Postprocessing/invert_blue.glsl",
+    "sha256": "c6a076a64df69ea9d733f87cd3482b3bc627b7b1bf92f856e46dbeeb6c9ea4e5"
+  },
+  {
+    "bytes": 100,
+    "path": "Sys/Shaders/Postprocessing/invertedoutline.glsl",
+    "sha256": "1c278391b580c62aed0d91e7815174ff9398c80489261482c75f9eaa0b736c2c"
+  },
+  {
+    "bytes": 563,
+    "path": "Sys/Shaders/Postprocessing/mad_world.glsl",
+    "sha256": "7a54a88a0df4be627ee0a91cd4a866960df54b44c21411a42ddb52b647039a77"
+  },
+  {
+    "bytes": 768,
+    "path": "Sys/Shaders/Postprocessing/motionblur.glsl",
+    "sha256": "bb85b624035a88fa525ab183c420b7e282fe126a8abf264c911ee732d9fd9516"
+  },
+  {
+    "bytes": 145,
+    "path": "Sys/Shaders/Postprocessing/nightvision.glsl",
+    "sha256": "2f3d6bdcf2f4a72518df83b6b8558d93b12da796cebb75f84f8e84d01e0c67bf"
+  },
+  {
+    "bytes": 1929,
+    "path": "Sys/Shaders/Postprocessing/nightvision2.glsl",
+    "sha256": "bc716eb21ff1d16996fc0e710c306112a535db8240e70dda08301838c54d88e1"
+  },
+  {
+    "bytes": 2343,
+    "path": "Sys/Shaders/Postprocessing/nightvision2scanlines.glsl",
+    "sha256": "5c72f78be8471384e3e91e64c4ae747716adbe2e1f419aed1141ca58471cff73"
+  },
+  {
+    "bytes": 242,
+    "path": "Sys/Shaders/Postprocessing/posterize.glsl",
+    "sha256": "d9b89a74f642d121f45b8b7f135459cf73d00f3cb2d7be9c19fa5e157aa940e5"
+  },
+  {
+    "bytes": 225,
+    "path": "Sys/Shaders/Postprocessing/posterize2.glsl",
+    "sha256": "96fa9a80ca971119896102a83d746d9ed21d14caaa5ac84a53bc22bd741a0712"
+  },
+  {
+    "bytes": 1142,
+    "path": "Sys/Shaders/Postprocessing/primarycolors.glsl",
+    "sha256": "9ade71ee40d0101ab22537ca1c85c5138e7e2f57dbe3e6329ff78e3a160c6535"
+  },
+  {
+    "bytes": 339,
+    "path": "Sys/Shaders/Postprocessing/sepia.glsl",
+    "sha256": "5064fa46edc2debd10fddd4407713828132de78967eceb0ece927dfd2539fbfe"
+  },
+  {
+    "bytes": 527,
+    "path": "Sys/Shaders/Postprocessing/sketchy.glsl",
+    "sha256": "447e1dd6e4bbb0cd2ed03b0cf856a7c16df7a729811aad5d770768ae4e55d090"
+  },
+  {
+    "bytes": 236,
+    "path": "Sys/Shaders/Postprocessing/spookey1.glsl",
+    "sha256": "6e13ff31be25123ba645d79e5f18239bb89f92a299d7813537fd16954ed416b8"
+  },
+  {
+    "bytes": 281,
+    "path": "Sys/Shaders/Postprocessing/spookey2.glsl",
+    "sha256": "e478b8697fa0bfe4f34c48af03669a7d6380204797874c9c648c4779b395e453"
+  },
+  {
+    "bytes": 95,
+    "path": "Sys/Shaders/Postprocessing/sunset.glsl",
+    "sha256": "f49fd8ef8332bbeb9535db990c7e148ba51e946edb490c216e7fb8ce8da75c56"
+  },
+  {
+    "bytes": 43,
+    "path": "Sys/Shaders/Postprocessing/swap_RGB_BGR.glsl",
+    "sha256": "c4c6f77971aac4f4573634dd07b478fd8b57515a277eccd8da7420bbdd9e9f77"
+  },
+  {
+    "bytes": 43,
+    "path": "Sys/Shaders/Postprocessing/swap_RGB_BRG.glsl",
+    "sha256": "54479dce43035160fee947b5981baa0e4b1b2ff39e1561073b1135a0b30ab2ca"
+  },
+  {
+    "bytes": 43,
+    "path": "Sys/Shaders/Postprocessing/swap_RGB_GBR.glsl",
+    "sha256": "69ce29a0fc02605b7db0786be9a0bdb930cc0ddbaa319411d697333da7afa938"
+  },
+  {
+    "bytes": 43,
+    "path": "Sys/Shaders/Postprocessing/swap_RGB_GRB.glsl",
+    "sha256": "167edd8351810570c125fc9c05b6f44a773b720dd99ca55e662f2814e4664126"
+  },
+  {
+    "bytes": 43,
+    "path": "Sys/Shaders/Postprocessing/swap_RGB_RBG.glsl",
+    "sha256": "56e336d24fdefa01e85014bd2f3b88bf39823da557f5a463e591f2c1b1b26521"
+  },
+  {
+    "bytes": 286,
+    "path": "Sys/Shaders/Postprocessing/toxic.glsl",
+    "sha256": "5c743ae12a6cbc963cb02857bb912eb695b7797fb9d51ae735d8efa7ce8a5664"
+  },
+  {
+    "bytes": 663,
+    "path": "Sys/Shaders/README.txt",
+    "sha256": "9a9c3468c063a175c98d358fcb40c89c3e6f266d031a88de361a1ae3fda2d2df"
+  },
+  {
+    "bytes": 681,
+    "path": "Sys/Shaders/Scaling/RG_SSAA.glsl",
+    "sha256": "ff1c249bebb86c42384d63bab5fd9a781906b9ab833718b813a02de252d3d1cd"
+  },
+  {
+    "bytes": 3662,
+    "path": "Sys/Shaders/Scaling/aa-shader-4.o.glsl",
+    "sha256": "3818b7568003e2c02fbe636d1b48a6bebe601ab30778d634346ced0aae781dc6"
+  },
+  {
+    "bytes": 9722,
+    "path": "Sys/Shaders/Scaling/crt-hyllian.glsl",
+    "sha256": "4064e48fedca4280542e0551d5301caa0b1230c810b7c4c36a148ee7196c8359"
+  },
+  {
+    "bytes": 15364,
+    "path": "Sys/Shaders/Scaling/jinc2-multi-res.glsl",
+    "sha256": "c436c1800c82a73d436c59371919c59a490acc96bd7fb214eb98a715b7294b0e"
+  },
+  {
+    "bytes": 6610,
+    "path": "Sys/Shaders/Scaling/jinc2-sharper.glsl",
+    "sha256": "73685228c20ab81cf356c22afd4fa38a030fe9686576b9066c44b29ee8b3fad3"
+  },
+  {
+    "bytes": 1075,
+    "path": "Sys/Shaders/Scaling/natural-vision.glsl",
+    "sha256": "a8dda399c05acc240d8f4c4171e6f5787207e11b5149a37e34ad542874068d51"
+  },
+  {
+    "bytes": 168,
+    "path": "Sys/Shaders/Scaling/nearest-neighbor.glsl",
+    "sha256": "6b105be4a7144de799f177f86ec66893c857ee1896241be5b55c5fa502a8d5ba"
+  },
+  {
+    "bytes": 13782,
+    "path": "Sys/Shaders/Scaling/nedi.glsl",
+    "sha256": "9beddf8383f612f95ff0a09375e1cb367d2eb1e94820aa190f78da7657dd2aa5"
+  },
+  {
+    "bytes": 38,
+    "path": "Sys/Shaders/Scaling/passthrough.glsl",
+    "sha256": "ea100de65d7e612f45a95ae399af3f63af18eee5b94dba0f892e24de55d2716a"
+  },
+  {
+    "bytes": 9525,
+    "path": "Sys/Shaders/Scaling/reverse-aa.glsl",
+    "sha256": "e9f32dc2b018ff995b5e1aa5ace587c52c24959f11bab1ce8ccafaa47f422df7"
+  },
+  {
+    "bytes": 24320,
+    "path": "Sys/Shaders/Scaling/super-xbr-super-res.glsl",
+    "sha256": "f622a62d8b53f73b5723dc59d25833818fecbee2bac71f82a543784b82e5cf77"
+  },
+  {
+    "bytes": 20050,
+    "path": "Sys/Shaders/Scaling/super-xbr.glsl",
+    "sha256": "e1e1b8eeb3a57c21b2873b892657f1ad1f1c0ef1a5ab3d08375a96ebc4de77ff"
+  },
+  {
+    "bytes": 14087,
+    "path": "Sys/Shaders/Scaling/xbr-lv2.glsl",
+    "sha256": "9f2d15b7a4f147e3bfe99bf20aaa9f215606b0ab4e5f518591bb2f09f48c5ed5"
+  },
+  {
+    "bytes": 543,
+    "path": "Sys/Shaders/Stereoscopy/Anaglyph/dubois-LCD-Amber-Blue.glsl",
+    "sha256": "393f6895b73f3d62140d56cc36d5405b8018602a032a4ee55793bb74a7abfd10"
+  },
+  {
+    "bytes": 545,
+    "path": "Sys/Shaders/Stereoscopy/Anaglyph/dubois-LCD-Green-Magenta.glsl",
+    "sha256": "192064347fd0d6fcfa74a7c64b70f699c23961618374e9c4163c1f83cda0c6dc"
+  },
+  {
+    "bytes": 371,
+    "path": "Sys/Shaders/Stereoscopy/Anaglyph/dubois.glsl",
+    "sha256": "338f10c93d68e9cabdbbc711c7b4480adc4cdf428a71a6a75b042511329b32a3"
+  },
+  {
+    "bytes": 163,
+    "path": "Sys/Shaders/Stereoscopy/Anaglyph/fullcolor.glsl",
+    "sha256": "9a8d4624f3a131db4b8295218a12622746edf89fb66db7c4ed50ed8c96e97a69"
+  },
+  {
+    "bytes": 241,
+    "path": "Sys/Shaders/Stereoscopy/Anaglyph/grayscale.glsl",
+    "sha256": "1d20603063e1234716916292dc00886c1b06cc853142e791bea0eef11fee35b0"
+  },
+  {
+    "bytes": 332,
+    "path": "Sys/Shaders/Stereoscopy/Anaglyph/grayscale2.glsl",
+    "sha256": "c52f5444026481a90e811572ca41d2d8b3c5e2d4dc74ea330c44f91f50d694c4"
+  },
+  {
+    "bytes": 263,
+    "path": "Sys/Shaders/Stereoscopy/Side-by-side.glsl",
+    "sha256": "35fb8318e356f64241ef180c285bfaba4f5deffab009fb05962071683a7b4c78"
+  },
+  {
+    "bytes": 433,
+    "path": "Sys/Shaders/Stereoscopy/Top-and-bottom.glsl",
+    "sha256": "556cc91329fe2a6f491555941f85e151aa16574238ac102449e055a9638d4879"
+  },
+  {
+    "bytes": 176,
+    "path": "Sys/Shaders/Stereoscopy/interlaced.glsl",
+    "sha256": "90f944cbd64f0551383ce493aea97ad4183a859dc57606035289a1df1c6f2e02"
+  },
+  {
+    "bytes": 1914,
+    "path": "Sys/Slippi/InjectionLists/list_console_PAL.json",
+    "sha256": "573add890463d3719c197f222805f11c2e9d7110fc076ca4a0ecabba66bc5aea"
+  },
+  {
+    "bytes": 723,
+    "path": "Sys/Slippi/InjectionLists/list_console_UCF.json",
+    "sha256": "7c3ba31a12ee5dabfceac996a1cdef4a4fd070bd59a3096625528ba4ba8a824c"
+  },
+  {
+    "bytes": 1687,
+    "path": "Sys/Slippi/InjectionLists/list_console_UCF_084.json",
+    "sha256": "9defe647d99cf3338ef304febbd8bf5323d8a2619ddbb5d2b0503bd63d7bf66b"
+  },
+  {
+    "bytes": 1560,
+    "path": "Sys/Slippi/InjectionLists/list_console_UCF_084_stealth.json",
+    "sha256": "252cbb21846ec8d497d7d8034bfb6f009fc3c925950b05f08e2e325c239fa64d"
+  },
+  {
+    "bytes": 557,
+    "path": "Sys/Slippi/InjectionLists/list_console_UCF_stealth.json",
+    "sha256": "0afce04ea1ced087a021ed3b152e03527c4dbb089fe044230a7ac04d52a3e82b"
+  },
+  {
+    "bytes": 9076,
+    "path": "Sys/Slippi/InjectionLists/list_console_core.json",
+    "sha256": "f13ca1a3079e9329c58fee1ad94ebc01c0ec551168b924fe420268d5c3a07431"
+  },
+  {
+    "bytes": 201,
+    "path": "Sys/Slippi/InjectionLists/list_console_crash_output.json",
+    "sha256": "5a640b5fa55ca3d9457e321ae0cd61338d08d6a2c3dc07a452d97fca1a59ac95"
+  },
+  {
+    "bytes": 1402,
+    "path": "Sys/Slippi/InjectionLists/list_console_gameplay_both.json",
+    "sha256": "2d6609276027e63fd41293841530fa81270df100195fbdbafb6876a171cdd84f"
+  },
+  {
+    "bytes": 805,
+    "path": "Sys/Slippi/InjectionLists/list_console_gameplay_lgl.json",
+    "sha256": "ff891f9096e5a9c3498a3783d476777bc69b29fa53fe63c302d39278e0852418"
+  },
+  {
+    "bytes": 259,
+    "path": "Sys/Slippi/InjectionLists/list_console_gameplay_wobbling-old1.json",
+    "sha256": "b0bffb14313104654cec80bc26c27e05549c461e9e46ea1241c42f5217a0e2a1"
+  },
+  {
+    "bytes": 616,
+    "path": "Sys/Slippi/InjectionLists/list_console_gameplay_wobbling.json",
+    "sha256": "cdf94e32eed6537785be3c7124870b8a71db20622855b933634cfafcd4e0a1a6"
+  },
+  {
+    "bytes": 415,
+    "path": "Sys/Slippi/InjectionLists/list_console_lag_pd.json",
+    "sha256": "0cc8f0ef0eb5790e32a3cc0681abd3e24b8bf92031c1c9404eb1ee1bdb21f1a9"
+  },
+  {
+    "bytes": 1158,
+    "path": "Sys/Slippi/InjectionLists/list_console_lag_pdhalfvb.json",
+    "sha256": "0af160f8698424d569a9a7d96fb09016d0124ebb8e1235948a05779be5efcc5e"
+  },
+  {
+    "bytes": 3267,
+    "path": "Sys/Slippi/InjectionLists/list_console_mods_friendlies.json",
+    "sha256": "9e4063d746dc413ba471366f1e32766cf53bd96630a19df27b034b0f33b5b463"
+  },
+  {
+    "bytes": 1296,
+    "path": "Sys/Slippi/InjectionLists/list_console_mods_stealth.json",
+    "sha256": "2ee941bb3b9a3268e2eb1798bfcdd56a71f0870b22506c2bf814735ddd8d3787"
+  },
+  {
+    "bytes": 2491,
+    "path": "Sys/Slippi/InjectionLists/list_console_mods_tournament.json",
+    "sha256": "ff103f2ebd1a0bf55ec72905966738148d183047e47261f1c32ffd1b6ccbdc5e"
+  },
+  {
+    "bytes": 393,
+    "path": "Sys/Slippi/InjectionLists/list_console_safety.json",
+    "sha256": "cb324df9597c75a11de6f075285f4bdf6535da996f47ac333e25d5ae520c7ee2"
+  },
+  {
+    "bytes": 2827,
+    "path": "Sys/Slippi/InjectionLists/list_console_screen_wide.json",
+    "sha256": "7514f6f06e6a83e5e54a269bd5c94821c876c1cb195b1e6b0949ac5750be0d7b"
+  },
+  {
+    "bytes": 3055,
+    "path": "Sys/Slippi/InjectionLists/list_console_screen_wide_shutters.json",
+    "sha256": "61b317e02d6e8747144cd26af0a7e78f265b1b25b7235968d69d914f383f14fd"
+  },
+  {
+    "bytes": 1079,
+    "path": "Sys/Slippi/InjectionLists/list_console_stages_all.json",
+    "sha256": "64e74acb022d824329c83dadd66bb75ea054adb8aa27505cc27297e1c8507f0a"
+  },
+  {
+    "bytes": 198,
+    "path": "Sys/Slippi/InjectionLists/list_console_stages_stadium-old1.json",
+    "sha256": "73f33a0d8faddf630db88612d5e1a37a3dcc92fe8441bd5bc25266200394b3c5"
+  },
+  {
+    "bytes": 760,
+    "path": "Sys/Slippi/InjectionLists/list_console_stages_stadium.json",
+    "sha256": "0fe2b866ed1b711b4d1d6d2e3c47f8a8fdc7bbf812c2828a6a47dd052fd6565b"
+  },
+  {
+    "bytes": 865,
+    "path": "Sys/Slippi/InjectionLists/list_debugging.json",
+    "sha256": "dd191efdb574c39a66a68807129081f65a9ce54783b0c6664fbe8b6c9a4de8ad"
+  },
+  {
+    "bytes": 19512,
+    "path": "Sys/Slippi/InjectionLists/list_netplay-old.json",
+    "sha256": "e32d9f79bf102c2709372c0d5b2d2967eef5036350db2a7f22ab2c1b6b02bc88"
+  },
+  {
+    "bytes": 53366,
+    "path": "Sys/Slippi/InjectionLists/list_netplay.json",
+    "sha256": "f8d4461bc116b42673875bd4cc12eb79698e7a6b53d013711b5ef2f37b175f8b"
+  },
+  {
+    "bytes": 62,
+    "path": "Sys/Themes/Clean/README.txt",
+    "sha256": "b55686919c816b7fe5ee9752df7bec86fa9925eac55780c9ef2472f85858c746"
+  },
+  {
+    "bytes": 225,
+    "path": "Sys/Themes/Clean/browse.png",
+    "sha256": "5d1869ec34eb11377fe80bd8816abc551f7299c5c2167afc337f3f0ea80357b8"
+  },
+  {
+    "bytes": 442,
+    "path": "Sys/Themes/Clean/browse@2x.png",
+    "sha256": "c1f09f3fbc8673240af20a8bd057681db4c8f58fa25bb757508fd574fbbcd4a5"
+  },
+  {
+    "bytes": 957,
+    "path": "Sys/Themes/Clean/classic.png",
+    "sha256": "d951fb1bc62e3a193c130c3eb7f69f9a0ca4110935e26c2740e9a1e820a2d97c"
+  },
+  {
+    "bytes": 2177,
+    "path": "Sys/Themes/Clean/classic@2x.png",
+    "sha256": "cb96aa14b1ccf9c9486c0c104493a3c246e1722bfbfbc2f29c4c410af214e90b"
+  },
+  {
+    "bytes": 311,
+    "path": "Sys/Themes/Clean/config.png",
+    "sha256": "03dcbbcf698c3e92d4adaac32e2c0932e4e79bbd4a637a93ba92fa30709686ac"
+  },
+  {
+    "bytes": 603,
+    "path": "Sys/Themes/Clean/config@2x.png",
+    "sha256": "aab986b5fd39304434533e777d439def71eda5174d61c21c1a7d2178b024234b"
+  },
+  {
+    "bytes": 564,
+    "path": "Sys/Themes/Clean/fullscreen.png",
+    "sha256": "1e74d2a8cf28b75bad1bfb448c2c2bcaf17462a39c7b9e8dc52d648e0f491cc6"
+  },
+  {
+    "bytes": 1097,
+    "path": "Sys/Themes/Clean/fullscreen@2x.png",
+    "sha256": "b9a26487f0b7abc9cc43dd88fb00e83770bda73956f18f36107b1155b12f1871"
+  },
+  {
+    "bytes": 1040,
+    "path": "Sys/Themes/Clean/gcpad.png",
+    "sha256": "af45c2acc296ea6e59719ab0fecf7264151f1a7247ec01ebcaaeffb27643cbfc"
+  },
+  {
+    "bytes": 2652,
+    "path": "Sys/Themes/Clean/gcpad@2x.png",
+    "sha256": "d1bb23941f44c6ad606a4e3a27eba6f5d8c2479b6a62e8a60c6ce3ba41ca0c9d"
+  },
+  {
+    "bytes": 482,
+    "path": "Sys/Themes/Clean/graphics.png",
+    "sha256": "42c2bd96aa24c949580a06848e31dfe69982b6e4f36f08c7d1aff242f2376776"
+  },
+  {
+    "bytes": 973,
+    "path": "Sys/Themes/Clean/graphics@2x.png",
+    "sha256": "c6e2484598f2a359a7807c3e1460dbb07e5190ec3a4c7c7cbe7e442fc64759c3"
+  },
+  {
+    "bytes": 649,
+    "path": "Sys/Themes/Clean/open.png",
+    "sha256": "f2de81c8579cc0486ad77c67dfa92b3a12248dc284836eadb80ea3a379c4c70c"
+  },
+  {
+    "bytes": 1394,
+    "path": "Sys/Themes/Clean/open@2x.png",
+    "sha256": "18fd3214276d3ec237aec7dcdb0b1788f84a0a5c223445a28cc7e9f16116ba89"
+  },
+  {
+    "bytes": 220,
+    "path": "Sys/Themes/Clean/pause.png",
+    "sha256": "d196e7d251765a6c80513e4f9fcbec406df8b117cfd913845a644b6fad4829ff"
+  },
+  {
+    "bytes": 515,
+    "path": "Sys/Themes/Clean/pause@2x.png",
+    "sha256": "08587d5b9239e6cf55bc5fde7206dd26b1bac3cdcf13f40945f0ab0e13233438"
+  },
+  {
+    "bytes": 349,
+    "path": "Sys/Themes/Clean/play.png",
+    "sha256": "7baad4a2eba3a765a160e3866bbd2555ed6b2cb57f3187f36ff9a7897d779264"
+  },
+  {
+    "bytes": 700,
+    "path": "Sys/Themes/Clean/play@2x.png",
+    "sha256": "30249ee7389d824d1941c502274bf68540fafed3b0c41f45ba1b0cb834d0b61a"
+  },
+  {
+    "bytes": 781,
+    "path": "Sys/Themes/Clean/refresh.png",
+    "sha256": "d8762fc8ba1b8aa8b89f1d904d9c30d9f754b60b55b8552adc8924224d1096ff"
+  },
+  {
+    "bytes": 1616,
+    "path": "Sys/Themes/Clean/refresh@2x.png",
+    "sha256": "cd0faa294d30df65954f60647bb7278dfb5dc933fe65f35ae79279c9b4913400"
+  },
+  {
+    "bytes": 711,
+    "path": "Sys/Themes/Clean/screenshot.png",
+    "sha256": "39955a49064f892619a1b82a34793cfc9f8383d70bacbddf91fe3437ce83df8c"
+  },
+  {
+    "bytes": 1531,
+    "path": "Sys/Themes/Clean/screenshot@2x.png",
+    "sha256": "d53eb78c7e6ec1573d5e0631d5ee79986db960a9eb26ce2ea0a25f5d6534fe0e"
+  },
+  {
+    "bytes": 221,
+    "path": "Sys/Themes/Clean/stop.png",
+    "sha256": "91962a22111c81099da4611f146af26e4d1b60df44b2e84cfbb67b23078a2eb9"
+  },
+  {
+    "bytes": 368,
+    "path": "Sys/Themes/Clean/stop@2x.png",
+    "sha256": "1a2c04207b1acd28d4367d1a4a5e51be4c07fc12c70b4717e3d327b7e0c1cb2c"
+  },
+  {
+    "bytes": 652,
+    "path": "Sys/Themes/Clean/wiimote.png",
+    "sha256": "ac95a04b7922cfe70c648edabd4b184df13a96c84f68521147c4f74d99b0ede0"
+  },
+  {
+    "bytes": 1399,
+    "path": "Sys/Themes/Clean/wiimote@2x.png",
+    "sha256": "42d294e76af26915eef9d622b5f9541a76d122dd450f6466c2ff79ac3f00afe8"
+  },
+  {
+    "bytes": 62,
+    "path": "Sys/Themes/Clean Blue/README.txt",
+    "sha256": "b55686919c816b7fe5ee9752df7bec86fa9925eac55780c9ef2472f85858c746"
+  },
+  {
+    "bytes": 278,
+    "path": "Sys/Themes/Clean Blue/browse.png",
+    "sha256": "0f0ed656dc6222a818daa719522e7dcb426f7c10127efd840dfb8ec867181918"
+  },
+  {
+    "bytes": 547,
+    "path": "Sys/Themes/Clean Blue/browse@2x.png",
+    "sha256": "8adf24e3198af638fa432126d69dd67faaa80ee8e7ece628b1b31d04a98e0ceb"
+  },
+  {
+    "bytes": 1158,
+    "path": "Sys/Themes/Clean Blue/classic.png",
+    "sha256": "4dc415574ba99b5b3c7abae72de0b84465d086d45606caa525ff538114697dfa"
+  },
+  {
+    "bytes": 2646,
+    "path": "Sys/Themes/Clean Blue/classic@2x.png",
+    "sha256": "11565fd639bd003523296f76f9bc0add1aaa3d15acc4a6f1ad9fe18f2f1fee4e"
+  },
+  {
+    "bytes": 339,
+    "path": "Sys/Themes/Clean Blue/config.png",
+    "sha256": "39712c39edf8217997fe201867c1601221e2641c4ea6175c0be737be8db015ef"
+  },
+  {
+    "bytes": 721,
+    "path": "Sys/Themes/Clean Blue/config@2x.png",
+    "sha256": "82238e4c8151541ce75234ee319f6c867c65297531689985e8848f5bfa39f8b2"
+  },
+  {
+    "bytes": 681,
+    "path": "Sys/Themes/Clean Blue/fullscreen.png",
+    "sha256": "f7ef2ea966fb35992f1be7cec6821d6108042c5421b130d70bb5c16890045ed8"
+  },
+  {
+    "bytes": 1360,
+    "path": "Sys/Themes/Clean Blue/fullscreen@2x.png",
+    "sha256": "5af2f170dfbe75795a96e35323a119b9bb36f0eb766ae2c28dae3202301eb4a2"
+  },
+  {
+    "bytes": 1272,
+    "path": "Sys/Themes/Clean Blue/gcpad.png",
+    "sha256": "e499befbbc5401b131f2c1e2d821eee0cf20435ebf89f7b4eed46adb12279361"
+  },
+  {
+    "bytes": 3239,
+    "path": "Sys/Themes/Clean Blue/gcpad@2x.png",
+    "sha256": "8151878e4cc8d73b167e7def5bdfa8490f7bf6710c450e75674b09b1192f1500"
+  },
+  {
+    "bytes": 592,
+    "path": "Sys/Themes/Clean Blue/graphics.png",
+    "sha256": "66a7ccc72376f1b6180d21870a3eaaad9ad3a09c8f27d165d20f1c82c220e16f"
+  },
+  {
+    "bytes": 1182,
+    "path": "Sys/Themes/Clean Blue/graphics@2x.png",
+    "sha256": "3b1e5c92aaa78fe5d7130aed64915122b4841f83048e344b39887a92990e2cb5"
+  },
+  {
+    "bytes": 868,
+    "path": "Sys/Themes/Clean Blue/open.png",
+    "sha256": "e00395b74cab4b0710972c66ef760f498fc666ec32ec4d79fd0b45777c66620a"
+  },
+  {
+    "bytes": 1857,
+    "path": "Sys/Themes/Clean Blue/open@2x.png",
+    "sha256": "e1bb5f4846d3fd291180d34a90c68a9c6cbf1388c7750cc9310459b9674c4eef"
+  },
+  {
+    "bytes": 267,
+    "path": "Sys/Themes/Clean Blue/pause.png",
+    "sha256": "8b2803ff2e9ad3955d086a73f7be10bcb03b128cc0e552f0baa43c9d85525a45"
+  },
+  {
+    "bytes": 621,
+    "path": "Sys/Themes/Clean Blue/pause@2x.png",
+    "sha256": "da3f779f08e4ff0bac1e28dd60cffd00dafe77e86dc6d74faf24862843bd2d5c"
+  },
+  {
+    "bytes": 437,
+    "path": "Sys/Themes/Clean Blue/play.png",
+    "sha256": "8ddce388e1ea75356f2814c800323f987ea304552e350a3f0b1dc7f4cc8a159b"
+  },
+  {
+    "bytes": 898,
+    "path": "Sys/Themes/Clean Blue/play@2x.png",
+    "sha256": "901cc856d056d4c819fe8ca995be0557032f12f7c346e40366e725002d47e19a"
+  },
+  {
+    "bytes": 966,
+    "path": "Sys/Themes/Clean Blue/refresh.png",
+    "sha256": "969c847569c47aabc71bd5332968bc63ad466a948e37241f66abc40937f1187c"
+  },
+  {
+    "bytes": 2011,
+    "path": "Sys/Themes/Clean Blue/refresh@2x.png",
+    "sha256": "f9c5bbf79aa03a77dc23f5f7a3a62813c468565f4f1014362ed608ad6b0ae211"
+  },
+  {
+    "bytes": 854,
+    "path": "Sys/Themes/Clean Blue/screenshot.png",
+    "sha256": "40c4edf4d342c553cdcedd87f3bd074a24c094ab835f65dfae1965a2f0791524"
+  },
+  {
+    "bytes": 1860,
+    "path": "Sys/Themes/Clean Blue/screenshot@2x.png",
+    "sha256": "9952daf7cc5ec2a473b86de034087344c579052ee9b1459f69aedea0100a5b67"
+  },
+  {
+    "bytes": 275,
+    "path": "Sys/Themes/Clean Blue/stop.png",
+    "sha256": "75b1085a2a9016dc33c1b960eb37fe28fd8de2889938eb192ece36fce9e49eb6"
+  },
+  {
+    "bytes": 469,
+    "path": "Sys/Themes/Clean Blue/stop@2x.png",
+    "sha256": "fc14528d971bf08876ede997c992a7c4da3ae0a6a3d3c1921dbbf1cad35c63ed"
+  },
+  {
+    "bytes": 769,
+    "path": "Sys/Themes/Clean Blue/wiimote.png",
+    "sha256": "dc906fac152e63b89442b10aedf17916af0ec6cf539d13219ddc7e2d8b58582c"
+  },
+  {
+    "bytes": 1687,
+    "path": "Sys/Themes/Clean Blue/wiimote@2x.png",
+    "sha256": "dd964e83a50c00f97319ec3ab74e77000859dbd02c10348989d146bd45d03b91"
+  },
+  {
+    "bytes": 62,
+    "path": "Sys/Themes/Clean Lite/README.txt",
+    "sha256": "b55686919c816b7fe5ee9752df7bec86fa9925eac55780c9ef2472f85858c746"
+  },
+  {
+    "bytes": 232,
+    "path": "Sys/Themes/Clean Lite/browse.png",
+    "sha256": "e299012f7e91a466fc455154aad513510cc0019ae86efd814a5d6372c6c8dd70"
+  },
+  {
+    "bytes": 429,
+    "path": "Sys/Themes/Clean Lite/browse@2x.png",
+    "sha256": "99e1739303dc7aeb86b72a125eddd0d56d7c2ab77620c9dc4679433c96deaa5b"
+  },
+  {
+    "bytes": 1040,
+    "path": "Sys/Themes/Clean Lite/classic.png",
+    "sha256": "5e9fce3c23288e4e8d7203f612f7302428e5720f0074c354a8ab2fda2c6da14e"
+  },
+  {
+    "bytes": 2341,
+    "path": "Sys/Themes/Clean Lite/classic@2x.png",
+    "sha256": "2821e9428f320f6f30314e55984688433e1bad30c07d7a0d802010705b386402"
+  },
+  {
+    "bytes": 309,
+    "path": "Sys/Themes/Clean Lite/config.png",
+    "sha256": "e914f596d8eb7c7f91571e249b716baff8a18804df4b3b907f9ef9e6d011bbc1"
+  },
+  {
+    "bytes": 610,
+    "path": "Sys/Themes/Clean Lite/config@2x.png",
+    "sha256": "1d9fccd3d9e6c4869082fe9ebb7dd25cfa09819b67683688bf72dec3883d0a9f"
+  },
+  {
+    "bytes": 613,
+    "path": "Sys/Themes/Clean Lite/fullscreen.png",
+    "sha256": "a60571fce22971f0a1ffd06d0c51c019ea65e50ac6125f048a0b0e6f68bfc5a7"
+  },
+  {
+    "bytes": 1227,
+    "path": "Sys/Themes/Clean Lite/fullscreen@2x.png",
+    "sha256": "7dd956e1d79114ccc205eae83744ee8d93e3548ece65e28f0bdf5bd0a9b23a6d"
+  },
+  {
+    "bytes": 1102,
+    "path": "Sys/Themes/Clean Lite/gcpad.png",
+    "sha256": "300d546b8cf4c623d44894cd4d5965c116b39d616fe53e5fb2a8f347fab40d69"
+  },
+  {
+    "bytes": 2859,
+    "path": "Sys/Themes/Clean Lite/gcpad@2x.png",
+    "sha256": "940eedcf53e4a3c8f32c12d1b1c9df4ced484b61eb3f36fce00db3d2025db555"
+  },
+  {
+    "bytes": 507,
+    "path": "Sys/Themes/Clean Lite/graphics.png",
+    "sha256": "703542c41f86d4808f59610db2c6e5f9617b0d8dccccd8da73f5931b02a5f60c"
+  },
+  {
+    "bytes": 1037,
+    "path": "Sys/Themes/Clean Lite/graphics@2x.png",
+    "sha256": "7e8753fc62c1484527144d0c367bc2e83819187f763344d1894b46c18baff8c4"
+  },
+  {
+    "bytes": 619,
+    "path": "Sys/Themes/Clean Lite/open.png",
+    "sha256": "57202d364df42e4d007c9b441b2dc71348cd2d77d130b91a58d358ccfe91bf65"
+  },
+  {
+    "bytes": 1213,
+    "path": "Sys/Themes/Clean Lite/open@2x.png",
+    "sha256": "ebc53ad21ea3e49fce4d3f2093d8b1d82d580e10193f7ac0ded5d47cc364a699"
+  },
+  {
+    "bytes": 216,
+    "path": "Sys/Themes/Clean Lite/pause.png",
+    "sha256": "641e3561d0151b48dab6cded3a16cece0644b4b91746c56caa21fe4b2878dde9"
+  },
+  {
+    "bytes": 513,
+    "path": "Sys/Themes/Clean Lite/pause@2x.png",
+    "sha256": "60dcada99210e091d2bd6ccddeb85961ca2ce473b7e1c9cd433a04bae11f6690"
+  },
+  {
+    "bytes": 363,
+    "path": "Sys/Themes/Clean Lite/play.png",
+    "sha256": "c45012027d5e4f819495d1a2cd2b3dafa41d239c1f60dbec21981cc45255d79f"
+  },
+  {
+    "bytes": 752,
+    "path": "Sys/Themes/Clean Lite/play@2x.png",
+    "sha256": "80d30296ad272ab9c686d271d0d9f270df81b7489ef8289a12098189b7b524ee"
+  },
+  {
+    "bytes": 840,
+    "path": "Sys/Themes/Clean Lite/refresh.png",
+    "sha256": "8c4c48db43785f3a099166fd9203c27341faf710b6e732b32b811850314fda95"
+  },
+  {
+    "bytes": 1810,
+    "path": "Sys/Themes/Clean Lite/refresh@2x.png",
+    "sha256": "98479890742c429d87d716e85e57e651c0f8296aeb3eb136a35578821ff205f1"
+  },
+  {
+    "bytes": 777,
+    "path": "Sys/Themes/Clean Lite/screenshot.png",
+    "sha256": "5d63559f9ff785ce4eb48ee5c22d49e5b6176674f3a753d783db254a79597a7e"
+  },
+  {
+    "bytes": 1614,
+    "path": "Sys/Themes/Clean Lite/screenshot@2x.png",
+    "sha256": "85b6d408e5083659e35d4e1c774992953eaadf66547414601aba97f2c2addeef"
+  },
+  {
+    "bytes": 234,
+    "path": "Sys/Themes/Clean Lite/stop.png",
+    "sha256": "1a707e4d62ed72dce7f7718914db27dc9c39cff5a99ebfa3a83210df76c4eb37"
+  },
+  {
+    "bytes": 376,
+    "path": "Sys/Themes/Clean Lite/stop@2x.png",
+    "sha256": "30124961ef9ec50932606223d73938f44a56448bfc1d34a1cae88f80347f4d9a"
+  },
+  {
+    "bytes": 647,
+    "path": "Sys/Themes/Clean Lite/wiimote.png",
+    "sha256": "27b5dacce8940a8fc20a6099068e11a3e4f41cfb25196de764177bb35be04e06"
+  },
+  {
+    "bytes": 1430,
+    "path": "Sys/Themes/Clean Lite/wiimote@2x.png",
+    "sha256": "90abfad6b9d46069f889ec5b3277bb04c695943eedccc9bc05d6c068b013abc9"
+  },
+  {
+    "bytes": 62,
+    "path": "Sys/Themes/Clean Pink/README.txt",
+    "sha256": "b55686919c816b7fe5ee9752df7bec86fa9925eac55780c9ef2472f85858c746"
+  },
+  {
+    "bytes": 333,
+    "path": "Sys/Themes/Clean Pink/browse.png",
+    "sha256": "337cc8ecdfee0576f4c2eaa0bd175bab52312045bd2544713a704c00fa2b2578"
+  },
+  {
+    "bytes": 780,
+    "path": "Sys/Themes/Clean Pink/browse@2x.png",
+    "sha256": "c02cabd1650f3b704342043b9ca2f45967a2bc95cf6e5fa634145ac69a76b760"
+  },
+  {
+    "bytes": 1530,
+    "path": "Sys/Themes/Clean Pink/classic.png",
+    "sha256": "284e16d26307247851dd311520448a8764bae04b2dafce8e137a1671e233fbfe"
+  },
+  {
+    "bytes": 3587,
+    "path": "Sys/Themes/Clean Pink/classic@2x.png",
+    "sha256": "58d479d89e9844a12912d0ca5d12c7fba601a8aff9b5298467ad59502a4f3ba7"
+  },
+  {
+    "bytes": 392,
+    "path": "Sys/Themes/Clean Pink/config.png",
+    "sha256": "6f3b046da00abc01d3bdeec42689875ef0cbf39b9e81567cf1ddda7a99536f54"
+  },
+  {
+    "bytes": 822,
+    "path": "Sys/Themes/Clean Pink/config@2x.png",
+    "sha256": "5d74c6d5858e1b0d7b92ff3f3febd7d4815d3a2570e57a4567b8778c0d653c4c"
+  },
+  {
+    "bytes": 906,
+    "path": "Sys/Themes/Clean Pink/fullscreen.png",
+    "sha256": "6bf303dcfe67241d21cc7c49460803fc42f519c9848f2aa31b7132ac833f8473"
+  },
+  {
+    "bytes": 1870,
+    "path": "Sys/Themes/Clean Pink/fullscreen@2x.png",
+    "sha256": "bd71001602ee1d4a76171967431fcca44dec6b9309ba719f131620ad79e97bb1"
+  },
+  {
+    "bytes": 1622,
+    "path": "Sys/Themes/Clean Pink/gcpad.png",
+    "sha256": "bdab858d4e2f3991d0d7424ae3323cd2287815266398c3dea94adcf248aba14f"
+  },
+  {
+    "bytes": 4425,
+    "path": "Sys/Themes/Clean Pink/gcpad@2x.png",
+    "sha256": "0c1787fdc5a2e8654a56cbc2aa35a820e09c37fd41ef6ea31cb74c49d0aeefe7"
+  },
+  {
+    "bytes": 677,
+    "path": "Sys/Themes/Clean Pink/graphics.png",
+    "sha256": "30b1fedbdfd16de9659202068bbc9a0a8c3fc5b531ed688f84920e9b1eb6ccac"
+  },
+  {
+    "bytes": 1490,
+    "path": "Sys/Themes/Clean Pink/graphics@2x.png",
+    "sha256": "e3e6a5d6317a724e352c1741782a063c4672cf207b4aa562d3003f86326c9f0b"
+  },
+  {
+    "bytes": 1052,
+    "path": "Sys/Themes/Clean Pink/open.png",
+    "sha256": "e7ae9ac54e04ba8885cfac61dcd81a02f2d62992ef69ec661a71cecd249b805e"
+  },
+  {
+    "bytes": 2289,
+    "path": "Sys/Themes/Clean Pink/open@2x.png",
+    "sha256": "1695403a76b755560a7eb0bfc9620c97b1b7880cb234bfc8b98cdd14313ca55d"
+  },
+  {
+    "bytes": 298,
+    "path": "Sys/Themes/Clean Pink/pause.png",
+    "sha256": "029e2edad22434e14ee5ab899846c289f416d4279e3a63e4e9a441ec283bd53f"
+  },
+  {
+    "bytes": 847,
+    "path": "Sys/Themes/Clean Pink/pause@2x.png",
+    "sha256": "9d3e35d2b746059f25f33fc59fe777b2a623e101863d6e5b0197cd922ce97f59"
+  },
+  {
+    "bytes": 544,
+    "path": "Sys/Themes/Clean Pink/play.png",
+    "sha256": "c8f9eb1940898d93dca921f765be5fe6f8b9ff442e13a14da40ed99bacf92179"
+  },
+  {
+    "bytes": 1176,
+    "path": "Sys/Themes/Clean Pink/play@2x.png",
+    "sha256": "8e81503f6def4771980eaff29ac167df11a1e2b667ee23c42fb325ce8025cce0"
+  },
+  {
+    "bytes": 1259,
+    "path": "Sys/Themes/Clean Pink/refresh.png",
+    "sha256": "0203288bb4bbe8767495699b66aac2a3bff512f0a3fa5b6d0a923bb519609748"
+  },
+  {
+    "bytes": 2859,
+    "path": "Sys/Themes/Clean Pink/refresh@2x.png",
+    "sha256": "dc84a744e647b076bd5998b98c6249a983a2c61b62de4b4c2525f8df5e55bfa4"
+  },
+  {
+    "bytes": 1176,
+    "path": "Sys/Themes/Clean Pink/screenshot.png",
+    "sha256": "50a94a5e9e7c1de028581f8787c757698774c7376bee1c1e922c4dd1031a24c2"
+  },
+  {
+    "bytes": 2615,
+    "path": "Sys/Themes/Clean Pink/screenshot@2x.png",
+    "sha256": "5b3e009880c8e3cdd697381a66e811da7723a836ba505ead57a2bedec44dd80e"
+  },
+  {
+    "bytes": 335,
+    "path": "Sys/Themes/Clean Pink/stop.png",
+    "sha256": "e691a232fefa251c55ae9ee292ceaf4fe42b5d0b7af4d4f128820eb554f688f2"
+  },
+  {
+    "bytes": 580,
+    "path": "Sys/Themes/Clean Pink/stop@2x.png",
+    "sha256": "94dd3fdc224686c4167cde5f2d092eb4b35cd0d415e9618a3d4cc0577a8989c7"
+  },
+  {
+    "bytes": 943,
+    "path": "Sys/Themes/Clean Pink/wiimote.png",
+    "sha256": "128e20b106cdb42ff72485842a4f43e8ae599928a61730d47c1ce060c504cff8"
+  },
+  {
+    "bytes": 2228,
+    "path": "Sys/Themes/Clean Pink/wiimote@2x.png",
+    "sha256": "15c41c01b60ba8c03e989548160172f911e9d79e0ecacc35b739a8258adf6637"
+  },
+  {
+    "bytes": 32,
+    "path": "Sys/Wii/shared2/ec/shopsetu.log",
+    "sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+  },
+  {
+    "bytes": 32,
+    "path": "Sys/Wii/shared2/succession/shop.log",
+    "sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925"
+  },
+  {
+    "bytes": 16384,
+    "path": "Sys/Wii/shared2/sys/SYSCONF",
+    "sha256": "a8ec1ec377ee3a3c93a27f74dadf9edf95112ce167fc23d1abdbeb4fa15eb179"
+  },
+  {
+    "bytes": 103,
+    "path": "Sys/Wii/shared2/wc24/mbox/Readme.txt",
+    "sha256": "e5a888912968050c6c1d46d1c364c324684e1d15aaa62cfe36cf7fce2c687b21"
+  },
+  {
+    "bytes": 32768,
+    "path": "Sys/Wii/shared2/wc24/mbox/wc24recv.ctl",
+    "sha256": "31f2c580b271f7c8bb98f4ed1deac3a89fd1c95089c7c4a7061466e2286cd964"
+  },
+  {
+    "bytes": 48,
+    "path": "Sys/Wii/shared2/wc24/mbox/wc24recv.mbx",
+    "sha256": "dd2ad8c9fb38884523459963bfaec5d5aeaa5fd20efcdc209764d461e690e435"
+  },
+  {
+    "bytes": 16384,
+    "path": "Sys/Wii/shared2/wc24/mbox/wc24send.ctl",
+    "sha256": "430c3795f1a0aeb198bf626a4a2ff6d123321d453807dd7b904dc3b74db35d13"
+  },
+  {
+    "bytes": 48,
+    "path": "Sys/Wii/shared2/wc24/mbox/wc24send.mbx",
+    "sha256": "c248dc031ce09f7be1e55956b6f173e79d6a47d913c22a16593c4687325692b7"
+  },
+  {
+    "bytes": 1024,
+    "path": "Sys/Wii/shared2/wc24/misc.bin",
+    "sha256": "13dd5b6b2682defd3b23afd8e2983d00edc25bd4dc28a8389380dee0ec45a4a5"
+  },
+  {
+    "bytes": 63488,
+    "path": "Sys/Wii/shared2/wc24/nwc24dl.bin",
+    "sha256": "057b6f840c19b41ce080318bc7e717e2b910965ce72ab781a7e319017636c38e"
+  },
+  {
+    "bytes": 32864,
+    "path": "Sys/Wii/shared2/wc24/nwc24fl.bin",
+    "sha256": "ed94af416c47ed3bc2c944ebcd1d734b8935d9697feb0f7039d8fea3ec514c18"
+  },
+  {
+    "bytes": 12800,
+    "path": "Sys/Wii/shared2/wc24/nwc24fls.bin",
+    "sha256": "c3a4a5649d6ed2322a0de98d2258b96a6a1d3c0179854fd21e9835d529736822"
+  },
+  {
+    "bytes": 1024,
+    "path": "Sys/Wii/shared2/wc24/nwc24msg.cbk",
+    "sha256": "7afebf33eeb0035397cc74e15e892e700cd2903641d26562f5d46cfbb6171109"
+  },
+  {
+    "bytes": 1024,
+    "path": "Sys/Wii/shared2/wc24/nwc24msg.cfg",
+    "sha256": "7afebf33eeb0035397cc74e15e892e700cd2903641d26562f5d46cfbb6171109"
+  },
+  {
+    "bytes": 1352,
+    "path": "Sys/bootloader.gct",
+    "sha256": "6beeb0d74f58eb7825ed9ceb60e3037f9a55f6265efc3a2085f3073ffe6b3680"
+  },
+  {
+    "bytes": 4288,
+    "path": "Sys/codehandler.bin",
+    "sha256": "4fff42b192e95b353da28f6c3f0afa002bfbd2caf7c4bfb1187304e2406ccb0c"
+  },
+  {
+    "bytes": 723388,
+    "path": "Sys/totaldb.dsy",
+    "sha256": "0784fe88bd6ecbf936ef73921a5c76d212e806e4332ccf4a506381e3b6d8e7af"
+  },
+  {
+    "bytes": 0,
+    "path": "portable.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

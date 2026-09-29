@@ -1,0 +1,663 @@
+{
+  "sources": [
+    {
+      "name": "image_10M.png",
+      "path": "data/zero_delay_sources/image_10M.png",
+      "library_file_id": "libfile_c4d1fdbae1c8819184ebef9def670693",
+      "sha256": "fd3f77398e805b0f444cad7c5febea2ae1f8c0eb717719ce140f2d0713d0a7d1"
+    },
+    {
+      "name": "image_75M.png",
+      "path": "data/zero_delay_sources/image_75M.png",
+      "library_file_id": "libfile_ad09231f2da88191b83ccf8fc1037be1",
+      "sha256": "1b9554e685ac4e82c9c353b683d03a9aa7eafe1fb448bc8f3aad5f530fed08e8"
+    },
+    {
+      "name": "image_75M_latest.png",
+      "path": "data/zero_delay_sources/image_75M_latest.png",
+      "sha256": "046711fef2266ce208a96917970f150052dbac65666013a91a0ae309d589281c",
+      "role": "Authoritative 75M Init, RL 222 and RL 980 results; completes the previously unplayed FoxFD0 six-stage block."
+    }
+  ],
+  "protocol_source": "User-supplied description accompanying the images",
+  "opponent_family": "Phillip",
+  "opponent_repository": "https://github.com/vladfi1/phillip/tree/114aea4c446b31359c5637b271db52b200440caa/agents",
+  "policy_delay_frames": 0,
+  "policy_delay_source": "User-reported evaluation condition",
+  "matchup": "Native-character mirrors",
+  "conditions": {
+    "fd": {
+      "stage": "Final Destination",
+      "games_per_opponent": 16
+    },
+    "six_stages": {
+      "stage_count": 6,
+      "games_per_stage_per_opponent": 3,
+      "games_per_opponent": 18,
+      "stage_names": null
+    }
+  },
+  "cohort": "Additional zero-delay specialist evaluation; reported separately from the final 1312-game Slippi-AI suite.",
+  "models": {
+    "10M": {
+      "initial_checkpoint_label": "Init",
+      "initial_training_stage": null,
+      "rl_checkpoint_label": "RL 632",
+      "rows": [
+        {
+          "opponent": "delay0/FoxFD",
+          "native_character": "Fox",
+          "init_fd": {
+            "wins": 7,
+            "losses": 9,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 13,
+            "losses": 5,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "delay0/FalcoFD",
+          "native_character": "Falco",
+          "init_fd": {
+            "wins": 9,
+            "losses": 7,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "FoxFD0",
+          "native_character": "Fox",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "MarthFD0",
+          "native_character": "Marth",
+          "init_fd": {
+            "wins": 10,
+            "losses": 6,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "PeachFD",
+          "native_character": "Peach",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 17,
+            "losses": 1,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "SheikFD",
+          "native_character": "Sheik",
+          "init_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "FalconFalconBF",
+          "native_character": "Captain Falcon",
+          "init_fd": {
+            "wins": 12,
+            "losses": 4,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 10,
+            "losses": 8,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        }
+      ],
+      "totals": {
+        "init_fd": {
+          "wins": 84,
+          "losses": 28,
+          "games": 112,
+          "opponents": 7,
+          "win_rate": 0.75
+        },
+        "init_six_stages": {
+          "wins": 108,
+          "losses": 18,
+          "games": 126,
+          "opponents": 7,
+          "win_rate": 0.8571428571428571
+        },
+        "rl_fd": {
+          "wins": 112,
+          "losses": 0,
+          "games": 112,
+          "opponents": 7,
+          "win_rate": 1.0
+        },
+        "rl_six_stages": {
+          "wins": 126,
+          "losses": 0,
+          "games": 126,
+          "opponents": 7,
+          "win_rate": 1.0
+        }
+      }
+    },
+    "75M": {
+      "initial_checkpoint_label": "Init",
+      "initial_training_stage": null,
+      "rl_checkpoint_label": "RL 980",
+      "rows": [
+        {
+          "opponent": "delay0/FoxFD",
+          "native_character": "Fox",
+          "init_fd": {
+            "wins": 12,
+            "losses": 4,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 14,
+            "losses": 2,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "delay0/FalcoFD",
+          "native_character": "Falco",
+          "init_fd": {
+            "wins": 12,
+            "losses": 4,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 14,
+            "losses": 2,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "FoxFD0",
+          "native_character": "Fox",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "MarthFD0",
+          "native_character": "Marth",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 17,
+            "losses": 1,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "PeachFD",
+          "native_character": "Peach",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 17,
+            "losses": 1,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "SheikFD",
+          "native_character": "Sheik",
+          "init_fd": {
+            "wins": 13,
+            "losses": 3,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 14,
+            "losses": 4,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "FalconFalconBF",
+          "native_character": "Captain Falcon",
+          "init_fd": {
+            "wins": 11,
+            "losses": 5,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 13,
+            "losses": 5,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        }
+      ],
+      "totals": {
+        "init_fd": {
+          "wins": 93,
+          "losses": 19,
+          "games": 112,
+          "opponents": 7,
+          "win_rate": 0.8303571428571429
+        },
+        "init_six_stages": {
+          "wins": 109,
+          "losses": 17,
+          "games": 126,
+          "opponents": 7,
+          "win_rate": 0.8650793650793651
+        },
+        "rl_fd": {
+          "wins": 108,
+          "losses": 4,
+          "games": 112,
+          "opponents": 7,
+          "win_rate": 0.9642857142857143
+        },
+        "rl_six_stages": {
+          "wins": 126,
+          "losses": 0,
+          "games": 126,
+          "opponents": 7,
+          "win_rate": 1.0
+        }
+      },
+      "result_source": "image_75M_latest.png"
+    }
+  },
+  "comparison_checkpoints": {
+    "75M_RL222": {
+      "initial_checkpoint_label": "Init",
+      "initial_training_stage": null,
+      "rl_checkpoint_label": "RL 222",
+      "rows": [
+        {
+          "opponent": "delay0/FoxFD",
+          "native_character": "Fox",
+          "init_fd": {
+            "wins": 12,
+            "losses": 4,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "delay0/FalcoFD",
+          "native_character": "Falco",
+          "init_fd": {
+            "wins": 12,
+            "losses": 4,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "FoxFD0",
+          "native_character": "Fox",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 16,
+            "losses": 2,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "MarthFD0",
+          "native_character": "Marth",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 17,
+            "losses": 1,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "PeachFD",
+          "native_character": "Peach",
+          "init_fd": {
+            "wins": 15,
+            "losses": 1,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 17,
+            "losses": 1,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "SheikFD",
+          "native_character": "Sheik",
+          "init_fd": {
+            "wins": 13,
+            "losses": 3,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 14,
+            "losses": 4,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        },
+        {
+          "opponent": "FalconFalconBF",
+          "native_character": "Captain Falcon",
+          "init_fd": {
+            "wins": 11,
+            "losses": 5,
+            "games": 16
+          },
+          "init_six_stages": {
+            "wins": 13,
+            "losses": 5,
+            "games": 18
+          },
+          "rl_fd": {
+            "wins": 16,
+            "losses": 0,
+            "games": 16
+          },
+          "rl_six_stages": {
+            "wins": 18,
+            "losses": 0,
+            "games": 18
+          }
+        }
+      ],
+      "totals": {
+        "init_fd": {
+          "wins": 93,
+          "losses": 19,
+          "games": 112,
+          "opponents": 7,
+          "win_rate": 0.8303571428571429
+        },
+        "init_six_stages": {
+          "wins": 109,
+          "losses": 17,
+          "games": 126,
+          "opponents": 7,
+          "win_rate": 0.8650793650793651
+        },
+        "rl_fd": {
+          "wins": 110,
+          "losses": 2,
+          "games": 112,
+          "opponents": 7,
+          "win_rate": 0.9821428571428571
+        },
+        "rl_six_stages": {
+          "wins": 126,
+          "losses": 0,
+          "games": 126,
+          "opponents": 7,
+          "win_rate": 1.0
+        }
+      },
+      "result_source": "image_75M_latest.png",
+      "comparison_role": "Earlier checkpoint retained for the 75M training-progression comparison; the main endpoint is RL 980."
+    }
+  }
+}

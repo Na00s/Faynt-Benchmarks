@@ -1,0 +1,149 @@
+# The 20m BC-init self-play day run (user decisions 25 Aug 2026, session 18): start from Ali's BEST
+# 20m checkpoint -- the muon-scaling-laws c3 run, val NLL 0.8409 at 137.4 M frames (beats the
+# converged 166 M calibration muon's 0.8463; W&B analysis in SELFPLAY-RUNS.md "20m BC init") -- with
+# the same weights as a frozen teacher (KL 0.1) and as the zero-noise eval anchor, at delay 0, on the
+# matched batch regime (num_batches 16 x 96 Dolphins = 196 608 env frames = 393 216 rows per update).
+# lr: 4e-4 (the first choice, 2x the 5m delayed rate) MEASURED as a revert storm in the first smoke
+# (median attempted actor KL 1.07e-1, clip 0.84, 0 applied updates -- the 20m produces far more KL per
+# unit of lr than the 5m); dropped to 4e-5 by the in-regime lr^2 relation (targets ~1.1e-3 KL/update,
+# still 4-10x the old BC run's movement per update), user decision 25 Aug 2026.  The guard below is
+# set from the re-smoke's measured median before any day launch.
+# LAUNCH 1 (14:30-20:35 UTC 25 Aug, W&B 2a0yrfyq) ran at lr 1e-4 and reverted 58 of 58 PPO steps:
+# see the [learner] note.  Launch 2 rolls the lr back to the smoke's measured 4e-5 and RESUMES the
+# same latest.pt -- the policy weights are still the BC init (nothing was ever applied) but the value
+# net trained through all 58 steps (uev 1.0 -> 0.41) and the burn-in stages are behind us, so the
+# resume starts straight in the ppo stage with a warm critic.
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_20m_bc_self_wide_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/20m_bc --spawn
+# What to read (SELFPLAY-RUNS.md): eval/other/* first (the run vs its own BC start -- reads 0 at
+# step 0 and cannot cycle), loss/teacher_kl bounded while loss/entropy stays near its BC value
+# (~0.2-1.1 nats; climbing toward 11 = leaving the prior), ppo/reverted, the CPU ladder last.
+# The checkpoint is pinned: /runs/bc/20m-muon-scaling-c3.pt, sha256 a59df0747d22eb82e4acbffa78729754
+# 5dc564643e50d132c4985d2004345944 -- never move it; every RL checkpoint re-verifies the hash.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 84600             # 23.5 h < Modal's 24 h function cap; the next launch resumes latest.pt
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2           # a step is 16 rollouts (~6 min at 20m)
+snapshot_interval_steps = 8       # step_<n>.pt ladder (~48 min apart): past selves for the opponent pool
+
+[policy]
+profile = "20m"                   # config.yaml: 20.04 M params; all 54 fields match the checkpoint
+init = "checkpoint"
+checkpoint = "/runs/bc/20m-muon-scaling-c3.pt"   # the STABLE path (staged + byte-verified 25 Aug 2026)
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "policy"                 # clone_frozen() of the just-loaded BC weights: no second file read
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 6 per worker; players is derived from opponent.type
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 6w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 96 boots, 6 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (6)
+boot = "two_phase"
+worker_processes = 16             # the P7 layout
+mp_start_method = "spawn"
+chunk_frames = 1                  # D = 0: the slack (b-1)+(k-1) <= D forces lockstep stepping
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0                  # matches the model's action_offset_frames = 1 (no mismatch flag)
+context_mode = "ring"
+batch_steps = 1                   # D = 0: no pipeline (P8 stays dormant by construction)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: 2 x 96 = 192 rows
+seed = 1
+
+[learner]
+learning_rate = 4e-5              # ROLLED BACK from 1e-4 on 25 Aug 2026 20:30 UTC: the first day
+                                  # launch attempted actor KL 3.7-4.7e-3 on EVERY step against the
+                                  # 2e-3 guard -> 58/58 reverted, weights/drift_step exactly 0, the
+                                  # policy frozen at the BC init for 6 h (~$17).  A reverted step also
+                                  # restores Adam's moments, so the run never left the first-step
+                                  # value transient.  4e-5 is the measured-clean smoke rate (take two:
+                                  # first PPO step 8.6e-4, settled 1.7e-5, 0/10 reverts) and the lr^2
+                                  # relation reproduces what we just saw: 8.6e-4 x (1e-4/4e-5)^2 =
+                                  # 5.4e-3 ~ the observed 4e-3.  Projected here: transient <= 8.6e-4
+                                  # (lower still -- the resumed value net is already warm, uev 0.41
+                                  # vs the smoke's 0.92), settled ~2e-5, i.e. >= 2.3x under the guard.
+kl_teacher_weight = 0.1           # slippi-ai's post-training recipe; the anti-collapse mechanism
+value_burnin_steps = 6            # ~96 rollouts of value-only training (the BC recipe's 100 at nb = 1)
+optimizer_burnin_steps = 3        # ~48 rollouts at lr 0: Adam's moments warm before the policy moves
+microbatch_envs = 48              # 192-row trajectories in 4 chunks: 20m at 64 rows measured 14 GB
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16                  # slippi-ai's production regime: accumulate 16 rollouts per update
+epsilon = 1e-2                    # the BC regime's measured clip window (session 15: clip ~0.10)
+beta = 0.0
+max_mean_actor_kl = 5e-3          # raised from 2e-3 with the lr rollback (user decision 25 Aug 2026
+                                  # 20:35 UTC): launch 1 proved the failure mode is a guard BELOW the
+                                  # first-step transient -- a revert also restores Adam's moments, so
+                                  # the run re-attempts step 1 forever and never decays.  5e-3 is the
+                                  # smoke's value, where lr 4e-5 measured a max of 8.6e-4 over 10 PPO
+                                  # steps (~6x margin) while still holding the BC prior.
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "20m", "l4", "day",
+    "wide", "ring", "mp-workers", "fast-step", "nb16",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 7200.0         # two-hourly; ~11 min per round (3 opponents x 32 eval Dolphins)
+at_start = true
+at_end = true
+frames = 57600                    # per opponent: 32 eval Dolphins x 30 s of game
+num_envs = 32
+rollout_length = 128
+# The zero-noise anchor is the BC init itself: eval/other reads 0 at step 0 and cannot cycle.
+opponents = ["cpu1", "cpu9", "other:/runs/bc/20m-muon-scaling-c3.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "other"         # best.pt selects on progress against the fixed BC anchor

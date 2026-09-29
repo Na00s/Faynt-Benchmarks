@@ -1,0 +1,73 @@
+{
+  "bindings": {
+    "game_image_sha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464",
+    "package_archive_sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19",
+    "policy_plan_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9",
+    "runtime_image": {
+      "image_id": "<historical-provider-id>",
+      "manifest_sha256": "8c016126e6773bb666697a1c93b04f8bbd79329462f416b0bbe61eea1cc9f813",
+      "platform": "linux_x86_64"
+    }
+  },
+  "decision": "authorized-portability-limited-continuation",
+  "evidence": {
+    "frisson-10m-p1": {
+      "bytes": 2763,
+      "sha256": "52ad78c4c8882f3074dd902f0c2a4395dd79f25ca38959ae1699914785dec8b2"
+    },
+    "frisson-10m-p2": {
+      "bytes": 2766,
+      "sha256": "394acec127c3595b515876c101459938ee67e4ef74ae5a977bab49dd77ace20e"
+    },
+    "frisson-75m-p1": {
+      "bytes": 2762,
+      "sha256": "744ce21e9117feebbb23f024b8d9a411c9e4d7a80adc0e8017c1d3e63f4f9bb0"
+    },
+    "frisson-75m-p2": {
+      "bytes": 2763,
+      "sha256": "aafbd834eceeb6bf2523848006613694d7408d6db4055e09f15e05548b6af106"
+    },
+    "numeric_diagnostic": {
+      "bytes": 283250,
+      "sha256": "2701ec7bc33af5d79e83aba6e82a41e1127c96f609914fe1b5b6efd4a0443d47"
+    },
+    "policy_plan": {
+      "bytes": 18770,
+      "sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9"
+    },
+    "policy_result": {
+      "bytes": 30804,
+      "sha256": "f1a18ee4655e449951f7bc5131aca9a8d17191eef1e9ae03da894c184d6e270c"
+    },
+    "slippi-fox_d21_ditto_v4-p1": {
+      "bytes": 2777,
+      "sha256": "a5736b2a1895214b8eeb520d35f303dcab2aa9150638a5543ee7c555c0e148f8"
+    },
+    "slippi-fox_d21_ditto_v4-p2": {
+      "bytes": 3262,
+      "sha256": "03cd1ddf4e183ee8c9c2b40d240af3492b6545fcb75b667e7c6156c8dde7074f"
+    },
+    "slippi-fox_d24_ditto_v4-p1": {
+      "bytes": 2777,
+      "sha256": "85d30642fa1a0d5f263cc6a942bf9e3d5ab40e226e6d2966a290f371cdcfad5b"
+    },
+    "slippi-fox_d24_ditto_v4-p2": {
+      "bytes": 2913,
+      "sha256": "f3608fcfcc10b1fb78fbc83dd37885b9667426288e94ec8161868edd6a951139"
+    },
+    "slippi-gm-p1": {
+      "bytes": 2759,
+      "sha256": "4c7d48d60e75a6ccd635053aa01ccd01fddf10a5282a6910f7e8844178bea04c"
+    },
+    "slippi-gm-p2": {
+      "bytes": 3254,
+      "sha256": "c2ea424761269e8c595c876a960f0a8be7f394c956aa2c2024cd0f9df9051ae2"
+    },
+    "user_approval": {
+      "bytes": 1613,
+      "sha256": "d378d15fdf3ea0541a16e83af79f014b55553aab94e10419b6fe3c2626a4fd78"
+    }
+  },
+  "kind": "policy_parity",
+  "schema": "e011.modal-live-admission.v1"
+}

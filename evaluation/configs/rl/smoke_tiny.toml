@@ -1,0 +1,94 @@
+# Two learner steps of the tiny test model in the dummy env (PLAN.md §6 P3, entrypoint smoke).
+#   .venv/bin/python -m melee_rl.train --config configs/rl/smoke_tiny.toml --checkpoint-dir runs/smoke_tiny
+# Same shapes as tests/rl/conftest.py (B = 3, T = 8, C = 16, context 24); games restart every 21 frames so
+# the reset paths run.  Random init, the teacher is a frozen copy of it (KL weight 0: PLAN.md §9.4), W&B off.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 2
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 1
+save_interval_steps = 1
+snapshot_interval_steps = 2
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 1234
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[policy.model_overrides]
+d_model = 32
+n_layers = 2
+n_heads = 4
+n_kv_heads = 2
+head_dim = 8
+d_ff = 64
+context_length = 24
+encoder_hidden_size = 8
+item_mlp_layers = 1
+gradient_checkpointing = false
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dummy"
+
+[env.dummy]
+num_envs = 3
+seed = 5
+game_frames = 21
+
+[actor]
+rollout_length = 8
+context_frames = 16
+delay_frames = 0
+context_mode = "reprime"
+seed = 7
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+
+[opponent]
+type = "cpu"
+
+[learner]
+learning_rate = 1e-3
+kl_teacher_weight = 0.0
+value_burnin_steps = 0
+optimizer_burnin_steps = 0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.value]
+d_model = 32
+n_layers = 2
+n_heads = 4
+n_kv_heads = 2
+head_dim = 8
+d_ff = 64
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 2
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 1e-4
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # tests never talk to W&B; cloud runs pass --wandb-mode online|offline
+entity = "frisson-labs"           # shared W&B project: our runs are separable by group / tags / job_type
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dummy-env", "smoke"]
+print_interval_steps = 1

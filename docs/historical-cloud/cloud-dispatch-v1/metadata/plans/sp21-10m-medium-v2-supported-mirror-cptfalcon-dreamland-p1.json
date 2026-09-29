@@ -1,0 +1,1217 @@
+{
+  "artifact_labels": [
+    "sp21-10m-medium-v2-supported-mirror-cptfalcon-dreamland-p2-a1",
+    "sp21-10m-medium-v2-supported-mirror-cptfalcon-dreamland-p1-a1"
+  ],
+  "authorization_sha256": "313f2587f0285163558dd57e885fe70526445b1c7591f30fcdc4668a1263d23c",
+  "checkpoints": {
+    ".e001-cache/slippi-ai/models/medium-v2": {
+      "bytes": 95559707,
+      "sha256": "48dcfd87c52fde9899fb37b0293ce2a597fb2384b7b40baf7fb49c760152a96c"
+    },
+    ".e010-cache/post-rl-p21/frisson-melee-10m-rl-step1318.pt": {
+      "bytes": 96448859,
+      "sha256": "da1179d6319d2f9a805b1697d8176b66a455aa9f37b51e46ad5f2a3d3537a7da"
+    }
+  },
+  "games": [
+    {
+      "block": "supported-mirror",
+      "frisson_character": "CPTFALCON",
+      "frisson_port": 2,
+      "label": "sp21-10m-medium-v2-supported-mirror-cptfalcon-dreamland-p2",
+      "opponent_context_outside_rl_roster": false,
+      "ordinal": 1471,
+      "pair_id": "53bb0de36b02f316",
+      "player_name": "Master Player",
+      "profile": "10m",
+      "release": "medium-v2",
+      "save_slp": true,
+      "save_video": false,
+      "seed": 1539528661,
+      "slippi_character": "CPTFALCON",
+      "slippi_character_in_bc_declaration": true,
+      "slippi_character_in_deployed_roster": true,
+      "slippi_port": 1,
+      "stage": "DREAMLAND"
+    },
+    {
+      "block": "supported-mirror",
+      "frisson_character": "CPTFALCON",
+      "frisson_port": 1,
+      "label": "sp21-10m-medium-v2-supported-mirror-cptfalcon-dreamland-p1",
+      "opponent_context_outside_rl_roster": false,
+      "ordinal": 1472,
+      "pair_id": "53bb0de36b02f316",
+      "player_name": "Master Player",
+      "profile": "10m",
+      "release": "medium-v2",
+      "save_slp": true,
+      "save_video": false,
+      "seed": 1539528661,
+      "slippi_character": "CPTFALCON",
+      "slippi_character_in_bc_declaration": true,
+      "slippi_character_in_deployed_roster": true,
+      "slippi_port": 2,
+      "stage": "DREAMLAND"
+    }
+  ],
+  "limits": {
+    "client_resubmissions": 0,
+    "cpu": [
+      4,
+      4
+    ],
+    "function_seconds": 15990,
+    "game_seconds": 7200,
+    "max_containers": 1,
+    "memory_mib": [
+      16384,
+      16384
+    ],
+    "nonpreemptible": true,
+    "owner_seconds": 15900,
+    "platform_restarts": "possible; same absolute expiry retained",
+    "return_bytes": 536870912,
+    "return_file_bytes": 268435456,
+    "session_seconds": 16290,
+    "upload_bytes": 2403696640
+  },
+  "output": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/cloud-dispatch-v1/future-results/sp21-10m-medium-v2-supported-mirror-cptfalcon-dreamland-p1",
+  "panel_manifest_sha256": "c7c85408ce45e26916082ffa7456fb681273ec70d5be9d865a6edb7bda4e09af",
+  "policy_plan_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9",
+  "prior_tape_plan_sha256": "8c016126e6773bb666697a1c93b04f8bbd79329462f416b0bbe61eea1cc9f813",
+  "public_source": {
+    "branch": "main",
+    "revision": "577965a7731dc53e3472ea63d9e9853a4e9d65fa",
+    "url": "https://github.com/vladfi1/slippi-ai"
+  },
+  "runtime_spec": {
+    "architecture": "x86_64",
+    "audio": "native audio enabled; virtual host has no promised physical sound device",
+    "dependency_lock_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "dependency_pins_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "display": "fresh inherited Xvfb, TCP disabled, 640x480x24",
+    "environment": {
+      "GALLIUM_DRIVER": "llvmpipe",
+      "LIBGL_ALWAYS_SOFTWARE": "1",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "native_disable_audio": false,
+    "os": "ubuntu:22.04",
+    "package_versions": "exact dpkg receipt required from the admitted runtime image",
+    "packages": [
+      "libgtk-3-0",
+      "libasound2",
+      "libxi6",
+      "libsfml-network2.5",
+      "libusb-1.0-0",
+      "libmbedtls14",
+      "libsoil1",
+      "libsm6",
+      "liblzo2-2",
+      "libudev1",
+      "libcurl4",
+      "libopengl0",
+      "libglx0",
+      "libxrandr2",
+      "libxxf86vm1",
+      "xvfb",
+      "libgl1-mesa-dri",
+      "mesa-utils",
+      "x11-utils"
+    ],
+    "renderer": "Mesa llvmpipe software OpenGL",
+    "runtime_admitted": false
+  },
+  "schema": "e011.modal-full-game-pilot.v1",
+  "scope": {
+    "benchmark_games": 1,
+    "benchmark_ledger_writes": false,
+    "characters": [
+      "CPTFALCON",
+      "CPTFALCON"
+    ],
+    "checkpoint_step": 1318,
+    "cross_host_trajectory_equivalence": "unassessed",
+    "durable_index": "frisson-benchmark-game-index-v1",
+    "durable_per_game": true,
+    "durable_volume": "frisson-benchmark-game-results-v1",
+    "frisson_physical_ports": [
+      2,
+      1
+    ],
+    "max_physical_executions": 3,
+    "native_max_game_frames": 30000,
+    "numeric_classification": "portability-limited-v4-approved-exact-command-parity",
+    "numeric_evidence_scope": "retained V4 reference cases; this checkpoint and trajectory may be unmeasured",
+    "opponent": "medium-v2",
+    "opponent_name": "Master Player",
+    "pair_id": "53bb0de36b02f316",
+    "policy_inference": true,
+    "profile": "10m",
+    "save_slp": true,
+    "save_video": false,
+    "seed": 1539528661,
+    "selected_game_indices": [
+      1
+    ],
+    "stage": "DREAMLAND"
+  },
+  "source_paths": [
+    "src/melee_policy/__init__.py",
+    "src/melee_policy/integration/__init__.py",
+    "src/melee_policy/integration/frame_watchdog.py",
+    "src/melee_policy/integration/frisson_match.py",
+    "src/melee_policy/integration/frisson_policy.py",
+    "src/melee_policy/integration/mimic_bundle_manifest.py",
+    "src/melee_policy/integration/mimic_vs_hal.py",
+    "src/melee_policy/integration/natural_game_end.py",
+    "src/melee_policy/integration/post_rl_checkpoints.py",
+    "src/melee_policy/integration/runtime_identity.py",
+    "src/melee_policy/integration/slippi_ai_policy.py",
+    "src/melee_policy/integration/slippi_match.py",
+    "src/melee_policy/integration/state_identity.py",
+    "scripts/modal_panel_runtime_pilot.py",
+    "scripts/modal_panel_policy_pilot.py",
+    "scripts/modal_panel_build_pilot.py",
+    "scripts/modal_panel_linux_build.py",
+    "scripts/modal_panel_policy_canary.py",
+    "scripts/modal_panel_source_snapshot.py",
+    "scripts/modal_panel_live_context.py",
+    "scripts/modal_panel_linux_host.py",
+    "scripts/modal_panel_package_audit.py",
+    "scripts/modal_panel_live_canary.py",
+    "src/melee_policy/integration/frisson_slippi_match.py",
+    "configs/integration_mimic_vs_hal.toml",
+    "patches/slippi-dolphin-two-pipe-frame-sync.patch",
+    "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+    "scripts/modal_panel_live_pilot.py",
+    "src/melee_policy/integration/game_bundle.py",
+    "src/melee_policy/integration/slippi_compatibility.py",
+    "src/melee_policy/integration/replay_result.py",
+    "src/melee_policy/integration/play.py",
+    "src/melee_policy/e000/__init__.py",
+    "src/melee_policy/e000/enums.py",
+    "scripts/slippi_panel_runtime.py",
+    "scripts/slippi_panel_audit.py",
+    "scripts/run_slippi_public_panel.py",
+    "scripts/run_final_75m_vs_slippi_ai_character_sweep.py",
+    "scripts/modal_panel_match_host.py",
+    "scripts/modal_panel_match_source.py",
+    "scripts/modal_panel_game_pilot.py",
+    "requirements-e010.lock",
+    "scripts/build-frame-sync-dolphin",
+    "scripts/modal_panel_pair_binding.py",
+    "scripts/modal_panel_batch_pilot.py",
+    "scripts/modal_panel_durable_game.py"
+  ],
+  "source_snapshot_sha256": "83d261fb7988ee20bcf49dbd648b0fc2f75d41ddca1a86643996f19443ccc755",
+  "tape_prerequisite": {
+    "files": {
+      "admissions/context.json": {
+        "bytes": 3157,
+        "sha256": "7eeb4c4153d6d200f8ea6653a868e660a57fdf3ce3cb6221101e27ebf93c35ab"
+      },
+      "admissions/dependency_lock.json": {
+        "bytes": 44661,
+        "sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e"
+      },
+      "admissions/dependency_pins.json": {
+        "bytes": 1700,
+        "sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9"
+      },
+      "admissions/game_image_access-admission.json": {
+        "bytes": 767,
+        "sha256": "117925c873d538037155533f16543e6cfea3ace6ffd80d026ffeaf987ce8675f"
+      },
+      "admissions/installed_runtime.json": {
+        "bytes": 2649,
+        "sha256": "2691196734ca5c166de1cb94c38c13e7fa7b3ab5243fcd3df7cb04233b4d5836"
+      },
+      "admissions/linux_runtime-admission.json": {
+        "bytes": 1438,
+        "sha256": "95dc33068ea2f44666f660a9b2c4e0354ade95c3124415762d1195d374032030"
+      },
+      "admissions/live_execution-admission.json": {
+        "bytes": 902,
+        "sha256": "fd2accff646d4593b7c05ebb1524763af57ac3d89ad7d0d7e489a285e781abe1"
+      },
+      "admissions/os_packages.json": {
+        "bytes": 673,
+        "sha256": "97e46bb02c9f8adfcf8672ff5b257e380d08a6309b57adb9e9b94edadcbf03d2"
+      },
+      "admissions/policy_parity-admission.json": {
+        "bytes": 2600,
+        "sha256": "6a9c5439cdea26dc9c60fb03acc372e1d612a249dafe529c7a7fd4f130c3a6b3"
+      },
+      "admissions/source_manifest.json": {
+        "bytes": 3866,
+        "sha256": "265197d14bbb7d13e59011b63c7f3515db542f93953f4fff0f8c528b1cbf0c4d"
+      },
+      "admissions/tape-plan.json": {
+        "bytes": 189120,
+        "sha256": "66285b0ecce8c2cb525823f1b6c42fb0f46edf148c22d1efef19c9d9e6a1360c"
+      },
+      "admissions/ubjson_extension.json": {
+        "bytes": 149,
+        "sha256": "d14e928e37ca22e08fcfd84df623dbafa83889756175fd9ea6053d5409869b6f"
+      },
+      "controller-tape/case-0/case.json": {
+        "bytes": 26509,
+        "sha256": "13e7dae90f90f7012200ec09d713a2ea980bbb5e1653a43b2db9eacb9af04597"
+      },
+      "controller-tape/case-0/controller_tape_canonical_schema_audit_projection.jsonl": {
+        "bytes": 1179392,
+        "sha256": "b56e377eda51b95fe35572ded26f9e637f6bc199da7dbce061b7bd4a789f9d8b"
+      },
+      "controller-tape/case-0/controller_tape_trace.jsonl": {
+        "bytes": 1135232,
+        "sha256": "14e8e098b2befb557e88a23301e506be871947f7f5edb538cb4fd79cf3255b38"
+      },
+      "controller-tape/case-0/replays/Game_20260911T231205.slp": {
+        "bytes": 169882,
+        "sha256": "f634d28c66c2741e266ffe6f6119edf1e7c85732a2173df9edd8183ac7e8650c"
+      },
+      "controller-tape/case-1/case.json": {
+        "bytes": 26511,
+        "sha256": "ddeb085495ad5f1c17b1097a7dbff475367717fb789219a3d8cc9047adf597e5"
+      },
+      "controller-tape/case-1/controller_tape_canonical_schema_audit_projection.jsonl": {
+        "bytes": 1182917,
+        "sha256": "5b0649d1cf4f535815b74f75307579bcb57f34e35edda57ac6a504bdc8ab2e0c"
+      },
+      "controller-tape/case-1/controller_tape_trace.jsonl": {
+        "bytes": 1138757,
+        "sha256": "0d62b7181f7d6b87e882fe241daf3631b35f0728f20936192eca6b35d66fe53a"
+      },
+      "controller-tape/case-1/replays/Game_20260911T231226.slp": {
+        "bytes": 169387,
+        "sha256": "a542f5fd89067be794cfc61f6148bed486bb37971f7613298d887d19e6f5b30a"
+      },
+      "controller-tape/host-01.log": {
+        "bytes": 30,
+        "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+      },
+      "controller-tape/host-02.log": {
+        "bytes": 518,
+        "sha256": "6c37475f80922972af6466e370677283f5f0e0d31576dfc520738ac252d9a9de"
+      },
+      "controller-tape/host-03.log": {
+        "bytes": 8944,
+        "sha256": "0f0abe243bf9ce392412e31e8bcac4b75f5f255b51eb8b5b070b155d7b3b4537"
+      },
+      "controller-tape/host-04.log": {
+        "bytes": 65536,
+        "sha256": "356b15b1ddaf8da3c0d9784807f8c88a37e803e585812b4ea6d6385aa4d83eff"
+      },
+      "controller-tape/host-05.log": {
+        "bytes": 1743,
+        "sha256": "a3d6fba4a42e99717e00d9b5844c54c7e5291d1e25ea3823cd39fb1aa97939b7"
+      },
+      "controller-tape/intent.json": {
+        "bytes": 166,
+        "sha256": "68f12892251b9cde52476b31442d08eb74e13e9a5e97b40456203fe6f2e4de65"
+      },
+      "controller-tape/result.json": {
+        "bytes": 15244,
+        "sha256": "9ce8a350870fce0a66c298951890032c1f7805a621ebdee6eaba0f9ca4c30ca2"
+      },
+      "controller-tape/xvfb.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "receipt.json": {
+        "bytes": 21461,
+        "sha256": "90f826bf5f01bad1159caa0fb448fe2819ca98e4def94ac7d57e0433f0dab57d"
+      },
+      "runtime/logs/000.log": {
+        "bytes": 1544,
+        "sha256": "8a03a1e35ce510bc1354c2be80be301a6e7c9638746a9ab49d5dd7a7b2209fc5"
+      },
+      "runtime/logs/001.log": {
+        "bytes": 65536,
+        "sha256": "319578fcb59105f903ecb6a0f17bad863eeb67cc63a505ab7fc35aeaba5d747b"
+      },
+      "runtime/logs/002.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "runtime/logs/003.log": {
+        "bytes": 729,
+        "sha256": "9dfa688f46cda730ed7ae82e0fb2332c3de25474dfea4d0bab4fa62c345d2121"
+      },
+      "runtime/logs/004.log": {
+        "bytes": 14513,
+        "sha256": "9b95bcdff006d37a8264eafa1b81efd76859be387950ad0caf7b680cf722c681"
+      },
+      "runtime/logs/005.log": {
+        "bytes": 226,
+        "sha256": "c19bf9d623c6409d5c8f41639702fbb27d385b72376985761e40ea326195f639"
+      },
+      "runtime/logs/006.log": {
+        "bytes": 8697,
+        "sha256": "2dc6bbf3afca61960fdea0e930499f57c7efbf2161eaa9d2bed564ee3ac9e3c0"
+      },
+      "runtime/logs/007.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "runtime/logs/008.log": {
+        "bytes": 30,
+        "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+      },
+      "runtime/logs/009.log": {
+        "bytes": 518,
+        "sha256": "6c37475f80922972af6466e370677283f5f0e0d31576dfc520738ac252d9a9de"
+      },
+      "runtime/logs/010.log": {
+        "bytes": 30,
+        "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+      },
+      "runtime/logs/011.log": {
+        "bytes": 518,
+        "sha256": "6c37475f80922972af6466e370677283f5f0e0d31576dfc520738ac252d9a9de"
+      },
+      "runtime/logs/012.log": {
+        "bytes": 8944,
+        "sha256": "fde23688f959caedb612c87894c5af0d9c46a3b618bc6ea945ce29e67eea8ff7"
+      },
+      "runtime/logs/013.log": {
+        "bytes": 65536,
+        "sha256": "356b15b1ddaf8da3c0d9784807f8c88a37e803e585812b4ea6d6385aa4d83eff"
+      },
+      "runtime/logs/014.log": {
+        "bytes": 1749,
+        "sha256": "6291a05fad4b79f0ec02ee61cd2a416a4eea599258b164f86b272cc9fac3aef1"
+      },
+      "runtime/logs/015.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "runtime/qualification.json": {
+        "bytes": 22294,
+        "sha256": "69fc6fc2af5fd4b968cf9939cc3487107d6e6db56729a4b988e72005a7226ab9"
+      },
+      "runtime/receipt.json": {
+        "bytes": 50125,
+        "sha256": "798dbed51f96383299ea49140f04f2a6a4c894bfa141161014225a09176c5e99"
+      },
+      "supervisor/owner.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "supervisor/receipt.json": {
+        "bytes": 685,
+        "sha256": "e147637d4a744f39bb87f4d7ae0692c5c11c1e01b7a9b50a42dd838f0979434f"
+      },
+      "tape-command/commands.json": {
+        "bytes": 537,
+        "sha256": "069b519e10c6108648aa979c50d2ca6561dd5c78bef786edc5895ec3be118391"
+      },
+      "tape-command/logs/001.log": {
+        "bytes": 738,
+        "sha256": "ca170df02b1e57d206fb880eaaa87120de6d6e4fba98ddf1afb66b0f0d516054"
+      },
+      "tape-result.json": {
+        "bytes": 18901,
+        "sha256": "03479ee6594c3c94d541466d93b737a4c68a04d3f4540785cfe7cdb4e5382bc3"
+      }
+    },
+    "result_sha256": "bf2a8350357d71a41f385de59a8a4e4957167fe22499ceb407f4b937136903b4"
+  },
+  "uploads": [
+    {
+      "bytes": 60,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/__init__.py",
+      "remote": "/opt/runtime-root/src/melee_policy/__init__.py",
+      "sha256": "7255d380f78c96124b5f40c80609b3a2a5e84f7c236884eea35f6f84da427e50"
+    },
+    {
+      "bytes": 47,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/__init__.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/__init__.py",
+      "sha256": "063b43d1dedbefc78c2152595ccf701f7c19f825e9adb6b3559fdd900369bd7f"
+    },
+    {
+      "bytes": 2842,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frame_watchdog.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frame_watchdog.py",
+      "sha256": "8bf24e6c4ded876ad743227bccbb91ac67c87fd4af15fe3eb87e2f54eae34b7b"
+    },
+    {
+      "bytes": 78691,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frisson_match.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frisson_match.py",
+      "sha256": "d536c7f87c2c6ee5bceeb6973d910a27758c2c89b663f82439842fa76248fa76"
+    },
+    {
+      "bytes": 110279,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frisson_policy.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frisson_policy.py",
+      "sha256": "fcdba59fc186b104689d20510d7a3d2b8fb4c2515cac6df587028926cf6025ca"
+    },
+    {
+      "bytes": 9427,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/mimic_bundle_manifest.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/mimic_bundle_manifest.py",
+      "sha256": "53313d0fa9ed6dccd786a349cfb6509440fa4beca8d3345c80c0e5496fc97720"
+    },
+    {
+      "bytes": 203556,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/mimic_vs_hal.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/mimic_vs_hal.py",
+      "sha256": "24ed6cb674de7242009c7e07fb0b9e7657c348168fa5723551a3aa40fcd1cb42"
+    },
+    {
+      "bytes": 728,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/natural_game_end.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/natural_game_end.py",
+      "sha256": "043a5913f0bf421a708ff0a683c52703a42ebaa6da8f611516021846c211f0ad"
+    },
+    {
+      "bytes": 2259,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/post_rl_checkpoints.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/post_rl_checkpoints.py",
+      "sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f"
+    },
+    {
+      "bytes": 5508,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/runtime_identity.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/runtime_identity.py",
+      "sha256": "388bd46e041df6a5ec80ec3d96eedcb22abb2e9e0b56fa1281cff4ec818e17a9"
+    },
+    {
+      "bytes": 64440,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/slippi_ai_policy.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/slippi_ai_policy.py",
+      "sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a"
+    },
+    {
+      "bytes": 214774,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/slippi_match.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/slippi_match.py",
+      "sha256": "e41af721dd6e53a7e4592c3a7e2a273ad68159494344af21c64e4fde20be4b69"
+    },
+    {
+      "bytes": 1743,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/state_identity.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/state_identity.py",
+      "sha256": "9bb290953064ce574ef59ca1b4fa351e30c5c191854fb891bd290f3cbf60d96c"
+    },
+    {
+      "bytes": 34365,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_runtime_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_runtime_pilot.py",
+      "sha256": "1d7c7fc2abc262c0d6584670ed760167a3b3721e1fa17fc6532298b9c978dbc6"
+    },
+    {
+      "bytes": 42396,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_policy_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_policy_pilot.py",
+      "sha256": "fd7e12bf9eec55cd0be54dcbc538f155f0d08cb5907472fcbbcb8189ca8e428c"
+    },
+    {
+      "bytes": 38811,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_build_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_build_pilot.py",
+      "sha256": "d7cb2f8244bdb4926b9488d56bb12b1d0a4feffcba494921b33f3058e9c6d8fe"
+    },
+    {
+      "bytes": 32050,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_linux_build.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_linux_build.py",
+      "sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e"
+    },
+    {
+      "bytes": 32148,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_policy_canary.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_policy_canary.py",
+      "sha256": "d97f4b9634eaa18f1a7b04114a679e685a26261c5923494b9e24792970e7f5be"
+    },
+    {
+      "bytes": 11640,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_source_snapshot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_source_snapshot.py",
+      "sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507"
+    },
+    {
+      "bytes": 38939,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_live_context.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_live_context.py",
+      "sha256": "8d6a7ba10b83f4ef350f3a4264a717f2c1b6eb75c6f81bb242ee3451e4eea8f8"
+    },
+    {
+      "bytes": 16558,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_linux_host.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_linux_host.py",
+      "sha256": "8bc70d4ff7f43083ca7c763b3ea824755ca1685baa767a690d8076ede4bd4f7d"
+    },
+    {
+      "bytes": 18433,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_package_audit.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_package_audit.py",
+      "sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61"
+    },
+    {
+      "bytes": 31259,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/mimic_native_bundles.v1.json",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/mimic_native_bundles.v1.json",
+      "sha256": "adb8fa9ef8c6fd5f054fb68b22552c2c92cacce3f8cc0ac0ca2f72bed9ebcef3"
+    },
+    {
+      "bytes": 44661,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-dependencies-v1/candidate-lock-94.json",
+      "remote": "/opt/runtime-input/lock.json",
+      "sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e"
+    },
+    {
+      "bytes": 1700,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-dependencies-v1/requirements-linux-live-94.lock",
+      "remote": "/opt/runtime-input/pins.lock",
+      "sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9"
+    },
+    {
+      "bytes": 23284133,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/returned/linux-dolphin-code.tar.gz",
+      "remote": "/opt/runtime-input/code.tar.gz",
+      "sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19"
+    },
+    {
+      "bytes": 55049,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/returned/package-manifest.json",
+      "remote": "/opt/runtime-input/manifest.json",
+      "sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700"
+    },
+    {
+      "bytes": 6365,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/PACKAGE_AUDIT.json",
+      "remote": "/opt/runtime-input/audit.json",
+      "sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05"
+    },
+    {
+      "bytes": 30409,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_live_canary.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_live_canary.py",
+      "sha256": "28ba293c1c20aed73d51b847682b43aaa1d46d9d24a7c4ffc780f88af2431caa"
+    },
+    {
+      "bytes": 68740,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frisson_slippi_match.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frisson_slippi_match.py",
+      "sha256": "4c73dd81152307bb7a44302c09f6c29f46719230ea8656a111e2dc45c7a07399"
+    },
+    {
+      "bytes": 7883,
+      "local": "${BENCHMARK_ROOT}/configs/integration_mimic_vs_hal.toml",
+      "remote": "/opt/runtime-root/configs/integration_mimic_vs_hal.toml",
+      "sha256": "ebdc6abf3443d115580207b4351b2cb865b87f45d336c96c00058ab7f7a020f8"
+    },
+    {
+      "bytes": 11412,
+      "local": "${BENCHMARK_ROOT}/patches/slippi-dolphin-two-pipe-frame-sync.patch",
+      "remote": "/opt/runtime-root/patches/slippi-dolphin-two-pipe-frame-sync.patch",
+      "sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e"
+    },
+    {
+      "bytes": 1894960,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+      "remote": "/opt/runtime-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+      "sha256": "c7c85408ce45e26916082ffa7456fb681273ec70d5be9d865a6edb7bda4e09af"
+    },
+    {
+      "bytes": 42019,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_live_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_live_pilot.py",
+      "sha256": "3ed3b555993b376df43467bbbdac8d25cc70c3d7585aaf25ec54e78325bbab1a"
+    },
+    {
+      "bytes": 12889,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/plan.json",
+      "remote": "/opt/runtime-plan.json",
+      "sha256": "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02"
+    },
+    {
+      "bytes": 55695,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/result.json",
+      "remote": "/opt/live-input/prior/result.json",
+      "sha256": "3b149b502fe21cfc2f179ad07d6118204c070b6b2664ad8ea61a09038e43a64d"
+    },
+    {
+      "bytes": 252,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/call.json",
+      "remote": "/opt/live-input/prior/call.json",
+      "sha256": "20f15116e0fee6a256b316e84872704b382e1371d4e5b057ba268402b1512182"
+    },
+    {
+      "bytes": 50125,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/returned/receipt.json",
+      "remote": "/opt/live-input/prior/returned/receipt.json",
+      "sha256": "f474181840d848115c8ca79221c87a41921778ea56f14c4004d5651098f22886"
+    },
+    {
+      "bytes": 22294,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/returned/qualification.json",
+      "remote": "/opt/live-input/prior/returned/qualification.json",
+      "sha256": "f8c4ccb94fe3785374caf7e4a2c287a899e211d25152b5a5d00cbdfcc96dfaf6"
+    },
+    {
+      "bytes": 2762,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-00.json",
+      "remote": "/opt/live-input/policy/frisson-75m-p1.json",
+      "sha256": "744ce21e9117feebbb23f024b8d9a411c9e4d7a80adc0e8017c1d3e63f4f9bb0"
+    },
+    {
+      "bytes": 2763,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-01.json",
+      "remote": "/opt/live-input/policy/frisson-75m-p2.json",
+      "sha256": "aafbd834eceeb6bf2523848006613694d7408d6db4055e09f15e05548b6af106"
+    },
+    {
+      "bytes": 2763,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-02.json",
+      "remote": "/opt/live-input/policy/frisson-10m-p1.json",
+      "sha256": "52ad78c4c8882f3074dd902f0c2a4395dd79f25ca38959ae1699914785dec8b2"
+    },
+    {
+      "bytes": 2766,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-03.json",
+      "remote": "/opt/live-input/policy/frisson-10m-p2.json",
+      "sha256": "394acec127c3595b515876c101459938ee67e4ef74ae5a977bab49dd77ace20e"
+    },
+    {
+      "bytes": 2777,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-04.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d21_ditto_v4-p1.json",
+      "sha256": "a5736b2a1895214b8eeb520d35f303dcab2aa9150638a5543ee7c555c0e148f8"
+    },
+    {
+      "bytes": 3262,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-05.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d21_ditto_v4-p2.json",
+      "sha256": "03cd1ddf4e183ee8c9c2b40d240af3492b6545fcb75b667e7c6156c8dde7074f"
+    },
+    {
+      "bytes": 2777,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-06.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d24_ditto_v4-p1.json",
+      "sha256": "85d30642fa1a0d5f263cc6a942bf9e3d5ab40e226e6d2966a290f371cdcfad5b"
+    },
+    {
+      "bytes": 2913,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-07.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d24_ditto_v4-p2.json",
+      "sha256": "f3608fcfcc10b1fb78fbc83dd37885b9667426288e94ec8161868edd6a951139"
+    },
+    {
+      "bytes": 2759,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-08.json",
+      "remote": "/opt/live-input/policy/slippi-gm-p1.json",
+      "sha256": "4c7d48d60e75a6ccd635053aa01ccd01fddf10a5282a6910f7e8844178bea04c"
+    },
+    {
+      "bytes": 3254,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-09.json",
+      "remote": "/opt/live-input/policy/slippi-gm-p2.json",
+      "sha256": "c2ea424761269e8c595c876a960f0a8be7f394c956aa2c2024cd0f9df9051ae2"
+    },
+    {
+      "bytes": 18770,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/plan.json",
+      "remote": "/opt/live-input/policy/policy_plan.json",
+      "sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9"
+    },
+    {
+      "bytes": 30804,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/result.json",
+      "remote": "/opt/live-input/policy/policy_result.json",
+      "sha256": "f1a18ee4655e449951f7bc5131aca9a8d17191eef1e9ae03da894c184d6e270c"
+    },
+    {
+      "bytes": 283250,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/NUMERIC_DIAGNOSTIC.json",
+      "remote": "/opt/live-input/policy/numeric_diagnostic.json",
+      "sha256": "2701ec7bc33af5d79e83aba6e82a41e1127c96f609914fe1b5b6efd4a0443d47"
+    },
+    {
+      "bytes": 1613,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/PORTABILITY_LIMITATION_APPROVAL.json",
+      "remote": "/opt/live-input/policy/user_approval.json",
+      "sha256": "d378d15fdf3ea0541a16e83af79f014b55553aab94e10419b6fe3c2626a4fd78"
+    },
+    {
+      "bytes": 883,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/LIVE_PILOT_AUTHORIZATION.json",
+      "remote": "/opt/live-input/authorization.json",
+      "sha256": "8c7d23c02f898936007d8099f6387508a559a924a47e33b2b53810190efcf871"
+    },
+    {
+      "bytes": 1459978240,
+      "local": "${BENCHMARK_ROOT}/.e001-cache/game-images/melee-ntsc-1.02.iso",
+      "remote": "/opt/live-input/melee-ntsc-1.02.iso",
+      "sha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464"
+    },
+    {
+      "bytes": 16180,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/game_bundle.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/game_bundle.py",
+      "sha256": "77a08f753e9810b5dc54f372328553386e15274cb28b7f54d067e427a260448b"
+    },
+    {
+      "bytes": 45116,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/slippi_compatibility.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/slippi_compatibility.py",
+      "sha256": "db287b9b16eae628b4190dda8d7b4ae71a88ee0a47f55ada24636829c1e6391a"
+    },
+    {
+      "bytes": 41519,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/replay_result.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/replay_result.py",
+      "sha256": "059d5870e2399516575533afd81b529a06a7d2ea7399e9efb7d5e12a60493252"
+    },
+    {
+      "bytes": 15592,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/play.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/play.py",
+      "sha256": "6904fcb8dbb6bac1ce378ad3edaedf3c35d11b2b0d5f4f1b041e187edf7a08d2"
+    },
+    {
+      "bytes": 284,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/e000/__init__.py",
+      "remote": "/opt/runtime-root/src/melee_policy/e000/__init__.py",
+      "sha256": "6bf9eaa7237afc0de4f4dc8048b35efb46dc859ae269e4d6b5648a8516e9f9ec"
+    },
+    {
+      "bytes": 2283,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/e000/enums.py",
+      "remote": "/opt/runtime-root/src/melee_policy/e000/enums.py",
+      "sha256": "2b9cf66076a5022213180cf27f8ee11f28507b0be5372fcb110e35afc07ea59f"
+    },
+    {
+      "bytes": 13936,
+      "local": "${BENCHMARK_ROOT}/scripts/slippi_panel_runtime.py",
+      "remote": "/opt/runtime-root/scripts/slippi_panel_runtime.py",
+      "sha256": "239fb0d79a4586dfe111847ef62a8f8c9bb8754062e989be475bb103117ef5a5"
+    },
+    {
+      "bytes": 7127,
+      "local": "${BENCHMARK_ROOT}/scripts/slippi_panel_audit.py",
+      "remote": "/opt/runtime-root/scripts/slippi_panel_audit.py",
+      "sha256": "0b49ff8743c1425da0aadd338f8197115260c9b702335286d8b08cb95d1aa79b"
+    },
+    {
+      "bytes": 28506,
+      "local": "${BENCHMARK_ROOT}/scripts/run_slippi_public_panel.py",
+      "remote": "/opt/runtime-root/scripts/run_slippi_public_panel.py",
+      "sha256": "e8f896b3bc420f2e9e2dd9456515a9a75fc4f4215fbae82364db340430c70fd4"
+    },
+    {
+      "bytes": 4328,
+      "local": "${BENCHMARK_ROOT}/scripts/run_final_75m_vs_slippi_ai_character_sweep.py",
+      "remote": "/opt/runtime-root/scripts/run_final_75m_vs_slippi_ai_character_sweep.py",
+      "sha256": "b67c097d6611d78b75e567107c142959df92fce87e2ad5ca5d27ebc71197a062"
+    },
+    {
+      "bytes": 12339,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_match_host.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_match_host.py",
+      "sha256": "16b54c5dced4603f1505bf988e11ba9df615e79cb67d52a082e8773f7071de31"
+    },
+    {
+      "bytes": 10672,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_match_source.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_match_source.py",
+      "sha256": "79659ee055d9982031539ee1c3ea14427273596c7c0b72b5c64cb3c28cce815d"
+    },
+    {
+      "bytes": 44601,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_game_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_game_pilot.py",
+      "sha256": "6459449d21a7976ed083127c39ba34203cfe089b3a695e9a6a6ef940e319db11"
+    },
+    {
+      "bytes": 1937,
+      "local": "${BENCHMARK_ROOT}/requirements-e010.lock",
+      "remote": "/opt/runtime-root/requirements-e010.lock",
+      "sha256": "3b0551c542cb63346b11080e20042abd22da127054ba391b02a6924597905bbd"
+    },
+    {
+      "bytes": 2931,
+      "local": "${BENCHMARK_ROOT}/scripts/build-frame-sync-dolphin",
+      "remote": "/opt/runtime-root/scripts/build-frame-sync-dolphin",
+      "sha256": "a0dca91aa5a0a1aa5f245829284cf4c0e582cbcedb0939e010a881a01ca78d3c"
+    },
+    {
+      "bytes": 7036,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_pair_binding.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_pair_binding.py",
+      "sha256": "f1850d3170ba5ae5f2a5f9f88f460842c883052d51098d924402a74cc3b29e79"
+    },
+    {
+      "bytes": 5915,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_batch_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_batch_pilot.py",
+      "sha256": "5eb7235cb7e3e3910462e927f60f75007e10a381810511ffdc16ff1dd4b94f9a"
+    },
+    {
+      "bytes": 20365,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_durable_game.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_durable_game.py",
+      "sha256": "dfbe3ba66252b86e710801fc27255f2a4cbbc35da9e7ea7e4cf08f37ea4d9594"
+    },
+    {
+      "bytes": 24179,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/plan.json",
+      "remote": "/opt/live-plan.json",
+      "sha256": "8c016126e6773bb666697a1c93b04f8bbd79329462f416b0bbe61eea1cc9f813"
+    },
+    {
+      "bytes": 17281,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/result.json",
+      "remote": "/opt/full-game-input/tape/result.json",
+      "sha256": "bf2a8350357d71a41f385de59a8a4e4957167fe22499ceb407f4b937136903b4"
+    },
+    {
+      "bytes": 252,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/call.json",
+      "remote": "/opt/full-game-input/tape/call.json",
+      "sha256": "d48a7fd30ec02c6bfdd7ba9216aa316d548fdc8c17a4508c377ecc2ba5a8b23d"
+    },
+    {
+      "bytes": 50125,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/receipt.json",
+      "remote": "/opt/full-game-input/tape/returned/runtime/receipt.json",
+      "sha256": "798dbed51f96383299ea49140f04f2a6a4c894bfa141161014225a09176c5e99"
+    },
+    {
+      "bytes": 22294,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/qualification.json",
+      "remote": "/opt/full-game-input/tape/returned/runtime/qualification.json",
+      "sha256": "69fc6fc2af5fd4b968cf9939cc3487107d6e6db56729a4b988e72005a7226ab9"
+    },
+    {
+      "bytes": 1544,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/000.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/000.log",
+      "sha256": "8a03a1e35ce510bc1354c2be80be301a6e7c9638746a9ab49d5dd7a7b2209fc5"
+    },
+    {
+      "bytes": 65536,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/001.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/001.log",
+      "sha256": "319578fcb59105f903ecb6a0f17bad863eeb67cc63a505ab7fc35aeaba5d747b"
+    },
+    {
+      "bytes": 0,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/002.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/002.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 729,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/003.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/003.log",
+      "sha256": "9dfa688f46cda730ed7ae82e0fb2332c3de25474dfea4d0bab4fa62c345d2121"
+    },
+    {
+      "bytes": 14513,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/004.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/004.log",
+      "sha256": "9b95bcdff006d37a8264eafa1b81efd76859be387950ad0caf7b680cf722c681"
+    },
+    {
+      "bytes": 226,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/005.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/005.log",
+      "sha256": "c19bf9d623c6409d5c8f41639702fbb27d385b72376985761e40ea326195f639"
+    },
+    {
+      "bytes": 8697,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/006.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/006.log",
+      "sha256": "2dc6bbf3afca61960fdea0e930499f57c7efbf2161eaa9d2bed564ee3ac9e3c0"
+    },
+    {
+      "bytes": 0,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/007.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/007.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 30,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/008.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/008.log",
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "bytes": 518,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/009.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/009.log",
+      "sha256": "6c37475f80922972af6466e370677283f5f0e0d31576dfc520738ac252d9a9de"
+    },
+    {
+      "bytes": 30,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/010.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/010.log",
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "bytes": 518,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/011.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/011.log",
+      "sha256": "6c37475f80922972af6466e370677283f5f0e0d31576dfc520738ac252d9a9de"
+    },
+    {
+      "bytes": 8944,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/012.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/012.log",
+      "sha256": "fde23688f959caedb612c87894c5af0d9c46a3b618bc6ea945ce29e67eea8ff7"
+    },
+    {
+      "bytes": 65536,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/013.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/013.log",
+      "sha256": "356b15b1ddaf8da3c0d9784807f8c88a37e803e585812b4ea6d6385aa4d83eff"
+    },
+    {
+      "bytes": 1749,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/014.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/014.log",
+      "sha256": "6291a05fad4b79f0ec02ee61cd2a416a4eea599258b164f86b272cc9fac3aef1"
+    },
+    {
+      "bytes": 0,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/runtime/logs/015.log",
+      "remote": "/opt/full-game-input/tape/returned/runtime/logs/015.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3157,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/context.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/context.json",
+      "sha256": "7eeb4c4153d6d200f8ea6653a868e660a57fdf3ce3cb6221101e27ebf93c35ab"
+    },
+    {
+      "bytes": 44661,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/dependency_lock.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/dependency_lock.json",
+      "sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e"
+    },
+    {
+      "bytes": 1700,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/dependency_pins.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/dependency_pins.json",
+      "sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9"
+    },
+    {
+      "bytes": 767,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/game_image_access-admission.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/game_image_access-admission.json",
+      "sha256": "117925c873d538037155533f16543e6cfea3ace6ffd80d026ffeaf987ce8675f"
+    },
+    {
+      "bytes": 2649,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/installed_runtime.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/installed_runtime.json",
+      "sha256": "2691196734ca5c166de1cb94c38c13e7fa7b3ab5243fcd3df7cb04233b4d5836"
+    },
+    {
+      "bytes": 1438,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/linux_runtime-admission.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/linux_runtime-admission.json",
+      "sha256": "95dc33068ea2f44666f660a9b2c4e0354ade95c3124415762d1195d374032030"
+    },
+    {
+      "bytes": 902,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/live_execution-admission.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/live_execution-admission.json",
+      "sha256": "fd2accff646d4593b7c05ebb1524763af57ac3d89ad7d0d7e489a285e781abe1"
+    },
+    {
+      "bytes": 673,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/os_packages.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/os_packages.json",
+      "sha256": "97e46bb02c9f8adfcf8672ff5b257e380d08a6309b57adb9e9b94edadcbf03d2"
+    },
+    {
+      "bytes": 2600,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/policy_parity-admission.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/policy_parity-admission.json",
+      "sha256": "6a9c5439cdea26dc9c60fb03acc372e1d612a249dafe529c7a7fd4f130c3a6b3"
+    },
+    {
+      "bytes": 3866,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/source_manifest.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/source_manifest.json",
+      "sha256": "265197d14bbb7d13e59011b63c7f3515db542f93953f4fff0f8c528b1cbf0c4d"
+    },
+    {
+      "bytes": 189120,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/tape-plan.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/tape-plan.json",
+      "sha256": "66285b0ecce8c2cb525823f1b6c42fb0f46edf148c22d1efef19c9d9e6a1360c"
+    },
+    {
+      "bytes": 149,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/admissions/ubjson_extension.json",
+      "remote": "/opt/full-game-input/tape/returned/admissions/ubjson_extension.json",
+      "sha256": "d14e928e37ca22e08fcfd84df623dbafa83889756175fd9ea6053d5409869b6f"
+    },
+    {
+      "bytes": 26509,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-0/case.json",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-0/case.json",
+      "sha256": "13e7dae90f90f7012200ec09d713a2ea980bbb5e1653a43b2db9eacb9af04597"
+    },
+    {
+      "bytes": 1179392,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-0/controller_tape_canonical_schema_audit_projection.jsonl",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-0/controller_tape_canonical_schema_audit_projection.jsonl",
+      "sha256": "b56e377eda51b95fe35572ded26f9e637f6bc199da7dbce061b7bd4a789f9d8b"
+    },
+    {
+      "bytes": 1135232,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-0/controller_tape_trace.jsonl",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-0/controller_tape_trace.jsonl",
+      "sha256": "14e8e098b2befb557e88a23301e506be871947f7f5edb538cb4fd79cf3255b38"
+    },
+    {
+      "bytes": 169882,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-0/replays/Game_20260911T231205.slp",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-0/replays/Game_20260911T231205.slp",
+      "sha256": "f634d28c66c2741e266ffe6f6119edf1e7c85732a2173df9edd8183ac7e8650c"
+    },
+    {
+      "bytes": 26511,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-1/case.json",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-1/case.json",
+      "sha256": "ddeb085495ad5f1c17b1097a7dbff475367717fb789219a3d8cc9047adf597e5"
+    },
+    {
+      "bytes": 1182917,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-1/controller_tape_canonical_schema_audit_projection.jsonl",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-1/controller_tape_canonical_schema_audit_projection.jsonl",
+      "sha256": "5b0649d1cf4f535815b74f75307579bcb57f34e35edda57ac6a504bdc8ab2e0c"
+    },
+    {
+      "bytes": 1138757,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-1/controller_tape_trace.jsonl",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-1/controller_tape_trace.jsonl",
+      "sha256": "0d62b7181f7d6b87e882fe241daf3631b35f0728f20936192eca6b35d66fe53a"
+    },
+    {
+      "bytes": 169387,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/case-1/replays/Game_20260911T231226.slp",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/case-1/replays/Game_20260911T231226.slp",
+      "sha256": "a542f5fd89067be794cfc61f6148bed486bb37971f7613298d887d19e6f5b30a"
+    },
+    {
+      "bytes": 30,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/host-01.log",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/host-01.log",
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    {
+      "bytes": 518,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/host-02.log",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/host-02.log",
+      "sha256": "6c37475f80922972af6466e370677283f5f0e0d31576dfc520738ac252d9a9de"
+    },
+    {
+      "bytes": 8944,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/host-03.log",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/host-03.log",
+      "sha256": "0f0abe243bf9ce392412e31e8bcac4b75f5f255b51eb8b5b070b155d7b3b4537"
+    },
+    {
+      "bytes": 65536,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/host-04.log",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/host-04.log",
+      "sha256": "356b15b1ddaf8da3c0d9784807f8c88a37e803e585812b4ea6d6385aa4d83eff"
+    },
+    {
+      "bytes": 1743,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/host-05.log",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/host-05.log",
+      "sha256": "a3d6fba4a42e99717e00d9b5844c54c7e5291d1e25ea3823cd39fb1aa97939b7"
+    },
+    {
+      "bytes": 166,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/intent.json",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/intent.json",
+      "sha256": "68f12892251b9cde52476b31442d08eb74e13e9a5e97b40456203fe6f2e4de65"
+    },
+    {
+      "bytes": 15244,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/result.json",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/result.json",
+      "sha256": "9ce8a350870fce0a66c298951890032c1f7805a621ebdee6eaba0f9ca4c30ca2"
+    },
+    {
+      "bytes": 0,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/controller-tape/xvfb.log",
+      "remote": "/opt/full-game-input/tape/returned/controller-tape/xvfb.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 21461,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/receipt.json",
+      "remote": "/opt/full-game-input/tape/returned/receipt.json",
+      "sha256": "90f826bf5f01bad1159caa0fb448fe2819ca98e4def94ac7d57e0433f0dab57d"
+    },
+    {
+      "bytes": 0,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/supervisor/owner.log",
+      "remote": "/opt/full-game-input/tape/returned/supervisor/owner.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 685,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/supervisor/receipt.json",
+      "remote": "/opt/full-game-input/tape/returned/supervisor/receipt.json",
+      "sha256": "e147637d4a744f39bb87f4d7ae0692c5c11c1e01b7a9b50a42dd838f0979434f"
+    },
+    {
+      "bytes": 537,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/tape-command/commands.json",
+      "remote": "/opt/full-game-input/tape/returned/tape-command/commands.json",
+      "sha256": "069b519e10c6108648aa979c50d2ca6561dd5c78bef786edc5895ec3be118391"
+    },
+    {
+      "bytes": 738,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/tape-command/logs/001.log",
+      "remote": "/opt/full-game-input/tape/returned/tape-command/logs/001.log",
+      "sha256": "ca170df02b1e57d206fb880eaaa87120de6d6e4fba98ddf1afb66b0f0d516054"
+    },
+    {
+      "bytes": 18901,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2/returned/tape-result.json",
+      "remote": "/opt/full-game-input/tape/returned/tape-result.json",
+      "sha256": "03479ee6594c3c94d541466d93b737a4c68a04d3f4540785cfe7cdb4e5382bc3"
+    },
+    {
+      "bytes": 198071,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/frisson-full-match-source.json",
+      "remote": "/opt/full-game-input/source.json",
+      "sha256": "83d261fb7988ee20bcf49dbd648b0fc2f75d41ddca1a86643996f19443ccc755"
+    },
+    {
+      "bytes": 96448859,
+      "local": "${BENCHMARK_ROOT}/.e010-cache/post-rl-p21/frisson-melee-10m-rl-step1318.pt",
+      "remote": "/opt/runtime-root/.e010-cache/post-rl-p21/frisson-melee-10m-rl-step1318.pt",
+      "sha256": "da1179d6319d2f9a805b1697d8176b66a455aa9f37b51e46ad5f2a3d3537a7da"
+    },
+    {
+      "bytes": 95559707,
+      "local": "${BENCHMARK_ROOT}/.e001-cache/slippi-ai/models/medium-v2",
+      "remote": "/opt/runtime-root/.e001-cache/slippi-ai/models/medium-v2",
+      "sha256": "48dcfd87c52fde9899fb37b0293ce2a597fb2384b7b40baf7fb49c760152a96c"
+    },
+    {
+      "bytes": 2631,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/cloud-dispatch-v1/metadata/blobs/313f2587f0285163558dd57e885fe70526445b1c7591f30fcdc4668a1263d23c",
+      "remote": "/opt/full-game-input/authorization.json",
+      "sha256": "313f2587f0285163558dd57e885fe70526445b1c7591f30fcdc4668a1263d23c"
+    }
+  ]
+}

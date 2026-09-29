@@ -1,0 +1,59 @@
+{
+  "admission_paths": {
+    "game_image_access": "/work/research/live-pilot/admissions/game_image_access-admission.json",
+    "linux_runtime": "/work/research/live-pilot/admissions/linux_runtime-admission.json",
+    "live_execution": "/work/research/live-pilot/admissions/live_execution-admission.json",
+    "policy_parity": "/work/research/live-pilot/admissions/policy_parity-admission.json"
+  },
+  "evidence_paths": {
+    "game_image_access": {
+      "authorization": "/opt/live-input/authorization.json"
+    },
+    "linux_runtime": {
+      "dependency_lock": "/work/research/live-pilot/admissions/dependency_lock.json",
+      "dependency_pins": "/work/research/live-pilot/admissions/dependency_pins.json",
+      "installed_runtime": "/work/research/live-pilot/admissions/installed_runtime.json",
+      "os_packages": "/work/research/live-pilot/admissions/os_packages.json",
+      "source_manifest": "/work/research/live-pilot/admissions/source_manifest.json",
+      "ubjson_extension": "/work/research/live-pilot/admissions/ubjson_extension.json"
+    },
+    "live_execution": {
+      "authorization": "/opt/live-input/authorization.json",
+      "owner_entrypoint": "/opt/runtime-root/scripts/modal_panel_live_pilot.py"
+    },
+    "policy_parity": {
+      "frisson-10m-p1": "/opt/live-input/policy/frisson-10m-p1.json",
+      "frisson-10m-p2": "/opt/live-input/policy/frisson-10m-p2.json",
+      "frisson-75m-p1": "/opt/live-input/policy/frisson-75m-p1.json",
+      "frisson-75m-p2": "/opt/live-input/policy/frisson-75m-p2.json",
+      "numeric_diagnostic": "/opt/live-input/policy/numeric_diagnostic.json",
+      "policy_plan": "/opt/live-input/policy/policy_plan.json",
+      "policy_result": "/opt/live-input/policy/policy_result.json",
+      "slippi-fox_d21_ditto_v4-p1": "/opt/live-input/policy/slippi-fox_d21_ditto_v4-p1.json",
+      "slippi-fox_d21_ditto_v4-p2": "/opt/live-input/policy/slippi-fox_d21_ditto_v4-p2.json",
+      "slippi-fox_d24_ditto_v4-p1": "/opt/live-input/policy/slippi-fox_d24_ditto_v4-p1.json",
+      "slippi-fox_d24_ditto_v4-p2": "/opt/live-input/policy/slippi-fox_d24_ditto_v4-p2.json",
+      "slippi-gm-p1": "/opt/live-input/policy/slippi-gm-p1.json",
+      "slippi-gm-p2": "/opt/live-input/policy/slippi-gm-p2.json",
+      "user_approval": "/opt/live-input/policy/user_approval.json"
+    }
+  },
+  "extension_binary_identical_to_prior": "unassessed",
+  "fresh_runtime_requalified": true,
+  "owner_declaration": {
+    "entrypoint": {
+      "identity": {
+        "bytes": 42019,
+        "sha256": "3ed3b555993b376df43467bbbdac8d25cc70c3d7585aaf25ec54e78325bbab1a"
+      },
+      "path": "/opt/runtime-root/scripts/modal_panel_live_pilot.py"
+    },
+    "expires_at": 1789168907,
+    "parent_pid": 4,
+    "plan_sha256": "3c93db282514352585509bccd04726b9c88ae6466e300a334e5a2981bc80f6ad",
+    "runner_sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e",
+    "schema": "e011.modal-live-parent-declaration.v1"
+  },
+  "policy_plan_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9",
+  "prior_runtime_plan_sha256": "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02"
+}

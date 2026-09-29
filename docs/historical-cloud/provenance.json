@@ -1,0 +1,512 @@
+[
+  {
+    "path": "docs/historical-cloud/cloud-dispatch-v1/metadata/plans/sp21-10m-medium-v2-supported-mirror-cptfalcon-dreamland-p1.json",
+    "original_path_relative_to_compatibility_root": "cloud-dispatch-v1/metadata/plans/sp21-10m-medium-v2-supported-mirror-cptfalcon-dreamland-p1.json",
+    "original_sha256": "8256d2ecf4feeb6fa266a180b89145a85c995966afea195d9d2625fe5807c536",
+    "release_sha256": "c6aeebfb406dd08d5a31c570d2e5151abbf40fd58862f26c2e87633da7d16bd6",
+    "original_bytes": 65980,
+    "release_bytes": 59197,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-dependencies-v1/candidate-lock-94.json",
+    "original_path_relative_to_compatibility_root": "live-dependencies-v1/candidate-lock-94.json",
+    "original_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "release_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "original_bytes": 44661,
+    "release_bytes": 44661,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-dependencies-v1/requirements-linux-live-94.lock",
+    "original_path_relative_to_compatibility_root": "live-dependencies-v1/requirements-linux-live-94.lock",
+    "original_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "release_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "original_bytes": 1700,
+    "release_bytes": 1700,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/pilot-v7/returned/package-manifest.json",
+    "original_path_relative_to_compatibility_root": "pilot-v7/returned/package-manifest.json",
+    "original_sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700",
+    "release_sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700",
+    "original_bytes": 55049,
+    "release_bytes": 55049,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/pilot-v7/PACKAGE_AUDIT.json",
+    "original_path_relative_to_compatibility_root": "pilot-v7/PACKAGE_AUDIT.json",
+    "original_sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05",
+    "release_sha256": "6ff71863305561e7d98b809197a855db9d2346fb1b8211be261b1911323bd5e8",
+    "original_bytes": 6365,
+    "release_bytes": 6360,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/runtime-pilot-v2/plan.json",
+    "original_path_relative_to_compatibility_root": "runtime-pilot-v2/plan.json",
+    "original_sha256": "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02",
+    "release_sha256": "3d760c34feeb5bbbcaee578bedd490e1d4ca943e96a5942cb9930caf0a0eb212",
+    "original_bytes": 12889,
+    "release_bytes": 11410,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/runtime-pilot-v2/result.json",
+    "original_path_relative_to_compatibility_root": "runtime-pilot-v2/result.json",
+    "original_sha256": "3b149b502fe21cfc2f179ad07d6118204c070b6b2664ad8ea61a09038e43a64d",
+    "release_sha256": "8dff55406426dabe7b92717f9606562872ea846671afbb9830ea77502f8f272e",
+    "original_bytes": 55695,
+    "release_bytes": 55690,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/runtime-pilot-v2/call.json",
+    "original_path_relative_to_compatibility_root": "runtime-pilot-v2/call.json",
+    "original_sha256": "20f15116e0fee6a256b316e84872704b382e1371d4e5b057ba268402b1512182",
+    "release_sha256": "347212a3f625b0c1ed9d0b3a2bb7ed62cfe588ea8a930770c68353678d70a419",
+    "original_bytes": 252,
+    "release_bytes": 241,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/runtime-pilot-v2/returned/receipt.json",
+    "original_path_relative_to_compatibility_root": "runtime-pilot-v2/returned/receipt.json",
+    "original_sha256": "f474181840d848115c8ca79221c87a41921778ea56f14c4004d5651098f22886",
+    "release_sha256": "f474181840d848115c8ca79221c87a41921778ea56f14c4004d5651098f22886",
+    "original_bytes": 50125,
+    "release_bytes": 50125,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/runtime-pilot-v2/returned/qualification.json",
+    "original_path_relative_to_compatibility_root": "runtime-pilot-v2/returned/qualification.json",
+    "original_sha256": "f8c4ccb94fe3785374caf7e4a2c287a899e211d25152b5a5d00cbdfcc96dfaf6",
+    "release_sha256": "f8c4ccb94fe3785374caf7e4a2c287a899e211d25152b5a5d00cbdfcc96dfaf6",
+    "original_bytes": 22294,
+    "release_bytes": 22294,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-00.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-00.json",
+    "original_sha256": "744ce21e9117feebbb23f024b8d9a411c9e4d7a80adc0e8017c1d3e63f4f9bb0",
+    "release_sha256": "8f065960f215cd1bb6207277d8c3323afa01d2486ccfb5b3e0a729784ce6005c",
+    "original_bytes": 2762,
+    "release_bytes": 2660,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-01.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-01.json",
+    "original_sha256": "aafbd834eceeb6bf2523848006613694d7408d6db4055e09f15e05548b6af106",
+    "release_sha256": "82e7281bdea2179666feae271dec0cc132c07dde276ef7a25e6c2e235c80b26b",
+    "original_bytes": 2763,
+    "release_bytes": 2661,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-02.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-02.json",
+    "original_sha256": "52ad78c4c8882f3074dd902f0c2a4395dd79f25ca38959ae1699914785dec8b2",
+    "release_sha256": "70e114cb7e9367911bb3b0fab144e537c48b9d496a4826cc550dd74437dfca69",
+    "original_bytes": 2763,
+    "release_bytes": 2661,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-03.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-03.json",
+    "original_sha256": "394acec127c3595b515876c101459938ee67e4ef74ae5a977bab49dd77ace20e",
+    "release_sha256": "156e21b0dfeb301ae1684b2fccf49e369bdd4fdc932070a214e31b6970651a78",
+    "original_bytes": 2766,
+    "release_bytes": 2664,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-04.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-04.json",
+    "original_sha256": "a5736b2a1895214b8eeb520d35f303dcab2aa9150638a5543ee7c555c0e148f8",
+    "release_sha256": "d1016ebfc9555567355144743d63cfa2a8529d090bb2b5cb40447755fd1a793f",
+    "original_bytes": 2777,
+    "release_bytes": 2675,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-05.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-05.json",
+    "original_sha256": "03cd1ddf4e183ee8c9c2b40d240af3492b6545fcb75b667e7c6156c8dde7074f",
+    "release_sha256": "8664a86a82528370ed264f9c557b6598f56f95da4932bf7ccf6d4409939b7f77",
+    "original_bytes": 3262,
+    "release_bytes": 3160,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-06.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-06.json",
+    "original_sha256": "85d30642fa1a0d5f263cc6a942bf9e3d5ab40e226e6d2966a290f371cdcfad5b",
+    "release_sha256": "193ca5f1e6b359524f47d11a97ec1270fc075613dd38fd9b3b798cae2879b2b5",
+    "original_bytes": 2777,
+    "release_bytes": 2675,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-07.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-07.json",
+    "original_sha256": "f3608fcfcc10b1fb78fbc83dd37885b9667426288e94ec8161868edd6a951139",
+    "release_sha256": "d5690c9e189b849e5a0f33d0612aeb09e8df28dd80e7f9b3ad4055acc7ef6ef6",
+    "original_bytes": 2913,
+    "release_bytes": 2811,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-08.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-08.json",
+    "original_sha256": "4c7d48d60e75a6ccd635053aa01ccd01fddf10a5282a6910f7e8844178bea04c",
+    "release_sha256": "6e6b606d098fcadd4b17dcc069efecd19e558b2a7a02acf7460d6febad6afc27",
+    "original_bytes": 2759,
+    "release_bytes": 2657,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/comparison-09.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/comparison-09.json",
+    "original_sha256": "c2ea424761269e8c595c876a960f0a8be7f394c956aa2c2024cd0f9df9051ae2",
+    "release_sha256": "f69811a336943bcb8391e32147be344e646adf8afba7e641ffd32430093a730d",
+    "original_bytes": 3254,
+    "release_bytes": 3152,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/plan.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/plan.json",
+    "original_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9",
+    "release_sha256": "8c8872e17cab63d139e3d9fab894616f2491b5c758bbe6a782734ad6debcbbd8",
+    "original_bytes": 18770,
+    "release_bytes": 17036,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/result.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/result.json",
+    "original_sha256": "f1a18ee4655e449951f7bc5131aca9a8d17191eef1e9ae03da894c184d6e270c",
+    "release_sha256": "5340e15288c0706c5e0c5e27333d9216cb1af82e939e40cb3de30ea598d0d9c9",
+    "original_bytes": 30804,
+    "release_bytes": 30799,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/NUMERIC_DIAGNOSTIC.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/NUMERIC_DIAGNOSTIC.json",
+    "original_sha256": "2701ec7bc33af5d79e83aba6e82a41e1127c96f609914fe1b5b6efd4a0443d47",
+    "release_sha256": "e7486cd8a430432cd93caf2cdce12872e7734afdef4028388ca91978b01f1109",
+    "original_bytes": 283250,
+    "release_bytes": 281567,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/policy-pilot-v4/PORTABILITY_LIMITATION_APPROVAL.json",
+    "original_path_relative_to_compatibility_root": "policy-pilot-v4/PORTABILITY_LIMITATION_APPROVAL.json",
+    "original_sha256": "d378d15fdf3ea0541a16e83af79f014b55553aab94e10419b6fe3c2626a4fd78",
+    "release_sha256": "d378d15fdf3ea0541a16e83af79f014b55553aab94e10419b6fe3c2626a4fd78",
+    "original_bytes": 1613,
+    "release_bytes": 1613,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/LIVE_PILOT_AUTHORIZATION.json",
+    "original_path_relative_to_compatibility_root": "LIVE_PILOT_AUTHORIZATION.json",
+    "original_sha256": "8c7d23c02f898936007d8099f6387508a559a924a47e33b2b53810190efcf871",
+    "release_sha256": "8c7d23c02f898936007d8099f6387508a559a924a47e33b2b53810190efcf871",
+    "original_bytes": 883,
+    "release_bytes": 883,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/plan.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/plan.json",
+    "original_sha256": "8c016126e6773bb666697a1c93b04f8bbd79329462f416b0bbe61eea1cc9f813",
+    "release_sha256": "06f7ba46eb8dd72a79d1d745cdb9b265d60f9e0db836268771abb02bb3b633ac",
+    "original_bytes": 24179,
+    "release_bytes": 21323,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/result.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/result.json",
+    "original_sha256": "bf2a8350357d71a41f385de59a8a4e4957167fe22499ceb407f4b937136903b4",
+    "release_sha256": "acfb909df5013b736b53bc526d1c069e1dfba63b752ac79e2846e49b70a8c8b3",
+    "original_bytes": 17281,
+    "release_bytes": 17276,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/call.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/call.json",
+    "original_sha256": "d48a7fd30ec02c6bfdd7ba9216aa316d548fdc8c17a4508c377ecc2ba5a8b23d",
+    "release_sha256": "a14b73c69a8e93b3e8b08ee9df3b7308c699936da25a3573fe8e9e7c3fd780da",
+    "original_bytes": 252,
+    "release_bytes": 241,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/runtime/receipt.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/runtime/receipt.json",
+    "original_sha256": "798dbed51f96383299ea49140f04f2a6a4c894bfa141161014225a09176c5e99",
+    "release_sha256": "798dbed51f96383299ea49140f04f2a6a4c894bfa141161014225a09176c5e99",
+    "original_bytes": 50125,
+    "release_bytes": 50125,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/runtime/qualification.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/runtime/qualification.json",
+    "original_sha256": "69fc6fc2af5fd4b968cf9939cc3487107d6e6db56729a4b988e72005a7226ab9",
+    "release_sha256": "69fc6fc2af5fd4b968cf9939cc3487107d6e6db56729a4b988e72005a7226ab9",
+    "original_bytes": 22294,
+    "release_bytes": 22294,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/context.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/context.json",
+    "original_sha256": "7eeb4c4153d6d200f8ea6653a868e660a57fdf3ce3cb6221101e27ebf93c35ab",
+    "release_sha256": "7eeb4c4153d6d200f8ea6653a868e660a57fdf3ce3cb6221101e27ebf93c35ab",
+    "original_bytes": 3157,
+    "release_bytes": 3157,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/dependency_lock.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/dependency_lock.json",
+    "original_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "release_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "original_bytes": 44661,
+    "release_bytes": 44661,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/dependency_pins.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/dependency_pins.json",
+    "original_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "release_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "original_bytes": 1700,
+    "release_bytes": 1700,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/game_image_access-admission.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/game_image_access-admission.json",
+    "original_sha256": "117925c873d538037155533f16543e6cfea3ace6ffd80d026ffeaf987ce8675f",
+    "release_sha256": "38a52400fd28143b43a605c9ecec7788ddfe01b5e9879f74a9163f34e845507c",
+    "original_bytes": 767,
+    "release_bytes": 766,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/installed_runtime.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/installed_runtime.json",
+    "original_sha256": "2691196734ca5c166de1cb94c38c13e7fa7b3ab5243fcd3df7cb04233b4d5836",
+    "release_sha256": "2691196734ca5c166de1cb94c38c13e7fa7b3ab5243fcd3df7cb04233b4d5836",
+    "original_bytes": 2649,
+    "release_bytes": 2649,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/linux_runtime-admission.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/linux_runtime-admission.json",
+    "original_sha256": "95dc33068ea2f44666f660a9b2c4e0354ade95c3124415762d1195d374032030",
+    "release_sha256": "633ced20a736d8738e7c160122d8ee364193a4405e80af61a40e87564445f150",
+    "original_bytes": 1438,
+    "release_bytes": 1437,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/live_execution-admission.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/live_execution-admission.json",
+    "original_sha256": "fd2accff646d4593b7c05ebb1524763af57ac3d89ad7d0d7e489a285e781abe1",
+    "release_sha256": "d62d2c933b0cd4f42ad8f2704e1a2c92826ebe36288baf61b32b663dc52655f5",
+    "original_bytes": 902,
+    "release_bytes": 901,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/os_packages.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/os_packages.json",
+    "original_sha256": "97e46bb02c9f8adfcf8672ff5b257e380d08a6309b57adb9e9b94edadcbf03d2",
+    "release_sha256": "97e46bb02c9f8adfcf8672ff5b257e380d08a6309b57adb9e9b94edadcbf03d2",
+    "original_bytes": 673,
+    "release_bytes": 673,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/policy_parity-admission.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/policy_parity-admission.json",
+    "original_sha256": "6a9c5439cdea26dc9c60fb03acc372e1d612a249dafe529c7a7fd4f130c3a6b3",
+    "release_sha256": "2470388fe2081214b21198b4d1058c5781588d2c7299004b008877914891c299",
+    "original_bytes": 2600,
+    "release_bytes": 2599,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/source_manifest.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/source_manifest.json",
+    "original_sha256": "265197d14bbb7d13e59011b63c7f3515db542f93953f4fff0f8c528b1cbf0c4d",
+    "release_sha256": "265197d14bbb7d13e59011b63c7f3515db542f93953f4fff0f8c528b1cbf0c4d",
+    "original_bytes": 3866,
+    "release_bytes": 3866,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/tape-plan.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/tape-plan.json",
+    "original_sha256": "66285b0ecce8c2cb525823f1b6c42fb0f46edf148c22d1efef19c9d9e6a1360c",
+    "release_sha256": "6b46ded9d3865fdae1aafb3e2f65fe3afe480c45cca76378cbc12625f5756aca",
+    "original_bytes": 189120,
+    "release_bytes": 189119,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/admissions/ubjson_extension.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/admissions/ubjson_extension.json",
+    "original_sha256": "d14e928e37ca22e08fcfd84df623dbafa83889756175fd9ea6053d5409869b6f",
+    "release_sha256": "d14e928e37ca22e08fcfd84df623dbafa83889756175fd9ea6053d5409869b6f",
+    "original_bytes": 149,
+    "release_bytes": 149,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/controller-tape/case-0/case.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/controller-tape/case-0/case.json",
+    "original_sha256": "13e7dae90f90f7012200ec09d713a2ea980bbb5e1653a43b2db9eacb9af04597",
+    "release_sha256": "13e7dae90f90f7012200ec09d713a2ea980bbb5e1653a43b2db9eacb9af04597",
+    "original_bytes": 26509,
+    "release_bytes": 26509,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/controller-tape/case-1/case.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/controller-tape/case-1/case.json",
+    "original_sha256": "ddeb085495ad5f1c17b1097a7dbff475367717fb789219a3d8cc9047adf597e5",
+    "release_sha256": "ddeb085495ad5f1c17b1097a7dbff475367717fb789219a3d8cc9047adf597e5",
+    "original_bytes": 26511,
+    "release_bytes": 26511,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/controller-tape/intent.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/controller-tape/intent.json",
+    "original_sha256": "68f12892251b9cde52476b31442d08eb74e13e9a5e97b40456203fe6f2e4de65",
+    "release_sha256": "68f12892251b9cde52476b31442d08eb74e13e9a5e97b40456203fe6f2e4de65",
+    "original_bytes": 166,
+    "release_bytes": 166,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/controller-tape/result.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/controller-tape/result.json",
+    "original_sha256": "9ce8a350870fce0a66c298951890032c1f7805a621ebdee6eaba0f9ca4c30ca2",
+    "release_sha256": "1b51f1446d7926439b343ddb10a92c7d1bcce878ff35a85491ce9ff9ee9b468b",
+    "original_bytes": 15244,
+    "release_bytes": 15243,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/receipt.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/receipt.json",
+    "original_sha256": "90f826bf5f01bad1159caa0fb448fe2819ca98e4def94ac7d57e0433f0dab57d",
+    "release_sha256": "ff95a283f58a5ba6d8f2b4ac2d07229576ad2d44bf81b256064082d80fd046e2",
+    "original_bytes": 21461,
+    "release_bytes": 21459,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/supervisor/receipt.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/supervisor/receipt.json",
+    "original_sha256": "e147637d4a744f39bb87f4d7ae0692c5c11c1e01b7a9b50a42dd838f0979434f",
+    "release_sha256": "7a73f3427836a934772b4ee26e3d07bfdb3815e0ec5728da23551dbba935dda7",
+    "original_bytes": 685,
+    "release_bytes": 684,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/tape-command/commands.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/tape-command/commands.json",
+    "original_sha256": "069b519e10c6108648aa979c50d2ca6561dd5c78bef786edc5895ec3be118391",
+    "release_sha256": "069b519e10c6108648aa979c50d2ca6561dd5c78bef786edc5895ec3be118391",
+    "original_bytes": 537,
+    "release_bytes": 537,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/live-pilot-v2/returned/tape-result.json",
+    "original_path_relative_to_compatibility_root": "live-pilot-v2/returned/tape-result.json",
+    "original_sha256": "03479ee6594c3c94d541466d93b737a4c68a04d3f4540785cfe7cdb4e5382bc3",
+    "release_sha256": "8e7c5b8407c9f56daf9c24d5e48b61854f9f6e0e76a264fd91c1859a7cc8e38f",
+    "original_bytes": 18901,
+    "release_bytes": 18900,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  },
+  {
+    "path": "docs/historical-cloud/frisson-full-match-source.json",
+    "original_path_relative_to_compatibility_root": "frisson-full-match-source.json",
+    "original_sha256": "83d261fb7988ee20bcf49dbd648b0fc2f75d41ddca1a86643996f19443ccc755",
+    "release_sha256": "83d261fb7988ee20bcf49dbd648b0fc2f75d41ddca1a86643996f19443ccc755",
+    "original_bytes": 198071,
+    "release_bytes": 198071,
+    "status": "historical evidence, requires fresh qualification for release source",
+    "transform": "Personal path prefix and provider resource identifiers sanitized."
+  }
+]

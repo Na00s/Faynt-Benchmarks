@@ -1,0 +1,41 @@
+{
+  "bindings": {
+    "game_image_sha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464",
+    "package_archive_sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19",
+    "policy_plan_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9",
+    "runtime_image": {
+      "image_id": "<historical-provider-id>",
+      "manifest_sha256": "8c016126e6773bb666697a1c93b04f8bbd79329462f416b0bbe61eea1cc9f813",
+      "platform": "linux_x86_64"
+    }
+  },
+  "decision": "pass",
+  "evidence": {
+    "dependency_lock": {
+      "bytes": 44661,
+      "sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e"
+    },
+    "dependency_pins": {
+      "bytes": 1700,
+      "sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9"
+    },
+    "installed_runtime": {
+      "bytes": 2649,
+      "sha256": "2691196734ca5c166de1cb94c38c13e7fa7b3ab5243fcd3df7cb04233b4d5836"
+    },
+    "os_packages": {
+      "bytes": 673,
+      "sha256": "97e46bb02c9f8adfcf8672ff5b257e380d08a6309b57adb9e9b94edadcbf03d2"
+    },
+    "source_manifest": {
+      "bytes": 3866,
+      "sha256": "265197d14bbb7d13e59011b63c7f3515db542f93953f4fff0f8c528b1cbf0c4d"
+    },
+    "ubjson_extension": {
+      "bytes": 149,
+      "sha256": "d14e928e37ca22e08fcfd84df623dbafa83889756175fd9ea6053d5409869b6f"
+    }
+  },
+  "kind": "linux_runtime",
+  "schema": "e011.modal-live-admission.v1"
+}

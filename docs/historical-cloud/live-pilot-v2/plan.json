@@ -1,0 +1,459 @@
+{
+  "authorization_sha256": "8c7d23c02f898936007d8099f6387508a559a924a47e33b2b53810190efcf871",
+  "data_assets": {
+    "src/melee_policy/integration/mimic_native_bundles.v1.json": {
+      "bytes": 31259,
+      "sha256": "adb8fa9ef8c6fd5f054fb68b22552c2c92cacce3f8cc0ac0ca2f72bed9ebcef3"
+    }
+  },
+  "fresh_runtime": {
+    "compiled_extension_byte_equality_to_prior": false,
+    "expanded_sources_checked_in_tape_child": true,
+    "requalify_install_loader_display": true,
+    "same_locked94_packages": true
+  },
+  "game_image": {
+    "byte_length": 1459978240,
+    "disc_game_id": "GALE01",
+    "disc_revision": 2,
+    "sha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464"
+  },
+  "limits": {
+    "client_resubmissions": 0,
+    "cpu": [
+      4,
+      4
+    ],
+    "function_seconds": 1800,
+    "max_containers": 1,
+    "memory_mib": [
+      16384,
+      16384
+    ],
+    "nonpreemptible": true,
+    "owner_seconds": 1710,
+    "platform_restarts": "possible; same absolute expiry retained",
+    "return_bytes": 134217728,
+    "return_file_bytes": 33554432,
+    "session_seconds": 2100,
+    "tape_seconds": 600,
+    "upload_bytes": 1501921280
+  },
+  "native_account_environment": "preserve existing HOME after matching the operating-system account",
+  "output": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-pilot-v2",
+  "policy_plan_sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9",
+  "prior_runtime_plan_sha256": "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02",
+  "runtime_spec": {
+    "architecture": "x86_64",
+    "audio": "native audio enabled; virtual host has no promised physical sound device",
+    "dependency_lock_sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e",
+    "dependency_pins_sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9",
+    "display": "fresh inherited Xvfb, TCP disabled, 640x480x24",
+    "environment": {
+      "GALLIUM_DRIVER": "llvmpipe",
+      "LIBGL_ALWAYS_SOFTWARE": "1",
+      "TF_ENABLE_ONEDNN_OPTS": "0"
+    },
+    "native_disable_audio": false,
+    "os": "ubuntu:22.04",
+    "package_versions": "exact dpkg receipt required from the admitted runtime image",
+    "packages": [
+      "libgtk-3-0",
+      "libasound2",
+      "libxi6",
+      "libsfml-network2.5",
+      "libusb-1.0-0",
+      "libmbedtls14",
+      "libsoil1",
+      "libsm6",
+      "liblzo2-2",
+      "libudev1",
+      "libcurl4",
+      "libopengl0",
+      "libglx0",
+      "libxrandr2",
+      "libxxf86vm1",
+      "xvfb",
+      "libgl1-mesa-dri",
+      "mesa-utils",
+      "x11-utils"
+    ],
+    "renderer": "Mesa llvmpipe software OpenGL",
+    "runtime_admitted": false
+  },
+  "schema": "e011.modal-live-pilot.v1",
+  "scope": {
+    "benchmark_ledger_writes": false,
+    "checkpoints": 0,
+    "command_frames_per_case": 320,
+    "controller_cases": 2,
+    "cross_host_trajectory_equivalence": "unassessed",
+    "numeric_classification": "portability-limited-v4-approved-exact-command-parity",
+    "policy_inference_calls": 0,
+    "reversed_physical_ports": true,
+    "save_slp": true,
+    "save_video": false
+  },
+  "source_paths": [
+    "src/melee_policy/__init__.py",
+    "src/melee_policy/integration/__init__.py",
+    "src/melee_policy/integration/frame_watchdog.py",
+    "src/melee_policy/integration/frisson_match.py",
+    "src/melee_policy/integration/frisson_policy.py",
+    "src/melee_policy/integration/mimic_bundle_manifest.py",
+    "src/melee_policy/integration/mimic_vs_hal.py",
+    "src/melee_policy/integration/natural_game_end.py",
+    "src/melee_policy/integration/post_rl_checkpoints.py",
+    "src/melee_policy/integration/runtime_identity.py",
+    "src/melee_policy/integration/slippi_ai_policy.py",
+    "src/melee_policy/integration/slippi_match.py",
+    "src/melee_policy/integration/state_identity.py",
+    "scripts/modal_panel_runtime_pilot.py",
+    "scripts/modal_panel_policy_pilot.py",
+    "scripts/modal_panel_build_pilot.py",
+    "scripts/modal_panel_linux_build.py",
+    "scripts/modal_panel_policy_canary.py",
+    "scripts/modal_panel_source_snapshot.py",
+    "scripts/modal_panel_live_context.py",
+    "scripts/modal_panel_linux_host.py",
+    "scripts/modal_panel_package_audit.py",
+    "scripts/modal_panel_live_canary.py",
+    "src/melee_policy/integration/frisson_slippi_match.py",
+    "configs/integration_mimic_vs_hal.toml",
+    "patches/slippi-dolphin-two-pipe-frame-sync.patch",
+    "artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+    "scripts/modal_panel_live_pilot.py"
+  ],
+  "uploads": [
+    {
+      "bytes": 60,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/__init__.py",
+      "remote": "/opt/runtime-root/src/melee_policy/__init__.py",
+      "sha256": "7255d380f78c96124b5f40c80609b3a2a5e84f7c236884eea35f6f84da427e50"
+    },
+    {
+      "bytes": 47,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/__init__.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/__init__.py",
+      "sha256": "063b43d1dedbefc78c2152595ccf701f7c19f825e9adb6b3559fdd900369bd7f"
+    },
+    {
+      "bytes": 2842,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frame_watchdog.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frame_watchdog.py",
+      "sha256": "8bf24e6c4ded876ad743227bccbb91ac67c87fd4af15fe3eb87e2f54eae34b7b"
+    },
+    {
+      "bytes": 78691,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frisson_match.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frisson_match.py",
+      "sha256": "d536c7f87c2c6ee5bceeb6973d910a27758c2c89b663f82439842fa76248fa76"
+    },
+    {
+      "bytes": 110279,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frisson_policy.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frisson_policy.py",
+      "sha256": "fcdba59fc186b104689d20510d7a3d2b8fb4c2515cac6df587028926cf6025ca"
+    },
+    {
+      "bytes": 9427,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/mimic_bundle_manifest.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/mimic_bundle_manifest.py",
+      "sha256": "53313d0fa9ed6dccd786a349cfb6509440fa4beca8d3345c80c0e5496fc97720"
+    },
+    {
+      "bytes": 203556,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/mimic_vs_hal.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/mimic_vs_hal.py",
+      "sha256": "24ed6cb674de7242009c7e07fb0b9e7657c348168fa5723551a3aa40fcd1cb42"
+    },
+    {
+      "bytes": 728,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/natural_game_end.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/natural_game_end.py",
+      "sha256": "043a5913f0bf421a708ff0a683c52703a42ebaa6da8f611516021846c211f0ad"
+    },
+    {
+      "bytes": 2259,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/post_rl_checkpoints.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/post_rl_checkpoints.py",
+      "sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f"
+    },
+    {
+      "bytes": 5508,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/runtime_identity.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/runtime_identity.py",
+      "sha256": "388bd46e041df6a5ec80ec3d96eedcb22abb2e9e0b56fa1281cff4ec818e17a9"
+    },
+    {
+      "bytes": 64440,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/slippi_ai_policy.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/slippi_ai_policy.py",
+      "sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a"
+    },
+    {
+      "bytes": 214774,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/slippi_match.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/slippi_match.py",
+      "sha256": "e41af721dd6e53a7e4592c3a7e2a273ad68159494344af21c64e4fde20be4b69"
+    },
+    {
+      "bytes": 1743,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/state_identity.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/state_identity.py",
+      "sha256": "9bb290953064ce574ef59ca1b4fa351e30c5c191854fb891bd290f3cbf60d96c"
+    },
+    {
+      "bytes": 34365,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_runtime_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_runtime_pilot.py",
+      "sha256": "1d7c7fc2abc262c0d6584670ed760167a3b3721e1fa17fc6532298b9c978dbc6"
+    },
+    {
+      "bytes": 42396,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_policy_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_policy_pilot.py",
+      "sha256": "fd7e12bf9eec55cd0be54dcbc538f155f0d08cb5907472fcbbcb8189ca8e428c"
+    },
+    {
+      "bytes": 38811,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_build_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_build_pilot.py",
+      "sha256": "d7cb2f8244bdb4926b9488d56bb12b1d0a4feffcba494921b33f3058e9c6d8fe"
+    },
+    {
+      "bytes": 32050,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_linux_build.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_linux_build.py",
+      "sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e"
+    },
+    {
+      "bytes": 32148,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_policy_canary.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_policy_canary.py",
+      "sha256": "d97f4b9634eaa18f1a7b04114a679e685a26261c5923494b9e24792970e7f5be"
+    },
+    {
+      "bytes": 11640,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_source_snapshot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_source_snapshot.py",
+      "sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507"
+    },
+    {
+      "bytes": 38939,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_live_context.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_live_context.py",
+      "sha256": "8d6a7ba10b83f4ef350f3a4264a717f2c1b6eb75c6f81bb242ee3451e4eea8f8"
+    },
+    {
+      "bytes": 16558,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_linux_host.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_linux_host.py",
+      "sha256": "8bc70d4ff7f43083ca7c763b3ea824755ca1685baa767a690d8076ede4bd4f7d"
+    },
+    {
+      "bytes": 18433,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_package_audit.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_package_audit.py",
+      "sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61"
+    },
+    {
+      "bytes": 31259,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/mimic_native_bundles.v1.json",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/mimic_native_bundles.v1.json",
+      "sha256": "adb8fa9ef8c6fd5f054fb68b22552c2c92cacce3f8cc0ac0ca2f72bed9ebcef3"
+    },
+    {
+      "bytes": 44661,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-dependencies-v1/candidate-lock-94.json",
+      "remote": "/opt/runtime-input/lock.json",
+      "sha256": "0083888d28351524408a49f9c73a4b47886886339af79004219460f6fc9f729e"
+    },
+    {
+      "bytes": 1700,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/live-dependencies-v1/requirements-linux-live-94.lock",
+      "remote": "/opt/runtime-input/pins.lock",
+      "sha256": "1d9922123beee8953bd6c2234a28062b8f5a4b89012371ca7198c1d713438dd9"
+    },
+    {
+      "bytes": 23284133,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/returned/linux-dolphin-code.tar.gz",
+      "remote": "/opt/runtime-input/code.tar.gz",
+      "sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19"
+    },
+    {
+      "bytes": 55049,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/returned/package-manifest.json",
+      "remote": "/opt/runtime-input/manifest.json",
+      "sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700"
+    },
+    {
+      "bytes": 6365,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/pilot-v7/PACKAGE_AUDIT.json",
+      "remote": "/opt/runtime-input/audit.json",
+      "sha256": "f5366740c90fa53a01d5b3aba2ac2c136a34802c814156e4e72c7aefe5b0cb05"
+    },
+    {
+      "bytes": 30409,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_live_canary.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_live_canary.py",
+      "sha256": "28ba293c1c20aed73d51b847682b43aaa1d46d9d24a7c4ffc780f88af2431caa"
+    },
+    {
+      "bytes": 68740,
+      "local": "${BENCHMARK_ROOT}/src/melee_policy/integration/frisson_slippi_match.py",
+      "remote": "/opt/runtime-root/src/melee_policy/integration/frisson_slippi_match.py",
+      "sha256": "4c73dd81152307bb7a44302c09f6c29f46719230ea8656a111e2dc45c7a07399"
+    },
+    {
+      "bytes": 7883,
+      "local": "${BENCHMARK_ROOT}/configs/integration_mimic_vs_hal.toml",
+      "remote": "/opt/runtime-root/configs/integration_mimic_vs_hal.toml",
+      "sha256": "ebdc6abf3443d115580207b4351b2cb865b87f45d336c96c00058ab7f7a020f8"
+    },
+    {
+      "bytes": 11412,
+      "local": "${BENCHMARK_ROOT}/patches/slippi-dolphin-two-pipe-frame-sync.patch",
+      "remote": "/opt/runtime-root/patches/slippi-dolphin-two-pipe-frame-sync.patch",
+      "sha256": "bb0e8885b33e6f3bb5a43e5ef936fce4a0b79459cde926a97d02aed9a7fd388e"
+    },
+    {
+      "bytes": 1894960,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+      "remote": "/opt/runtime-root/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/manifest.json",
+      "sha256": "c7c85408ce45e26916082ffa7456fb681273ec70d5be9d865a6edb7bda4e09af"
+    },
+    {
+      "bytes": 42019,
+      "local": "${BENCHMARK_ROOT}/scripts/modal_panel_live_pilot.py",
+      "remote": "/opt/runtime-root/scripts/modal_panel_live_pilot.py",
+      "sha256": "3ed3b555993b376df43467bbbdac8d25cc70c3d7585aaf25ec54e78325bbab1a"
+    },
+    {
+      "bytes": 12889,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/plan.json",
+      "remote": "/opt/runtime-plan.json",
+      "sha256": "ea9efdce79af9bd3ad3f3dfeea448c99a2273a15c4379bf4f42869ef5b34fc02"
+    },
+    {
+      "bytes": 55695,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/result.json",
+      "remote": "/opt/live-input/prior/result.json",
+      "sha256": "3b149b502fe21cfc2f179ad07d6118204c070b6b2664ad8ea61a09038e43a64d"
+    },
+    {
+      "bytes": 252,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/call.json",
+      "remote": "/opt/live-input/prior/call.json",
+      "sha256": "20f15116e0fee6a256b316e84872704b382e1371d4e5b057ba268402b1512182"
+    },
+    {
+      "bytes": 50125,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/returned/receipt.json",
+      "remote": "/opt/live-input/prior/returned/receipt.json",
+      "sha256": "f474181840d848115c8ca79221c87a41921778ea56f14c4004d5651098f22886"
+    },
+    {
+      "bytes": 22294,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/runtime-pilot-v2/returned/qualification.json",
+      "remote": "/opt/live-input/prior/returned/qualification.json",
+      "sha256": "f8c4ccb94fe3785374caf7e4a2c287a899e211d25152b5a5d00cbdfcc96dfaf6"
+    },
+    {
+      "bytes": 2762,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-00.json",
+      "remote": "/opt/live-input/policy/frisson-75m-p1.json",
+      "sha256": "744ce21e9117feebbb23f024b8d9a411c9e4d7a80adc0e8017c1d3e63f4f9bb0"
+    },
+    {
+      "bytes": 2763,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-01.json",
+      "remote": "/opt/live-input/policy/frisson-75m-p2.json",
+      "sha256": "aafbd834eceeb6bf2523848006613694d7408d6db4055e09f15e05548b6af106"
+    },
+    {
+      "bytes": 2763,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-02.json",
+      "remote": "/opt/live-input/policy/frisson-10m-p1.json",
+      "sha256": "52ad78c4c8882f3074dd902f0c2a4395dd79f25ca38959ae1699914785dec8b2"
+    },
+    {
+      "bytes": 2766,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-03.json",
+      "remote": "/opt/live-input/policy/frisson-10m-p2.json",
+      "sha256": "394acec127c3595b515876c101459938ee67e4ef74ae5a977bab49dd77ace20e"
+    },
+    {
+      "bytes": 2777,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-04.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d21_ditto_v4-p1.json",
+      "sha256": "a5736b2a1895214b8eeb520d35f303dcab2aa9150638a5543ee7c555c0e148f8"
+    },
+    {
+      "bytes": 3262,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-05.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d21_ditto_v4-p2.json",
+      "sha256": "03cd1ddf4e183ee8c9c2b40d240af3492b6545fcb75b667e7c6156c8dde7074f"
+    },
+    {
+      "bytes": 2777,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-06.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d24_ditto_v4-p1.json",
+      "sha256": "85d30642fa1a0d5f263cc6a942bf9e3d5ab40e226e6d2966a290f371cdcfad5b"
+    },
+    {
+      "bytes": 2913,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-07.json",
+      "remote": "/opt/live-input/policy/slippi-fox_d24_ditto_v4-p2.json",
+      "sha256": "f3608fcfcc10b1fb78fbc83dd37885b9667426288e94ec8161868edd6a951139"
+    },
+    {
+      "bytes": 2759,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-08.json",
+      "remote": "/opt/live-input/policy/slippi-gm-p1.json",
+      "sha256": "4c7d48d60e75a6ccd635053aa01ccd01fddf10a5282a6910f7e8844178bea04c"
+    },
+    {
+      "bytes": 3254,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/comparison-09.json",
+      "remote": "/opt/live-input/policy/slippi-gm-p2.json",
+      "sha256": "c2ea424761269e8c595c876a960f0a8be7f394c956aa2c2024cd0f9df9051ae2"
+    },
+    {
+      "bytes": 18770,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/plan.json",
+      "remote": "/opt/live-input/policy/policy_plan.json",
+      "sha256": "c03d57507438f08240e49e76cf9b8ce14ba600520395a3ebf9b1ac0ef208e5e9"
+    },
+    {
+      "bytes": 30804,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/result.json",
+      "remote": "/opt/live-input/policy/policy_result.json",
+      "sha256": "f1a18ee4655e449951f7bc5131aca9a8d17191eef1e9ae03da894c184d6e270c"
+    },
+    {
+      "bytes": 283250,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/NUMERIC_DIAGNOSTIC.json",
+      "remote": "/opt/live-input/policy/numeric_diagnostic.json",
+      "sha256": "2701ec7bc33af5d79e83aba6e82a41e1127c96f609914fe1b5b6efd4a0443d47"
+    },
+    {
+      "bytes": 1613,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/policy-pilot-v4/PORTABILITY_LIMITATION_APPROVAL.json",
+      "remote": "/opt/live-input/policy/user_approval.json",
+      "sha256": "d378d15fdf3ea0541a16e83af79f014b55553aab94e10419b6fe3c2626a4fd78"
+    },
+    {
+      "bytes": 883,
+      "local": "${BENCHMARK_ROOT}/artifacts/integration/frisson_ai/slippi-public-panel-p21-v1/research/modal-compat-v1/LIVE_PILOT_AUTHORIZATION.json",
+      "remote": "/opt/live-input/authorization.json",
+      "sha256": "8c7d23c02f898936007d8099f6387508a559a924a47e33b2b53810190efcf871"
+    },
+    {
+      "bytes": 1459978240,
+      "local": "${BENCHMARK_ROOT}/.e001-cache/game-images/melee-ntsc-1.02.iso",
+      "remote": "/opt/live-input/melee-ntsc-1.02.iso",
+      "sha256": "0de05981a34156b9cedcef73c73d4244ac05cf6149ab3c9cfed917698819e464"
+    }
+  ]
+}

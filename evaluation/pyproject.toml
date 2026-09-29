@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faynt-evaluation"
+version = "0.1.0"
+description = "Faynt policy evaluation and game execution"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<2.2", "PyYAML>=6", "torch>=2.5,<3"]
+
+[project.optional-dependencies]
+runtime = ["melee==0.47.3"]
+modal = ["modal==1.5.4"]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+py-modules = ["model", "controller_codec", "tensor_batch"]
+[tool.setuptools.packages.find]
+include = ["melee_rl*"]
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

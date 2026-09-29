@@ -1,0 +1,86 @@
+{
+  "schema": "faynt.local-benchmark-release-validation.v1",
+  "date": "2026-09-28",
+  "schedule_acceptance_tests": {
+    "passed": 242,
+    "skipped": 9,
+    "files": [
+      "test_prepared_benchmark_release.py",
+      "test_faynt_d0_benchmark_plan.py",
+      "test_final_benchmark_suite.py",
+      "test_posttraining_benchmark_variant.py",
+      "test_post_rl_benchmark.py",
+      "test_public_panel_report.py",
+      "test_slippi_public_panel.py"
+    ],
+    "skipped_reason": "Caller-supplied checkpoint or retained external fixture required."
+  },
+  "cloud_queue_tests": {
+    "passed": 360,
+    "deselected": 5,
+    "reason": "Four Modal SDK-specific tests require that optional SDK; one retained Ness audit fixture is excluded."
+  },
+  "cli_help": {
+    "passed": 10,
+    "policy_instances": 0,
+    "games": 0
+  },
+  "fresh_runtime_plan": {
+    "generated": true,
+    "package_acquisition_bytes": 0
+  },
+  "source_parse": true,
+  "cloud_execution": false,
+  "gameplay_execution": false,
+  "runtime_claim": "Prepared-runtime source bindings and offline admission paths verified; fresh Linux numeric/gameplay qualification remains an operator step.",
+  "isolated_cloud_native_import": {
+    "passed": true,
+    "native_modules": 14,
+    "policy_instances": 0,
+    "dolphin_launches": 0,
+    "source_scope": "exact runtime SOURCE_PATHS and DATA_ASSETS copied to isolated canonical directory"
+  },
+  "default_local_suite": {
+    "passed": 2225,
+    "skipped": 141,
+    "failed": 0,
+    "errors": 0,
+    "warnings": 3,
+    "elapsed_seconds": 30.34,
+    "command": "python -m pytest -q --disable-warnings --tb=short",
+    "working_directory": "Faynt-Benchmarks repository root",
+    "python_environment": "Python 3.12, tested local melee-policy environment with Torch 2.7.1 and TensorDict 0.9.1",
+    "test_selection": "pytest.ini: tests/integration; pythonpath=src scripts",
+    "skip_reasons": [
+      "Caller-supplied model/checkpoint/replay or emulator fixture absent",
+      "Exact historical recovery audit, numeric capture or Linux loader log absent",
+      "Optional Modal SDK or other optional native test dependency unavailable",
+      "Original local research-only staged import environment absent"
+    ],
+    "evaluation_suite": "Separate evaluation/ environment and test instructions; excluded from root local-runtime default collection",
+    "emulator_games_launched": 0,
+    "cloud_jobs_launched": 0
+  },
+  "upstream_metadata_sanitization": {
+    "four_metadata_files_sanitized": true,
+    "fixed_game_rows_unchanged": true,
+    "expanded_game_rows_unchanged": true,
+    "checkpoint_byte_hashes_unchanged": true,
+    "focused_tests_passed": 88,
+    "alias": "${UPSTREAM_RUNTIME}",
+    "code_path": "slippi_panel_audit.json_safe is also used by runtime metadata comparison"
+  },
+  "prepared_runtime_admission": {
+    "parent_child_installed_package_receipts_must_match": true,
+    "exact_94_distribution_version_check_retained": true,
+    "source_loader_display_parent_cleanup_checks_retained": true,
+    "targeted_tests_passed": 122,
+    "targeted_tests_skipped": 4
+  },
+  "added_final_source_files": [
+    "scripts/finalize_final_winner_benchmark_videos.py",
+    "pytest.ini",
+    "tests/integration/conftest.py",
+    "tests/integration/test_portable_checkpoint_metadata.py"
+  ]
+}

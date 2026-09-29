@@ -1,0 +1,96 @@
+# P8 canary: the delay pipeline on real Dolphin, smallest box (8 Dolphins over 2 spawned env workers,
+# 3m vs CPU level 9, D = 5, b = 2, k = 2 -> slack (2-1) + (2-1) = 2 <= 5, runahead r = 4).  Correctness,
+# not speed: 0 faults / worker errors, resets = boots only, sane env/frames_total, the chunked wire and
+# the pipelined tail running on gVisor.  About 5 minutes on the small CPU function (~$0.05).
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_cpu8_delay \
+#       --wandb-mode online --checkpoint-subdir p8/cpu8_delay
+# allow_mismatch: the model declares action_offset_frames = 1 (D = 0); this run trains from a random
+# init, so D = 5 is in-distribution by construction -- the flag only acknowledges the declared field
+# (P8-PLAN.md preamble).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000                 # the wall-time limit below ends the run
+max_runtime_s = 300
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 8
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i (sliced per worker)
+console_timeout_s = 30.0
+boot_timeout_s = 120.0
+keepalive_seconds = 0.0           # required by worker mode
+step_threads = 0                  # per worker: one thread per Dolphin of its group
+boot = "two_phase"
+worker_processes = 2              # 4 Dolphins per spawned OS process
+mp_start_method = "spawn"
+chunk_frames = 2                  # k = 2: one step_chunk pipe message per worker per two frames
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 5                  # D = 5 (Ali's q12 target: data.delay 6 <=> delay_frames 5)
+context_mode = "reprime"
+batch_steps = 2                   # b = 2: two frames per policy call
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"
+cpu_level = 9
+
+[learner]
+learning_rate = 1e-4
+kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-4
+
+[delay]
+allow_mismatch = true             # random init: the flag only acknowledges the declared offset (header)
+
+[logging]
+mode = "disabled"                 # cloud runs pass --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "p8", "delay-pipeline", "cpu9", "3m", "canary"]
+print_interval_steps = 1

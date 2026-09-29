@@ -1,0 +1,139 @@
+# P25 CALIBRATION (9 Sep 2026): SmashBot against the released MIMIC policy.
+#
+# The second half of the gate, and the more informative one.  CPU 9 does not merely flatter agents, it
+# MIS-RANKS them (P12, GOTCHAS S30): it separated two of our checkpoints at p = 0.018 while MIMIC found
+# them identical.  MIMIC is the yardstick every model in `melee_rl/RESULTS.md` is measured against, so
+# this arm is what puts SmashBot on the same ladder -- before any of our weights are pointed at it.
+#
+# Neither side is one of our checkpoints, so this drives `melee_rl.external_match`.  It needs the GPU
+# image (MIMIC has no KV cache: it re-runs its whole 60-frame window every frame), so it runs on
+# `external_match`, not `external_match_cpu`.
+#
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::external \
+#       --config smashbot_mimic --sides smashbot,mimic --label smashbot-vs-mimic \
+#       --output-dir /runs/matches/p25-calibration/smashbot_mimic \
+#       --overrides "smashbot.delay_frames=$BEST" --spawn
+#
+# `--sides smashbot,mimic` puts SmashBot on Dolphin port 1 and MIMIC on port 2; both are set from the
+# side order, so `[smashbot] player` and `[mimic] player` in this file are overridden by the job.
+# Budget: MIMIC is the cost here -- about 5.7 env frames/s per Dolphin at batch 16 on the L4, so a
+# 16-match job is roughly 45-55 min (GOTCHAS S30).
+
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains in a recording job
+seed = 0
+deterministic = true
+device = "cuda"                   # MIMIC has no KV cache; the L4 is what makes a match finish
+threads = 8
+
+[policy]
+profile = "10m"                   # only a fallback; the recorded checkpoint carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 16                     # one Dolphin per match, 16 on one stage (VideoConfig.clips overrides it)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox, as in Ali's benchmark launcher
+costumes = [0, 1]
+stage = 25                        # Final Destination, like for like with every earlier FD arm
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # REQUIRED: SmashBot reads the raw gamestates, which only exist here
+chunk_frames = 1
+save_replays = true
+infinite_time = false             # a REAL match -- stocks fall and the game ends
+stop_timeout_s = 20.0             # SIGTERM Dolphin before Console.stop kills it (ENV.md §6.5)
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode: no history window (the deployment path)
+delay_frames = 0                  # matches action_offset_frames = 1 of the recorded checkpoints
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"                      # only fixes the default player layout; the recorder builds MIMIC
+
+[learner]
+kl_teacher_weight = 0.0           # nothing trains here; without a teacher the weights must be zero
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # a recording job logs nothing
+
+[eval]
+at_start = false
+at_end = false
+
+[smashbot]
+source_dir = "/opt/smashbot/source"       # the pinned GPL-3.0 checkout baked into the image
+player = 1                        # environment player 1 = Dolphin port 2, as MIMIC is
+seed = 0                          # SmashBot draws from the global `random`; this seeds its private stream
+delay_frames = 0                  # SET FROM THE cpu9 SWEEP: --overrides smashbot.delay_frames=D
+                                  # use_exi_inputs + blocking_input + online_delay = 0, so an opponent
+                                  # decides on frame N and its input lands on frame N -- tighter than the
+                                  # named-pipe path SmashBot was written against.  A chain that presses a
+                                  # frame early to absorb that latency then lands a frame early, which is
+                                  # what a missed ledgedash or Firefox looks like.
+compat = true                      # the libmelee shim (melee_rl.smashbot_compat).  The
+                                  # calibration A/B turns it off with
+                                  # --overrides "smashbot.compat=false" to MEASURE what the
+                                  # 0.41 -> 0.47 drift costs, rather than assert it.
+strict = true                     # THE GATE: a raised exception stops the job rather than
+                                  # becoming a neutral stick nobody notices
+
+[mimic]
+source_dir = "/opt/mimic/source"          # the pinned checkout baked into the image
+asset_dir = "/opt/mimic/fox-master"       # model.pt + config.json + the normalisation bundle
+device = "cuda"
+temperature = 1.0                 # the released defaults of integration_mimic_vs_hal.toml [mimic]
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1                        # overridden by the side order (--sides smashbot,mimic)
+
+[video]
+mode = "match"                    # one real match per Dolphin, first replay kept
+matchups = ["policy:cpu9"]        # UNUSED by an external match; the sides come from --sides
+clips = 16                        # 16 matches per checkpoint, all on Final Destination
+seconds = 520.0                   # the per-match CAP, deliberately PAST Melee's 8-minute timer:
+                                  # the rollout starts at frame -123 while the timer starts at 0, so a
+                                  # 480 s budget stops 123 frames before a timed-out game writes its
+                                  # GAME_END and the result would read as "unfinished".  The cap is
+                                  # only a ceiling: match mode stops as soon as every Dolphin has
+                                  # begun a second game.  (The 29 Aug 2026 jobs ran at 480.)
+output_dir = "/runs/matches"
+rollout_length = 128
+temperature = 1.0                 # the training distribution, as in [eval]
+seed = 0
+port_offset = 0
+wandb = false

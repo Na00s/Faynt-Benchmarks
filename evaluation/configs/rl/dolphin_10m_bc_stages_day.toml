@@ -1,0 +1,175 @@
+# The 10m six-stage self-play run (user decisions 2 Sep 2026): RL run 1's recipe -- the only run that
+# transferred to an outside opponent (P12: vs MIMIC, stock margin -3.31 -> -2.06, dealt +28/min) -- on
+# Ali's 10m family-pretraining checkpoint, with two changes to the environment and one to the yardstick:
+#   * STAGES: the six tournament-legal stages instead of Final Destination only.  `stages` is cycled
+#     over the global environment index, so the 96 Dolphins play 16 per stage and the 30 eval Dolphins 5
+#     per stage (every stage in every eval round).  The BC checkpoint was trained on the ranked corpus,
+#     where FD is the RAREST stage (BF 32 %, YS 21 %, PS 19 %, DL 11 %, FoD 10 %, FD 7 %), so this is
+#     also closer to the prior's own data mix.  Pokemon Stadium is frozen (libmelee's menu-helper
+#     default; what slippi-ai expects).
+#   * OPPONENTS: 85/15 self-play vs cpu9 by trained rows (user decision: the prior is far stronger than
+#     the 20m's, so a small cpu9 arm hedges without diluting the self-play signal that carried run 1's
+#     gain; the 50/50 mix of P10 added nothing against MIMIC).  `self*72` = 144 rows (both ports) +
+#     `cpu9*24` = 24 rows -> 86 % / 14 %; each arm's Dolphin count is a multiple of six, so the stage
+#     cycle stays balanced inside every arm (12 and 4 per stage).
+#   * EVAL: cpu1 dropped, MIMIC added.  P12 showed CPU 9 credits the wrong run; MIMIC is the outside
+#     yardstick, now measured in-loop.  best.pt selects on the zero-noise BC anchor (`other` = the
+#     exact starting weights, Ali's checkpoint), so eval/other IS the improvement over the init.
+#   * DURATION: two full launches (user decision 3 Sep 2026; the first plan was 36 h in total).  Modal
+#     caps a container at 24 h, so this is two launches of the same command: `max_runtime_s` 79200 ends
+#     each launch cleanly at 22 h (end eval + final save inside the container's limit -- the session-28
+#     lesson), the relaunch resumes latest.pt, and `max_total_runtime_s` 172800 (48 h) is the backstop
+#     above the ~44 h the two launches accumulate (launch 1: 242 steps, ~80.3 k s in loop_state.runtime_s).
+# Everything else is the 20m day file: teacher = the BC weights (KL 0.1), nb16 x 96 Dolphins
+# (196 608 env frames = 268 800 rows per update), D = 0, epsilon 1e-2, burn-ins 6/3, snapshots.
+#
+# lr / guard, MEASURED by `dolphin_10m_bc_stages_smoke` (2 Sep 2026 02:10-03:1x UTC, app
+# ap-wn1upuVN9wWvCSYbyWfOsS): at lr 4e-5 the 10m's actor KL is 9.3e-6 on its FIRST PPO step and 7.6e-6
+# on the second (clip 0.04, entropy 0.84 flat, drift 1.3e-4 / 2.1e-4 per step, 0 reverts, uev 0.91 ->
+# 0.86) -- no value transient at all, where the 20m at the same lr measured 8.6e-4 -> 1.7e-5.  That is
+# the 20m day run's SETTLED regime (~8e-6/update at 4e-5) from step one.  lr 1e-4 (the user's own
+# session-18 pick for the 20m, undone there only by a guard set below its transient) projects
+# ~5e-5/update by the lr^2 relation -- 100x under the 5e-3 guard -- and 2.5x the weight movement.
+# Throughput: 664-786 env fps, 250-296 s per 16-rollout step (the mix pays the env wall twice).
+# The smoke ended cleanly (end eval, final save, 0 hard resets, game_starts = 96 = boots only).
+#
+# The checkpoint: `10m-wd-low-e129b9d4dd08` step 106806 = 7.0 B target frames (51x the 20m c3's
+# 137 M), bf16 training, context 256, action_offset_frames 1 (= our D = 0).  Its `resolved_config.model`
+# is the runtime summary, mapped to config.yaml's 10m profile by `checkpoint.ali_model_config` (all
+# 10 163 629 parameters load strict).  STABLE path below, sha256
+# a7f336df1aa57396ee079b41d86400905968ddc8531f1e37e8ad4d15af5e5108 -- never move it.
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_10m_bc_stages_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/10m_stages --spawn
+# Launch 2 (after launch 1 ends, ~22 h later) = the same command: it resumes latest.pt into the same
+# W&B run and stops itself at its own 22-h cap.  Never two launches on one directory at once.
+# What to read (SELFPLAY-RUNS.md): eval/other/* first (vs its own BC start -- reads ~0 at step 0 and
+# cannot cycle), eval/mimic/* second (the outside yardstick: stock margin is not available in the
+# endless eval, read ko_diff / dealt / taken per minute), loss/teacher_kl bounded while loss/entropy
+# stays near its BC value, ppo/reverted ~0, weights/drift_step > 0, cpu9 last.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 79200             # 22 h per launch: leaves ~2 h inside Modal's 24-h cap for boot, the end eval, saves
+max_total_runtime_s = 172800      # 48 h across launches (accumulated in loop_state.runtime_s; resumes count); raised from 129600 on 3 Sep 2026 so launch 2 runs the full 22 h like launch 1 (user decision)
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2           # a step is 16 rollouts (~4-5 min at 10m)
+snapshot_interval_steps = 8       # step_<n>.pt ladder: past selves for a later opponent pool
+
+[policy]
+profile = "10m"                   # config.yaml: 10.16 M params; the checkpoint's summary names this profile
+init = "checkpoint"
+checkpoint = "/runs/bc/frisson-melee-10m-v1-best-val.pt"   # the STABLE path (staged 2 Sep 2026)
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "policy"                 # clone_frozen() of the just-loaded BC weights: no second file read
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 72 self + 24 cpu9 (the mix groups must sum to this)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # unused while `stages` is set (kept for the config's default path)
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- cycled over the global env index: 16 each
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 6w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 96 boots, 6 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (6)
+boot = "two_phase"
+worker_processes = 16             # split 12 + 4 across the arms (opponent.mix_workers)
+mp_start_method = "spawn"
+chunk_frames = 1                  # D = 0: the slack (b-1)+(k-1) <= D forces lockstep stepping
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0                  # matches the model's action_offset_frames = 1 (no mismatch flag)
+context_mode = "ring"
+batch_steps = 1                   # D = 0: no pipeline (P8 stays dormant by construction)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"                      # 85/15 self-play vs cpu9 by TRAINED ROWS (user decision 2 Sep 2026)
+mix = ["self*72", "cpu9*24"]      # 72 self Dolphins = 144 rows (both ports) + 24 cpu9 rows: 86 % / 14 %
+mix_workers = [12, 4]             # 6 Dolphins per worker in both arms; 72 and 24 are multiples of 6 stages
+seed = 1
+
+[learner]
+learning_rate = 1e-4              # smoke-measured: 4e-5 -> KL ~8e-6/update with no transient; 1e-4 -> ~5e-5 (lr^2)
+kl_teacher_weight = 0.1           # slippi-ai's post-training recipe; the anti-collapse mechanism
+value_burnin_steps = 6            # ~96 rollouts of value-only training (the BC recipe's 100 at nb = 1)
+optimizer_burnin_steps = 3        # ~48 rollouts at lr 0: Adam's moments warm before the policy moves
+microbatch_envs = 24              # must divide every arm's rows (144 and 24): 6 chunks + 1 chunk per update
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16                  # slippi-ai's production regime: accumulate 16 rollouts per update
+epsilon = 1e-2                    # the BC regime's measured clip window
+beta = 0.0
+max_mean_actor_kl = 5e-3          # ~100x above the projected KL; the smoke's first PPO step was 9.3e-6 (no transient)
+
+[delay]
+allow_mismatch = false
+
+[mimic]
+source_dir = "/opt/mimic/source"          # the pinned checkout baked into the MIMIC image
+asset_dir = "/opt/mimic/fox-master"       # model.pt + config.json + the normalisation bundle
+device = "cuda"                   # MIMIC has no KV cache: it re-runs its 60-frame window every frame
+temperature = 1.0                 # the released defaults of integration_mimic_vs_hal.toml [mimic]
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1                        # environment player 1 = Dolphin port 2, as in Ali's launcher
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "10m", "l4", "day",
+    "wide", "ring", "mp-workers", "fast-step", "nb16", "stages", "mimic-eval", "mix", "cpu9-arm", "self85",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 10800.0        # three-hourly (user decision): a warm round is ~14 min (smoke end eval: cpu9 386 fps, MIMIC 125, anchor 200)
+at_start = true                   # the first round is cold (MIMIC model load + CUDA warm-up): ~17 min in the smoke
+at_end = true
+frames = 46080                    # per opponent: 30 eval Dolphins x 1536 frames (25.6 s of game each)
+num_envs = 30                     # 5 per stage: every stage is covered in every round
+worker_processes = 10             # the eval Dolphins' own layout (3 per worker; 30 does not divide by the 16 training workers)
+rollout_length = 128
+# The zero-noise anchor is the BC init itself: eval/other reads ~0 at step 0 and cannot cycle.
+# MIMIC (the released fox-master model through its own inference code, P12) is the outside yardstick.
+opponents = ["cpu9", "mimic", "other:/runs/bc/frisson-melee-10m-v1-best-val.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "other"         # best.pt selects on progress against the fixed BC anchor

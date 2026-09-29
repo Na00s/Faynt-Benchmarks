@@ -1,0 +1,143 @@
+# The profiling smoke of the 75m six-stage run (5 Sep 2026, /rl-speedup): dolphin_75m_bc_stages_smoke -- 96
+# Dolphins (72 self-play + 24 cpu9), the six legal stages, D = 0, teacher KL 0.1, prefix mode with the prefix
+# teacher and host-side prefixes, microbatch 12, the 96 GiB box -- with a 1 + 1 burn-in ladder, no start eval,
+# a 35-min training cap (four steps: two burn-ins and two PPO steps) and [profiling] on for the two PPO steps
+# (steps 2 and 3): torch.profiler traces of the first 32 frames of each arm's first rollout and of the first 4
+# microbatch passes of every learner phase, plus the one-shot regions (snapshots, optimizer, drift, save),
+# summarised into profile/summary.{json,md} in the run directory.  One end eval vs cpu9 / MIMIC / the anchor
+# (user decision 5 Sep 2026) keeps the eval-phase numbers comparable with the 4 Sep smoke (W&B awlcl1qm).
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_75m_profile_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir p17/75m_profile_smoke --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 2100              # 35 min: 1 + 1 burn-in steps (~14 min) and two profiled PPO steps (~2 x 12 min)
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2
+snapshot_interval_steps = 0
+
+[policy]
+profile = "75m"                   # Ali's family profile, filled in by melee_rl.checkpoint.EXTRA_PROFILES
+init = "checkpoint"
+checkpoint = "/runs/bc/frisson-melee-75m.pt"   # the STABLE path (staged 4 Sep 2026, sha256 8662de0c...c648)
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 72 self + 24 cpu9 (the mix groups must sum to this)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- cycled over the global env index: 16 each
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 16
+mp_start_method = "spawn"
+chunk_frames = 1
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "prefix"           # the rolling cache + its snapshot on the trajectory (patch #1)
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"
+mix = ["self*72", "cpu9*24"]      # 72 self Dolphins = 144 rows (both ports) + 24 cpu9 rows
+mix_workers = [12, 4]
+seed = 1
+
+[learner]
+learning_rate = 4e-5              # the 4 Sep smoke's measured rate (KL 7.8e-5 -> 2.7e-5 per update)
+kl_teacher_weight = 0.1
+value_burnin_steps = 1            # a profiling smoke: the ladder only has to reach the PPO stage
+optimizer_burnin_steps = 1
+microbatch_envs = 12
+teacher_prefix = true
+prefix_on_host = true
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 5e-3
+
+[delay]
+allow_mismatch = false
+
+[mimic]
+source_dir = "/opt/mimic/source"
+asset_dir = "/opt/mimic/fox-master"
+device = "cuda"
+temperature = 1.0
+top_k = 0
+top_p = 0.0
+seed = 0
+player = 1
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "75m", "l4", "smoke",
+    "wide", "prefix", "teacher-prefix", "host-prefix", "mb12", "xwide", "mp-workers", "fast-step", "nb16", "stages",
+    "mimic-eval", "mix", "cpu9-arm", "self85", "profile",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 86400.0        # never inside the cap: only the end round runs
+at_start = false                  # the step-0 baselines are known (the 4 Sep smoke); the cold round would cost 12 min
+at_end = true                     # user decision 5 Sep 2026: one end eval stays
+frames = 15360
+num_envs = 30
+worker_processes = 10
+rollout_length = 128
+opponents = ["cpu9", "mimic", "other:/runs/bc/frisson-melee-75m.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "mimic"
+
+[profiling]
+enabled = true
+steps = [2, 3]                    # the two PPO steps of this smoke
+actor_frames = 32                 # the first 32 frames of each arm's first rollout of the step
+learner_chunks = 4                # the first 4 microbatch passes of each learner phase

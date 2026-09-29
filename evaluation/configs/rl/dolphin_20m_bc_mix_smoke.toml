@@ -1,0 +1,123 @@
+# The 40-minute shake-out for the P10 mixed-curriculum run: the day file's shape with fast burn-ins
+# and a small end-of-run cpu9 evaluation.  Its job is to (1) prove both arms boot and train in one
+# learner step, (2) measure the per-update actor KL of the new regime -- init from an RL checkpoint
+# plus a changed opponent distribution is a NEW regime, and step sizes do not transfer between
+# regimes (sessions 13 and 21) -- and (3) read the mixed step time (two sequential group rollouts
+# pay the env wall twice; the 128-row forward is cheaper than the parent's 192).
+# About 40 minutes on the wide function (~$1.9).
+#   cd melee-policy-frisson-ai && .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_20m_bc_mix_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir p10/mix_smoke --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 2400              # ~40 min: boots + 2 burn-in steps + ~5 measured PPO steps + the end eval
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2
+snapshot_interval_steps = 0
+
+[policy]
+profile = "20m"
+init = "checkpoint"
+checkpoint = "/runs/selfplay/20m_bc/best.pt"   # frozen as init.pt in the run dir at first launch
+init_value = true
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true
+
+[teacher]
+source = "checkpoint"
+path = "/runs/bc/20m-muon-scaling-c3.pt"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]
+costumes = [0, 1]
+stage = 25
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 16
+mp_start_method = "spawn"
+chunk_frames = 1
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "mix"
+mix = ["self*32", "cpu9*64"]
+mix_workers = [8, 8]
+seed = 1
+
+[learner]
+learning_rate = 4e-5              # the day value: this smoke verifies it holds in the mixed regime
+kl_teacher_weight = 0.1
+value_burnin_steps = 1
+optimizer_burnin_steps = 1
+microbatch_envs = 64
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16
+epsilon = 1e-2
+beta = 0.0
+max_mean_actor_kl = 5e-3
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "mix", "cpu9-arm", "self-play", "rl-init", "from-20m-bc-best", "teacher-kl",
+    "20m", "l4", "smoke", "wide", "ring", "mp-workers", "fast-step", "nb16",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = true
+interval_seconds = 7200.0         # never fires inside the 40-min cap; at_end runs the one round
+at_start = false                  # the boots already cost minutes; the day run keeps its start eval
+at_end = true
+frames = 28800
+num_envs = 32
+rollout_length = 128
+opponents = ["cpu9"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"
+metric_opponent = "cpu9"          # exercises the best.pt-by-cpu9 selection end to end

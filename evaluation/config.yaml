@@ -1,0 +1,230 @@
+metadata:
+  framework: pytorch
+  slippi_ai_repository: https://github.com/vladfi1/slippi-ai
+  slippi_ai_commit: 577965a7731dc53e3472ea63d9e9853a4e9d65fa
+  representation_fixture: tests/fixtures/slippi_ai_577965a.json
+  controller_codec_fixture: tests/fixtures/custom_v1_pinned.json
+  canonical_schema: slippi-ai-577965a.replay-mds.v1
+  canonical_tensor_boundary: tensor_batch.PolicyBatch
+  initialization:
+    transformer: prenorm_normal_0.02
+    standard_residual_output_scale: 1/sqrt(2*n_layers)
+    attention_gate: official_qiuzh20_normal_0.02
+    full_attnres_depth_queries: zeros
+
+model:
+  encoder:
+    type: slippi_ai_enhanced
+    hidden_size: 128
+    item_mlp_layers: 2
+    controller_rnn_cell: lstm
+    use_self_nana: true
+    use_controller_rnn: false
+    use_learned_character: true
+    use_learned_action: true
+    use_character_action_joint: true
+    use_item_sum: true
+    use_items: true
+    hybrid_embed: false
+    use_randall: true
+    use_fod_platforms: true
+    condition_on_player_name: false
+    # Set from the training name vocabulary before enabling conditioning.
+    player_name_vocab_size: 0
+
+  prediction:
+    action_offset_frames: 1
+    action_codec: custom_v1
+
+  backbone:
+    type: causal_transformer
+    context_length: 256
+    d_model: 512
+    n_layers: 6
+    n_heads: 8
+    n_kv_heads: 2
+    head_dim: 64
+    d_ff: 1216
+    attention_type: full
+    attention_output_gate: elementwise_sigmoid
+    attention_gate_bias: false
+    attention_gate_compute_dtype: float32
+    residual_mode: full_attnres
+    norm: rmsnorm
+    norm_eps: 1.0e-6
+    qk_norm: true
+    activation: swiglu
+    position_encoding: rope
+    rope_theta: 10000.0
+    bias: false
+    attention_dropout: 0.0
+    residual_dropout: 0.0
+    attention_implementation: sdpa
+    use_kv_cache: true
+    gradient_checkpointing: true
+    initializer_std: 0.02
+
+  controller_head:
+    type: slippi_ai_autoregressive
+    component_depth: 2
+    residual_size: 128
+
+  precision:
+    parameter_dtype: float32
+    compute_dtype: bfloat16
+    cache_dtype: bfloat16
+    softmax_dtype: float32
+
+scaling:
+  active_profile: 20m
+  target_is_total_policy_parameters: true
+  # These are calibrated from the requested seed family after counting the
+  # complete encoder + gated backbone + autoregressive controller head.
+  profiles:
+    3m:  {d_model: 128, n_layers: 3,  n_heads: 2,  n_kv_heads: 1, head_dim: 64, d_ff: 304}
+    5m:  {d_model: 256, n_layers: 3,  n_heads: 4,  n_kv_heads: 1, head_dim: 64, d_ff: 704}
+    10m: {d_model: 384, n_layers: 5,  n_heads: 6,  n_kv_heads: 2, head_dim: 64, d_ff: 768}
+    20m: {d_model: 512, n_layers: 6,  n_heads: 8,  n_kv_heads: 2, head_dim: 64, d_ff: 1216}
+    35m: {d_model: 576, n_layers: 9,  n_heads: 9,  n_kv_heads: 3, head_dim: 64, d_ff: 1344}
+    40m: {d_model: 576, n_layers: 10, n_heads: 9,  n_kv_heads: 3, head_dim: 64, d_ff: 1408}
+    50m: {d_model: 640, n_layers: 10, n_heads: 10, n_kv_heads: 2, head_dim: 64, d_ff: 1696}
+  expected_parameter_counts:
+    3m:  {encoder: 1789824, backbone: 817728,   controller_head: 395821, total: 3003373}
+    5m:  {encoder: 1789824, backbone: 2851776,  controller_head: 412205, total: 5053805}
+    10m: {encoder: 1789824, backbone: 7945216,  controller_head: 428589, total: 10163629}
+    20m: {encoder: 1789824, backbone: 17806080, controller_head: 444973, total: 20040877}
+    35m: {encoder: 1789824, backbone: 33094656, controller_head: 453165, total: 35337645}
+    40m: {encoder: 1789824, backbone: 37743744, controller_head: 453165, total: 39986733}
+    50m: {encoder: 1789824, backbone: 47875840, controller_head: 461357, total: 50127021}
+
+data:
+  schema_version: slippi-ai-577965a.replay-mds.v1
+  # Repository-facing target-offset convention.  Windowing implements the
+  # explicit [start:start+T] / [start+1:start+T+1] slices.
+  delay: 1
+  context_length_source: model.backbone.context_length
+  dataset:
+    repository: erickfm/melee-ranked-replays
+    revision: ef54ddc230e01373ff2a179b49a7e559af788081
+    # The repaired revision accidentally contains no metadata JSON files.  The
+    # six content-pinned sidecars are read from the last commit containing all
+    # of them, while every raw tarball remains pinned to `revision` above.
+    metadata_revision: 694d40f6b13dc79c477d754ef6097ce9f72eac00
+    metadata_paths:
+      - metadata/metadata_a1.json
+      - metadata/metadata_a2.json
+      - metadata/metadata_a3.json
+      - metadata/metadata_a4.json
+      - metadata/metadata_a5.json
+      - metadata/metadata_a6.json
+    metadata_sha256:
+      metadata_a1.json: ac733f28057f929476e007d22611bde7a346d18be198f59da79972f025f1ead0
+      metadata_a2.json: 003c263afbe239c4efd9c0f79efdd01c15144cfe5b2d7c03301210c010e57cf0
+      metadata_a3.json: 1dfef36518a7323d15ec6c841cf50574672c9835de17cf74d90701805543cf1e
+      metadata_a4.json: 19d03e72c246797f5c443e476ee80bc9c0b84a4a2963d72800f76df93fe8abf7
+      metadata_a5.json: ed8a852da7d34f6cc5545855f9e9b85c589d67688dc636f909ee9ffc37eb1403
+      metadata_a6.json: f20a5a3b730cc6481d2abb49406a4c3a0e62283be9d1b7041d7f7368ea8bc7a0
+    slippi_ai_commit: 577965a7731dc53e3472ea63d9e9853a4e9d65fa
+    rank_pairs:
+      - diamond-diamond
+      - diamond-platinum
+      - master-diamond
+      - master-master
+      - master-platinum
+      - platinum-platinum
+  calibration:
+    candidate_replays: 90000
+    stop_player_perspective_target_frames: 1500000000
+    archive_content_mapping:
+      path: data/calibration_bucket_mapping_ef54ddc.json
+      mapping_sha256: a359333281faa225c95032cc96c92ef465ee28c4b6fd5a536e8be758d1ef3843
+      artifact_sha256: 85feb7975ccaee3106fa10dcb16807ea161ca043eb0d8411a3ae8a1bc25c26e3
+    extension:
+      base_build_id: fe6c590c714732d204d9019fc7f5cbc8c3ad4854ddae7ad7b11192a06b19c02f
+      reservation_scope: calibration:fe6c590c714732d204d9019fc7f5cbc8c3ad4854ddae7ad7b11192a06b19c02f
+      candidate_replays: 51335
+      selection_path: data/calibration_extension_selection_ef54ddc_v2.json
+      selection_sha256: 49bd71947ef889d643d946a05f68cc51c1a9c1780f3889b807c668f63925d3ab
+      selection_artifact_sha256: cb0a33163ad90c06074609afa53e137c08f3200e822f7775d37998c69b5e251e
+    parsing_workers: 8
+    # Modal currently exposes a 512 GiB default/minimum quota, which is the
+    # smallest schedulable allocation above the requested ~100 GiB scratch.
+    worker_ephemeral_disk_mib: 524288
+    ownership_seed: 20260820
+    sample_seed: 577965
+    canary_unique_replays: 100
+    full_dataset_ingestion_enabled: false
+  splits:
+    seed: 15031
+    train_fraction: 0.98
+    validation_fraction: 0.01
+    test_fraction: 0.01
+  mds:
+    compression: zstd:3
+    hashes: [sha256]
+    size_limit: 100mb
+
+training:
+  profile: 20m
+  precision: bfloat16
+  seed: 20260820
+  dataset_sample_seed: 577965
+  validation_seed: 15031
+  # These later, explicit calibration frame stops are authoritative.  With
+  # N=20,040,877 they correspond to 0.019960713492 and 0.100044057984 EFLOP.
+  screening_target_frames: 166000000
+  finalist_target_frames: 832000000
+  compute_estimator: 6*N*D
+  schedule_horizon_target_frames: 832000000
+  validation:
+    deterministic: true
+    windows_per_replay: 1
+    # Approximately 10M targets, rounded to the smallest nearby cadence that
+    # is an exact optimizer boundary for both Stage-A global frame batches.
+    interval_target_frames: 10485760
+  wandb:
+    project: Faynt
+    group: 20m-calibration-v1
+    entity: frisson-labs
+  stage_a:
+    optimizer: adamw
+    learning_rates: [1.0e-4, 3.0e-4, 1.0e-3]
+    global_target_frame_batches: [65536, 262144]
+    beta1: 0.9
+    beta2: 0.95
+    weight_decay: 0.01
+    gradient_clip: 1.0
+    warmup_fraction: 0.01
+    schedule: cosine
+    final_lr_fraction: 0.10
+  stage_b:
+    optimizer: muon_with_aux_adamw
+    muon_learning_rates: [0.01, 0.02, 0.04]
+    muon_momentum: 0.95
+    muon_nesterov: true
+    muon_ns_steps: 5
+    muon_weight_decay: 0.01
+    aux_adamw_learning_rate: ${best_adamw_learning_rate}
+    aux_adamw_beta1: 0.9
+    aux_adamw_beta2: 0.95
+    aux_adamw_weight_decay: 0.01
+    global_target_frame_batch: ${best_adamw_global_target_frame_batch}
+    warmup_fraction: 0.01
+    schedule: cosine
+    final_lr_fraction: 0.10
+    gradient_clip: 1.0
+
+modal:
+  app_name: melee-policy-20m-calibration
+  parsed_data_volume: melee-policy-calibration-data-v1
+  checkpoint_volume: melee-policy-calibration-checkpoints-v1
+  wandb_secret: melee-policy-wandb
+  hf_secret: melee-policy-hf
+  default_gpu: L40S
+  default_training_concurrency: 6
+  parser_concurrency: 8
+  pricing:
+    # GPU-only public list price observed 2026-08-20. CPU, memory, regional,
+    # and non-preemptible multipliers are intentionally reported separately.
+    l40s_usd_per_second: 0.000542
+    source: https://modal.com/pricing

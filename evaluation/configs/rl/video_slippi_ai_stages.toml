@@ -1,0 +1,196 @@
+# P27 (10 Sep 2026): 18 REAL four-stock matches against a RELEASED slippi-ai agent, across the SIX legal stages.
+#
+# vladfi1/slippi-ai (MIT, revision 577965a -- the repository's own pin and the revision E010 gated
+# `medium-v2` at) is Phillip II: behaviour cloning on Fizzi's anonymised ranked replays, then PPO
+# self-play.  Its agents have played Zain, Amsa, Cody, Moky and Aklo on stream.  This is the rung above
+# MIMIC, SmashBot and CPU 9.
+#
+# THE ASYMMETRY, STATED ONCE: every release carries 18-24 frames of POLICY DELAY -- it is trained to
+# emit the controller for frame t + d from the state at frame t, which is what lets it play netplay
+# against humans at up to 300 ms of ping.  Our policy acts on the NEXT frame.  Probing the whole
+# deployed Dropbox folder for delays 0-24 (9 Sep 2026) returned 18, 21 and 24 only: the folder holds no
+# low-delay release to make this symmetric.  Every number from this file against a Dropbox release is
+# "our next-frame Fox against their netplay-delay Fox", and the report says so.
+#
+# THE EXCEPTION (22 Sep 2026): `fox_d0_tx_like_3x512`, a DELAY-0 Fox the author shared with the team
+# directly -- a JAX/flax IMITATION checkpoint (no rl_config), Fox-ditto data, the first symmetric fight.
+# It runs through upstream's JAX half (its own pip layer in the image) and, being imitation-only, plays
+# under whichever tag `[slippi_ai] name` picks (the campaign runs "Master Player" and "Cody"):
+#   --overrides "slippi_ai.model=fox_d0_tx_like_3x512,slippi_ai.name=Master Player"
+# Pre-flight it first: `modal run -m melee_rl.modal_app::slippi_check --models fox_d0_tx_like_3x512`.
+#
+# RUN THE CALIBRATION ARMS FIRST (`slippi_ai_cpu9.toml`, `slippi_ai_mimic.toml`,
+# `slippi_ai_smashbot.toml`).  A release that cannot beat CPU 9 inside our harness is not a measurement
+# of anything -- the P25/P26 lesson, where a silently crippled opponent flattered everything it played.
+#
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::video --slippi-ai \
+#       --config video_slippi_ai_stages --checkpoint /runs/shared/p21-best/frisson-melee-10m-rl-step1318.pt \
+#       --output-dir /runs/matches/p27-slippi-ai --label 10m-rl-1318-vs-fox-d21-ditto-v4 --spawn
+#
+# The twelve-character releases need their character named, and the Falco specialist needs the
+# environment to start Falco on port 2:
+#   --overrides "slippi_ai.model=gm,slippi_ai.character=1"
+#   --overrides "slippi_ai.model=falco_d18_vs_fox_v4,env.dolphin.characters=[1,22]"
+#
+# Budget: their net is a 3 x 512 (or 3 x 768) LSTM stepped once per frame for the whole batch, on the
+# cores.  Expect a job between `video_smashbot` (pure Python) and `video_mimic` (which re-runs a
+# 60-frame window every frame).
+
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 0                     # nothing trains in a recording job
+seed = 0
+deterministic = true
+device = "cuda"                   # our checkpoint is on the L4; SmashBot is pure Python on the cores
+threads = 8
+
+[policy]
+profile = "10m"                   # only a fallback; the recorded checkpoint carries its own config
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "none"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 18                     # one Dolphin per match, three per stage (VideoConfig.clips overrides it)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # Fox vs Fox, as in Ali's benchmark launcher
+costumes = [0, 1]
+stage = 25                        # unused while `stages` is set (the config's default path)
+stages = [25, 24, 18, 26, 8, 6]   # FD, BF, PS, DL, FoD, YS -- cycled over the env index: 3 each of 18
+slippi_port = 51441
+console_timeout_s = 30.0
+boot_timeout_s = 300.0
+keepalive_seconds = 0.0
+step_threads = 0
+boot = "two_phase"
+worker_processes = 0              # REQUIRED: SmashBot reads the raw gamestates, which only exist here
+chunk_frames = 1
+save_replays = true
+infinite_time = false             # a REAL match -- stocks fall and the game ends
+stop_timeout_s = 20.0             # SIGTERM Dolphin before Console.stop kills it (ENV.md §6.5)
+
+[actor]
+rollout_length = 128
+context_frames = 0                # ring mode: no history window (the deployment path)
+delay_frames = 0                  # matches action_offset_frames = 1 of the recorded checkpoints
+context_mode = "ring"
+batch_steps = 1
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"                      # only fixes the default player layout; the recorder builds MIMIC
+
+[learner]
+kl_teacher_weight = 0.0           # nothing trains here; without a teacher the weights must be zero
+reverse_kl_teacher_weight = 0.0
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # a recording job logs nothing
+
+[eval]
+at_start = false
+at_end = false
+
+[slippi_ai]
+model = "fox_d21_ditto_v4"        # WHICH RELEASE PLAYS.  One arm per release:
+                                  #   --overrides "slippi_ai.model=gm"
+                                  # gm / master / diamond are the twelve-character family and need
+                                  # `character` set as well (see below).  Every name, sha256, delay and
+                                  # nametag lands in the manifest beside the results.
+model_dir = "/runs/external/slippi-ai"    # the staged release files on the Volume
+source_dir = "/opt/slippi-ai/source"      # the pinned MIT checkout baked into the image (577965a)
+player = 1                        # environment player 1 = Dolphin port 2, as MIMIC and SmashBot are
+character = 0                     # 0 = "the only character this release plays" (Fox for fox_*, Falco
+                                  # for falco_*).  gm / master / diamond play twelve, so they must say:
+                                  #   --overrides "slippi_ai.character=1"   (1 = libmelee FOX)
+name = ""                         # "" = the tag upstream itself would pick: the first of the tags the
+                                  # RL run conditioned on ("Cody" for the Fox dittos, "Ginger" for the
+                                  # Falco specialist, "Master Player" for the twelve-character family).
+                                  # It is part of the policy, not cosmetic.
+console_delay = 0                 # OUR ENVIRONMENT HAS NO CONSOLE LAG (use_exi_inputs +
+                                  # blocking_input + online_delay = 0), so the agent's full policy
+                                  # delay applies: 21 frames for fox_d21_ditto_v4 and the twelve-
+                                  # character family, 18 for fox_d18_*, 24 for fox_d24_ditto_v4.
+                                  # console_delay exists to pay for a real console's lag; setting it
+                                  # here would hand the agent an action timing it was never trained on.
+                                  # OUR policy acts on the next frame, so every match in this file
+                                  # against a Dropbox release is ASYMMETRIC IN OUR FAVOUR and the
+                                  # report has to say so; only `fox_d0_tx_like_3x512` (delay 0, 22 Sep
+                                  # 2026) is symmetric.
+sample_temperature = 1.0          # the training distribution, as in [eval] and [video]
+use_gpu = false                   # TensorFlow stays on the cores; the L4 belongs to our policy
+jit_compile = false               # E010's proven setting (XLA off); their own evaluator defaults it on
+async_inference = false           # the synchronous DelayedAgent: one step per frame, deterministic
+verify_sha256 = true              # the staged file must be the release we measured
+strict = true                     # an exception is a bug in OUR wiring: let it out.  Unlike SmashBot
+                                  # there is no upstream "swallow it into a neutral input" behaviour to
+                                  # reproduce -- their own evaluator would crash too.
+[video]
+mode = "match"                    # one real match per Dolphin, first replay kept
+matchups = ["policy:slippi_ai"]
+clips = 18                        # 18 matches per checkpoint: three per stage
+seconds = 520.0                   # the per-match CAP, deliberately PAST Melee's 8-minute timer:
+                                  # the rollout starts at frame -123 while the timer starts at 0, so a
+                                  # 480 s budget stops 123 frames before a timed-out game writes its
+                                  # GAME_END and the result would read as "unfinished".  The cap is
+                                  # only a ceiling: match mode stops as soon as every Dolphin has
+                                  # begun a second game.  (The 29 Aug 2026 jobs ran at 480.)
+output_dir = "/runs/matches"
+rollout_length = 128
+temperature = 1.0                 # the training distribution, as in [eval]
+seed = 0
+port_offset = 0
+wandb = false
+
+[video.render]
+# Copied from `video_match_stages.toml`: without this block the recorder's render stage falls back
+# to RenderConfig defaults, which do not point at the Ishiiruka PLAYBACK build, and
+# `modal_app::render --config video_smashbot` silently renders nothing (measured 9 Sep 2026:
+# two render jobs completed and produced zero mp4s).
+# The Slippi PLAYBACK build, pinned into the video image only (26 Aug 2026 probe): the ExiAI Dolphin
+# we train with has no -i and no ffmpeg, both netplay builds reject -i, and this is the one binary
+# that accepted the comm file and actually wrote frames.  It needs an X server and does not exit when
+# the replay ends, so the call is bounded by the clip length x speed_factor and ffmpeg trims the dump.
+dolphin_path = "/opt/dolphin/ishiiruka-playback-3.5.2/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+backend = "OGL"
+platform = ""                     # wx build: no --platform flag (Xvfb supplies the display)
+xvfb = true
+internal_resolution = 1           # 1x native 640 x 480 -> GFX.ini EFBScale = SCALE_1X (P9b: Ishiiruka
+                                  # has no InternalResolution key, and its Linux default is SCALE_2X,
+                                  # so before the fix every render rasterised 1280 x 960)
+bitrate_kbps = 3000
+dump_format = "avi"
+emulation_speed = 0.0
+caption = true                    # "<checkpoint> step N (P1) vs CPU 9 (P2) - clip 1/2", burned in
+font_size = 18
+crf = 26                          # x264 quality of the caption pass. 20 gave ~4.7 Mbit/s at
+                                  # 642 x 528 (~71 MB per 2-min clip); 26 is visually close at
+                                  # this size and about a third of the bytes, which matters when
+                                  # a ten-clip job gets passed around a team.
+timeout_s = 1800.0                # the hard cap per render call
+speed_factor = 20.0               # only a safety net now: --cout frame markers end each render as
+min_timeout_s = 120.0             # soon as the replay does (render.run_playback)
+workers = 6                       # eight concurrent renders measured the wall clock of one, so the
+                                  # six fresh clips of a job are a single batch

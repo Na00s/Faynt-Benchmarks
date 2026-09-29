@@ -1,0 +1,416 @@
+{
+  "source_repository": "https://github.com/bicro/research_playground",
+  "source_branch": "benchmark-launcher",
+  "base_commit": "1e314880011a0be7af99e41542c1bd2582387b3b",
+  "source_kind": "dirty local research snapshot with recorded per-file hashes",
+  "files": [
+    {
+      "path": "scripts/faynt_d0_benchmark_plan.py",
+      "original_sha256": "6ede07052a686d145574a84ab0a997affdfdd3ba3d0b8631f70ca2bb40e79140",
+      "original_bytes": 12089,
+      "release_sha256": "0546d34a6dc1526e398d85952561ec75c2d18e6c275da81e9e82c84c672f8e8c",
+      "release_bytes": 12089,
+      "included": true
+    },
+    {
+      "path": "scripts/faynt_d0_durable_game.py",
+      "original_sha256": "1a1560f088599889d1fce5b52d0b289ab6b9238cf832ec80bf1f48fdbdfbea67",
+      "original_bytes": 16838,
+      "release_sha256": "6c84d0a8ed6674a294b124e8f1c8a03ccb6f085adcffb465c62b6ad512f59319",
+      "release_bytes": 17026,
+      "included": true
+    },
+    {
+      "path": "scripts/final_winner_batch_common.py",
+      "original_sha256": "c53e3a630f65104db0c7de853de3f76b2f674bd8489f0bafca7e8e203aa45d2e",
+      "original_bytes": 15661,
+      "release_sha256": "637e843fa59ce160b2a0ebda8da2d49c46a17df8ecae6e2649adec82094fcfeb",
+      "release_bytes": 15662,
+      "included": true
+    },
+    {
+      "path": "scripts/finalize_paused_slippi_panel_attempt.py",
+      "original_sha256": "1390eb8bc9be02709ade1916d7494341a2575a384dfc183342c5a602c4cd5945",
+      "original_bytes": 9194,
+      "release_sha256": "1390eb8bc9be02709ade1916d7494341a2575a384dfc183342c5a602c4cd5945",
+      "release_bytes": 9194,
+      "included": true
+    },
+    {
+      "path": "scripts/ingest_modal_durable_game.py",
+      "original_sha256": "4f9b7377c175477408c7ad1b82045c5d319b538e507a69643b91de1335e561ee",
+      "original_bytes": 3930,
+      "release_sha256": "4f9b7377c175477408c7ad1b82045c5d319b538e507a69643b91de1335e561ee",
+      "release_bytes": 3930,
+      "included": true
+    },
+    {
+      "path": "scripts/ingest_modal_panel_pair.py",
+      "original_sha256": "7a194402ba2ab872c47e080d4f4883670877256aec299e2c4bc9ef9b1cd4f381",
+      "original_bytes": 5355,
+      "release_sha256": "7a194402ba2ab872c47e080d4f4883670877256aec299e2c4bc9ef9b1cd4f381",
+      "release_bytes": 5355,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_batch_pilot.py",
+      "original_sha256": "5eb7235cb7e3e3910462e927f60f75007e10a381810511ffdc16ff1dd4b94f9a",
+      "original_bytes": 5915,
+      "release_sha256": "f81a678bb728ffe3ab72caeccd7527578904acb7de0d8d75073e7f396be2d88a",
+      "release_bytes": 5981,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_budget.py",
+      "original_sha256": "26aa1a018ce719c91b459c956389a8758e0488cd26694bb723fa903100af5890",
+      "original_bytes": 26212,
+      "release_sha256": "26aa1a018ce719c91b459c956389a8758e0488cd26694bb723fa903100af5890",
+      "release_bytes": 26212,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_build_pilot.py",
+      "original_sha256": "d7cb2f8244bdb4926b9488d56bb12b1d0a4feffcba494921b33f3058e9c6d8fe",
+      "original_bytes": 38811,
+      "release_sha256": "726f46ee3d0ada3447843754114cf218ee563b5865d6d0dd9e6df5bb32ee24a1",
+      "release_bytes": 25001,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_cloud_app.py",
+      "original_sha256": "4ad582bafe9a4464dc142f974bf59646f1d3a3eabb471f48c9ef670b47271cdb",
+      "original_bytes": 74731,
+      "release_sha256": "a591699c277d039f603b584a3ef4d4cd13265de1b9fcdc6cb836a54f9bbc3870",
+      "release_bytes": 75002,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_cloud_queue.py",
+      "original_sha256": "d894d62e578040fdda943ac8047e98a02869ea38be4101fc31c9592974e18322",
+      "original_bytes": 46369,
+      "release_sha256": "149a4ac705d9e1869510f3656d1bfcee90967fc4d05198e8ef92ce3e8b2f7d35",
+      "release_bytes": 46651,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_cohort.py",
+      "original_sha256": "f0a7ef768176e36b3a6c29afe60a71b99cbd1493197ea8b19d6a82ed0542df9b",
+      "original_bytes": 4365,
+      "release_sha256": "f0a7ef768176e36b3a6c29afe60a71b99cbd1493197ea8b19d6a82ed0542df9b",
+      "release_bytes": 4365,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_durable_canary.py",
+      "original_sha256": "4861d5d2901b28280d5f539c36766c6aef0683cb0622f13ba8dc7c11269b03ae",
+      "original_bytes": 5032,
+      "release_sha256": "261d5892b4c658bcea090eeca7db04ee988cc6f91ffe46c652b0880adde8cb55",
+      "release_bytes": 5099,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_durable_cohort.py",
+      "original_sha256": "94e2daa127e6c70eaa1606c0cf42b5c995d487c505b592c735d2839c2613ef98",
+      "original_bytes": 8383,
+      "release_sha256": "94e2daa127e6c70eaa1606c0cf42b5c995d487c505b592c735d2839c2613ef98",
+      "release_bytes": 8383,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_durable_game.py",
+      "original_sha256": "dfbe3ba66252b86e710801fc27255f2a4cbbc35da9e7ea7e4cf08f37ea4d9594",
+      "original_bytes": 20365,
+      "release_sha256": "be606a4f39383411557f5caec0feaf2cef2a24a6bdce73ad830d8b61e0318488",
+      "release_bytes": 20431,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_first_op_diagnostic.py",
+      "original_sha256": "4835400bb1b9c3cf64f0bfed084dfccf8444e2371612e2c42dabed4c12077c29",
+      "original_bytes": 17988,
+      "release_sha256": "4835400bb1b9c3cf64f0bfed084dfccf8444e2371612e2c42dabed4c12077c29",
+      "release_bytes": 17988,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_game_pilot.py",
+      "original_sha256": "6459449d21a7976ed083127c39ba34203cfe089b3a695e9a6a6ef940e319db11",
+      "original_bytes": 44601,
+      "release_sha256": "ad6c07d0512a110b4727ea31f0a6a03da7909b9ea1719cac1fd78ee226c7b2ae",
+      "release_bytes": 44420,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_linux_build.py",
+      "original_sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e",
+      "original_bytes": 32050,
+      "release_sha256": "0eefacae251003d992a78ecba008315d2c20330a8ff45d0773ed1dbd1743c66d",
+      "release_bytes": 18005,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_linux_host.py",
+      "original_sha256": "8bc70d4ff7f43083ca7c763b3ea824755ca1685baa767a690d8076ede4bd4f7d",
+      "original_bytes": 16558,
+      "release_sha256": "c9b7e4c4189e26fdbd74667c9b3ffdf7d46f2311a8b294e526922db442b9ddb9",
+      "release_bytes": 12268,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_live_canary.py",
+      "original_sha256": "28ba293c1c20aed73d51b847682b43aaa1d46d9d24a7c4ffc780f88af2431caa",
+      "original_bytes": 30409,
+      "release_sha256": "24dcabd0b215f8bb7cf1b1ea469037dbec25ecd24f58a63f9689fcfa9cd5b353",
+      "release_bytes": 30397,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_live_context.py",
+      "original_sha256": "8d6a7ba10b83f4ef350f3a4264a717f2c1b6eb75c6f81bb242ee3451e4eea8f8",
+      "original_bytes": 38939,
+      "release_sha256": "8304bcb4ec2031ae6efa8edb253821aa2d876549f4057d49d30c6d895ac1616b",
+      "release_bytes": 38927,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_live_dependencies.py",
+      "original_sha256": "c2f3938d3fd9d1ea8f112d65b77c977862ed5065aacac43fa4185e9b14b0ef8a",
+      "original_bytes": 10612,
+      "release_sha256": null,
+      "release_bytes": null,
+      "included": false
+    },
+    {
+      "path": "scripts/modal_panel_live_pilot.py",
+      "original_sha256": "3ed3b555993b376df43467bbbdac8d25cc70c3d7585aaf25ec54e78325bbab1a",
+      "original_bytes": 42019,
+      "release_sha256": "588b559bacb9bb7ec49c6677374492eb2e56f074758c175d6a5022933ea718af",
+      "release_bytes": 42125,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_match_host.py",
+      "original_sha256": "16b54c5dced4603f1505bf988e11ba9df615e79cb67d52a082e8773f7071de31",
+      "original_bytes": 12339,
+      "release_sha256": "5b3c24af87aba8d88fd8b97a703a3a175f171685f13c1e5c84a3c163d54946ff",
+      "release_bytes": 12311,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_match_source.py",
+      "original_sha256": "79659ee055d9982031539ee1c3ea14427273596c7c0b72b5c64cb3c28cce815d",
+      "original_bytes": 10672,
+      "release_sha256": "79659ee055d9982031539ee1c3ea14427273596c7c0b72b5c64cb3c28cce815d",
+      "release_bytes": 10672,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_package_audit.py",
+      "original_sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61",
+      "original_bytes": 18433,
+      "release_sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61",
+      "release_bytes": 18433,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_pair_binding.py",
+      "original_sha256": "f1850d3170ba5ae5f2a5f9f88f460842c883052d51098d924402a74cc3b29e79",
+      "original_bytes": 7036,
+      "release_sha256": "cbdfed67b9fadb90610e6ac8921490b1ae5a969f338652087b23a21e7055ae54",
+      "release_bytes": 7012,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_policy_canary.py",
+      "original_sha256": "d97f4b9634eaa18f1a7b04114a679e685a26261c5923494b9e24792970e7f5be",
+      "original_bytes": 32148,
+      "release_sha256": "ed1229272480d750492b61ca642c7b9d3904fd28b940823f5c3a62747af9d9dd",
+      "release_bytes": 32148,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_policy_dependencies.py",
+      "original_sha256": "69a4faa16d801f7186877d936830c754bc6b6f227c96af1debca0d4dc55fa142",
+      "original_bytes": 20096,
+      "release_sha256": null,
+      "release_bytes": null,
+      "included": false
+    },
+    {
+      "path": "scripts/modal_panel_policy_pilot.py",
+      "original_sha256": "fd7e12bf9eec55cd0be54dcbc538f155f0d08cb5907472fcbbcb8189ca8e428c",
+      "original_bytes": 42396,
+      "release_sha256": "114745324c669dcea3db8a4e2047253f49a05c26cbd7775f9462fd0f4efe54d9",
+      "release_bytes": 36794,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_prefix_validation.py",
+      "original_sha256": "a4e65a1c2320836ef512f51e4a2b1a84571a5237c8a56220cb2d158c0f6d19d5",
+      "original_bytes": 1237,
+      "release_sha256": "a4e65a1c2320836ef512f51e4a2b1a84571a5237c8a56220cb2d158c0f6d19d5",
+      "release_bytes": 1237,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_queue.py",
+      "original_sha256": "56626e4e96453eabce6fdd6583872141669bb2fe6edc5c5bbe3d10b9960e6b3a",
+      "original_bytes": 32524,
+      "release_sha256": "56626e4e96453eabce6fdd6583872141669bb2fe6edc5c5bbe3d10b9960e6b3a",
+      "release_bytes": 32524,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_runtime_pilot.py",
+      "original_sha256": "1d7c7fc2abc262c0d6584670ed760167a3b3721e1fa17fc6532298b9c978dbc6",
+      "original_bytes": 34365,
+      "release_sha256": "f1ec0cf28437d70b9d451120e9e5d083378b1a8802aaecbb1d2c26848b2530b8",
+      "release_bytes": 32413,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_single_pilot.py",
+      "original_sha256": "039be4ab1118795d78ddc5fb798af19e0d12c1898713f9332fc0d69d25b365f4",
+      "original_bytes": 4830,
+      "release_sha256": "039be4ab1118795d78ddc5fb798af19e0d12c1898713f9332fc0d69d25b365f4",
+      "release_bytes": 4830,
+      "included": true
+    },
+    {
+      "path": "scripts/modal_panel_source_snapshot.py",
+      "original_sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507",
+      "original_bytes": 11640,
+      "release_sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507",
+      "release_bytes": 11640,
+      "included": true
+    },
+    {
+      "path": "scripts/prepare_faynt_d0_benchmark.py",
+      "original_sha256": "0c1a846adc86b05bd9bbfb20dfbc893132096d65424a97640ffce7c4bd863b2f",
+      "original_bytes": 797,
+      "release_sha256": "f241a3801729aeb3921081dd40ac92be32aebe276f277686cd324fde1500004c",
+      "release_bytes": 813,
+      "included": true
+    },
+    {
+      "path": "scripts/prepare_faynt_d0_cloud.py",
+      "original_sha256": "48af52a6b70db2aa42f24d76a7fe58ded4d46db971010ce86386e4bc6b7ed256",
+      "original_bytes": 15611,
+      "release_sha256": "2b925d6dec027a3bb8004c5f36bdb302ef1a39c2b0a1a02833864baab702bbcd",
+      "release_bytes": 15905,
+      "included": true
+    },
+    {
+      "path": "scripts/report_modal_cloud_queue.py",
+      "original_sha256": "f8d4b0f9ee2fd91126fd46d17be9b1ad026d8764793e5269ed3c5ba95b8167a6",
+      "original_bytes": 5546,
+      "release_sha256": "f8d4b0f9ee2fd91126fd46d17be9b1ad026d8764793e5269ed3c5ba95b8167a6",
+      "release_bytes": 5546,
+      "included": true
+    },
+    {
+      "path": "scripts/run_final_winner_benchmark.py",
+      "original_sha256": "3e0b5868dfdd6d29b57afac4f2d5bb46d2e0e018b3b020b16b81e0e1176496b2",
+      "original_bytes": 23781,
+      "release_sha256": "3e0b5868dfdd6d29b57afac4f2d5bb46d2e0e018b3b020b16b81e0e1176496b2",
+      "release_bytes": 23781,
+      "included": true
+    },
+    {
+      "path": "scripts/run_frisson_dual_oneoff.py",
+      "original_sha256": "d8df2fcebd1bd300abffee602ec3425892c060403ff12910fa42c36c389b323f",
+      "original_bytes": 31249,
+      "release_sha256": "5b6365b5e319bdf20d62ff8fe51c06afdd1ea36ac2bd70fe6bddce1773b0ae22",
+      "release_bytes": 31238,
+      "included": true
+    },
+    {
+      "path": "scripts/run_post_rl_benchmark.py",
+      "original_sha256": "fcb414e49bf39d7533266ba482406feef03bab29c930a3173e97bf11105b2cde",
+      "original_bytes": 250,
+      "release_sha256": "fcb414e49bf39d7533266ba482406feef03bab29c930a3173e97bf11105b2cde",
+      "release_bytes": 250,
+      "included": true
+    },
+    {
+      "path": "scripts/run_posttraining_winner_benchmark.py",
+      "original_sha256": "16038a8cf409ce5325e2029c3f971915c7a013c8aaa626dfa8a54e28368b58f3",
+      "original_bytes": 340,
+      "release_sha256": "16038a8cf409ce5325e2029c3f971915c7a013c8aaa626dfa8a54e28368b58f3",
+      "release_bytes": 340,
+      "included": true
+    },
+    {
+      "path": "scripts/run_slippi_public_panel.py",
+      "original_sha256": "e8f896b3bc420f2e9e2dd9456515a9a75fc4f4215fbae82364db340430c70fd4",
+      "original_bytes": 28506,
+      "release_sha256": "89937bb25384cd1041767b38c31d87096b756e72333ce7e6f51ada44f7f2b295",
+      "release_bytes": 28399,
+      "included": true
+    },
+    {
+      "path": "scripts/slippi_panel_audit.py",
+      "original_sha256": "0b49ff8743c1425da0aadd338f8197115260c9b702335286d8b08cb95d1aa79b",
+      "original_bytes": 7127,
+      "release_sha256": "e26e1087bc719257163b3abb68cd6791743e64c751e6bf5906c0d7f10877438b",
+      "release_bytes": 6914,
+      "included": true
+    },
+    {
+      "path": "scripts/slippi_panel_runtime.py",
+      "original_sha256": "239fb0d79a4586dfe111847ef62a8f8c9bb8754062e989be475bb103117ef5a5",
+      "original_bytes": 13936,
+      "release_sha256": "ecff60bf292fcec36e2376fd5333836ec556bb1bb07fd656d416c450f17240fc",
+      "release_bytes": 14015,
+      "included": true
+    },
+    {
+      "path": "src/melee_policy/integration/final_benchmark_suite.py",
+      "original_sha256": "ef420ff43d1da9606b471883b9d76c41572c7797f3f0235b151aeff2977617b6",
+      "original_bytes": 115166,
+      "release_sha256": "96845ea670999d18fc1501d1ce36a5c3adb299cfe728e49d4229df38ff19f75c",
+      "release_bytes": 115153,
+      "included": true
+    },
+    {
+      "path": "scripts/slippi_panel_plan.py",
+      "original_sha256": "04eeaf45362fe682a42c3ebc3c1574b4fcc2993a92e1aa42956f8b7deae6cc00",
+      "original_bytes": 7340,
+      "release_sha256": "04eeaf45362fe682a42c3ebc3c1574b4fcc2993a92e1aa42956f8b7deae6cc00",
+      "release_bytes": 7340,
+      "included": true
+    },
+    {
+      "path": "scripts/report_slippi_public_panel.py",
+      "original_sha256": "fd6f269565d2d77158cf75a8f1d811230d4d309d7505ab60dcc899c54093f296",
+      "original_bytes": 22756,
+      "release_sha256": "fd6f269565d2d77158cf75a8f1d811230d4d309d7505ab60dcc899c54093f296",
+      "release_bytes": 22756,
+      "included": true
+    },
+    {
+      "path": "scripts/slippi_panel_canary.py",
+      "original_sha256": "c924859170693c133cef70e7a5a54dbe3d4505c52d5ddd867cfdea1b940fcf0c",
+      "original_bytes": 5103,
+      "release_sha256": "c924859170693c133cef70e7a5a54dbe3d4505c52d5ddd867cfdea1b940fcf0c",
+      "release_bytes": 5103,
+      "included": true
+    },
+    {
+      "path": "scripts/slippi_panel_deploy.py",
+      "original_sha256": "dc0e0d85e1acff4800853e88f6d192b84091a19d4e29bdf54ef5cc0ea4e8efbd",
+      "original_bytes": 5659,
+      "release_sha256": "dc0e0d85e1acff4800853e88f6d192b84091a19d4e29bdf54ef5cc0ea4e8efbd",
+      "release_bytes": 5659,
+      "included": true
+    },
+    {
+      "path": "scripts/finalize_final_winner_benchmark_videos.py",
+      "original_sha256": "4d6d014f7887d7c9f5aaf36242d8a7085e5b41c9533443c3a7a5710b96268cab",
+      "original_bytes": 50055,
+      "release_sha256": "85d10961590ce93fc7aa741ae831b34b5a27888e6fb1276d14706948b4d107d6",
+      "release_bytes": 50043,
+      "included": true
+    }
+  ]
+}

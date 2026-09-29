@@ -1,0 +1,111 @@
+# P6b: the 20m day run, wide -- the same run as dolphin_20m_day.toml (Ali's 20m profile from scratch vs CPU 9,
+# hourly evals, one detached 23.5 h launch per day) on 64 headless Dolphins in one container with the L4 + 32 cores /
+# 64 GiB (--gpu --wide -> dolphin_train_gpu_wide), in *ring* context mode.  Why (22 Aug 2026, user decision after the
+# first real run): the per-frame policy forward is latency-bound on the GPU (about 45 ms per batched frame at batch
+# 8, 10 % utilisation), so 8 Dolphins gave only 82 env fps (step 12.9 s = policy 5.8 + re-prime 4.4 + env 1.1 +
+# learner 0.4); batching 64 Dolphins costs about the same per frame, and ring mode drops the re-prime (the actor keeps
+# the model's native rolling cache; the learner re-forwards [C + T] = 256 frames and uses its own recomputation as
+# the behaviour log-prob -- PLAN.md's documented deviation; with the endless match resets are rare).  Expected: about
+# 10-13 s per 8 192-frame step = 600-800 env fps (to be measured).  Launched with the SAME checkpoint subdir as the
+# 20m day run, so it resumes latest.pt into the same W&B run; batch size / context mode / eval size are run-file
+# settings, not checkpoint state.  Cost: L4 + 32 cores / 64 GiB = $2.82/h = about $66 per launch (estimate + yes).
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_20m_wide_day \
+#       --gpu --wide --wandb-mode online --checkpoint-subdir p6b/20m_day --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 1000000               # the wall-time limit below ends each launch
+max_runtime_s = 84600             # 23.5 h < Modal's 24 h function cap; the next launch resumes from latest.pt
+seed = 0
+deterministic = true
+device = "cuda"                   # the L4 function (--gpu); the 20m forward is too slow on CPU threads
+threads = 4
+save_interval_steps = 20          # latest.pt every ~4 min at 8 192 frames per step (a stop loses at most that)
+snapshot_interval_steps = 1000    # step_<n>.pt every ~3.5 h (~270 MiB each)
+
+[policy]
+profile = "20m"                   # Ali's active profile (config.yaml): d_model 512, 6 layers, 20.04 M
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 64                     # one container: 64 Dolphins on 32 cores (+ 32 eval Dolphins during an eval)
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 16 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 64 two-phase boots on 32 cores (8 took ~29 s)
+keepalive_seconds = 0.0
+step_threads = 0                  # one thread per Dolphin for send + advance + convert
+boot = "two_phase"
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "ring"             # no re-prime (was 4.4 s of every 12.9 s step); learner-side behaviour log-probs
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"
+cpu_level = 9
+
+[learner]
+learning_rate = 3e-5                # 20m from scratch: 1e-4 gave actor KL 0.02-0.04 per update (all reverted)
+kl_teacher_weight = 0.0
+reverse_kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-2          # from scratch: the P6a runs saw ~2e-3 per update at lr 1e-4 (1e-4 reverted all)
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "p6b", "cpu9", "from-scratch", "20m", "l4", "day", "wide", "ring"]
+print_interval_steps = 10
+
+[eval]
+enabled = true
+interval_seconds = 3600.0         # hourly, checked after the current step; plus the start and the end of each launch
+at_start = true
+at_end = true
+frames = 57600                    # per opponent: 32 eval Dolphins x 30 s (batched eval: ~2-4 min per opponent)
+num_envs = 32
+rollout_length = 128
+opponents = ["cpu9", "best"]      # best = this run's best.pt (skipped until it exists)
+temperature = 1.0
+seed = 0
+metric = "damage_dealt_per_minute"
+metric_opponent = "cpu9"

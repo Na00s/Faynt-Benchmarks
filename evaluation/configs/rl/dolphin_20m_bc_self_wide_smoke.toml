@@ -1,0 +1,110 @@
+# The 60-minute shake-out for the 20m BC-init run (user decisions 25 Aug 2026): its job is to
+# MEASURE the median per-update loss/actor_kl_mean -- the day guard is set from it.  Take one
+# (lr 4e-4, 25 Aug ~12:30 UTC, W&B rl-...-123054) measured a revert storm: median attempted KL
+# 1.07e-1, clip 0.84, every update reverted, ~310 s/step at ~620 fps, no OOM at microbatch 48.
+# Take two runs lr 4e-5 (the in-regime lr^2 projection: ~1.1e-3 per update).  The guard here is
+# 5e-3 -- loose on purpose, so the smoke measures instead of reverting; the day file gets
+# max(5x median, 1e-3).  Eval off.
+# About 60 minutes on the wide function (~$2.9).
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_20m_bc_self_wide_smoke --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir p8/20m_bc_smoke --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 100000
+max_runtime_s = 3600              # 60 min: boots + 3 burn-in steps + ~7 measured PPO steps
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 2
+snapshot_interval_steps = 0
+
+[policy]
+profile = "20m"                   # config.yaml: 20.04 M params; all 54 fields match the checkpoint
+init = "checkpoint"
+checkpoint = "/runs/bc/20m-muon-scaling-c3.pt"   # the STABLE path (staged + byte-verified 25 Aug 2026)
+seed = 0                          # unused with init = "checkpoint"
+compute_dtype = "float32"
+cache_dtype = "float32"
+fast_step = true                  # P7b: the vectorised ring step
+
+[teacher]
+source = "policy"                 # clone_frozen() of the just-loaded BC weights: no second file read
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 96                     # 6 per worker; players is derived from opponent.type
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # sliced per worker: worker w's env j listens on 51441 + 6w + j
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 96 boots, 6 per worker, workers in parallel
+keepalive_seconds = 0.0
+step_threads = 0                  # per worker: one thread per Dolphin of its group (6)
+boot = "two_phase"
+worker_processes = 16             # the P7 layout
+mp_start_method = "spawn"
+chunk_frames = 1                  # D = 0: the slack (b-1)+(k-1) <= D forces lockstep stepping
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0                  # matches the model's action_offset_frames = 1 (no mismatch flag)
+context_mode = "ring"
+batch_steps = 1                   # D = 0: no pipeline (P8 stays dormant by construction)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: 2 x 96 = 192 rows
+seed = 1
+
+[learner]
+learning_rate = 4e-5              # take two: set from take one's measurement (4e-4 -> KL 1.07e-1)
+kl_teacher_weight = 0.1           # slippi-ai's post-training recipe; the anti-collapse mechanism
+value_burnin_steps = 2            # enough to damp the value-mismatch transient; the day file uses 6
+optimizer_burnin_steps = 1
+microbatch_envs = 48              # 192-row trajectories in 4 chunks: 20m at 64 rows measured 14 GB
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 16                  # slippi-ai's production regime: accumulate 16 rollouts per update
+epsilon = 1e-2                    # the BC regime's measured clip window (session 15: clip ~0.10)
+beta = 0.0
+max_mean_actor_kl = 5e-3          # loose on purpose: the smoke measures, the day file enforces
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = [
+    "ppo", "dolphin-env", "self-play", "two-port", "bc-init", "teacher-kl", "20m", "l4", "smoke",
+    "wide", "ring", "mp-workers", "fast-step", "nb16",
+]
+print_interval_steps = 1
+
+[eval]
+enabled = false                   # a measurement run: no eval boots

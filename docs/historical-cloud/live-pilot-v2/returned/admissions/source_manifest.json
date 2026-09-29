@@ -1,0 +1,102 @@
+{
+  "scripts/modal_panel_build_pilot.py": {
+    "bytes": 38811,
+    "sha256": "d7cb2f8244bdb4926b9488d56bb12b1d0a4feffcba494921b33f3058e9c6d8fe"
+  },
+  "scripts/modal_panel_linux_build.py": {
+    "bytes": 32050,
+    "sha256": "bbc2979dfa8d238016cd357edb9d40a40c40c81f82790cf6e12328e497ecf01e"
+  },
+  "scripts/modal_panel_linux_host.py": {
+    "bytes": 16558,
+    "sha256": "8bc70d4ff7f43083ca7c763b3ea824755ca1685baa767a690d8076ede4bd4f7d"
+  },
+  "scripts/modal_panel_live_canary.py": {
+    "bytes": 30409,
+    "sha256": "28ba293c1c20aed73d51b847682b43aaa1d46d9d24a7c4ffc780f88af2431caa"
+  },
+  "scripts/modal_panel_live_context.py": {
+    "bytes": 38939,
+    "sha256": "8d6a7ba10b83f4ef350f3a4264a717f2c1b6eb75c6f81bb242ee3451e4eea8f8"
+  },
+  "scripts/modal_panel_live_pilot.py": {
+    "bytes": 42019,
+    "sha256": "3ed3b555993b376df43467bbbdac8d25cc70c3d7585aaf25ec54e78325bbab1a"
+  },
+  "scripts/modal_panel_package_audit.py": {
+    "bytes": 18433,
+    "sha256": "6ce918410971fa05524b5f875c44e150d1af562903f9d473f2c5584bdc7e8e61"
+  },
+  "scripts/modal_panel_policy_canary.py": {
+    "bytes": 32148,
+    "sha256": "d97f4b9634eaa18f1a7b04114a679e685a26261c5923494b9e24792970e7f5be"
+  },
+  "scripts/modal_panel_policy_pilot.py": {
+    "bytes": 42396,
+    "sha256": "fd7e12bf9eec55cd0be54dcbc538f155f0d08cb5907472fcbbcb8189ca8e428c"
+  },
+  "scripts/modal_panel_runtime_pilot.py": {
+    "bytes": 34365,
+    "sha256": "1d7c7fc2abc262c0d6584670ed760167a3b3721e1fa17fc6532298b9c978dbc6"
+  },
+  "scripts/modal_panel_source_snapshot.py": {
+    "bytes": 11640,
+    "sha256": "0155c1381a6725145d1be61b54a861109299b367a3f9bb01202c5637cf6ec507"
+  },
+  "src/melee_policy/__init__.py": {
+    "bytes": 60,
+    "sha256": "7255d380f78c96124b5f40c80609b3a2a5e84f7c236884eea35f6f84da427e50"
+  },
+  "src/melee_policy/integration/__init__.py": {
+    "bytes": 47,
+    "sha256": "063b43d1dedbefc78c2152595ccf701f7c19f825e9adb6b3559fdd900369bd7f"
+  },
+  "src/melee_policy/integration/frame_watchdog.py": {
+    "bytes": 2842,
+    "sha256": "8bf24e6c4ded876ad743227bccbb91ac67c87fd4af15fe3eb87e2f54eae34b7b"
+  },
+  "src/melee_policy/integration/frisson_match.py": {
+    "bytes": 78691,
+    "sha256": "d536c7f87c2c6ee5bceeb6973d910a27758c2c89b663f82439842fa76248fa76"
+  },
+  "src/melee_policy/integration/frisson_policy.py": {
+    "bytes": 110279,
+    "sha256": "fcdba59fc186b104689d20510d7a3d2b8fb4c2515cac6df587028926cf6025ca"
+  },
+  "src/melee_policy/integration/frisson_slippi_match.py": {
+    "bytes": 68740,
+    "sha256": "4c73dd81152307bb7a44302c09f6c29f46719230ea8656a111e2dc45c7a07399"
+  },
+  "src/melee_policy/integration/mimic_bundle_manifest.py": {
+    "bytes": 9427,
+    "sha256": "53313d0fa9ed6dccd786a349cfb6509440fa4beca8d3345c80c0e5496fc97720"
+  },
+  "src/melee_policy/integration/mimic_vs_hal.py": {
+    "bytes": 203556,
+    "sha256": "24ed6cb674de7242009c7e07fb0b9e7657c348168fa5723551a3aa40fcd1cb42"
+  },
+  "src/melee_policy/integration/natural_game_end.py": {
+    "bytes": 728,
+    "sha256": "043a5913f0bf421a708ff0a683c52703a42ebaa6da8f611516021846c211f0ad"
+  },
+  "src/melee_policy/integration/post_rl_checkpoints.py": {
+    "bytes": 2259,
+    "sha256": "2317c01de544180ac0520105403a62b806eb717a22885e5634180aad54253c9f"
+  },
+  "src/melee_policy/integration/runtime_identity.py": {
+    "bytes": 5508,
+    "sha256": "388bd46e041df6a5ec80ec3d96eedcb22abb2e9e0b56fa1281cff4ec818e17a9"
+  },
+  "src/melee_policy/integration/slippi_ai_policy.py": {
+    "bytes": 64440,
+    "sha256": "211e9d16b4c969629170a94d029660848c1ce9157f5a2280ae8b9c3765b5e59a"
+  },
+  "src/melee_policy/integration/slippi_match.py": {
+    "bytes": 214774,
+    "sha256": "e41af721dd6e53a7e4592c3a7e2a273ad68159494344af21c64e4fde20be4b69"
+  },
+  "src/melee_policy/integration/state_identity.py": {
+    "bytes": 1743,
+    "sha256": "9bb290953064ce574ef59ca1b4fa351e30c5c191854fb891bd290f3cbf60d96c"
+  }
+}

@@ -1,0 +1,6488 @@
+{
+  "created_unix": 1789097577.375353,
+  "failures": {},
+  "records": {
+    "SFIL": {
+      "bytes": 42331812,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "in_parallel": true,
+            "unroll_length": 80
+          },
+          "dataset": {
+            "allowed_characters": "fox",
+            "allowed_opponents": "all",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset/meta.json",
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "player": {
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            }
+          },
+          "expt_dir": "experiments/fox_d21_as32_imitation_v3.1",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 16,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 512,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "restore_tag": null,
+          "runtime": {
+            "eval_every_n": 5000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 100,
+            "save_interval": 600
+          },
+          "save_to_s3": false,
+          "tag": "fox_d21_as32_imitation_v3.1",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 512,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 3
+        },
+        "name_map": {
+          "": 4,
+          "A#9": 11,
+          "AKLO#381": 6,
+          "Aklo": 6,
+          "Cody": 5,
+          "Diamond Player": 2,
+          "FREE#521": 13,
+          "GUYF#436": 12,
+          "HAX#472": 3,
+          "Hax": 3,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "JBDW#120": 5,
+          "KJH#23": 10,
+          "LOWH#158": 14,
+          "MOKY#475": 9,
+          "Master Player": 1,
+          "NULL#478": 8,
+          "OHMA#175": 7,
+          "Platinum Player": 0,
+          "SFAT": 7,
+          "SFAT#783": 7,
+          "SFAT#9": 7,
+          "SFAT#99": 7,
+          "XX#02": 3,
+          "ZUPPY#0": 15,
+          "cody": 5,
+          "iBDW": 5
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 96,
+            "rollout_length": 120,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "SFAT"
+            ],
+            "path": null,
+            "tag": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "headless": true,
+            "infinite_time": true,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "${UPSTREAM_RUNTIME}/SSBM/Slippi_Online-x86_64-ExiAI.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": 29,
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.003,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 1.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.001,
+            "reward": {
+              "approaching_factor": 0.0,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.01,
+              "stalling_penalty": 0.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null,
+              "tag": null
+            },
+            "train": true,
+            "type": "self",
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 4,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "sphil"
+          },
+          "teacher": "pickled_models/fox_d21_as32_imitation_v3.1",
+          "value_burnin_steps": 128
+        },
+        "step": 1412
+      },
+      "name": "SFIL",
+      "parameter_count": 10580760,
+      "path": ".e001-cache/slippi-ai/models/SFIL",
+      "policy_sha256": "38dea6083c49fd7d24dccb5ba0465d3d84cd7d8f0be3cf25f6b78ee52aab0a2e",
+      "sha256": "01fea8e5eb40d9e4cd455f41a619c9802e7a131582b3ce95b68934f4bdc5abdd",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AJ3PL8rUzWKZtLuX0MD4cN8/SFIL?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 137
+    },
+    "diamond": {
+      "bytes": 95559704,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "/linusr/vlad/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Online-x86_64-ExiAI-3.18.0.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.02,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.02,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "top12_d21_rl_kl_2e-02"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 14374
+      },
+      "name": "diamond",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/diamond",
+      "policy_sha256": "fafa634e8481e871e87d53edc32d95026215274318a4207b5b665df5b391eff4",
+      "sha256": "7650af84ab02a55f46f6278ec70030f2637c64e3b1538f35691c748455792312",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AM2YJ7U-BDnZ8IObiFxVfJw/diamond?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 141
+    },
+    "falco_d21_ditto_v4": {
+      "bytes": 42331980,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 8,
+            "unroll_length": 80
+          },
+          "dataset": {
+            "allowed_characters": "falco",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "Platinum Player",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset/meta.json",
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "player": {
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            }
+          },
+          "expt_dir": "experiments/falco_d21_imitation_v4",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 16,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 512,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 864000,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "falco_d21_imitation_v4",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 512,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 4
+        },
+        "name_map": {
+          "": 2,
+          "ALBE#135": 12,
+          "BBB": 7,
+          "BBB#960": 7,
+          "BILLY#0": 14,
+          "BillyBoPeep": 14,
+          "Cody": 8,
+          "Diamond Player": 0,
+          "DruggedFox": 13,
+          "FRNZ#141": 4,
+          "Frenzy": 4,
+          "GING#345": 3,
+          "Ginger": 3,
+          "IBDW#0": 8,
+          "IBDW#734": 8,
+          "JBDW#120": 8,
+          "JOSH#450": 9,
+          "KIM#148": 11,
+          "KJH": 5,
+          "KJH#23": 5,
+          "MAGI#732": 6,
+          "Master Player": 1,
+          "SAMI#669": 13,
+          "TRIF#0": 10,
+          "TRIF#268": 10,
+          "TRT#879": 15,
+          "Trif": 10,
+          "cody": 8,
+          "iBDW": 8
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 96,
+            "rollout_length": 120,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Ginger",
+              "Frenzy",
+              "KJH",
+              "BBB"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": true,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "${UPSTREAM_RUNTIME}/SSBM/Slippi_Online-x86_64-ExiAI.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": 29,
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.003,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.001,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 20.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": "self",
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "falco_d21_ditto_v4_from_d18"
+          },
+          "teacher": "pickled_models/falco_d21_imitation_v4",
+          "value_burnin_steps": 128
+        },
+        "step": 27973
+      },
+      "name": "falco_d21_ditto_v4",
+      "parameter_count": 10580760,
+      "path": ".e001-cache/slippi-ai/models/falco_d21_ditto_v4",
+      "policy_sha256": "ddba2f784743d3ed1f086caf7b58fe581d5ed6a512cf0f136e64d26776601eb6",
+      "sha256": "1d0013d057a292b2c81705eb3a72eb62fbdcc69b7d8d15fadb15c198feebc812",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AFkL3Vu_7B-ZXgiRLIkrGOg/falco_d21_ditto_v4?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 137
+    },
+    "fox_d21_ditto_hax_v3": {
+      "bytes": 42331959,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "in_parallel": true,
+            "unroll_length": 80
+          },
+          "dataset": {
+            "allowed_characters": "fox",
+            "allowed_names": "Hax",
+            "allowed_opponents": "all",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset/meta.json",
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "player": {
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            }
+          },
+          "expt_dir": "experiments/hax_d21_as32_v1",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 16,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 512,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": "pickled_models/fox_d21_imitation_v3.1",
+          "restore_tag": null,
+          "runtime": {
+            "eval_every_n": 5000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 500,
+            "save_interval": 600
+          },
+          "save_to_s3": false,
+          "tag": "hax_d21_as32_v1",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 512,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 3
+        },
+        "name_map": {
+          "": 4,
+          "A#9": 11,
+          "AKLO#381": 6,
+          "Aklo": 6,
+          "Cody": 5,
+          "Diamond Player": 2,
+          "FREE#521": 13,
+          "GUYF#436": 12,
+          "HAX#472": 3,
+          "Hax": 3,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "JBDW#120": 5,
+          "KJH#23": 10,
+          "LOWH#158": 14,
+          "MOKY#475": 9,
+          "Master Player": 1,
+          "NULL#478": 8,
+          "OHMA#175": 7,
+          "Platinum Player": 0,
+          "SFAT": 7,
+          "SFAT#783": 7,
+          "SFAT#9": 7,
+          "SFAT#99": 7,
+          "XX#02": 3,
+          "ZUPPY#0": 15,
+          "cody": 5,
+          "iBDW": 5
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 96,
+            "rollout_length": 180,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Hax"
+            ],
+            "path": null,
+            "tag": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "headless": true,
+            "infinite_time": true,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "${UPSTREAM_RUNTIME}/SSBM/Slippi_Online-x86_64-ExiAI.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": 29,
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.03,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 1.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.03,
+            "reward": {
+              "approaching_factor": 0.0003,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.01,
+              "stalling_penalty": 0.1
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null,
+              "tag": null
+            },
+            "train": true,
+            "type": "self",
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 1000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "fox_d21_ditto_hax_kl_3e-2"
+          },
+          "teacher": "pickled_models/fox_d21_imitation_hax",
+          "value_burnin_steps": 128
+        },
+        "step": 205
+      },
+      "name": "fox_d21_ditto_hax_v3",
+      "parameter_count": 10580760,
+      "path": ".e001-cache/slippi-ai/models/fox_d21_ditto_hax_v3",
+      "policy_sha256": "7b015c305798ddffef1407ebaf6297f559994dba618bd5cf955598a5106a96cb",
+      "sha256": "7fb87ea06d5abcbd8d664db38683b287dc853d142aa133cd399f1aa5f42474e1",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/ANt2maXlxZdGhq5j_mPbyAI/fox_d21_ditto_hax_v3?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 137
+    },
+    "fox_d21_ditto_v4": {
+      "bytes": 42332034,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 8,
+            "unroll_length": 80
+          },
+          "dataset": {
+            "allowed_characters": "fox",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "Platinum Player",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset/meta.json",
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "player": {
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            }
+          },
+          "expt_dir": "experiments/fox_d21_imitation_v3.1_masked",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 16,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 512,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": "pickled_models/fox_d18_imitation_v3.1_masked",
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "fox_d21_imitation_v3.1_masked",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 512,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 4
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 13,
+          "AKLO#239": 5,
+          "AKLO#381": 5,
+          "Aklo": 5,
+          "Cody": 4,
+          "Diamond Player": 1,
+          "FAPT#275": 9,
+          "HAX#472": 2,
+          "Hax": 2,
+          "IBDW#0": 4,
+          "IBDW#734": 4,
+          "JBDW#120": 4,
+          "KING#911": 8,
+          "KJH": 12,
+          "KJH#23": 12,
+          "LOWH#158": 15,
+          "MOKY#475": 11,
+          "Master Player": 0,
+          "NULL#478": 7,
+          "OHMA#175": 6,
+          "RIKZ#401": 10,
+          "SFAT": 6,
+          "SFAT#783": 6,
+          "SFAT#9": 6,
+          "SFAT#99": 6,
+          "SOLO#735": 13,
+          "Solobattle": 13,
+          "XX#02": 2,
+          "ZUPPY#0": 14,
+          "cody": 4,
+          "iBDW": 4
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 96,
+            "rollout_length": 120,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Cody",
+              "Aklo",
+              "Hax",
+              "SFAT"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": true,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "${UPSTREAM_RUNTIME}/SSBM/Slippi_Online-x86_64-ExiAI.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": 29,
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.003,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.001,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "stalling_penalty": 0.1
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": "self",
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "fox_d21_ditto_v4_from_d18"
+          },
+          "teacher": "pickled_models/fox_d21_imitation_v4",
+          "value_burnin_steps": 128
+        },
+        "step": 26078
+      },
+      "name": "fox_d21_ditto_v4",
+      "parameter_count": 10580760,
+      "path": ".e001-cache/slippi-ai/models/fox_d21_ditto_v4",
+      "policy_sha256": "3b9a91ba9a97e0eb677160b8d1e741251f1dfc26790774d92ce0f7cfb7ec439a",
+      "sha256": "f4854fc783246b42d4bfc9309d6964c174a388f3425bb21f3f79355a4562e727",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AEryQOEBtmjLX_8z_AYdEuI/fox_d21_ditto_v4?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 137
+    },
+    "fox_d24_ditto_v4": {
+      "bytes": 42332052,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 8,
+            "unroll_length": 80
+          },
+          "dataset": {
+            "allowed_characters": "fox",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "Platinum Player",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset/meta.json",
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "player": {
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            }
+          },
+          "expt_dir": "experiments/fox_d24_imitation_v4",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 16,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 512,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 24,
+            "train_value_head": false
+          },
+          "restore_pickle": "experiments/fox_d21_imitation_v3.1_masked/latest.pkl",
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "fox_d24_imitation_v4",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 512,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 4
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 13,
+          "AKLO#239": 5,
+          "AKLO#381": 5,
+          "Aklo": 5,
+          "Cody": 4,
+          "Diamond Player": 1,
+          "FAPT#275": 9,
+          "HAX#472": 2,
+          "Hax": 2,
+          "IBDW#0": 4,
+          "IBDW#734": 4,
+          "JBDW#120": 4,
+          "KING#911": 8,
+          "KJH": 12,
+          "KJH#23": 12,
+          "LOWH#158": 15,
+          "MOKY#475": 11,
+          "Master Player": 0,
+          "NULL#478": 7,
+          "OHMA#175": 6,
+          "RIKZ#401": 10,
+          "SFAT": 6,
+          "SFAT#783": 6,
+          "SFAT#9": 6,
+          "SFAT#99": 6,
+          "SOLO#735": 13,
+          "Solobattle": 13,
+          "XX#02": 2,
+          "ZUPPY#0": 14,
+          "cody": 4,
+          "iBDW": 4
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 10,
+            "num_env_steps": 4,
+            "num_envs": 200,
+            "rollout_length": 80,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Cody",
+              "Hax",
+              "Aklo",
+              "SFAT"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": true,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Online-x86_64-ExiAI.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": 29,
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.003,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.001,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 40.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": "self",
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "fox_d24_ditto_v4"
+          },
+          "teacher": "pickled_models/fox_d24_imitation_v4",
+          "value_burnin_steps": 128
+        },
+        "step": 37693
+      },
+      "name": "fox_d24_ditto_v4",
+      "parameter_count": 10580760,
+      "path": ".e001-cache/slippi-ai/models/fox_d24_ditto_v4",
+      "policy_sha256": "3dd6f0157126293c365d85fa21993a51be28b56712f77e61bb59ced21337858c",
+      "sha256": "38ff0851e920f30d15e9974b621aa730e4a13f0e117132596afa3ecd3161c4bb",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/ACHNYVS13AjH-yXICzeNDvA/fox_d24_ditto_v4?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 137
+    },
+    "gm": {
+      "bytes": 95559733,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "audio_backend": "",
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "/linusr/vlad/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Netplay_Mainline_ExiAI_NoLeak-x86_64.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.005,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.005,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": null,
+            "save_interval": 300,
+            "tag": "top12_d21_rl_kl_5e-03"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 32344
+      },
+      "name": "gm",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/gm",
+      "policy_sha256": "9e4468f8e194d54864c180376e468136bdd45a44a50cbf74c399a100fc41ac63",
+      "sha256": "f03b1ae18a0cce1ed7b7a5b6db6f8a1e49a35344d72e39463780adbba43b8e27",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AI2frIdvITPIA7yUi9sw0O8/gm?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 141
+    },
+    "gm-v1": {
+      "bytes": 42340455,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "in_parallel": true,
+            "unroll_length": 80
+          },
+          "dataset": {
+            "allowed_characters": "all",
+            "allowed_opponents": "all",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset/meta.json",
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "player": {
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            }
+          },
+          "expt_dir": "experiments/all_d21_as32_imitation_v3",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 20,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 512,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": false
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "restore_tag": null,
+          "runtime": {
+            "eval_every_n": 5000,
+            "log_interval": 300,
+            "max_runtime": 864000,
+            "num_eval_steps": 500,
+            "save_interval": 600
+          },
+          "save_to_s3": false,
+          "tag": "all_d21_as32_imitation_v3",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 512,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 4
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 8,
+          "8#9": 7,
+          "AKLO#239": 10,
+          "AKLO#381": 10,
+          "AMSA#0": 6,
+          "Aklo": 10,
+          "Amsa": 6,
+          "Cody": 5,
+          "Diamond Player": 2,
+          "FRNZ#141": 11,
+          "Franz": 13,
+          "Frenzy": 11,
+          "Gosu": 9,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ISDS#767": 14,
+          "Isdsar": 14,
+          "JBDW#120": 5,
+          "John Redcorn": 17,
+          "KOD#0": 7,
+          "Kodorin": 7,
+          "MAGI#732": 18,
+          "Master Player": 1,
+          "Mr Plow": 17,
+          "NULL#478": 16,
+          "OHMA#175": 12,
+          "PLATO#0": 13,
+          "Platinum Player": 0,
+          "S2J": 17,
+          "SFAT": 12,
+          "SFAT#783": 12,
+          "SFAT#9": 12,
+          "SFAT#99": 12,
+          "SOLO#735": 8,
+          "SSJ#998": 17,
+          "Solobattle": 8,
+          "TATE#360": 15,
+          "WIZZ#310": 9,
+          "XELA#158": 13,
+          "XX#02": 4,
+          "YOLO#135": 19,
+          "cody": 5,
+          "iBDW": 5
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 96,
+            "rollout_length": 120,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              1,
+              22,
+              18,
+              7
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": true,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "${UPSTREAM_RUNTIME}/SSBM/Slippi_Online-x86_64-ExiAI.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": 29,
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.005,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.003,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 20.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": "self",
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "multi_d21_rl"
+          },
+          "teacher": "pickled_models/all_d21_imitation_v3",
+          "value_burnin_steps": 128
+        },
+        "step": 2301
+      },
+      "name": "gm-v1",
+      "parameter_count": 10582808,
+      "path": ".e001-cache/slippi-ai/models/gm-v1",
+      "policy_sha256": "83482d1d00e7134e4b5c3e97828e30249e4953b8469c965d94caba5d6b62e5dd",
+      "sha256": "194d95f774c8e902fcb7ba4249d1a54207d884cdee0b1a27e25a1fd803120870",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AKZ4_4ghCpCOKNpZQv2q2PE/gm-v1?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 137
+    },
+    "gold": {
+      "bytes": 95559737,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 9,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "audio_backend": "",
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "${UPSTREAM_RUNTIME}/SSBM/Slippi_Netplay_Mainline_ExiAI_NoLeak-x86_64.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.1,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.1,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": null,
+            "save_interval": 300,
+            "tag": "top12_d21_rl__plat_kl_1e-01"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 994
+      },
+      "name": "gold",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/gold",
+      "policy_sha256": "0bf567927587d1240fcd7abdac266333570afdd03b161a989ce448aba20f3758",
+      "sha256": "3a5762dc08b88dcfbb36432278c4d6701a45b8f3f147e5ef8bf9a451fb37c1b9",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/ANGO3DUMe3vBmSf4jVy1yXA/gold?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 141
+    },
+    "master": {
+      "bytes": 95559704,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "/linusr/vlad/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Online-x86_64-ExiAI-3.18.0.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.01,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.01,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "top12_d21_rl_kl_1e-02"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 26765
+      },
+      "name": "master",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/master",
+      "policy_sha256": "71c420e3207c29d505ad802093048c74e032a2db62b47a7c7404b51eb6186905",
+      "sha256": "0c326f2ab772a926e9b13adac9ec78fe166a8d7b9350f75c5b8ed9e2170cc249",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AIvQqeG0uR55u0qYEKujoIc/master?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 141
+    },
+    "medium": {
+      "bytes": 95559707,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Online-x86_64-ExiAI-3.18.0.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.05,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.05,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "top12_d21_rl_kl_5e-02"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 6829
+      },
+      "name": "medium",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/medium",
+      "policy_sha256": "5571f696310c073809d509e29cf88a623c34b2ad280a538eb7778286360ab4ff",
+      "sha256": "48dcfd87c52fde9899fb37b0293ce2a597fb2384b7b40baf7fb49c760152a96c",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/ABb7w8MZfycLsLynGrMo9MA/medium?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 141
+    },
+    "medium-v1": {
+      "bytes": 42340457,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "in_parallel": true,
+            "unroll_length": 80
+          },
+          "dataset": {
+            "allowed_characters": "all",
+            "allowed_opponents": "all",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset/meta.json",
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "player": {
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            }
+          },
+          "expt_dir": "experiments/all_d21_as32_imitation_v3",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 20,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 512,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": false
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "restore_tag": null,
+          "runtime": {
+            "eval_every_n": 5000,
+            "log_interval": 300,
+            "max_runtime": 864000,
+            "num_eval_steps": 500,
+            "save_interval": 600
+          },
+          "save_to_s3": false,
+          "tag": "all_d21_as32_imitation_v3",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 512,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 4
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 8,
+          "8#9": 7,
+          "AKLO#239": 10,
+          "AKLO#381": 10,
+          "AMSA#0": 6,
+          "Aklo": 10,
+          "Amsa": 6,
+          "Cody": 5,
+          "Diamond Player": 2,
+          "FRNZ#141": 11,
+          "Franz": 13,
+          "Frenzy": 11,
+          "Gosu": 9,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ISDS#767": 14,
+          "Isdsar": 14,
+          "JBDW#120": 5,
+          "John Redcorn": 17,
+          "KOD#0": 7,
+          "Kodorin": 7,
+          "MAGI#732": 18,
+          "Master Player": 1,
+          "Mr Plow": 17,
+          "NULL#478": 16,
+          "OHMA#175": 12,
+          "PLATO#0": 13,
+          "Platinum Player": 0,
+          "S2J": 17,
+          "SFAT": 12,
+          "SFAT#783": 12,
+          "SFAT#9": 12,
+          "SFAT#99": 12,
+          "SOLO#735": 8,
+          "SSJ#998": 17,
+          "Solobattle": 8,
+          "TATE#360": 15,
+          "WIZZ#310": 9,
+          "XELA#158": 13,
+          "XX#02": 4,
+          "YOLO#135": 19,
+          "cody": 5,
+          "iBDW": 5
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 96,
+            "rollout_length": 120,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              1,
+              22,
+              18,
+              7
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": true,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "${UPSTREAM_RUNTIME}/SSBM/Slippi_Online-x86_64-ExiAI.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": 29,
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.05,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.05,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 20.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": "self",
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "multi_d21_rl"
+          },
+          "teacher": "pickled_models/all_d21_imitation_v3",
+          "value_burnin_steps": 128
+        },
+        "step": 9735
+      },
+      "name": "medium-v1",
+      "parameter_count": 10582808,
+      "path": ".e001-cache/slippi-ai/models/medium-v1",
+      "policy_sha256": "2e54d6299f2aac5792fed06edbf9c8919784f30c36b2ebd0d30c6e69b94d5b38",
+      "sha256": "6778fcc894e0db2211b799f688ba639131905b851aa836e502c23ed438b5e232",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AMC9ihXGkkZ6lngNeyk2uhc/medium-v1?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 137
+    },
+    "medium-v2": {
+      "bytes": 95559707,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Online-x86_64-ExiAI-3.18.0.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.05,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.05,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "top12_d21_rl_kl_5e-02"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 6829
+      },
+      "name": "medium-v2",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/medium-v2",
+      "policy_sha256": "5571f696310c073809d509e29cf88a623c34b2ad280a538eb7778286360ab4ff",
+      "sha256": "48dcfd87c52fde9899fb37b0293ce2a597fb2384b7b40baf7fb49c760152a96c",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fi/lpi9krfei1knfvfw7up7v/medium-v2?rlkey=qmah3qfz5anwva93x48zcx01k&dl=1",
+      "variable_count": 141
+    },
+    "plat": {
+      "bytes": 95559707,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player",
+              "Master Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "${UPSTREAM_RUNTIME}/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Online-x86_64-ExiAI-3.18.0.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.03,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.03,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": 512,
+            "save_interval": 300,
+            "tag": "top12_d21_rl_kl_3e-02"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 9825
+      },
+      "name": "plat",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/plat",
+      "policy_sha256": "6895949ed79acbdd9b528f6e78aa84732ed5037002265ecbfe08526abf733576",
+      "sha256": "d02d1e7b4fb6b629e9135982eec73f1ef70ccc0e8c8708da6d1cd4638d4e6624",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/AKCnL4iLfie3MAja2yNS9QQ/plat?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 141
+    },
+    "silver": {
+      "bytes": 95559734,
+      "finite": true,
+      "metadata": {
+        "config": {
+          "controller_head": {
+            "autoregressive": {
+              "component_depth": 2,
+              "residual_size": 128
+            },
+            "independent": {
+              "residual": false
+            },
+            "name": "autoregressive"
+          },
+          "data": {
+            "balance_characters": true,
+            "batch_size": 512,
+            "compressed": true,
+            "damage_ratio": 0.01,
+            "num_workers": 4,
+            "unroll_length": 60
+          },
+          "dataset": {
+            "allowed_characters": "fox,falco,marth,sheik,jigglypuff,cptfalcon,peach,yoshi,popo,luigi,pikachu,samus",
+            "allowed_names": "all",
+            "allowed_opponents": "all",
+            "banned_names": "none",
+            "data_dir": "/mnt/d/vlad/SSBM/Dataset-3.18.0/games",
+            "meta_path": "/mnt/d/vlad/SSBM/Dataset-3.18.0/meta.json",
+            "mirror": true,
+            "seed": 0,
+            "swap": true,
+            "test_ratio": 0.1
+          },
+          "embed": {
+            "controller": {
+              "axis_spacing": 32,
+              "shoulder_spacing": 10
+            },
+            "items": {
+              "mlp_sizes": [
+                128,
+                32
+              ],
+              "type": {
+                "enum": "ItemsType",
+                "name": "MLP",
+                "value": "mlp"
+              }
+            },
+            "player": {
+              "legacy_jumps_left": false,
+              "shield_scale": 0.01,
+              "speed_scale": 0.5,
+              "with_controller": false,
+              "with_nana": true,
+              "with_speeds": false,
+              "xy_scale": 0.05
+            },
+            "with_fod": true,
+            "with_randall": true
+          },
+          "expt_dir": "experiments/top12_d21_imitation_v5",
+          "expt_root": "experiments",
+          "is_test": false,
+          "learner": {
+            "compile": true,
+            "decay_rate": 0.0,
+            "jit_compile": true,
+            "learning_rate": 0.0001,
+            "minibatch_size": 128,
+            "reward_halflife": 8.0,
+            "value_cost": 0.5
+          },
+          "max_names": 128,
+          "network": {
+            "gru": {
+              "hidden_size": 128
+            },
+            "lstm": {
+              "hidden_size": 128,
+              "num_res_blocks": 0
+            },
+            "mlp": {
+              "depth": 2,
+              "dropout_rate": 0.0,
+              "width": 128
+            },
+            "name": "tx_like",
+            "res_lstm": {
+              "hidden_size": 128,
+              "num_layers": 1
+            },
+            "tx_like": {
+              "activation": "gelu",
+              "ffw_multiplier": 2,
+              "hidden_size": 768,
+              "num_layers": 3,
+              "recurrent_layer": "lstm"
+            }
+          },
+          "observation": {
+            "animation": {
+              "mask": true
+            }
+          },
+          "policy": {
+            "delay": 21,
+            "train_value_head": false
+          },
+          "restore_pickle": null,
+          "runtime": {
+            "eval_every_n": 50000,
+            "log_interval": 300,
+            "max_runtime": 604800,
+            "num_eval_steps": 5000,
+            "save_interval": 600
+          },
+          "tag": "top12_d21_imitation_v5",
+          "value_function": {
+            "network": {
+              "gru": {
+                "hidden_size": 128
+              },
+              "lstm": {
+                "hidden_size": 128,
+                "num_res_blocks": 0
+              },
+              "mlp": {
+                "depth": 2,
+                "dropout_rate": 0.0,
+                "width": 128
+              },
+              "name": "tx_like",
+              "res_lstm": {
+                "hidden_size": 128,
+                "num_layers": 1
+              },
+              "tx_like": {
+                "activation": "gelu",
+                "ffw_multiplier": 2,
+                "hidden_size": 768,
+                "num_layers": 1,
+                "recurrent_layer": "lstm"
+              }
+            },
+            "separate_network_config": true,
+            "train_separate_network": true
+          },
+          "version": 5
+        },
+        "name_map": {
+          "": 3,
+          "666#666": 7,
+          "8#9": 13,
+          "A#9": 47,
+          "AAAA#300": 75,
+          "AKLO#239": 11,
+          "AKLO#381": 11,
+          "ALBE#135": 65,
+          "ALEX#154": 125,
+          "AMSA#0": 6,
+          "AXE#845": 95,
+          "Aklo": 11,
+          "Amsa": 6,
+          "Axe": 95,
+          "BABA#763": 78,
+          "BATS#195": 119,
+          "BBB": 38,
+          "BBB#960": 38,
+          "BILLY#0": 54,
+          "BIRB#540": 123,
+          "BOSH#1": 42,
+          "BillyBoPeep": 54,
+          "CBT#901": 105,
+          "CHU#352": 21,
+          "CHUG#596": 15,
+          "CM#296": 92,
+          "CODY#007": 15,
+          "CRAY#527": 96,
+          "Cody": 5,
+          "DAN#877": 18,
+          "DAYM#666": 108,
+          "DTM#664": 12,
+          "DUCK#403": 50,
+          "Daniel": 18,
+          "Diamond Player": 2,
+          "DontTestMe": 12,
+          "DruggedFox": 64,
+          "EQUI#264": 57,
+          "FAPT#275": 40,
+          "FAT#827": 126,
+          "FECF#121": 93,
+          "FFF#641": 48,
+          "FLEX#850": 71,
+          "FLPN#618": 97,
+          "FOUR#893": 84,
+          "FR#156": 121,
+          "FREE#521": 87,
+          "FRNZ#141": 9,
+          "FRO#116": 115,
+          "FUCKIN#1": 26,
+          "FknSilver": 26,
+          "Franz": 56,
+          "Frenzy": 9,
+          "GAHT#867": 90,
+          "GING#345": 8,
+          "GREC#116": 116,
+          "GUYF#436": 68,
+          "Ginger": 8,
+          "Gosu": 10,
+          "HAX#472": 4,
+          "Hax": 4,
+          "IBDW#0": 5,
+          "IBDW#734": 5,
+          "ILT#987": 20,
+          "ILY#686": 107,
+          "INKY#398": 29,
+          "INNG#569": 59,
+          "ISDS#767": 24,
+          "IV#0": 113,
+          "IV#564": 111,
+          "Inky": 29,
+          "Isdsar": 24,
+          "JAH#516": 117,
+          "JBDW#120": 5,
+          "JCHU#536": 36,
+          "JChu": 36,
+          "JERM#173": 58,
+          "JK#602": 100,
+          "JM#0": 67,
+          "JMO#192": 72,
+          "JOEY#870": 122,
+          "JOJO#350": 53,
+          "JOSH#450": 22,
+          "John Redcorn": 35,
+          "KA#261": 74,
+          "KAND#898": 27,
+          "KIM#148": 52,
+          "KING#911": 28,
+          "KINS#0": 109,
+          "KJH": 17,
+          "KJH#23": 17,
+          "KOD#0": 13,
+          "KOTU#737": 21,
+          "KYLE#626": 112,
+          "Kandayo": 27,
+          "Kodorin": 13,
+          "Krudo": 15,
+          "LEAF#930": 51,
+          "LEFFEN#0": 104,
+          "LILY#0": 70,
+          "LOVE#1": 83,
+          "LOVE#308": 73,
+          "LOWH#158": 62,
+          "LUCK#0": 94,
+          "LUCK#286": 106,
+          "M2K": 21,
+          "MAGI#732": 33,
+          "MAR#10": 81,
+          "MART#441": 124,
+          "MARZ#491": 103,
+          "MAX#0": 88,
+          "MEAD#912": 91,
+          "MEKK#251": 63,
+          "MOF#366": 61,
+          "MOKY#475": 37,
+          "MON#0": 25,
+          "MORS#762": 55,
+          "Magi": 33,
+          "Master Player": 1,
+          "Moky": 37,
+          "Monotheon": 25,
+          "Morsecode": 55,
+          "Mr Plow": 35,
+          "NEZ#125": 60,
+          "NICKI#1": 44,
+          "NIER#900": 39,
+          "NULL#478": 30,
+          "Nez": 60,
+          "Nicki": 44,
+          "OHMA#175": 16,
+          "ON#727": 34,
+          "PLATO#0": 56,
+          "PTBO#289": 99,
+          "Platinum Player": 0,
+          "QUIG#818": 66,
+          "RAOUL#0": 85,
+          "RIKZ#401": 46,
+          "RITO#831": 110,
+          "S2J": 35,
+          "SALT#747": 41,
+          "SAMI#669": 64,
+          "SFAT": 16,
+          "SFAT#783": 16,
+          "SFAT#9": 16,
+          "SFAT#99": 16,
+          "SHARP#0": 98,
+          "SHUN#719": 127,
+          "SICK#374": 31,
+          "SIDD#539": 14,
+          "SOLO#735": 7,
+          "SOON#122": 79,
+          "SPARK#0": 102,
+          "SQUI#166": 114,
+          "SSJ#998": 35,
+          "STOP#937": 76,
+          "SUTT#456": 23,
+          "Salt": 41,
+          "Siddward": 14,
+          "Solobattle": 7,
+          "Spark": 101,
+          "TATE#360": 32,
+          "TEST#502": 80,
+          "THA#837": 26,
+          "TRANS#0": 118,
+          "TRIF#0": 19,
+          "TRIF#268": 19,
+          "TRT#879": 89,
+          "TWO#555": 77,
+          "Trif": 19,
+          "Uhhei": 23,
+          "WH#0": 43,
+          "WIZZ#310": 10,
+          "WOLF#649": 120,
+          "XELA#158": 56,
+          "XX#02": 4,
+          "YAMI#272": 45,
+          "YCZ#6": 43,
+          "YCZ#667": 43,
+          "YCZ6": 43,
+          "YOLO#135": 49,
+          "ZAID#0": 101,
+          "ZAIN#0": 12,
+          "ZEEK#153": 82,
+          "ZION#999": 86,
+          "ZUPPY#0": 69,
+          "Zain": 12,
+          "Zamu": 47,
+          "cody": 5,
+          "iBDW": 5,
+          "zain": 12
+        },
+        "rl_config": {
+          "actor": {
+            "async_envs": true,
+            "gpu_inference": true,
+            "inner_batch_size": 6,
+            "num_env_steps": 4,
+            "num_envs": 144,
+            "rollout_length": 60,
+            "use_fake_envs": false
+          },
+          "agent": {
+            "async_inference": false,
+            "batch_steps": 4,
+            "char": [
+              {
+                "enum": "Character",
+                "name": "FOX",
+                "value": 1
+              },
+              {
+                "enum": "Character",
+                "name": "FALCO",
+                "value": 22
+              },
+              {
+                "enum": "Character",
+                "name": "MARTH",
+                "value": 18
+              },
+              {
+                "enum": "Character",
+                "name": "SHEIK",
+                "value": 7
+              },
+              {
+                "enum": "Character",
+                "name": "JIGGLYPUFF",
+                "value": 15
+              },
+              {
+                "enum": "Character",
+                "name": "CPTFALCON",
+                "value": 2
+              },
+              {
+                "enum": "Character",
+                "name": "PEACH",
+                "value": 9
+              },
+              {
+                "enum": "Character",
+                "name": "YOSHI",
+                "value": 14
+              },
+              {
+                "enum": "Character",
+                "name": "POPO",
+                "value": 10
+              },
+              {
+                "enum": "Character",
+                "name": "LUIGI",
+                "value": 17
+              },
+              {
+                "enum": "Character",
+                "name": "PIKACHU",
+                "value": 12
+              },
+              {
+                "enum": "Character",
+                "name": "SAMUS",
+                "value": 13
+              }
+            ],
+            "compile": true,
+            "jit_compile": false,
+            "name": [
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player",
+              "Platinum Player"
+            ],
+            "path": null
+          },
+          "dolphin": {
+            "audio_backend": "",
+            "blocking_input": true,
+            "connect_code": null,
+            "console_timeout": 60.0,
+            "copy_home_directory": false,
+            "disable_audio": false,
+            "dump": {
+              "codec": null,
+              "dump": false,
+              "encoder": null,
+              "format": null,
+              "path": null
+            },
+            "emulation_speed": 1.0,
+            "fullscreen": false,
+            "gfx_backend": "",
+            "headless": true,
+            "infinite_time": false,
+            "iso": "/linusr/vlad/SSBM/SSBM.iso",
+            "log_level": 3,
+            "log_types": [
+              "SLIPPI"
+            ],
+            "online_delay": 0,
+            "path": "/linusr/vlad/SSBM/Slippi_Netplay_Mainline_ExiAI_NoLeak-x86_64.AppImage",
+            "render": null,
+            "replay_dir": null,
+            "save_replays": false,
+            "slippi_port": null,
+            "stage": {
+              "enum": "Stage",
+              "name": "RANDOM_STAGE",
+              "value": 29
+            },
+            "user_json_path": null
+          },
+          "learner": {
+            "compile": true,
+            "discount_on_death": null,
+            "entropy_weight": 0.0,
+            "jit_compile": false,
+            "kl_teacher_weight": 0.2,
+            "learning_rate": 3e-05,
+            "policy_gradient_weight": 3.0,
+            "ppo": {
+              "beta": 0.3,
+              "epsilon": 0.01,
+              "max_mean_actor_kl": 0.0001,
+              "minibatched": false,
+              "num_batches": 16,
+              "num_epochs": 2
+            },
+            "reverse_kl_teacher_weight": 0.2,
+            "reward": {
+              "approaching_factor": 0.001,
+              "damage_ratio": 0.01,
+              "ledge_grab_penalty": 0.02,
+              "nana_ratio": 0.5,
+              "stalling_penalty": 0.1,
+              "stalling_threshold": 50.0
+            },
+            "reward_halflife": 8.0,
+            "value_cost": 1.0
+          },
+          "opponent": {
+            "other": {
+              "async_inference": false,
+              "batch_steps": 0,
+              "char": null,
+              "compile": true,
+              "jit_compile": false,
+              "name": [
+                "Master Player"
+              ],
+              "path": null
+            },
+            "train": true,
+            "type": {
+              "enum": "OpponentType",
+              "name": "SELF",
+              "value": "self"
+            },
+            "update_interval": null
+          },
+          "optimizer_burnin_steps": 128,
+          "override_delay": null,
+          "restore": null,
+          "runtime": {
+            "burnin_steps_after_reset": 5,
+            "expt_dir": null,
+            "expt_root": "experiments/rl",
+            "log_interval": 300,
+            "max_runtime": null,
+            "max_step": 10000,
+            "reset_every_n_steps": null,
+            "save_interval": 300,
+            "tag": "top12_d21_rl_kl_2e-01"
+          },
+          "teacher": "pickled_models/top12_d21_imitation_3x768_v5",
+          "value_burnin_steps": 128
+        },
+        "step": 218
+      },
+      "name": "silver",
+      "parameter_count": 23887032,
+      "path": ".e001-cache/slippi-ai/models/silver",
+      "policy_sha256": "09aefa11ad7bbbdbd6b4243e5a837fc51e8db33eb4dd092c82a0537437fe42ba",
+      "sha256": "df625133f2bc3e1a6173375ba90be6856152135021d932fff87a9ca1ea0443f0",
+      "state_keys": [
+        "policy"
+      ],
+      "url": "https://www.dropbox.com/scl/fo/mg916t9exid4stqmx2bjf/APDMoX-KJPAucW8l6ASV1uE/silver?rlkey=baqxnfxg2uytvcz62w9o8mwzt&dl=1",
+      "variable_count": 141
+    }
+  }
+}

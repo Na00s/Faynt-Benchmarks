@@ -1,0 +1,92 @@
+# P7a canary: dolphin_cpu8 with the eight Dolphins split over four spawned env worker processes
+# (P7-PLAN.md 2.4 run 2).  The cheapest real-Dolphin exercise of melee_rl/env/dolphin_mp.py on Modal's
+# gVisor runtime -- boots, steps, an in-worker relaunch path if one fires, clean shutdown; numbers to
+# read: env/fps in the range of the in-process cpu8 run (ENV.md 5.3 (b)), zero faults, worker exit 0.
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_cpu8_mp \
+#       --wandb-mode online --checkpoint-subdir p7a/cpu8_mp
+# Everything else matches dolphin_cpu8.toml (3m vs CPU level 9, T = C = 128, fp32); about 5 minutes.
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000                 # the wall-time limit below ends the run
+max_runtime_s = 300
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 8
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i (sliced per worker)
+console_timeout_s = 30.0
+boot_timeout_s = 120.0
+keepalive_seconds = 0.0           # required by worker mode (and libmelee keeps enet alive on its own)
+step_threads = 0                  # per worker: one thread per Dolphin of its group
+boot = "two_phase"                # per worker, groups boot in parallel across processes
+worker_processes = 4              # P7a: 2 Dolphins per spawned OS process
+mp_start_method = "spawn"
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "cpu"
+cpu_level = 9
+
+[learner]
+learning_rate = 1e-4
+kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-4
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # cloud runs pass --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "p7a", "mp-workers", "cpu9", "3m"]
+print_interval_steps = 1

@@ -1,0 +1,147 @@
+# SUPERSEDED (24 Aug 2026, session 15): the from-scratch experiment below cycled -- loss/entropy 10.94 -> 3.5
+# -> 5.7 -> 3.6 -> 5.4 while eval/other against the frozen anchor stayed flat at +1.11 ko_diff for 800 steps
+# (W&B b2dhwzro, SELFPLAY-RUNS.md) -- and was stopped at step ~1300.  The live successor is
+# dolphin_5m_bc_self_wide_day.toml: the same run initialised from Ali's 5m BC checkpoint with a frozen BC
+# teacher (BC-INIT-PLAN.md).  Kept as the record of the from-scratch launch; its checkpoints stay on the
+# Volume under selfplay/5m_wide.
+#
+# Session 13 (23 Aug 2026), take two: two-port self-play from scratch on the **5m** profile -- 64 headless
+# Dolphins x 2 trained ports = 128 learner rows, L4 + 32 cores / 64 GiB (--gpu --wide), ring mode, one
+# detached 23.5 h launch per day.  Fresh run (5m weights cannot resume the 20m checkpoint): subdir
+# selfplay/5m_wide.
+#
+# Why 5m and why this learning rate -- two measured failures, both recorded in ANALYSIS-20M-CPU9.md and
+# SELFPLAY-RUNS.md:
+#
+#   1. 20m vs CPU 9 at lr 3e-5: per-update actor KL 3.5e-5 against a 1e-2 guard, i.e. the learning rate was
+#      the constraint, not the trust region.  15.7 M frames, policy still at 97.7 % of maximum entropy.
+#   2. 20m self-play at lr 3e-4 (this file's predecessor): the opposite failure -- actor KL 1.8e-2 to 6.4e-2,
+#      **520 of 520 PPO steps reverted by the 1e-2 guard**, the policy provably bit-identical to its random
+#      init after 608 steps (the deterministic anchor evaluation returned the same numbers to five decimals
+#      nine times running).  ~$26 of reverted updates.  The lr^2 extrapolation was 10x optimistic because the
+#      optimizer burn-in works: warming Adam's moments at lr 0 makes |m/sqrt(v)| ~ 1, so every update moves a
+#      full lr per parameter instead of the noise-attenuated fraction the 64-row run without burn-in showed.
+#
+# So the learning rate here is *measured*, not extrapolated: run dolphin_5m_self_wide_smoke.toml first
+# (20 min, ~$0.94), read the median loss/actor_kl_mean over its PPO steps, and set the rate below to
+# lr_smoke * sqrt(4e-3 / measured_median) before launching the day file.  The 2e-4 seeded here is the
+# scaled guess (KL falls ~4x from 20m to 5m at fixed lr, since 5.05 M vs 20.04 M parameters), nothing more.
+#
+# 5m also buys throughput: 3 layers instead of 6, and 84 % of the actor's per-row cost scales with depth
+# (measured, ANALYSIS-20M-CPU9.md §5), so the step should fall from the 20m run's 48.3 s to about 30 s --
+# roughly 273 env fps and $1.43 per M training rows against $2.41.  The evaluation anchor stays the 20m
+# random init on the Volume: it is a *fixed, zero-noise* reference (policy-vs-policy consumes no Melee RNG,
+# so it reproduces exactly), and a random policy is a random policy whatever its width.  Cost: $2.82/h,
+# about $66 per 23.5 h launch (estimate + yes).
+#   .venv/bin/modal run --detach -e smash_melee_bot -m melee_rl.modal_app::train \
+#       --config dolphin_5m_self_wide_day --gpu --wide --wandb-mode online \
+#       --checkpoint-subdir selfplay/5m_wide --spawn
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 1000000               # the wall-time limit below ends each launch
+max_runtime_s = 84600             # 23.5 h < Modal's 24 h function cap; the next launch resumes latest.pt
+seed = 0
+deterministic = true
+device = "cuda"
+threads = 4
+save_interval_steps = 10          # latest.pt every ~8 min at ~50 s per step
+snapshot_interval_steps = 100     # step_<n>.pt every ~50 min (~60 MB each): a ladder of past selves,
+                                  # and any two of them diff offline into a weight-drift number, the
+                                  # same check weights/drift_total now logs every step
+
+[policy]
+profile = "5m"                    # config.yaml: d_model 256, 3 layers, 5.05 M -- 4x smaller than 20m
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "none"                   # from scratch: nothing sensible to anchor to (PLAN.md §9.4)
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 64                     # players is derived from opponent.type: ("policy", "policy") for self-play
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i; the eval Dolphins start 8 ports later
+console_timeout_s = 30.0
+boot_timeout_s = 300.0            # 64 two-phase boots on 32 cores (8 took ~29 s)
+keepalive_seconds = 0.0
+step_threads = 0                  # one thread per Dolphin for send + advance + convert
+boot = "two_phase"
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "ring"             # no re-prime; learner-side behaviour log-probs (PLAN.md §3.6 deviation 2)
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "self"
+train = true                      # both ports are the student: no opponent object, 2 x 64 = 128 rows
+seed = 1
+
+[learner]
+learning_rate = 2e-4              # SEEDED GUESS -- replace with the smoke run's measurement (header)
+kl_teacher_weight = 0.0
+value_burnin_steps = 50           # train only the value net first: no "everything was bad" gradient at V = 0
+optimizer_burnin_steps = 50       # one epoch at lr 0: Adam's moments warm up before the policy moves
+# microbatch_envs omitted: 5m at 128 rows needs ~7 GB of the L4's 24 (20m at 64 rows measured 14.0 GB)
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 0.1                     # at 0.05 the measured clip fraction was 0.85: the 2nd epoch did nothing
+beta = 0.0                        # slippi-ai's default; 0.3 was extra damping on an already tiny step
+max_mean_actor_kl = 2e-2          # a backstop, not the throttle -- 1e-2 reverted 520 of 520 updates
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # the launch passes --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "self-play", "two-port", "from-scratch", "5m", "l4", "day", "wide", "ring"]
+print_interval_steps = 5          # ~4 min between lines at ~50 s per step
+
+[eval]
+enabled = true
+interval_seconds = 7200.0         # two-hourly (user decision 23 Aug 2026): three opponents cost ~27 % of
+                                  # wall clock hourly; halving that buys ~19 % more training data, and the
+                                  # measured cpu9 noise floor (+-17 damage/min) makes hourly sampling of
+                                  # the CPU ladder worth little.  Plus the start and end of each launch.
+at_start = true
+at_end = true
+frames = 57600                    # per opponent: 32 eval Dolphins x 30 s (cpu ~4.5 min, a policy ~8 min)
+num_envs = 32
+rollout_length = 128
+# The fixed references: the CPU ladder at both ends and a frozen 20m random init (the previous run's own
+# step 0, on the volume).  "best" is deliberately absent -- it moves with the run and can cycle, so it
+# cannot tell real progress from rock-paper-scissors; best.pt is still written by the selector below.
+opponents = ["cpu1", "cpu9", "other:/runs/p6b/20m_day/step_00000000.pt"]
+temperature = 1.0
+seed = 0
+metric = "reward_per_frame"       # the composite the learner actually optimises, against the weakest CPU
+metric_opponent = "cpu1"

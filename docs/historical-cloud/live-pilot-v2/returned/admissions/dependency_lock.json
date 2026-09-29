@@ -1,0 +1,952 @@
+{
+  "artifacts": [
+    {
+      "bytes": 137410,
+      "distribution": "absl-py",
+      "filename": "absl_py-2.5.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "0f17b89f2a4eaaedc4f28c622998aa690564b3012a396a4ffad0821007fe03ba",
+      "url": "https://files.pythonhosted.org/packages/58/0a/a10b45aab35b175aded078a462dc8d0c698f5b13946e7cb0869097b78bb6/absl_py-2.5.0-py3-none-any.whl",
+      "version": "2.5.0"
+    },
+    {
+      "bytes": 13427,
+      "distribution": "annotated-types",
+      "filename": "annotated_types-0.8.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+      "url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl",
+      "version": "0.8.0"
+    },
+    {
+      "bytes": 12732,
+      "distribution": "astunparse",
+      "filename": "astunparse-1.6.3-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "c2652417f2c8b5bb325c885ae329bdf3f86424075c4fd1a128674bc6fba4b8e8",
+      "url": "https://files.pythonhosted.org/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl",
+      "version": "1.6.3"
+    },
+    {
+      "bytes": 60752,
+      "distribution": "attrs",
+      "filename": "attrs-23.2.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "99b87a485a5820b23b879f04c2305b44b951b502fd64be915879d77a7e8fc6f1",
+      "url": "https://files.pythonhosted.org/packages/e0/44/827b2a91a5816512fcaf3cc4ebc465ccd5d598c45cefa6703fcf4a79018f/attrs-23.2.0-py3-none-any.whl",
+      "version": "23.2.0"
+    },
+    {
+      "bytes": 496195,
+      "distribution": "backports-zstd",
+      "filename": "backports_zstd-1.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "470895d0bcddc850766e593d1b26764fb138c2feed149f515a2627ef9587d54c",
+      "url": "https://files.pythonhosted.org/packages/1e/40/121917bd2671bc3f1507c25503c0554f0b52483edcca4e6210e6d22228df/backports_zstd-1.7.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "1.7.0"
+    },
+    {
+      "bytes": 1419762,
+      "distribution": "brotli",
+      "filename": "brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "072e7624b1fc4d601036ab3f4f27942ef772887e876beff0301d261210bca97f",
+      "url": "https://files.pythonhosted.org/packages/03/a7/03aa61fbc3c5cbf99b44d158665f9b0dd3d8059be16c460208d9e385c837/brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "version": "1.2.0"
+    },
+    {
+      "bytes": 136983,
+      "distribution": "certifi",
+      "filename": "certifi-2026.7.22-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775",
+      "url": "https://files.pythonhosted.org/packages/0b/a7/71ac2cff56fec219ed242bb11b8efb69fcc4bec75db06fb7bfe35de520e6/certifi-2026.7.22-py3-none-any.whl",
+      "version": "2026.7.22"
+    },
+    {
+      "bytes": 248801,
+      "distribution": "charset-normalizer",
+      "filename": "charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "b9af956078716df40d985fb0dfeb2c2120c5ca92ba4ff4b388acfd01cdc14d08",
+      "url": "https://files.pythonhosted.org/packages/6f/89/bb5108dc6c3651dca963f2b0a3ba19bbcb370c94e1b6d3e0e844a58e6dca/charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "3.5.1"
+    },
+    {
+      "bytes": 119243,
+      "distribution": "click",
+      "filename": "click-8.4.2-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76",
+      "url": "https://files.pythonhosted.org/packages/fb/e2/79c688af8b210d232694e31e59da9f6ec747bae31c3f5946e4e9b98860d5/click-8.4.2-py3-none-any.whl",
+      "version": "8.4.2"
+    },
+    {
+      "bytes": 22228,
+      "distribution": "cloudpickle",
+      "filename": "cloudpickle-3.1.2-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a",
+      "url": "https://files.pythonhosted.org/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl",
+      "version": "3.1.2"
+    },
+    {
+      "bytes": 10365,
+      "distribution": "decorator",
+      "filename": "decorator-5.3.1-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "f47fe6fdbd2edd623ecfe36875d37aba411624e2670dd395dddae1358689bb3c",
+      "url": "https://files.pythonhosted.org/packages/05/7f/798705f5296a58ca505d600456748d1be48078eac8a7050d8a98bc9edb89/decorator-5.3.1-py3-none-any.whl",
+      "version": "5.3.1"
+    },
+    {
+      "bytes": 268388,
+      "distribution": "dm-sonnet",
+      "filename": "dm_sonnet-2.0.2-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "4c2364cc9ed5f1d9754e00e52a59b8b4fb5194c109b66390f33c44a9c5a34b89",
+      "url": "https://files.pythonhosted.org/packages/73/99/137b716f927cacac1f6f88291fbc54cd5ca0be4054ea0ed170dd627a69b9/dm_sonnet-2.0.2-py3-none-any.whl",
+      "version": "2.0.2"
+    },
+    {
+      "bytes": 186506,
+      "distribution": "dm-tree",
+      "filename": "dm_tree-0.1.10-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "012c2b376e88d3685c73a4b5c23be41fe933e14e380dcd90172971690b0e02d2",
+      "url": "https://files.pythonhosted.org/packages/83/eb/1d55c679cee9a54e552480d308535753c72e2250cf720d7aa777bff2a4fe/dm_tree-0.1.10-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "0.1.10"
+    },
+    {
+      "bytes": 331094,
+      "distribution": "dnspython",
+      "filename": "dnspython-2.8.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "01d9bbc4a2d76bf0db7c1f729812ded6d912bd318d3b1cf81d30c0f845dbf3af",
+      "url": "https://files.pythonhosted.org/packages/ba/5a/18ad964b0086c6e62e2e7500f7edc89e3faa45033c71c1893d34eed2b2de/dnspython-2.8.0-py3-none-any.whl",
+      "version": "2.8.0"
+    },
+    {
+      "bytes": 34535,
+      "distribution": "fancyflags",
+      "filename": "fancyflags-1.2-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "f06b08e92c1996791d325526ee205e8751117c3ff9b943ffe3f65582e0fdfa21",
+      "url": "https://files.pythonhosted.org/packages/07/88/488c96b400cc4f4062227c2905b903daa6e9d937f755561beade58d3285f/fancyflags-1.2-py3-none-any.whl",
+      "version": "1.2"
+    },
+    {
+      "bytes": 98901,
+      "distribution": "filelock",
+      "filename": "filelock-3.32.3-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "7f0ca4bcc0e181c60dbbd8aa9ab5b120ebb99e4e064e83636340056f833a1f09",
+      "url": "https://files.pythonhosted.org/packages/a7/8e/50f46a9c0ce8d2861a394c1347caae037ea0431d2f67d7feb151cbc4649a/filelock-3.32.3-py3-none-any.whl",
+      "version": "3.32.3"
+    },
+    {
+      "bytes": 26661,
+      "distribution": "flatbuffers",
+      "filename": "flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4",
+      "url": "https://files.pythonhosted.org/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl",
+      "version": "25.12.19"
+    },
+    {
+      "bytes": 206583,
+      "distribution": "fsspec",
+      "filename": "fsspec-2026.7.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279",
+      "url": "https://files.pythonhosted.org/packages/fd/3c/6a2bf344106328fd04963664a60b9bb6496fc25df8e962fcdc1367285fb9/fsspec-2026.7.0-py3-none-any.whl",
+      "version": "2026.7.0"
+    },
+    {
+      "bytes": 22966,
+      "distribution": "gast",
+      "filename": "gast-0.7.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "99cbf1365633a74099f69c59bd650476b96baa5ef196fec88032b00b31ba36f7",
+      "url": "https://files.pythonhosted.org/packages/1d/33/f1c6a276de27b7d7339a34749cc33fa87f077f921969c47185d34a887ae2/gast-0.7.0-py3-none-any.whl",
+      "version": "0.7.0"
+    },
+    {
+      "bytes": 57471,
+      "distribution": "google-pasta",
+      "filename": "google_pasta-0.2.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "b32482794a366b5366a32c92a9a9201b107821889935a02b3e51f6b432ea84ed",
+      "url": "https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl",
+      "version": "0.2.0"
+    },
+    {
+      "bytes": 7040616,
+      "distribution": "grpcio",
+      "filename": "grpcio-1.83.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "aeb339838db07600481ef869507279b75326c75eac6d10f7afa62a0da1d2bcdd",
+      "url": "https://files.pythonhosted.org/packages/b2/78/c9e81f806ac704b6b145cb01628db398985b1f8dfdc10e23b55fb0902b3d/grpcio-1.83.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "version": "1.83.0"
+    },
+    {
+      "bytes": 4929422,
+      "distribution": "h5py",
+      "filename": "h5py-3.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "0cbd41f4e3761f150aa5b662df991868ca533872c95467216f2bec5fcad84882",
+      "url": "https://files.pythonhosted.org/packages/86/f9/f00de11c82c88bfc1ef22633557bfba9e271e0cb3189ad704183fc4a2644/h5py-3.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "3.14.0"
+    },
+    {
+      "bytes": 68550,
+      "distribution": "idna",
+      "filename": "idna-3.19-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4",
+      "url": "https://files.pythonhosted.org/packages/57/b0/0e52c878c53f245edd3a11020f20979b3f490f245af532c7cae3027754b5/idna-3.19-py3-none-any.whl",
+      "version": "3.19"
+    },
+    {
+      "bytes": 100594,
+      "distribution": "inflate64",
+      "filename": "inflate64-1.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "62d1aac3aba094ae42e27ce7581b414c90f218248be0953b6aeb11a127225e5d",
+      "url": "https://files.pythonhosted.org/packages/37/00/1a2351a85d36b26c5b2b8cfbb37ad86084c98f592dd7590f8577d8b33993/inflate64-1.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "1.0.4"
+    },
+    {
+      "bytes": 9454,
+      "distribution": "inflection",
+      "filename": "inflection-0.5.1-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "f38b2b640938a4f35ade69ac3d053042959b62a0f1076a5bbaa1b9526605a8a2",
+      "url": "https://files.pythonhosted.org/packages/59/91/aa6bde563e0085a02a435aa99b49ef75b0a4b062635e606dab23ce18d720/inflection-0.5.1-py2.py3-none-any.whl",
+      "version": "0.5.1"
+    },
+    {
+      "bytes": 134899,
+      "distribution": "jinja2",
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl",
+      "version": "3.1.6"
+    },
+    {
+      "bytes": 1918413,
+      "distribution": "keras-nightly",
+      "filename": "keras_nightly-3.16.0.dev2026082004-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "f56ab3b81ed1369bd3c3145575134394555e2da0c1f560a7d92d77edaf1080f0",
+      "url": "https://files.pythonhosted.org/packages/58/f6/63e2fa2a50153f9234e0eba3a180bfa4edd670e029499324abe30f1c2724/keras_nightly-3.16.0.dev2026082004-py3-none-any.whl",
+      "version": "3.16.0.dev2026082004"
+    },
+    {
+      "bytes": 24515943,
+      "distribution": "libclang",
+      "filename": "libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "c533091d8a3bbf7460a00cb6c1a71da93bffe148f172c7d03b1c31fbf8aa2a0b",
+      "url": "https://files.pythonhosted.org/packages/1d/fc/716c1e62e512ef1c160e7984a73a5fc7df45166f2ff3f254e71c58076f7c/libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl",
+      "version": "18.1.1"
+    },
+    {
+      "bytes": 110757,
+      "distribution": "markdown",
+      "filename": "markdown-3.10.3-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "fa6c92a00a4a3c98b22728c64a935ae1928250ae65058a6ded814d2cc29a4cea",
+      "url": "https://files.pythonhosted.org/packages/64/69/4a5af2bc115a9a33fefe51709749de8262be3f9ba063d1753a837cdbc49c/markdown-3.10.3-py3-none-any.whl",
+      "version": "3.10.3"
+    },
+    {
+      "bytes": 91687,
+      "distribution": "markdown-it-py",
+      "filename": "markdown_it_py-4.2.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a",
+      "url": "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl",
+      "version": "4.2.0"
+    },
+    {
+      "bytes": 22947,
+      "distribution": "markupsafe",
+      "filename": "markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "d6dd0be5b5b189d31db7cda48b91d7e0a9795f31430b7f271219ab30f1d3ac9d",
+      "url": "https://files.pythonhosted.org/packages/3c/2e/8d0c2ab90a8c1d9a24f0399058ab8519a3279d1bd4289511d74e909f060e/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "3.0.3"
+    },
+    {
+      "bytes": 9979,
+      "distribution": "mdurl",
+      "filename": "mdurl-0.1.2-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+      "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl",
+      "version": "0.1.2"
+    },
+    {
+      "bytes": 630169,
+      "distribution": "melee",
+      "filename": "melee-0.47.3-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "7261df65518dfb306b59abc13150e769ba1f15c8cf83320e8f031cfe747faf45",
+      "url": "https://files.pythonhosted.org/packages/85/ee/57526f7b561d5041ff8a4195819bc892908260e73ed35b3e2238401e7a56/melee-0.47.3-py3-none-any.whl",
+      "version": "0.47.3"
+    },
+    {
+      "bytes": 409890,
+      "distribution": "ml-dtypes",
+      "filename": "ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "3b4a480aa8fd54a1805b8ac10f3f91763926a74f73c0c364c10f9231854f4170",
+      "url": "https://files.pythonhosted.org/packages/c7/f9/7d76c1eae866f5d4636401b31b6d6dd90e4b4ced1fa7cfdfcca9c60e4bd3/ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "0.6.0"
+    },
+    {
+      "bytes": 536198,
+      "distribution": "mpmath",
+      "filename": "mpmath-1.3.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "url": "https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl",
+      "version": "1.3.0"
+    },
+    {
+      "bytes": 17037,
+      "distribution": "multivolumefile",
+      "filename": "multivolumefile-0.2.3-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "237f4353b60af1703087cf7725755a1f6fcaeeea48421e1896940cd1c920d678",
+      "url": "https://files.pythonhosted.org/packages/22/31/ec5f46fd4c83185b806aa9c736e228cb780f13990a9cf4da0beb70025fcc/multivolumefile-0.2.3-py3-none-any.whl",
+      "version": "0.2.3"
+    },
+    {
+      "bytes": 5905,
+      "distribution": "namex",
+      "filename": "namex-0.1.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "e2012a474502f1e2251267062aae3114611f07df4224b6e06334c57b0f2ce87c",
+      "url": "https://files.pythonhosted.org/packages/b2/bc/465daf1de06409cdd4532082806770ee0d8d7df434da79c76564d0f69741/namex-0.1.0-py3-none-any.whl",
+      "version": "0.1.0"
+    },
+    {
+      "bytes": 2068504,
+      "distribution": "networkx",
+      "filename": "networkx-3.6.1-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762",
+      "url": "https://files.pythonhosted.org/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl",
+      "version": "3.6.1"
+    },
+    {
+      "bytes": 16527618,
+      "distribution": "numpy",
+      "filename": "numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "fd83c01228a688733f1ded5201c678f0c53ecc1006ffbc404db9f7a899ac6249",
+      "url": "https://files.pythonhosted.org/packages/8c/3d/1e1db36cfd41f895d266b103df00ca5b3cbe965184df824dec5c08c6b803/numpy-2.2.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "2.2.6"
+    },
+    {
+      "bytes": 60018,
+      "distribution": "opentelemetry-api",
+      "filename": "opentelemetry_api-1.44.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "94b98c893a91b88657eaac1e3ba89618cdb85be6918196705354f34728b2cdef",
+      "url": "https://files.pythonhosted.org/packages/ca/6f/a04e900f465ff3221ccc395522503e2d10e79fa21f2723c8e177aae1e0d1/opentelemetry_api-1.44.0-py3-none-any.whl",
+      "version": "1.44.0"
+    },
+    {
+      "bytes": 71932,
+      "distribution": "opt-einsum",
+      "filename": "opt_einsum-3.4.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "69bb92469f86a1565195ece4ac0323943e83477171b91d24c35afe028a90d7cd",
+      "url": "https://files.pythonhosted.org/packages/23/cd/066e86230ae37ed0be70aae89aabf03ca8d9f39c8aea0dec8029455b5540/opt_einsum-3.4.0-py3-none-any.whl",
+      "version": "3.4.0"
+    },
+    {
+      "bytes": 488981,
+      "distribution": "optree",
+      "filename": "optree-0.20.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "5c4ed341ea1ee7eb04eff01527b88a868cb19aac672a667e0aefadf7d14c0260",
+      "url": "https://files.pythonhosted.org/packages/fe/98/6a63875d66bef096d0c040f0cba9d0b14436df88b130d7f779c3dfa59759/optree-0.20.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "0.20.0"
+    },
+    {
+      "bytes": 66469,
+      "distribution": "packaging",
+      "filename": "packaging-25.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "bootstrap",
+      "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484",
+      "url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
+      "version": "25.0"
+    },
+    {
+      "bytes": 11991493,
+      "distribution": "pandas",
+      "filename": "pandas-2.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "ba24af48643b12ffe49b27065d3babd52702d95ab70f50e1b34f71ca703e2c0d",
+      "url": "https://files.pythonhosted.org/packages/01/a5/931fc3ad333d9d87b10107d948d757d67ebcfc33b1988d5faccc39c6845c/pandas-2.3.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "2.3.0"
+    },
+    {
+      "bytes": 20475,
+      "distribution": "parameterized",
+      "filename": "parameterized-0.9.0-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "4e0758e3d41bea3bbd05ec14fc2c24736723f243b28d702081aef438c9372b1b",
+      "url": "https://files.pythonhosted.org/packages/00/2f/804f58f0b856ab3bf21617cccf5b39206e6c4c94c2cd227bde125ea6105f/parameterized-0.9.0-py2.py3-none-any.whl",
+      "version": "0.9.0"
+    },
+    {
+      "bytes": 1056459,
+      "distribution": "peppi-py-vladfi",
+      "filename": "peppi_py_vladfi-0.9.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "29f4309b242ef3189b0c0739630152ab8cc584d1f2e55cea792fb3f8c16dc69b",
+      "url": "https://files.pythonhosted.org/packages/6a/c5/c4833ff5ed0c9d6e176e686e704de525022e5a759d9d46e34281785b2388/peppi_py_vladfi-0.9.2-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "0.9.2"
+    },
+    {
+      "bytes": 6940830,
+      "distribution": "pillow",
+      "filename": "pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91",
+      "url": "https://files.pythonhosted.org/packages/84/21/a35af28dcc61f37ed850a2d64c65c701321dfbf25085e469d5559360cbbf/pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "12.3.0"
+    },
+    {
+      "bytes": 1825227,
+      "distribution": "pip",
+      "filename": "pip-25.1.1-py3-none-any.whl",
+      "format": "wheel",
+      "role": "bootstrap",
+      "sha256": "2913a38a2abf4ea6b64ab507bd9e967f3b53dc1ede74b01b0931e1ce548751af",
+      "url": "https://files.pythonhosted.org/packages/29/a2/d40fb2460e883eca5199c62cfc2463fd261f760556ae6290f88488c362c0/pip-25.1.1-py3-none-any.whl",
+      "version": "25.1.1"
+    },
+    {
+      "bytes": 23491,
+      "distribution": "platformdirs",
+      "filename": "platformdirs-4.11.3-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "5ed065d443751de711da036041a7a214122efc4a4de393b3f4137ba5576540e7",
+      "url": "https://files.pythonhosted.org/packages/19/a9/c34aebedd3a4c9afe5101b1b8713710b3fec18087c8a36c35d2f909861bd/platformdirs-4.11.3-py3-none-any.whl",
+      "version": "4.11.3"
+    },
+    {
+      "bytes": 16613,
+      "distribution": "portpicker",
+      "filename": "portpicker-1.6.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "b2787a41404cf7edbe29b07b9e0ed863b09f2665dcc01c1eb0c2261c1e7d0755",
+      "url": "https://files.pythonhosted.org/packages/32/2d/440e4d7041fff89f28f483733eb617127aa866135c2dc719e05893f089e1/portpicker-1.6.0-py3-none-any.whl",
+      "version": "1.6.0"
+    },
+    {
+      "bytes": 340439,
+      "distribution": "protobuf",
+      "filename": "protobuf-7.36.0-cp310-abi3-manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "70f5ec8eb0da81a44360c0dc0beac99a0d78071d21956a7076bae8bd2051841b",
+      "url": "https://files.pythonhosted.org/packages/c7/f8/bd5804695ba400e423c33fd4d9f58c28d86633d5ba1945c36ff3967d98cb/protobuf-7.36.0-cp310-abi3-manylinux2014_x86_64.whl",
+      "version": "7.36.0"
+    },
+    {
+      "bytes": 155560,
+      "distribution": "psutil",
+      "filename": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+      "url": "https://files.pythonhosted.org/packages/b5/70/5d8df3b09e25bce090399cf48e452d25c935ab72dad19406c77f4e828045/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "7.2.2"
+    },
+    {
+      "bytes": 50316,
+      "distribution": "py-ubjson",
+      "filename": "py-ubjson-0.16.1.tar.gz",
+      "format": "sdist",
+      "role": "runtime",
+      "sha256": "b9bfb8695a1c7e3632e800fb83c943bf67ed45ddd87cd0344851610c69a5a482",
+      "url": "https://files.pythonhosted.org/packages/1d/c7/28220d37e041fe1df03e857fe48f768dcd30cd151480bf6f00da8713214a/py-ubjson-0.16.1.tar.gz",
+      "version": "0.16.1"
+    },
+    {
+      "bytes": 72242,
+      "distribution": "py7zr",
+      "filename": "py7zr-1.1.3-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "17934a35089e026dec6c72ee275d9b841e646881ef822d618e805c3006661d9a",
+      "url": "https://files.pythonhosted.org/packages/88/40/dc7f804abd0ea167ea8d4d9b3f5455321aaf671d040fcef647e9e952e714/py7zr-1.1.3-py3-none-any.whl",
+      "version": "1.1.3"
+    },
+    {
+      "bytes": 47586063,
+      "distribution": "pyarrow",
+      "filename": "pyarrow-23.0.1-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "813d99f31275919c383aab17f0f455a04f5a429c261cc411b1e9a8f5e4aaaa05",
+      "url": "https://files.pythonhosted.org/packages/2c/a5/da83046273d990f256cb79796a190bbf7ec999269705ddc609403f8c6b06/pyarrow-23.0.1-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "version": "23.0.1"
+    },
+    {
+      "bytes": 52332,
+      "distribution": "pybcj",
+      "filename": "pybcj-1.0.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "a50b58f9b9d9978c55e3219b6816a1021a778b028a810b36aa754407591cb5ae",
+      "url": "https://files.pythonhosted.org/packages/76/59/5629811698e6cfaea6cf159cf86fa471904ceb60448dc8b80233bba2e392/pybcj-1.0.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "1.0.8"
+    },
+    {
+      "bytes": 2272578,
+      "distribution": "pycryptodomex",
+      "filename": "pycryptodomex-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "f489c4765093fb60e2edafdf223397bc716491b2b69fe74367b70d6999257a5c",
+      "url": "https://files.pythonhosted.org/packages/c8/a9/8862616a85cf450d2822dbd4fff1fcaba90877907a6ff5bc2672cafe42f8/pycryptodomex-3.23.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "3.23.0"
+    },
+    {
+      "bytes": 472262,
+      "distribution": "pydantic",
+      "filename": "pydantic-2.13.4-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba",
+      "url": "https://files.pythonhosted.org/packages/fd/7b/122376b1fd3c62c1ed9dc80c931ace4844b3c55407b6fb2d199377c9736f/pydantic-2.13.4-py3-none-any.whl",
+      "version": "2.13.4"
+    },
+    {
+      "bytes": 2094516,
+      "distribution": "pydantic-core",
+      "filename": "pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "926c9541b14b12b1681dca8a0b75feb510b06c6341b70a8e500c2fdcff837cce",
+      "url": "https://files.pythonhosted.org/packages/5f/97/2aab507d3d00ca626e8e57c1eac6a79e4e5fbcc63eb99733ff55d1717f65/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "2.46.4"
+    },
+    {
+      "bytes": 514663,
+      "distribution": "pyenet-vladfi",
+      "filename": "pyenet_vladfi-1.3.19-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "153aa579caee315f3a01ef97541efe23460950d3cf10ba4e38720bcdf18e8e26",
+      "url": "https://files.pythonhosted.org/packages/95/02/6da318e4860593fb6535c3cd89158cad428a0d2f4129f8b77c6fff8b53de/pyenet_vladfi-1.3.19-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "1.3.19"
+    },
+    {
+      "bytes": 1250147,
+      "distribution": "pygments",
+      "filename": "pygments-2.21.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9",
+      "url": "https://files.pythonhosted.org/packages/71/46/17f022dd3e953bf20a04a028a21ec746d942f8d2af30fa0f124fa0e6a684/pygments-2.21.0-py3-none-any.whl",
+      "version": "2.21.0"
+    },
+    {
+      "bytes": 144306,
+      "distribution": "pyppmd",
+      "filename": "pyppmd-1.3.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "1bd6d179ad39b6191ca0cbe62fb9592f33f49277b4384ad7bc5eb0e6ca27ebee",
+      "url": "https://files.pythonhosted.org/packages/88/d7/fe32c2a4f8539365e6292aed25545830a5e718a510cdb4caddd6fd8d8056/pyppmd-1.3.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "1.3.1"
+    },
+    {
+      "bytes": 229892,
+      "distribution": "python-dateutil",
+      "filename": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+      "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "version": "2.9.0.post0"
+    },
+    {
+      "bytes": 508283,
+      "distribution": "pytz",
+      "filename": "pytz-2026.3.post1-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "dd95840dd199baea12d9cc096a1d452caa6596a1c1e4b5f3dbd1541855d5e815",
+      "url": "https://files.pythonhosted.org/packages/0f/7b/39c34ca613b0b198cb866466651b26b045e2009864c5183c979a3b83f383/pytz-2026.3.post1-py2.py3-none-any.whl",
+      "version": "2026.3.post1"
+    },
+    {
+      "bytes": 10092,
+      "distribution": "pyvers",
+      "filename": "pyvers-0.1.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "065249805ae537ddf9a2d1a8dffc6d0a12474a347d2eaa2f35ebdae92c0c8199",
+      "url": "https://files.pythonhosted.org/packages/7f/39/c5432f541e6ea1d616dfd6ef42ce02792f7eb42dd44f5ed4439dbe17a58b/pyvers-0.1.0-py3-none-any.whl",
+      "version": "0.1.0"
+    },
+    {
+      "bytes": 807870,
+      "distribution": "pyyaml",
+      "filename": "pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc",
+      "url": "https://files.pythonhosted.org/packages/8b/9d/b3589d3877982d4f2329302ef98a8026e7f4443c765c46cfecc8858c6b4b/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "version": "6.0.3"
+    },
+    {
+      "bytes": 73075,
+      "distribution": "requests",
+      "filename": "requests-2.34.2-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "url": "https://files.pythonhosted.org/packages/a0/f4/c67b0b3f1b9245e8d266f0f112c500d50e5b4e83cb6f3b71b6528104182a/requests-2.34.2-py3-none-any.whl",
+      "version": "2.34.2"
+    },
+    {
+      "bytes": 310654,
+      "distribution": "rich",
+      "filename": "rich-15.0.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb",
+      "url": "https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl",
+      "version": "15.0.0"
+    },
+    {
+      "bytes": 518670,
+      "distribution": "sentry-sdk",
+      "filename": "sentry_sdk-2.68.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "538e56c2d03679d42f7c0cb5f1af73a7a510b00abc7e296c13ac49b107b713a4",
+      "url": "https://files.pythonhosted.org/packages/7d/9b/e2421d08956d0bc4691d995393d835e563886bff499d8fb10fdefae85a8d/sentry_sdk-2.68.0-py3-none-any.whl",
+      "version": "2.68.0"
+    },
+    {
+      "bytes": 818216,
+      "distribution": "setuptools",
+      "filename": "setuptools-84.0.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "bootstrap",
+      "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+      "url": "https://files.pythonhosted.org/packages/95/9c/c510029fc6ef33a6275cd2c5d3cecd6613dfd6aa401d57c54f1c18852ccf/setuptools-84.0.0-py3-none-any.whl",
+      "version": "84.0.0"
+    },
+    {
+      "bytes": 11050,
+      "distribution": "six",
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+      "version": "1.17.0"
+    },
+    {
+      "bytes": 6299353,
+      "distribution": "sympy",
+      "filename": "sympy-1.14.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "url": "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl",
+      "version": "1.14.0"
+    },
+    {
+      "bytes": 39814,
+      "distribution": "tabulate",
+      "filename": "tabulate-0.10.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "f0b0622e567335c8fabaaa659f1b33bcb6ddfe2e496071b743aa113f8774f2d3",
+      "url": "https://files.pythonhosted.org/packages/99/55/db07de81b5c630da5cbf5c7df646580ca26dfaefa593667fc6f2fe016d2e/tabulate-0.10.0-py3-none-any.whl",
+      "version": "0.10.0"
+    },
+    {
+      "bytes": 5525762,
+      "distribution": "tb-nightly",
+      "filename": "tb_nightly-2.20.0a20250717-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "3a2e0a75258baba5ffff993ac8f4a0aae4dc8b382bae42ec2660dc3af73505fc",
+      "url": "https://files.pythonhosted.org/packages/b4/a1/eee8c62bc69a9e2751f7f1c6d541f3c9257371979ad49b27822d38d0f364/tb_nightly-2.20.0a20250717-py3-none-any.whl",
+      "version": "2.20.0a20250717"
+    },
+    {
+      "bytes": 6590363,
+      "distribution": "tensorboard-data-server",
+      "filename": "tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "ef687163c24185ae9754ed5650eb5bc4d84ff257aabdc33f0cc6f74d8ba54530",
+      "url": "https://files.pythonhosted.org/packages/73/c6/825dab04195756cf8ff2e12698f22513b3db2f64925bdd41671bfb33aaa5/tensorboard_data_server-0.7.2-py3-none-manylinux_2_31_x86_64.whl",
+      "version": "0.7.2"
+    },
+    {
+      "bytes": 7734,
+      "distribution": "termcolor",
+      "filename": "termcolor-3.3.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "cf642efadaf0a8ebbbf4bc7a31cec2f9b5f21a9f726f4ccbb08192c9c26f43a5",
+      "url": "https://files.pythonhosted.org/packages/33/d1/8bb87d21e9aeb323cc03034f5eaf2c8f69841e40e4853c2627edf8111ed3/termcolor-3.3.0-py3-none-any.whl",
+      "version": "3.3.0"
+    },
+    {
+      "bytes": 10768,
+      "distribution": "texttable",
+      "filename": "texttable-1.7.0-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "72227d592c82b3d7f672731ae73e4d1f88cd8e2ef5b075a7a7f01a23a3743917",
+      "url": "https://files.pythonhosted.org/packages/24/99/4772b8e00a136f3e01236de33b0efda31ee7077203ba5967fcc76da94d65/texttable-1.7.0-py2.py3-none-any.whl",
+      "version": "1.7.0"
+    },
+    {
+      "bytes": 1695241,
+      "distribution": "tf-keras-nightly",
+      "filename": "tf_keras_nightly-2.21.0.dev2026082009-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "6ee1d379b0a8eb999feee8ddc96b66fc03da9f1c637f8d9f6cb92790c8a093d6",
+      "url": "https://files.pythonhosted.org/packages/de/da/55ef9bca3ed75d8363251048a82563ef72252270a4f2f990b85ab1a068b0/tf_keras_nightly-2.21.0.dev2026082009-py3-none-any.whl",
+      "version": "2.21.0.dev2026082009"
+    },
+    {
+      "bytes": 572640176,
+      "distribution": "tf-nightly",
+      "filename": "tf_nightly-2.21.0.dev20260203-cp312-cp312-manylinux_2_27_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "eadcd9ba51586243d87ee88fe1b515d33604acbc0d178430b8df57a8ba970dff",
+      "url": "https://files.pythonhosted.org/packages/a1/5c/a42eba0783006121ae1bbdd8271fc07618910bafe33fc450d44278f2f4e5/tf_nightly-2.21.0.dev20260203-cp312-cp312-manylinux_2_27_x86_64.whl",
+      "version": "2.21.0.dev20260203"
+    },
+    {
+      "bytes": 6975580,
+      "distribution": "tfp-nightly",
+      "filename": "tfp_nightly-0.26.0.dev20260820-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "222d4d8f2a04fd191fcefae597c9b06f76ebcf6d10ef7cde92385e5dfedae3ed",
+      "url": "https://files.pythonhosted.org/packages/37/0c/74f5dfddb79ec3356cd4bc366414bec3619b39d629cb1af5343900327a3e/tfp_nightly-0.26.0.dev20260820-py2.py3-none-any.whl",
+      "version": "0.26.0.dev20260820"
+    },
+    {
+      "bytes": 175833687,
+      "distribution": "torch",
+      "filename": "torch-2.7.1+cpu-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "8f8b3cfc53010a4b4a3c7ecb88c212e9decc4f5eeb6af75c3c803937d2d60947",
+      "url": "https://download-r2.pytorch.org/whl/cpu/torch-2.7.1%2Bcpu-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "version": "2.7.1+cpu"
+    },
+    {
+      "bytes": 78275,
+      "distribution": "tqdm",
+      "filename": "tqdm-4.66.4-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "b75ca56b413b030bc3f00af51fd2c1a1a5eac6a0c1cca83cbb37a5c52abce644",
+      "url": "https://files.pythonhosted.org/packages/18/eb/fdb7eb9e48b7b02554e1664afd3bd3f117f6b6d6c5881438a0b055554f9b/tqdm-4.66.4-py3-none-any.whl",
+      "version": "4.66.4"
+    },
+    {
+      "bytes": 45571,
+      "distribution": "typing-extensions",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "version": "4.16.0"
+    },
+    {
+      "bytes": 14750,
+      "distribution": "typing-inspection",
+      "filename": "typing_inspection-0.4.4-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147",
+      "url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+      "version": "0.4.4"
+    },
+    {
+      "bytes": 348168,
+      "distribution": "tzdata",
+      "filename": "tzdata-2026.3-py2.py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "dc096730c87af6cab1b171c9d532be840741ff5d459015e7f6947bd7d7e54931",
+      "url": "https://files.pythonhosted.org/packages/e5/6d/b53b99a9f2766d095985947a5782f1702cabb129a34f7a802d7197af832f/tzdata-2026.3-py2.py3-none-any.whl",
+      "version": "2026.3"
+    },
+    {
+      "bytes": 131087,
+      "distribution": "urllib3",
+      "filename": "urllib3-2.7.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897",
+      "url": "https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl",
+      "version": "2.7.0"
+    },
+    {
+      "bytes": 29622780,
+      "distribution": "wandb",
+      "filename": "wandb-0.28.2-py3-none-manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "1db698d107871c66b2dcbb0cf4dc2af1ddb159ba94e957e890158ec60ab2de54",
+      "url": "https://files.pythonhosted.org/packages/3c/7f/f3e23a2ff01848d7a5adab9f307992b92ef99c5e6bff2bd89cd46d651e3a/wandb-0.28.2-py3-none-manylinux_2_28_x86_64.whl",
+      "version": "0.28.2"
+    },
+    {
+      "bytes": 226459,
+      "distribution": "werkzeug",
+      "filename": "werkzeug-3.1.8-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "63a77fb8892bf28ebc3178683445222aa500e48ebad5ec77b0ad80f8726b1f50",
+      "url": "https://files.pythonhosted.org/packages/93/8c/2e650f2afeb7ee576912636c23ddb621c91ac6a98e66dc8d29c3c69446e1/werkzeug-3.1.8-py3-none-any.whl",
+      "version": "3.1.8"
+    },
+    {
+      "bytes": 33320,
+      "distribution": "wheel",
+      "filename": "wheel-0.48.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "bootstrap",
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab",
+      "url": "https://files.pythonhosted.org/packages/2e/29/69cfbb602cd91690c55d38ba9fe53e6a7e76a6fa647bf38f19c138d25449/wheel-0.48.0-py3-none-any.whl",
+      "version": "0.48.0"
+    },
+    {
+      "bytes": 172381,
+      "distribution": "wrapt",
+      "filename": "wrapt-2.3.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "5d221a6e6ddd302b8397433184e96b59f259f50024b854db1c411a881586b6b8",
+      "url": "https://files.pythonhosted.org/packages/28/7f/cfd9bc4b1f5e424eeea83d0493e43f3b1b02707ce8e50c47945873982bd5/wrapt-2.3.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "version": "2.3.0"
+    },
+    {
+      "bytes": 430242,
+      "distribution": "tensordict",
+      "filename": "tensordict-0.9.1-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "ba30eacb5630dc1ee47159a66baa9dc6c5cec3f130b39b7589ff712f9e45777a",
+      "url": "https://files.pythonhosted.org/packages/89/68/0d801f339ff43aaaecad26d87f74bacb20503d9bcb1bdf7f76486c1f0b86/tensordict-0.9.1-cp312-cp312-manylinux_2_28_x86_64.whl",
+      "version": "0.9.1"
+    },
+    {
+      "bytes": 27789,
+      "distribution": "importlib-metadata",
+      "filename": "importlib_metadata-9.0.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "2d21d1cc5a017bd0559e36150c21c830ab1dc304dedd1b7ea85d20f45ef3edd7",
+      "url": "https://files.pythonhosted.org/packages/38/3d/2d244233ac4f76e38533cfcb2991c9eb4c7bf688ae0a036d30725b8faafe/importlib_metadata-9.0.0-py3-none-any.whl",
+      "version": "9.0.0"
+    },
+    {
+      "bytes": 131245,
+      "distribution": "orjson",
+      "filename": "orjson-3.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "1192a7021b6d071aaf909864f6e924d6a2675ca360485b972b8401749311750b",
+      "url": "https://files.pythonhosted.org/packages/8c/57/80b986ebfecd9c6a177ddf1c2319717f0cd8feffb2b78946595a18a2fc88/orjson-3.12.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "version": "3.12.0"
+    },
+    {
+      "bytes": 10238,
+      "distribution": "zipp",
+      "filename": "zipp-4.1.0-py3-none-any.whl",
+      "format": "wheel",
+      "role": "runtime",
+      "sha256": "25ad4e16390cd314347dd8f1de67a2ac538ae658ed4ab9db16029c07c188e97f",
+      "url": "https://files.pythonhosted.org/packages/3a/13/547360d81e6d88d58492968ffda9f9542854f11310ee556fef14260cc886/zipp-4.1.0-py3-none-any.whl",
+      "version": "4.1.0"
+    }
+  ],
+  "complete": true,
+  "platform": "linux_x86_64",
+  "provenance": {
+    "candidate_sha256": "1ff64ab01bbb4920c1841fc7a7b2810b4f7e653008b4c92753e241e7e5247f34",
+    "source_build_audit_sha256": "c979211fe1f1c88d6e546d1e5bf9ba2dfb9bb8b3b04c2c9756d0e80e2fe1a5ef"
+  },
+  "python": "3.12",
+  "schema": "e011.modal-policy-linux-dependencies.v1"
+}

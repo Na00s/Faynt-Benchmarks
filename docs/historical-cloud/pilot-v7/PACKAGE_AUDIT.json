@@ -1,0 +1,194 @@
+{
+  "archive": {
+    "elf64_x86_64": [
+      "dolphin-emu",
+      "libslippi_rust_extensions.so"
+    ],
+    "executed": false,
+    "expanded_tar_bytes": 82032640,
+    "extracted": false,
+    "files": 344,
+    "uncompressed_bytes": 81401746
+  },
+  "execution": {
+    "execution_id": "d8d1bf4827114f68b49b50ed89d43b6d",
+    "task_id": "<historical-provider-id>"
+  },
+  "gameplay_admitted": false,
+  "outer_files": {
+    "call.json": {
+      "bytes": 325,
+      "sha256": "6449488ef12d5ba8e78cf5a35c5ece44d0e03233943a4ab4ba5b9e531ad218ac"
+    },
+    "plan.json": {
+      "bytes": 4689,
+      "sha256": "aea6a4743a53589411c4d460467e7df6ec5e0a10d7f9e707be049f943da2a483"
+    },
+    "result.json": {
+      "bytes": 15205,
+      "sha256": "24cfb6876cd537d6056965cb53dbdfeeea8ebf8565c2b39fb75566fbaa48ccb0"
+    }
+  },
+  "outer_plan_sha256": "aea6a4743a53589411c4d460467e7df6ec5e0a10d7f9e707be049f943da2a483",
+  "returned_files": {
+    "bootstrap/001.log": {
+      "bytes": 1544,
+      "sha256": "ab88350752819561a263ec12e2350ffef8852ad6381978953212d1e5a1bc21b0"
+    },
+    "bootstrap/002.log": {
+      "bytes": 65536,
+      "sha256": "323546164b9a7965860068aee349d8a723e05cf2c6faecc3355013d29ab93c59"
+    },
+    "bootstrap/003.log": {
+      "bytes": 1094,
+      "sha256": "a8d76e304b2e89abd08cc0a295c31f49f686c851ff013978bd58f3faf3b513ae"
+    },
+    "bootstrap/004.log": {
+      "bytes": 237,
+      "sha256": "fe02442da1da7238ce4bb99e6596b64b99e1ca0646f5436a1d8b691ef43108d2"
+    },
+    "bootstrap/005.log": {
+      "bytes": 62917,
+      "sha256": "b0a469234c611a021edb7aaa5942f913629df4e497fee10cd440347dc47e4723"
+    },
+    "linux-dolphin-code.tar.gz": {
+      "bytes": 23284133,
+      "sha256": "ab2b1e04d8d3bd9beac1211299ca9e5038a06d03d36ad0efb148084c5b473c19"
+    },
+    "logs/001.log": {
+      "bytes": 19,
+      "sha256": "30279da57eb04a496cb207bc2f7c7e04d9c94788be5bc68824e6727e283b264b"
+    },
+    "logs/002.log": {
+      "bytes": 91,
+      "sha256": "6c08f840b67782da73a6fe113b64712615441722b15cd2723062dd4cc00a10d8"
+    },
+    "logs/003.log": {
+      "bytes": 245,
+      "sha256": "5fa6bf5b83f57f14020be375ac663df894027e2d672d6b7d82d7e8d8f7b49c8b"
+    },
+    "logs/004.log": {
+      "bytes": 246,
+      "sha256": "8d6e704227c739386853b14c98257428d8ffbffd817517db0b2e088d28c773f6"
+    },
+    "logs/005.log": {
+      "bytes": 36,
+      "sha256": "1ac65f1cd11fa83e9530348b787fa3e5bdd85b0f3727099df8bcdf3e24274138"
+    },
+    "logs/006.log": {
+      "bytes": 36,
+      "sha256": "6c2df3721232c841c6af639c7b1c37c3032fcbf711e4f2914435f97ab5f4dff1"
+    },
+    "logs/007.log": {
+      "bytes": 918,
+      "sha256": "8f8b29f0a76e4d9a7d147f4a27d710395235e98f85004314bbb83fd5a531791b"
+    },
+    "logs/008.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/009.log": {
+      "bytes": 125,
+      "sha256": "5e10f177665ef8cb23308c94f85a8c9a3a34996bf7801398f9c9cd52c906b51d"
+    },
+    "logs/010.log": {
+      "bytes": 39,
+      "sha256": "05e5cbbf758ddc10d54111e6bb4dcc0ff0f751bdbe15eebe112389a211402590"
+    },
+    "logs/011.log": {
+      "bytes": 41,
+      "sha256": "75de12a1d75f618d919492d190090247f2b76a5cfb894fb72e8984b4daebbaaf"
+    },
+    "logs/012.log": {
+      "bytes": 65536,
+      "sha256": "efebfacfaa336efc2fa64276b3b565608a2177911a55eddd652fc65b5bdbd323"
+    },
+    "logs/013.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/014.log": {
+      "bytes": 138,
+      "sha256": "5c9a29b118f10d80e74a34b63f97e6f64a09a00c57384832353622a78cbc13ec"
+    },
+    "logs/015.log": {
+      "bytes": 78,
+      "sha256": "a1b1af78c9a3f3cde329eee972322db124ee36e0286cdef0ef4d1d8fb164f07c"
+    },
+    "logs/016.log": {
+      "bytes": 41,
+      "sha256": "93b0028536090b4bf71dc5809377fbaa1c9fdabfdd411b01bbb87d2c003196f8"
+    },
+    "logs/017.log": {
+      "bytes": 4481,
+      "sha256": "873cd88b0ff5a7bbc4cd57f8f7f72c7739bf41b7920deb0a535c7a6b85c6c201"
+    },
+    "logs/018.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/019.log": {
+      "bytes": 123,
+      "sha256": "ae741d0ea037748e4e04a2e2db00d2408f1ec8cfbe53a6e7b75f739385508015"
+    },
+    "logs/020.log": {
+      "bytes": 55,
+      "sha256": "7cec9f587cfe321fb391fa7bd7d85b455a4e5f77355654fa44874434666322b5"
+    },
+    "logs/021.log": {
+      "bytes": 41,
+      "sha256": "b724d4313c80a20cedcb02bd3da3aad643653ac0122e8da9c5177ab962f8132e"
+    },
+    "logs/022.log": {
+      "bytes": 17762,
+      "sha256": "cf2c74080cd8fca7f4cbb51f3335a790ce0ba7b3bec5eb4b742081822615cfd6"
+    },
+    "logs/023.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/024.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/025.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/026.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "logs/027.log": {
+      "bytes": 10158,
+      "sha256": "20a00336b3820b848a19133aa5281d7443320385a24eb3a2a20bc7832ccd3b99"
+    },
+    "logs/028.log": {
+      "bytes": 65536,
+      "sha256": "cb5241112fdb3eb9015ea4974a330818275d024d890a818f7a174ec7f6bf9a96"
+    },
+    "logs/029.log": {
+      "bytes": 8943,
+      "sha256": "862ccb0c1e32839f84144ad10eb24f36026817f95ddac32267a194ee7d79bc8d"
+    },
+    "logs/030.log": {
+      "bytes": 8945,
+      "sha256": "515890e1fabcf37c88776500d3e3fcb74f6a37732bfaec2af1ea6bc88778bf9f"
+    },
+    "package-manifest.json": {
+      "bytes": 55049,
+      "sha256": "c9be9b3d84401487f8f7aa03f608dfe4a7a294804a92ef2ab1038f0d8d44e700"
+    },
+    "plan.json": {
+      "bytes": 3070,
+      "sha256": "173560bb26f1fbf31599a837777187c47b6d5cfca48c987f78b89d4da063d6d0"
+    },
+    "receipt.json": {
+      "bytes": 62917,
+      "sha256": "b0a469234c611a021edb7aaa5942f913629df4e497fee10cd440347dc47e4723"
+    }
+  },
+  "schema": "frisson.modal-panel-package-audit.v1",
+  "scope": "Byte/provenance and archive safety audit only. Truncated logs verify returned tail bytes; unavailable full-log bytes remain unaudited.",
+  "status": "package-audit-passed"
+}

@@ -1,0 +1,2135 @@
+{
+  "repository": "https://github.com/bicro/research_playground",
+  "branch": "rl_post_training",
+  "commit": "d4673486dcf6bbb1c9970a793c9a85f2cb735af8",
+  "original_files": [
+    {
+      "path": "melee-policy-frisson-ai/README.md",
+      "git_blob_sha": "c11a17ec47ceafb2cbd2cf2afceec744545a18e7",
+      "sha256": "af72b453dadc256b713b83cfa4888f571136c25e49177d50fb16141776b96e71",
+      "bytes": 8033
+    },
+    {
+      "path": "melee-policy-frisson-ai/config.yaml",
+      "git_blob_sha": "b4cc1fbfcfb84adb01df1a8262cb538ee2b17638",
+      "sha256": "fb6fd1f74d59627ec1e3c8bebac948880e54954eccae1bcbb37e15dcd3456269",
+      "bytes": 8724
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_bc_stages_day.toml",
+      "git_blob_sha": "34cf33dbac2f4d073330ce60b09ebc0589f117a8",
+      "sha256": "0b1a5bc2d2a805be9c3bf941627788c52b8a9e63575f7d53694e0d259f9d993b",
+      "bytes": 10479
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_bc_stages_prefix_day.toml",
+      "git_blob_sha": "8a6797e4ba2e5290ee9cef43be705c7bb95de6ef",
+      "sha256": "9ee4ce0f3c1e7130045693794ef278299d115ad5b2c27d86bf25249f735b365e",
+      "bytes": 8777
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_bc_stages_prefix_smoke.toml",
+      "git_blob_sha": "9ff37a0a219259b9c3570b54feaaa73c58fca5c2",
+      "sha256": "e4722fe2b1ea30d59641c70634df9deda7b6369ef8870b3ca71c8c92eebd57cd",
+      "bytes": 6737
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_bc_stages_smoke.toml",
+      "git_blob_sha": "c5c1eccc29413526e1b3e22226bbc92807b42a5c",
+      "sha256": "3949b5a54a22b61a01ac6e8e89f2354fb4f05cce652af54ce88dc07b4415eabe",
+      "bytes": 7342
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_delay_distill_day.toml",
+      "git_blob_sha": "42fa31ba85483ce662c4ecea6da34b450df8f3a0",
+      "sha256": "c91d939f54ed35b3757780b93b0032309361d4ad9a267795cd4f4f45a86b7c04",
+      "bytes": 11530
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_delay_distill_smoke.toml",
+      "git_blob_sha": "7f8c64fc5e4e10cb232fad0695226b0aa7649dc1",
+      "sha256": "6b81af2b8094a00b211b05a212278a6b2aabf00206f12827f1c3ef5be10142e6",
+      "bytes": 4785
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_delay_ema_day.toml",
+      "git_blob_sha": "3bd6bf3149c247259a2461cb1457b7dfa6651d43",
+      "sha256": "cef6f912b0ebc7f8c21e3f0121653b9154b2d8f2aa9d71ce0aeee26c0b06ac8e",
+      "bytes": 8506
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_delay_league_day.toml",
+      "git_blob_sha": "afe66f3b1336334b4c564b37cef812122486501f",
+      "sha256": "8aea1c86c0e62542572625f0d3a600e4ed2e825d761450823fcfc558170e78d3",
+      "bytes": 9181
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_delay_league_smoke.toml",
+      "git_blob_sha": "40bae89d06e1c3ba551d45e3a243076ad47da680",
+      "sha256": "1279d5b496f491dcc09b777cade4103e3cf3b19e4cd99e73d04292f27c715b82",
+      "bytes": 6779
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_delay_ppo_day.toml",
+      "git_blob_sha": "cb2b569f1dacb8f00af1f1b4bc0ac35a70d6a7f7",
+      "sha256": "3f34ad4b42e8b89bd56a2ff73854ca678ff2de81429f73f5f83786352fbaa452",
+      "bytes": 9808
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_leash_kl0p003_day.toml",
+      "git_blob_sha": "c4897d35bb8bfcead1396fb403d8fdad218db718",
+      "sha256": "497851b631d61d2efbdc7f9cfb0d4f2ff18d2e9464d140fe6b356810aeb02a60",
+      "bytes": 11596
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_leash_kl0p01_day.toml",
+      "git_blob_sha": "6fad1b7e631dfb39c4a4257face2b849dab30567",
+      "sha256": "244fd25204422539e1761d13ffc5c05cd17f3899a404ea3d1920c1fa8d147432",
+      "bytes": 11566
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_leash_kl0p03_day.toml",
+      "git_blob_sha": "81e37bb3f21da50f0d102741e411db984d3677a3",
+      "sha256": "03e43b1601b5168090e958b7e418920344f8fbebd3b989ff538ec082004a8c02",
+      "bytes": 11578
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_pt_stages_arms4_smoke.toml",
+      "git_blob_sha": "9121b35fd524b01eed4a9d957f532a66ee406036",
+      "sha256": "3398d8b5b9257787913bd15b4641a799bb865435d118e824bcf6009f4de808f2",
+      "bytes": 8254
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_10m_pt_stages_day.toml",
+      "git_blob_sha": "4005ebddc857542860c56b6e8848fb15c548fb0a",
+      "sha256": "c1797aadcda3bf09d2729288f005c415b97646f455ec037d8a79c27f719c1800",
+      "bytes": 8900
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_bc_mix_day.toml",
+      "git_blob_sha": "743ec7f5f211759e5f39fefe6ed101ef691a4f8d",
+      "sha256": "6ea5aa98d61d934476bf2f6cc91fad565b8c7511a1b195de8316bbe728e269b0",
+      "bytes": 4734
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_bc_mix_dmg005_day.toml",
+      "git_blob_sha": "6501a4caa66cd87c7d34b069d9a8521e4edce5ec",
+      "sha256": "7698994e8945dd8536a182fd28d54ab7f518fd9f02a6243d50e4a7d83b5f8572",
+      "bytes": 5615
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_bc_mix_smoke.toml",
+      "git_blob_sha": "7a3264c9e36a448306747113d48236915f9a62f7",
+      "sha256": "1ab63eeb83c4642140a6f91bdacd02c4a7db131da872f3435eddd9cb9992295e",
+      "bytes": 3479
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_bc_self_wide_day.toml",
+      "git_blob_sha": "b30f54c343fa7ba1b9e16c37be0ac6211af5cc07",
+      "sha256": "4dcdb6b0fa9c1832cbc6189e35b4eac769a601024f9111fa24acd38c3c1bcffc",
+      "bytes": 7929
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_bc_self_wide_smoke.toml",
+      "git_blob_sha": "20bde23bcc054a0b4693463d5b17baea70c952ae",
+      "sha256": "051f73e8d0d357a2187131a0e7bf44ffdb0a097c14cd860f9c7ecc619eb086a5",
+      "bytes": 4439
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_day.toml",
+      "git_blob_sha": "36b9e8a7e50f2fc69b71ae590e135bdffd535379",
+      "sha256": "5cbc2bbe5247f966168051f5e354b6f40f87704bd6a4f938101fdbee1d00f3e8",
+      "bytes": 4719
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_self_wide_day.toml",
+      "git_blob_sha": "9cf1504634163c9794503689c0db0cb603915008",
+      "sha256": "ba623d3078c23a5acefd10fc8f39c16e641f54256287d5747407f96d4174fb3b",
+      "bytes": 7757
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_self_wide_smoke.toml",
+      "git_blob_sha": "85d0de40608ec23fac26a1334c2196d966d280cc",
+      "sha256": "661dc47cea05462665cf44dae9c7ed5e9023bddc2fcf6eed66ab0ad2582fef21",
+      "bytes": 4982
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_20m_wide_day.toml",
+      "git_blob_sha": "0ba5ed7c88d2c7aecc42ebaf58cbf31b8f96b870",
+      "sha256": "c0adadf46246a5c61c3602d97358798241bf276a612ad13b21802bcd307b6bba",
+      "bytes": 4750
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_bc_self_wide_day.toml",
+      "git_blob_sha": "9765a16734fd9a6690ca8776fe56726fe3fc2e61",
+      "sha256": "1bf29099d6123d9b8d32fe20357732da93791ec3970321f498ff8960930cc50f",
+      "bytes": 7749
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_bc_self_wide_fast_smoke.toml",
+      "git_blob_sha": "4d1c92823a6ed2d100e17b7a622d305396225cb4",
+      "sha256": "d2501878094eea62e875857da64493a3a46d7721ac3a72c17fde9bf7d694a91f",
+      "bytes": 3767
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_bc_self_wide_mp_smoke.toml",
+      "git_blob_sha": "c55be50b73ade7a7f4e89e603df3642043ff919d",
+      "sha256": "65bc73c06d018caf210becc2c1f2b7d77a0765ab928a287628ee5ff2762c4a8d",
+      "bytes": 3576
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_bc_self_wide_smoke.toml",
+      "git_blob_sha": "36b19230fa7656caa5409a06694dbc58bdc8e44c",
+      "sha256": "0cc7a4a9c8400f569b4766227ce5e27a826adeae8d37c83e96b909e5734ca858",
+      "bytes": 5910
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_delay_b2k4_smoke.toml",
+      "git_blob_sha": "bfd9f36408fd796cdbe05731caecd283cf209f6b",
+      "sha256": "d88be334b4aa66402c1e9261c5758a159b409e9b28ce28eb3b7bdc660a4c5f8f",
+      "bytes": 4534
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_delay_b4k3_smoke.toml",
+      "git_blob_sha": "82adb5dd5a84d5902805debf1d24406c6c311ae0",
+      "sha256": "a274c3befe595303904bebbeaf1b4e9fc7d3a226079978ce80d620b266be825c",
+      "bytes": 4500
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_delay_day.toml",
+      "git_blob_sha": "ffe07f57d321659f8828917d9f524e07dd29a9ad",
+      "sha256": "34c6e89e379995dbf89ccd267b4fb8576d64b4c08660edeaae63fee041fda554",
+      "bytes": 6793
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_delay_e128_probe.toml",
+      "git_blob_sha": "c37c8ef65564d0fca4933e4ad7985f0dee531ed1",
+      "sha256": "b31b64eda3029c091230189777ece7c9cf04211ccf1d94d60d6177fe4ade67b4",
+      "bytes": 4558
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_delay_e160_probe.toml",
+      "git_blob_sha": "e8beef9173a1232b68a8d7642e88559cf68bb24e",
+      "sha256": "df4b900bb5bad1d2ef173ce92e6982dd4176df01baf68bc17da3f625f359d063",
+      "bytes": 4619
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_delay_nb16_smoke.toml",
+      "git_blob_sha": "e55e2783bc7cea207092617e389c40dc6c6e9a2b",
+      "sha256": "a79fae731cd98956e519934d856674496ff633506c7e5eb701129d2c7cbb53bd",
+      "bytes": 4435
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_self_wide_day.toml",
+      "git_blob_sha": "3c8582f0e4637edd4b2002f04fb2fc1cbefcdb96",
+      "sha256": "e0958f347ed3450ed9ea7c5d90d47b7b90b1872346a3faf6485fab998300698a",
+      "bytes": 7715
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_5m_self_wide_smoke.toml",
+      "git_blob_sha": "6e8cf17d91ea8ac9ba54e608349c04ec192b2515",
+      "sha256": "428629b87e7c6432eef9be4384336c0372471ce0a87606126d4b7116a32e8166",
+      "bytes": 4974
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_75m_bc_stages_day.toml",
+      "git_blob_sha": "1f4b9f6c46a5af427482af55abe63d9c29083c31",
+      "sha256": "5560f67b4e82ed89410dd6c1525108f0f760a27af642dfcfa6867c8be87eb022",
+      "bytes": 10350
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_75m_bc_stages_smoke.toml",
+      "git_blob_sha": "5762ecde2df70faaf48e7e8e4cc74ccfbab9a9cb",
+      "sha256": "516e4b0b3a966a45cc7848103a616f650952ff442f528f441a9828151d737626",
+      "bytes": 8202
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_75m_profile_smoke.toml",
+      "git_blob_sha": "28cbcfe885a7fe6dab3c5db06aeb1981627381d1",
+      "sha256": "48e6b9fcb6ecd78d33ac102ea77a54368304c65d9ccf6aa03d27d088c3461c65",
+      "bytes": 4927
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_75m_pt_stages_day.toml",
+      "git_blob_sha": "0dc48777c1b19c7e903494b8b9750eb84fbdc398",
+      "sha256": "39de474ce6294c68ff9347dddb37c80b7e55ee13353ab9508b1450eea036e993",
+      "bytes": 9434
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_cpu.toml",
+      "git_blob_sha": "5f03501aaa32bde52540f183d6a64b1a0df0160d",
+      "sha256": "8490968599b33f49d880a885b25eeb73cff94535239ff80d073d533431f4335f",
+      "bytes": 2581
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_cpu8.toml",
+      "git_blob_sha": "9323d66d0131a6c3d1c4146f7aaace135e5b95d0",
+      "sha256": "64c992303d9423ec3be9dc8c021bc5ae8f386f182ef955a439c25d3939ea1c0c",
+      "bytes": 3163
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_cpu8_day.toml",
+      "git_blob_sha": "c290600feca3a4120d2323b7bbf3b1f83b52d15e",
+      "sha256": "e2835fd1b276180650b36db78ffe968240820edb8697f27ffedcccebeeb08f2b",
+      "bytes": 3674
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_cpu8_delay.toml",
+      "git_blob_sha": "a288982be3412c00aeda168a49855fb43420c03c",
+      "sha256": "7c3145fcfc9deae271444aece028e84e92bd6d72dda47f4b6439c2f1c801b51d",
+      "bytes": 3053
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_cpu8_eval.toml",
+      "git_blob_sha": "64b88b39d4ac9c018387d3a57156830289768ed7",
+      "sha256": "3c2edc7c4f373aaa881baf8bafa0332ae7592c8cde128a836b13dfa14d80b52a",
+      "bytes": 3634
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_cpu8_mp.toml",
+      "git_blob_sha": "ed7f53c9bf65e999c99379e1c20f6c654aada86d",
+      "sha256": "0aa59c9276fde654510dfb8614861b867aea31931070db9132d0bb4a83483c3b",
+      "bytes": 2700
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_other8.toml",
+      "git_blob_sha": "2d0a9a7438470c2d412e9cbe73e72fc9c19bcedc",
+      "sha256": "48f3bc3f3bba2ba2c315372907b7d739a946fabbe5cecbe013476943efa5b42e",
+      "bytes": 2925
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_self.toml",
+      "git_blob_sha": "5b5ec8857da079e84dc6b638a0d4d79e48f8d198",
+      "sha256": "ccaebe444aae55c14db7e527e8bb6256999975eb2e48c2320b0f7b5171299f99",
+      "bytes": 2098
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dolphin_self8.toml",
+      "git_blob_sha": "981ba062272b524165d3e0c370499c0ad065d42a",
+      "sha256": "ee7429be3545dee100447f11bbdd9d020745a4e1d857f5ceb756f1bba3eb9c69",
+      "bytes": 2918
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dummy_75m_bench.toml",
+      "git_blob_sha": "9e98077cc179ea06a53e41f768980290dbda8a16",
+      "sha256": "076075f951b00d2e42b9d7bf0fbb3c7dec98f727f9b3d1a9faeb4cba10958f19",
+      "bytes": 3793
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dummy_75m_bench_base.toml",
+      "git_blob_sha": "410db8b9d51a2d541207dd411c4f99b5ef8d587a",
+      "sha256": "9914da078984db9acec6f58df6c678ec9365e3a62983470e1b8124e393245f1f",
+      "bytes": 3417
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dummy_75m_bench_mb24.toml",
+      "git_blob_sha": "29c8769f6839cf28cab1d76b81a4299a74f15d99",
+      "sha256": "2fb17c846de6cfbb1a262f629aa29de8ec4b4a70d484d3c6ea7473c945b865d7",
+      "bytes": 3541
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dummy_75m_bench_nockpt.toml",
+      "git_blob_sha": "c9a8a4400d56096ecb61f89701995b1f31f1dad8",
+      "sha256": "da98f41d6620828a9e1cdf3040f148523d17764eade4a100202d77c950ad89ef",
+      "bytes": 3614
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/dummy_75m_bench_tf32.toml",
+      "git_blob_sha": "d3b13288e5e0c54b41a3fa2a44be69f27091ad78",
+      "sha256": "05e84404a851468af5303e18cde030a105eedd07b9306a612e86107687bf49b3",
+      "bytes": 3619
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/learn_tiny.toml",
+      "git_blob_sha": "8b11425d77a66300b7c3006ef3af3137e3e248df",
+      "sha256": "b25aabd2858c6bf2a62e512ddb12ca509164029d66d0f48698dc75ccd62f715a",
+      "bytes": 2351
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/phillip_cpu9.toml",
+      "git_blob_sha": "dd4fb619b06fd03096f24dc9be867d543d7e57ab",
+      "sha256": "14350e05ea17760230f6dbf31a637b5d9934fa7626c376d078d0a0fb2e212511",
+      "bytes": 6804
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/phillip_mimic.toml",
+      "git_blob_sha": "b55fcd6db8a93864e15605274205dfaac6c4b062",
+      "sha256": "49c5a123a6c79fe705159734ff7b4d2871dce36d9f7e5e7a6b2b830eefeafaf0",
+      "bytes": 6471
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/slippi_ai_cpu9.toml",
+      "git_blob_sha": "14178019a9c7e9e16c8f56518137e5ca077f719a",
+      "sha256": "29606e81de4c8ed235815595d9d20fc2cd8a03dcda8c67c8cb83f5d4b9e397b3",
+      "bytes": 7936
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/slippi_ai_mimic.toml",
+      "git_blob_sha": "fe08418eb61ad9d90d905d906ed21b8a00ce7b70",
+      "sha256": "2063c2fdc1cd147ed0ebb58027c9a820f0ca70b0fa9f8c324b1247580a7bf2c7",
+      "bytes": 10121
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/slippi_parity.toml",
+      "git_blob_sha": "68b72fda376648bb5008faa04c3dfda7c87deacb",
+      "sha256": "54a768686f88d6434b1867c0e8a5b5905ea94c7934eae6a6af829769dd9ca645",
+      "bytes": 3379
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/smashbot_cpu9.toml",
+      "git_blob_sha": "8f854808e150c99da7345ce94b95adb82c3baee0",
+      "sha256": "33e1a7717fafec05f220da9ae694b97c4ce3a93ada73dc3573bd6aa31d19005c",
+      "bytes": 6660
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/smashbot_mimic.toml",
+      "git_blob_sha": "1622652a46f3f2664101c04d599a24dfeeb72d44",
+      "sha256": "6ab601c65c0d37c77839d3e3a61efac5d33c6ad86674de57675f391dfe2300dd",
+      "bytes": 6491
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/smoke_3m.toml",
+      "git_blob_sha": "74b356ae9726415619b8949513c9060b278a8b43",
+      "sha256": "47109b80a6e7dd6fb74968abe4967f86839bb8a1df8127ae745eb5dbeab00fb3",
+      "bytes": 1620
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/smoke_tiny.toml",
+      "git_blob_sha": "3f9e764c90790631f2cfb3550ca427c73fe1fc43",
+      "sha256": "d2fba998f8b1ee8310cc43ddaf9260b06703e7979ba5c876f5c888f4af2af4c6",
+      "bytes": 1894
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/smoke_tiny_pipeline.toml",
+      "git_blob_sha": "48e21973aca8a44433a4b6f22214d37d22f14482",
+      "sha256": "ca457a93d593e6a4136767f7df862f1ad22061c7130157867d39ff4d03007612",
+      "bytes": 2126
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_20m_bc.toml",
+      "git_blob_sha": "b7cd6359be320a53e49ae4cdeb40d66de144d704",
+      "sha256": "152e6818dcb54d79f79012003810a2968ba2e6cb225c5adbced98a33fcadac52",
+      "bytes": 6309
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_match.toml",
+      "git_blob_sha": "46cf10233681163ad9e241ee6f630709799a1f09",
+      "sha256": "40df4a6d9d28359ec862fcb74e352fee8aea58b9a43da0feb9bd55433bc4936f",
+      "bytes": 6899
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_match_probe.toml",
+      "git_blob_sha": "74ef637c5f74f3eb1a9d9d375cc94483979e8dcf",
+      "sha256": "e67b6eb255b9023ead8a9fb92093a7b8f310f8a0abcf3434e682d5462e331153",
+      "bytes": 6636
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_match_stages.toml",
+      "git_blob_sha": "ff8b55db2a30b81d15a41ca3c42a06400502edb4",
+      "sha256": "916b53264d4fc8664b37096f80285ee1d15dd1ee3f9cf313251a2a9e4d93da3a",
+      "bytes": 6752
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_mimic.toml",
+      "git_blob_sha": "69d8b1b511e3c5c77d0c02e02a7e3b1429d9fef0",
+      "sha256": "db51fe39e0023aa5831b626231a1e9a60408349065b4ea04463b0a7026e6ec1f",
+      "bytes": 5056
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_mimic_stages.toml",
+      "git_blob_sha": "7e907c9110bd9a402d69f3d6338c5995971b007d",
+      "sha256": "7d24529474cd23a2753e38aa225d379525b947472b0ac72f5c897bcb9930bb61",
+      "bytes": 4848
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_phillip.toml",
+      "git_blob_sha": "bb5d91fc8bdd191ba0d91034836ee2b73d4f6b40",
+      "sha256": "c875c53ca50450536ae831c9623f546c094f016e8f24cfbbf61d66d0879fea87",
+      "bytes": 8853
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_phillip_stages.toml",
+      "git_blob_sha": "a66350cd4229ae522e6e4059544c54dd3822b75a",
+      "sha256": "31dc8f371edce4aeaceb5d8065bf6037fee11f679f817cb912f75db5b22bb038",
+      "bytes": 8963
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_seed_probe.toml",
+      "git_blob_sha": "19ae493a6e876a13d4d3e0a81608ac815dfded74",
+      "sha256": "9169948ecac452df981f080839c5f552530258ef3839baf13a19fd88e5a8d79e",
+      "bytes": 7189
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_slippi_ai.toml",
+      "git_blob_sha": "b1882a816a0044cf7feb3f288326bece67e29fcb",
+      "sha256": "a9a7153045f982b27c4d836f35a9adb2a2b175cdd8b0dcd54bfbf32cb25baac7",
+      "bytes": 11322
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_slippi_ai_stages.toml",
+      "git_blob_sha": "43df8b34a723f31b29dddc054d61a2a48e46d7d5",
+      "sha256": "a024f60cb857b7dc03c7f81361a33eeeaf3b0415f2f9cb16dfaece4a9cc5a4f8",
+      "bytes": 11428
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_smashbot.toml",
+      "git_blob_sha": "a3d6ee0c4d6555fde87b436f8b0edc28380d2be1",
+      "sha256": "f788e42b168dde681705743c90ae3d0053f0e3b73868dc2715464c51070f9d7d",
+      "bytes": 9169
+    },
+    {
+      "path": "melee-policy-frisson-ai/configs/rl/video_smashbot_stages.toml",
+      "git_blob_sha": "d4b5163f8c939515dfc829c5c95d82cc9db19081",
+      "sha256": "a05b8ffc7a0cc9028c6ef2537f5f3a8aa8a958c69fabefd8c345654655d3b71a",
+      "bytes": 9279
+    },
+    {
+      "path": "melee-policy-frisson-ai/controller_codec.py",
+      "git_blob_sha": "2eb5928200efa8d482b2f9d91c005d1b0459c497",
+      "sha256": "4a51a6eb2bd1da48a1a7c852194d914ab6e5072b7d353096f351e89b24252286",
+      "bytes": 33632
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/PHILLIP.md",
+      "git_blob_sha": "511fd3609f826fb21ddddebe9a585de766554805",
+      "sha256": "5ae3bd8dedc8033a0b49121de3962e70504f29b4066695b027683e42ede16816",
+      "bytes": 13758
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/README.md",
+      "git_blob_sha": "8341b7aea6bcc99c0ca4ca68e4795d5e19a2cd27",
+      "sha256": "833c49d5fe41bd35e7fff733fc090b949de430bd84c9854b134bc975a77201ad",
+      "bytes": 18117
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/RESULTS.md",
+      "git_blob_sha": "ac4372b94724bd2a3b79ba7a15b2253ac8a7c525",
+      "sha256": "40888f3702bd067fe82dce3b92b61351ddba52241a135fb49a100762b87185a7",
+      "bytes": 83693
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/__init__.py",
+      "git_blob_sha": "c2712addb6ddcff53e824d90ed09deff618bd423",
+      "sha256": "8d920a62476ad064fecc5fc40c78589fa254745adfa8a2543e9aa0d294bee381",
+      "bytes": 5320
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/actor.py",
+      "git_blob_sha": "7c65f9acfe96810b11622cc00cef30d232537a08",
+      "sha256": "a4b8f630a881154ea0d1f5924001e77e6c62bc5e2c1b7d51d7b954cec4ad6c6c",
+      "bytes": 35965
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/adapter.py",
+      "git_blob_sha": "1801ee32cba3bb571cbf15dd46662a22daa88c5e",
+      "sha256": "874d53475d5112ea56716f65a27bf34ae57c2fa7553733c7ad932a2422246570",
+      "bytes": 18699
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/bench_step.py",
+      "git_blob_sha": "c81edbcb908963b92d293350931013c9c1dcc855",
+      "sha256": "8587ba6ae816005638527729868a7bc8a81c4c0a3e9b55c4f1e552c16d875a48",
+      "bytes": 7293
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/checkpoint.py",
+      "git_blob_sha": "fb4d442e31fcfb672a69e3ea767fdf2fa025c693",
+      "sha256": "499d24098d413b5b37fcedf8ba2072081ced047ccc21d903834004c132ac2931",
+      "bytes": 26090
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/config.py",
+      "git_blob_sha": "54947322219b9c7a98e9b620ad8e3be756fd190c",
+      "sha256": "262f5192c63475525023b33530fedc3d002d513f4e01e93165a93aae6f30ae3b",
+      "bytes": 42459
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/distributions.py",
+      "git_blob_sha": "f12494449fe337299026ec2a0d69a4cb39041426",
+      "sha256": "7c541d9158037bb74240ca9f6b19a1f6fdeaa998b4c1584804de4b65358dbe19",
+      "bytes": 11086
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/__init__.py",
+      "git_blob_sha": "646771bdbe9467fe8acf8c90014316899edef9e7",
+      "sha256": "cfd2a95572db1a37cbf8cfd403ca2f817e5c877bdf8fd932a781309ca9241b1e",
+      "bytes": 679
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/async_env.py",
+      "git_blob_sha": "96f920d004294413f73ceaf25dc40f10a502cfd0",
+      "sha256": "0dde91532909199675f1fd51b6b98794edf30e2807a32bd2a982840c62a4d15e",
+      "bytes": 6674
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/dolphin.py",
+      "git_blob_sha": "437dc52c8559d358cccfac3af65377d1fc644a08",
+      "sha256": "a51b5fcdefaecbdbc3922a93bb929ea319aac29d78eacfda0bfefc03e5e8122d",
+      "bytes": 77044
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/dolphin_mp.py",
+      "git_blob_sha": "9e90c5d7bd661eda176163b20c54ec800b853079",
+      "sha256": "e889a8b66be172a6241cb9d816cdc0c6948cca4be18d1d401f6eaf589d960f4a",
+      "bytes": 39857
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/dummy.py",
+      "git_blob_sha": "93e7dc8b571ce70252d00111a53002e784042ebf",
+      "sha256": "5a865dce53d3bc4e6d486704188e434f9511976d86547241c7d0f80077261c69",
+      "bytes": 25471
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/libmelee_frames.py",
+      "git_blob_sha": "5442674c2f7c88aebc388b56ba59ac7baac36da7",
+      "sha256": "c3edec2c2c7c7a53e80772da6cc4b15e85546cbace8293442e63e05013c73291",
+      "bytes": 16839
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/protocol.py",
+      "git_blob_sha": "8b59b5bbd52c43ebd1a0bf23a516cb5176867846",
+      "sha256": "4205e866eaf90372a0fcc3a63d5f2a97980f848b4bb23e565b6422243173a8a3",
+      "bytes": 6255
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/shm.py",
+      "git_blob_sha": "73dc59bc06c339e177bf03ff26287130439706f9",
+      "sha256": "d96cfa56a6e828cb2cc1f8bec17fff869729b8eee8cec8de98f559365bf9129d",
+      "bytes": 9657
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env/timing.py",
+      "git_blob_sha": "41de4b129ea81b6c783249dc5cfd028635f0a3ce",
+      "sha256": "9bc325b51f75e9a76e268100870fabde751fbe19aa38346c04e32076b65c3985",
+      "bytes": 8969
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/env_bench.py",
+      "git_blob_sha": "86f6ad712ce921559cc88d032175f99f45e73bde",
+      "sha256": "657f3f75d98a86ba4c97e110c185353b1eb3e65ebf9696514e18a1ce92574c82",
+      "bytes": 17993
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/evaluate.py",
+      "git_blob_sha": "d4c1a4431841308962bb5209cd66c30819a7e59c",
+      "sha256": "cfaff9f0d08579e0cea873ea8adafeca6f7e66ed055d2e4fc8a32f4f79d7ddc4",
+      "bytes": 28073
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/external_match.py",
+      "git_blob_sha": "ac08e55917e947c5f33253a03914ced02af6ded3",
+      "sha256": "ba1c9520f0e395e965a8f3e2481ba92781c2642aca9b3010e0ad71370270585c",
+      "bytes": 21174
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/fast_encode.py",
+      "git_blob_sha": "ebc3d4eb4c75c74c5755c296fcfd7a639be3dfdd",
+      "sha256": "c3c3b3da387ba30d61e92fdcf667d585dce453659917250f28aa5734ac744606",
+      "bytes": 7866
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/fast_forward.py",
+      "git_blob_sha": "f86dd3f547c0c8b268e043054ab7e3f3592b1ea9",
+      "sha256": "d45e6eaf1b231ddea0e633de87f7c9b7d821ee6fed2174b7ad5aca496bed24b2",
+      "bytes": 29970
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/fast_step.py",
+      "git_blob_sha": "948bffaf0f1b71bd396becdc1b2c9c6661168783",
+      "sha256": "0c5d4932784b4e8b7b9d57fb81078a7feb28a1633001780fe50eb37ba81ac41e",
+      "bytes": 13526
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/frames.py",
+      "git_blob_sha": "f5e01394f5cd9f0484c844bd83d83c636de47f84",
+      "sha256": "9ed7ced34bc520351cd3de4a6ed3aa603f795f31df294eea3f9463d1b8a4a2a8",
+      "bytes": 17818
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/graph_step.py",
+      "git_blob_sha": "600519c3140e24aa190288ece6a2a3ed655608b6",
+      "sha256": "5f75da3da53b35418353dedae54e1ea05c5eaf54f59bb5c41ac329e2f230711e",
+      "bytes": 6379
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/kv_cache.py",
+      "git_blob_sha": "1c11c51b20ec1b17c38300eabf5895cf0bfb62c1",
+      "sha256": "b834c7565c68b7e159155b1ec86e34106e698f793c49cee2dd1e91340e23a4ad",
+      "bytes": 3312
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/learner.py",
+      "git_blob_sha": "75e5436ff6fd0f243541362b3e8afff5df44d855",
+      "sha256": "1124d80be45591e1dfe5cd8694ac462eb475717a673c3ba70bf5b29536ef21cb",
+      "bytes": 58747
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/logging.py",
+      "git_blob_sha": "7a641a6d01092b3f21305312553c674269e93150",
+      "sha256": "4bf4c111a460ff8fc8818642f59d182730bb7800d16179a0e5867819ee176926",
+      "bytes": 12645
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/mimic.py",
+      "git_blob_sha": "f216abc6d41f284ad507162a1ee353d57a5e445c",
+      "sha256": "84b652b711a7146c8e41cbae3340f306a62658e6639b7ee532f3211f51c25bb0",
+      "bytes": 17862
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/modal_app.py",
+      "git_blob_sha": "e045068a6edd9b1da815543a9c96f6ae4a09dd1d",
+      "sha256": "e2ede644e9fc5a71f51c018bd4d68ad7370b58aac27a62201ced32ef27e32b35",
+      "bytes": 188138
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/opponents.py",
+      "git_blob_sha": "d2e5ee76c059aa3ce496dc0ab2175c0d57d41646",
+      "sha256": "3d6067f4afac78e9a5b51166e38132632b2da1530a48f968c8de1bd7c35cc8e4",
+      "bytes": 42267
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/packed.py",
+      "git_blob_sha": "9409a6ba7d4e11477b14b3f29bb26a8cd93f3b63",
+      "sha256": "d96e07225312aa6e375cca1af359c80f0c3e951a91c9a5af522a66eb625b4b49",
+      "bytes": 8565
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/phillip.py",
+      "git_blob_sha": "029372c6e51b6dc3d341ddf64aaff73b3549d24a",
+      "sha256": "b2134364c02f981a40d2953b615e5b0e6510d18ad31de08c3a612b3e92732d7f",
+      "bytes": 38532
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/phillip_sidecar.py",
+      "git_blob_sha": "e54e7c135cb97482c52c8df0b7681a5b324fbcf6",
+      "sha256": "23e3d21519b192beb580e2c4308d1831d5f46df50e93342cc0cb29181df39f59",
+      "bytes": 16462
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/pipeline.py",
+      "git_blob_sha": "d3987fb7101e5cb59b9dd20056d2e56631e98139",
+      "sha256": "767f832fa9d24f426e2a0d42edb4527f026db8379bfa66ed8b51e398b76d44d5",
+      "bytes": 11364
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/pool.py",
+      "git_blob_sha": "0a76c51630e17d50ef39244ece477c3356804920",
+      "sha256": "917fe378d92eb6af8f058569357d1271671c8240bb59634472d42bcb9ce2f0d8",
+      "bytes": 12873
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/profiling.py",
+      "git_blob_sha": "20b2935fbd5bed8b3fd194949f31e884d0513bbc",
+      "sha256": "a7cb490d7fd84dc2c2cb7beb6ab7b4af45741aca6e32b997a65c24979a687480",
+      "bytes": 30415
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/protocol.py",
+      "git_blob_sha": "edb8de80c285882fc9ba4b4ea67741db457a108e",
+      "sha256": "a863c624e5c0b1ae5a77248f8b87faf471a6a2ff7e61808e01440b6b75823e3f",
+      "bytes": 6057
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/render.py",
+      "git_blob_sha": "8b97467b504e7f69a1beb7625d91c29d8b0848ab",
+      "sha256": "6fb52ed23c8d61238c24c43a658c2bd2be29ecc65de79d9103e87ef34c3295d0",
+      "bytes": 44410
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/reward.py",
+      "git_blob_sha": "5a62fc2fe55f20e3b501791a5734650b49968016",
+      "sha256": "ef8674992ca76f5b5b33e6b176306c08d2ec7d129627efe33c4ba3bd1356f3f6",
+      "bytes": 15341
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/rl_lib.py",
+      "git_blob_sha": "ccc6b540df85486415d57a7c2e58cb606d8604c9",
+      "sha256": "7d418258f3dd4de178bcd731bafd233e3a876ba5b43335930abbce26f4e392bc",
+      "bytes": 7341
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/slippi_ai_agent.py",
+      "git_blob_sha": "71e8d131977bd564a728a14b5ef5f6be7d894a9e",
+      "sha256": "0b9407cd217d95694df1315c7e7686b7f0cd22fe8df80720e640965635b70adc",
+      "bytes": 48084
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/slippi_ai_parity.py",
+      "git_blob_sha": "65bf622cc31a7835dac268cfae8643aaed696ccc",
+      "sha256": "68ad209ef2d811999d607fd056626f26255cff72c9c7e6cc5f6c83fccae012c3",
+      "bytes": 21367
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/slippi_ai_torch.py",
+      "git_blob_sha": "2cb13634d8c1ccaf4fbc3645551404b8cc47df81",
+      "sha256": "830d1fde1e507e5e5af7b152aa94670ff7a15e056f0e76b8e0d46e7465d7fed3",
+      "bytes": 54719
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/slp.py",
+      "git_blob_sha": "87780b6ba3f4960dff8da304750e224102a20468",
+      "sha256": "b2ef263910b6b1931f2842e9d095c085636f12fde5734b5857500cedae618948",
+      "bytes": 14188
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/slp_inputs.py",
+      "git_blob_sha": "1f322dc912c6a49f441b052e6ac8a71a84149912",
+      "sha256": "30f4de76a84c664f564c6fad3ba14d39e80fda38341255812f6c2aebbac6f8bf",
+      "bytes": 22268
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/smashbot.py",
+      "git_blob_sha": "a12a54e4c50dc31c4ae4a3614ab0333a279230cb",
+      "sha256": "d641ee086df752422e98a490c91ce11bb843cee2b38563ebb49af76462f3a289",
+      "bytes": 30253
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/smashbot_compat.py",
+      "git_blob_sha": "df8e46abd23315d5665d4a9801e6d49c5b598e6e",
+      "sha256": "71732d3301cae3250a5cbf090e244b4545d246e3459487b632c2fe8a2cf842ee",
+      "bytes": 18697
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/train.py",
+      "git_blob_sha": "e8f2aa1f3cefbcbcd5ae690095e173d4efa5721d",
+      "sha256": "c4315d1a522806df532c1c1cac7b6edb889b5f27e76d9f26a2661a930e2f58c8",
+      "bytes": 55923
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/trajectory.py",
+      "git_blob_sha": "4aa2d90901a9bf76d7345cc4d5be5ef987e2dc12",
+      "sha256": "c343486194cac9b5c44e5e86de8b3da0d2b6f3a33073839d208f4fb783196469",
+      "bytes": 23574
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/value.py",
+      "git_blob_sha": "dd7e4f022e824dfcbe7c61a5538c76f9a8d8281d",
+      "sha256": "7bd88b278c1b1fd7bdd856a61d2e31b5c70ad7175456fa5741682c0521e27550",
+      "bytes": 9254
+    },
+    {
+      "path": "melee-policy-frisson-ai/melee_rl/video.py",
+      "git_blob_sha": "97e854ba16c407d4ae4e85af9f0d7e352cfdc00e",
+      "sha256": "83c104592343d5381b1d8d425a058e12f0261060279a81545c4dde602644b19f",
+      "bytes": 46830
+    },
+    {
+      "path": "melee-policy-frisson-ai/modal_app.py",
+      "git_blob_sha": "80e664d10ec4d74b44b24d90190e926bd17be915",
+      "sha256": "12082b634e730877891f060c276f40a3f32bcf20893779baeda69472ed90ba3e",
+      "bytes": 210864
+    },
+    {
+      "path": "melee-policy-frisson-ai/model.py",
+      "git_blob_sha": "e0e60211333723a3ac3e825dc87fff0d444f6db1",
+      "sha256": "cd6d3757f01c1460c884413e47e1bbb6ae7a2854996a8803adfda47d30473049",
+      "bytes": 91312
+    },
+    {
+      "path": "melee-policy-frisson-ai/optimizers.py",
+      "git_blob_sha": "76f5298b93be879868d5e380bd71f20b3360552b",
+      "sha256": "5546ce453c619111332c123942e3d325436f6a36417f9b0014373eafaad557b1",
+      "bytes": 18860
+    },
+    {
+      "path": "melee-policy-frisson-ai/preprocessing.py",
+      "git_blob_sha": "d99de5a29f7d2bba92dc45cf8dfea88966e81360",
+      "sha256": "5d9d8d1e3a6d99a95002a3d5d7063e19e2848eb52338aa280496e517b6e8edee",
+      "bytes": 197073
+    },
+    {
+      "path": "melee-policy-frisson-ai/pyproject.toml",
+      "git_blob_sha": "a00f4d75f98179dc5155e6e2d24e77d5062a881d",
+      "sha256": "09c3dc390897c534b9e9a82f837e671d9105d58cc2f27066f6c2334257e439be",
+      "bytes": 2073
+    },
+    {
+      "path": "melee-policy-frisson-ai/replay_dataset.py",
+      "git_blob_sha": "1d9322133ebf838c6cbce91ea5d5a05e8bb5f046",
+      "sha256": "1bc1f83c1b13f810b9a39b7bd05eda8e6cfd253aa22f1fb01ce61d9e1249550e",
+      "bytes": 54154
+    },
+    {
+      "path": "melee-policy-frisson-ai/tensor_batch.py",
+      "git_blob_sha": "b78de67f4727673345938b44c5dc63adc8526885",
+      "sha256": "07c39e9e5d5152b9d8d73aa74edf77c690db53f45b6ec03c6d4e64c80f4814ed",
+      "bytes": 6995
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/__init__.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/_mp_backend.py",
+      "git_blob_sha": "0eb3f04655591029e0dcede6e70cb97e61688152",
+      "sha256": "342763681f755abb292bc6a53939d8383ea2c22d3036c3ca819ad15182a76a34",
+      "bytes": 9718
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/_phillip_stub/phillip/__init__.py",
+      "git_blob_sha": "4f99a65be7c4df9dc5efaa5b2cffc7c3637ae9f2",
+      "sha256": "9b15644a67e72e30c23ce80e10bfd979670f4b127a47bbf02b8361ff54f16f9e",
+      "bytes": 728
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/_phillip_stub/phillip/agent.py",
+      "git_blob_sha": "7956e84a75949d0d17cf5a4855e675212156b765",
+      "sha256": "d8a985c607b6fc32929f1e0d81b766d49ace6c3d2f88b6b31c9fb5791d22f597",
+      "bytes": 3899
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/_phillip_stub/phillip/ssbm.py",
+      "git_blob_sha": "1c312a2e3a16a358ae6d7972c9b1ca6f2ea33b70",
+      "sha256": "9831f22b3e4d537fca8d7e1a524dd8bf62f1b2b41b72a6a4d65bcbffcb2cf4aa",
+      "bytes": 1999
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/_phillip_stub/phillip/util.py",
+      "git_blob_sha": "a407c3d1511007bcf687d551f454e14cf3ca2444",
+      "sha256": "31fd1949c6f294277ec7a98c98864df2637d9a6c6e8b86637e0f914444a92b02",
+      "bytes": 426
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/_slippi_release.py",
+      "git_blob_sha": "bc813fa191bf5bb6844cce81cd7cd86e597f976d",
+      "sha256": "2ec9840094290c01d6ae75cadfe149af99a821a951d2ecbe1298cf0c035b24f8",
+      "bytes": 6923
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/_slp_fixtures.py",
+      "git_blob_sha": "d1e3462ab52151ce42c4751f3acd20a06de4c880",
+      "sha256": "d5e316d466592093fbadb95c1039a5ff57d98653862f806f2b1b07c41ef6fb31",
+      "bytes": 5311
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/conftest.py",
+      "git_blob_sha": "8d1b523f86bbd37d98747ea153aac39005a6df7b",
+      "sha256": "814eea73e7b35bc547787fab40654e5d10834b5d3983fafc0429d162ca725810",
+      "bytes": 5432
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_actor.py",
+      "git_blob_sha": "2b39d2a9fb90c54d7190b5762854aa2ff213d219",
+      "sha256": "09a50c992c2f52115dc3ea3e13b3d203e1e06bd5a2ec732dbca7f9eb3619cadf",
+      "bytes": 26642
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_adapter.py",
+      "git_blob_sha": "56bb2fa8a34c6315f4c98c5ba9103211c01766de",
+      "sha256": "80623b7e004f465e1b9d4771584fc3235547d677d2b84feb4ccf64ebbdd59665",
+      "bytes": 25658
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_adaptive.py",
+      "git_blob_sha": "77b5bca74032ac8750ec443334fcc3000f13a7a6",
+      "sha256": "5b1835038f8fdd68b1eda21c86314297288035f8a9e9336d606df8e5f902bace",
+      "bytes": 22014
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_analog_fidelity.py",
+      "git_blob_sha": "8e99b45dafd4d01175839fe5a1ad2e8c586c13bf",
+      "sha256": "84108580c0543465a22d673ade3b5979320732a34fee727d9ea5f63d5e745e75",
+      "bytes": 6141
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_async_env.py",
+      "git_blob_sha": "41f330447c4ccd7fdcdb6bc51b9dc3809eeaf163",
+      "sha256": "8e5ede8fd6b5b7c2b6d6210afb925b3842c6bd07208b8b40f1b42eca4b5f1821",
+      "bytes": 6214
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_checkpoint.py",
+      "git_blob_sha": "2002dbd85b60acf8e9a1b8185f87c8a072582cb9",
+      "sha256": "0ed2ffacb1e1ac24c0f02378de4bfb71099d46308c5d3306f755d726de3abce9",
+      "bytes": 30661
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_config.py",
+      "git_blob_sha": "f9c779507d1b45ac09491daaa333888e98ae94f6",
+      "sha256": "04da512e19f7608baaac2e37fb23f23c70b3eb0f048ef00892dac403db47598f",
+      "bytes": 108251
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_distributions.py",
+      "git_blob_sha": "16cb36ff466f63e8f846445b8dbc21a5b4803ccf",
+      "sha256": "f55bf28251fe23efed2aaa2447ad303e40b64ecdfc4d014ac041d6a0e6f09e4f",
+      "bytes": 10725
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_dolphin_env.py",
+      "git_blob_sha": "d453184ecc60ad50e711fb76879a3578840bbc7b",
+      "sha256": "8e2f754e74c7f484a2fb31698ed2cab7e5261d1b64dc0a33e25946d7ca8c9ec8",
+      "bytes": 65054
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_dolphin_mp.py",
+      "git_blob_sha": "3c1cb0f8d4d1968325b32c60f47c603e7645cca8",
+      "sha256": "85e4d8845400c5ef4eaae16f2553bcca1d5856bf948138d89be62f7c642382b1",
+      "bytes": 24713
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_dolphin_skip.py",
+      "git_blob_sha": "5ceaa9037f5b107afa4b2849b0b696734b938ef7",
+      "sha256": "ec7f4e6c6cb1b2410b5382e4371030b3b0e9298197ad850b22ceb3e8b799a56f",
+      "bytes": 4040
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_dummy_env.py",
+      "git_blob_sha": "76da7248ac82ccaeed04da722c9a5a66a0eba906",
+      "sha256": "70e4b029571f8ec35985f032d9cffab718d331725831d3ef38153fdcc6800fd0",
+      "bytes": 14423
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_env_bench.py",
+      "git_blob_sha": "33ff0710ea44b485ad2e2467d02c6128831dcf30",
+      "sha256": "5c1cdf90ab1c7f81c8773e216d3ace7e33dd9d3b8e6f2ea261493582ea22e6a7",
+      "bytes": 6538
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_env_timing.py",
+      "git_blob_sha": "3b936e697055a607eaff2c7cb093730ea29bd5cc",
+      "sha256": "98b0a44955fc64f9459a33d7f224695356840aeef47dee43fe1290d93371ad9b",
+      "bytes": 12691
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_evaluate.py",
+      "git_blob_sha": "4fdb1f31af223f5e2a07bae04cf7e3c3f4a33322",
+      "sha256": "c33cc38f4f2720446a923744edbc5c26f84b562ade64bc943a6469685bbd11f0",
+      "bytes": 22387
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_external_match.py",
+      "git_blob_sha": "00e93e113f1aa63c720739472280c1108c0a2768",
+      "sha256": "f2df086754c04e4e237be7a9e6f606abe263a2e709167b0d02b5ab61e3603e7c",
+      "bytes": 18558
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_fast_attention.py",
+      "git_blob_sha": "1aacdff9c0291448e87ee36aab02790b2f1b9bc0",
+      "sha256": "ec9cd517842dc8cb855e3affafc52f549aae4db684720cf62e7fc3dc96ecd9bb",
+      "bytes": 8440
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_fast_encode.py",
+      "git_blob_sha": "a798f907cb99df7be35bdf32aed47ef2beac7225",
+      "sha256": "73d161e336da1ba2a77a59b64aeb04cde00ed86e16ba314cbd8b92f4c395be55",
+      "bytes": 4420
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_fast_forward.py",
+      "git_blob_sha": "92b5c97871366f594eaed3af7878aaff22c25f4f",
+      "sha256": "b40abdd9bce31b89b1c0a4238f43b71d4ed126c94d471508e7abe0d767e1fb1d",
+      "bytes": 25912
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_fast_step.py",
+      "git_blob_sha": "3a797cf41a07a905079203870ac227e11f4bfb57",
+      "sha256": "b2412d70489c541dcf4d6a2de7014366a2052a38237b29729f7782e9c75c5c93",
+      "bytes": 17598
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_frames.py",
+      "git_blob_sha": "ddb03861a048caadfeb33c61129d19bc4c7c6970",
+      "sha256": "e22eed1ea790fc4ca01fd49c943779c5b24665da20fd7d995157feb5d40d7209",
+      "bytes": 8341
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_graph_step.py",
+      "git_blob_sha": "769e0b9460330f6dab4b1cc13e06c94b81e82f80",
+      "sha256": "63a013c2a69d3f1711a2ae7f8230aa98886cd8c6d8d33f472e6cbd916a1b9db6",
+      "bytes": 9184
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_hindsight.py",
+      "git_blob_sha": "3a5338b6b28043803de6da82c9dbae2130cab963",
+      "sha256": "dabddab8ab073176242aaa13ef4ffb094c364ac5d528a03bce909c5282ee8f8a",
+      "bytes": 25794
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_interleave.py",
+      "git_blob_sha": "0354f645ae7912aa82f3d35667d1aa58e000c025",
+      "sha256": "24e97ddbe20086dddfc53ac2fcbc6766d0972a3be5924358f72b65ba3119f491",
+      "bytes": 5354
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_kv_cache.py",
+      "git_blob_sha": "91b6faea7622bdfc861680e6a9867bd1ca586b4b",
+      "sha256": "ce04a6b6acad1f18d5808c488c64e23fed633353baab30baf389765431876759",
+      "bytes": 4815
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_learner.py",
+      "git_blob_sha": "1d92ed1d745622d92d5eb0cbf4325ec3a43fedbf",
+      "sha256": "cc5fc4a2eae75e70565b0bea5ee391f425fc1be248b0f786ccd609a0601737f3",
+      "bytes": 36394
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_learning_signal.py",
+      "git_blob_sha": "e4f733aeff3c467cb349e2793e25102bab97555f",
+      "sha256": "e54115840a6900023da717fea8e05f52302badaf0acacb1fdafd75e7dcf7ef41",
+      "bytes": 3978
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_libmelee_frames.py",
+      "git_blob_sha": "34c1bec2802e107ebe8bc0afbefd32cccb6d8d33",
+      "sha256": "6fb79594cdcc20358dea468847c871627d216150e579ec3c6e656e7032f7f0e9",
+      "bytes": 14138
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_logging.py",
+      "git_blob_sha": "3d78cb805fe1982fc6cb851bac7fc920b2a5c8d2",
+      "sha256": "dd6a9564dc436e9aace7a7ddf507fa8f14ad5b25f15a4b327430bb325dbfc291",
+      "bytes": 11486
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_mimic.py",
+      "git_blob_sha": "ec68cc23f8ecf039e900792f9876611541b10699",
+      "sha256": "b8662b2ba61879501aa3573c60d1ef8966bc3666680429f126109777498ab660",
+      "bytes": 20305
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_mix.py",
+      "git_blob_sha": "0e3f9c867efe9d0a5f7ac480bd9225d6457ba9dc",
+      "sha256": "6ad35d770111bbf7ef436fe25eaafafe93b960c9d52ff30630c1fefd93ee97e5",
+      "bytes": 35117
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_modal_app.py",
+      "git_blob_sha": "542cfb1a7aee4a73f7c61340446907ab5d71d868",
+      "sha256": "aee051fdb2622d93d9cfcdf152b31a085263ea51f63875b91e59d91ed3e9242d",
+      "bytes": 74791
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_multi_step.py",
+      "git_blob_sha": "802baf6bfc0cf6c9679f384f14a3fb86cd46f210",
+      "sha256": "1483032df1026d79ef4d671af5ffd08bcec9d7efe736176e4068b2a34cab8c80",
+      "bytes": 7960
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_opponents.py",
+      "git_blob_sha": "ef20516c59dccdb39a1cb4f365e1a7dc0b0fc8bd",
+      "sha256": "aa82681255a4ac525775812ce17e1c0103d13515477a0b172eecbced798b20d0",
+      "bytes": 13400
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_packed.py",
+      "git_blob_sha": "3dece4f47840a4e3e2416feb0fa01c49c6ce01e1",
+      "sha256": "2e4775d0b4b495aba9072c6cba282a41c098ac00ea0290514d5fe47c11b279ed",
+      "bytes": 9113
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_phillip.py",
+      "git_blob_sha": "9ef2a82ce833dbb37dce0974ad423d5555cd19cc",
+      "sha256": "96b84f1a854def002128601ab0b4194bb1d7ad660040d9695e3306b00a7c5a55",
+      "bytes": 26382
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_pipeline.py",
+      "git_blob_sha": "822b528865221127572faa6221a0d06c9d49fe53",
+      "sha256": "b25d86e918c0e506400f80551a309d563df949ca3c930ec0419d11762336f201",
+      "bytes": 9741
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_pool.py",
+      "git_blob_sha": "6a9bb7ec8dd45028242ef68b4653887eeea2a054",
+      "sha256": "717bfa515e2d0c48e3e3274e84f13aa196c1356ed7d020020e4c8644865994e6",
+      "bytes": 18389
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_prefix_forward.py",
+      "git_blob_sha": "b6431f362ea5ac288a8997462ca4deb0bf0b618b",
+      "sha256": "ca8d5db3c7774460fd0e651ba29b5ce062870c59cd302976e87e7539a08a1f09",
+      "bytes": 12628
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_profiling.py",
+      "git_blob_sha": "485acb70d855be16e7ffed8c1e9125669aaeb103",
+      "sha256": "3022883dc415d332b0bbedb4f001a5cac3a0c28180d888951c388eee1d67f4fa",
+      "bytes": 16311
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_render.py",
+      "git_blob_sha": "66c86ca3a71547cbfb952794a4f09c933addf468",
+      "sha256": "c218a9119976b85099b12cc3e08856775aa0d1c625764d5e1f546137f5bf6280",
+      "bytes": 32507
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_reward.py",
+      "git_blob_sha": "ead38fb9d01d8246ad4247c77204e08b6359b4ae",
+      "sha256": "5e5046d996dca799613fc27151c1359fd0a5f2c830285d6fbf50cfee41a59ede",
+      "bytes": 17377
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_rl_lib.py",
+      "git_blob_sha": "7be2495fe057fb60a42ec00b66695f5ea1d58cf9",
+      "sha256": "25d5f3e2af0992b6d615c1bbec19093f8478252de7fc64209fdf74a80f8902c1",
+      "bytes": 5333
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_shm.py",
+      "git_blob_sha": "a4f9c8a4b849f3472e67275034d3392c3036adfd",
+      "sha256": "028ae9ae4381b67d2e58e0fd2d18b93836156556b84b9da84ef4349d6c42741e",
+      "bytes": 9012
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_slippi_ai_agent.py",
+      "git_blob_sha": "da29268ee0b4660ad519c57a706ee4264bb9e440",
+      "sha256": "add04495f6f4e1669e01681c7ecdfac7046f0eabd242ef76f8c911670f96315c",
+      "bytes": 46582
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_slippi_ai_parity.py",
+      "git_blob_sha": "1b529c6a5151cbe982d0e1020ccfec47de0a4479",
+      "sha256": "363364d39e626e70b25bf34127962afb1741b3ce6bf8bc6c2a989f74a792d4f6",
+      "bytes": 9227
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_slippi_ai_torch.py",
+      "git_blob_sha": "504151e271da7840c74e7feb2a86ce87e9394af4",
+      "sha256": "88ba1e67fd50a49944ac9b0e0be6b32d6b5f16a5ec2ed66ec1fbcb2258ca5f0a",
+      "bytes": 33222
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_slp.py",
+      "git_blob_sha": "238108d559c68800571dad16861d82969e7b1c3c",
+      "sha256": "5cc3b71edf046b9943b2dcd756b969412139b3f680566d52fd75cae6928db178",
+      "bytes": 8535
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_slp_inputs.py",
+      "git_blob_sha": "8e7c2d9e71cee72769ddbc99ac6b36ad3bfe84ef",
+      "sha256": "d2570a23f29531aacbf2fb573b7c6d4b836035a96cd1e56c5652c66e5bbd987f",
+      "bytes": 19451
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_smashbot.py",
+      "git_blob_sha": "e4462ea72b7194eb48babf20e224d2929658c380",
+      "sha256": "53cf56379cde873cb0dc70da155776307685f9e342c56b956f94b77a9ad47b13",
+      "bytes": 33224
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_smashbot_compat.py",
+      "git_blob_sha": "a04b2dbe385f70bcd628850690b8396d2dca306e",
+      "sha256": "331d3260b5635cbde85111c78866450da279e9409d38b2f12dc0944764e22e87",
+      "bytes": 25759
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_train_smoke.py",
+      "git_blob_sha": "2e7ba65510097a6a983d08417bbe0fcb8ab77293",
+      "sha256": "95f5408d505ea7b3f78d170a25ce385a9353bfc919edaa391007fcd7dbd47f7c",
+      "bytes": 33288
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_trajectory.py",
+      "git_blob_sha": "051abaac02d28635584a3868a0a17c144227c8cb",
+      "sha256": "3046050f2d0272fcf9cfc8b93eed59c5dfb0a044fa00edffc656123e961980d4",
+      "bytes": 10886
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_value.py",
+      "git_blob_sha": "431639ddffd8705f0c0ffde3e79ef8e7345750b8",
+      "sha256": "0cabca28ff8aaaf2050d1e912eeffe19688e4971dc45dd4de3b034ec7981a50d",
+      "bytes": 7670
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/rl/test_video.py",
+      "git_blob_sha": "a98de9e117904847d919a61b9cb2ece0861b9227",
+      "sha256": "d0d97be6a3e97c7f1a8d6eae576b05237d8727edf5dbe1f96f4f90a2d8fb60cd",
+      "bytes": 33755
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/test_calibration_artifacts.py",
+      "git_blob_sha": "20979c825878a4d3530fdbb746ba0b3ce7d06010",
+      "sha256": "940ca7082cf019bcc6cceff4f24df7c5657ff6fd2a6cc97908096635030f90b2",
+      "bytes": 5850
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/test_codec.py",
+      "git_blob_sha": "1ee37e82d80892f2bc6702118f0d6eb8ecd8f07a",
+      "sha256": "6b9effcac6d233b49e191b8541b36e70caa3ac8dc8b7221efed63a1205cbaeae",
+      "bytes": 5664
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/test_modal_app.py",
+      "git_blob_sha": "a268a6196f9f95353171e5c20a0d5e5041e21307",
+      "sha256": "97d6daf23a89e2e74c92166860c1e76dca26a8dd90c428bc870e1e0dc920be7b",
+      "bytes": 59953
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/test_model.py",
+      "git_blob_sha": "7d55e0b61d0b1f879dfc8da6100a491859adffd2",
+      "sha256": "1c902cd954cb15ad8f0cf3f1d16fdbd495270d0b3ebc0dc43c25faff308cc465",
+      "bytes": 32993
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/test_preprocessing.py",
+      "git_blob_sha": "eaa842605db51432f3451f909a4a5c57dc8f4bcd",
+      "sha256": "c4ac366c85f74c68a06f556f9e453f076af1c6928065a5d74a75a63af9a185d0",
+      "bytes": 57208
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/test_replay_dataset.py",
+      "git_blob_sha": "b9626ea42fd60fac36700a8310ba9b1345280b2f",
+      "sha256": "796e214357a93f141be490319a4da7f446f13480df78cbed9b0ed1d586d52bcd",
+      "bytes": 22991
+    },
+    {
+      "path": "melee-policy-frisson-ai/tests/test_training.py",
+      "git_blob_sha": "6411c95e0b7375951387734d668ca3f7a2a7683a",
+      "sha256": "407d35eef6aabc2dca7048c5bfd4927adcd1ba0f0f075b82f9729acb8ae3ce5e",
+      "bytes": 14783
+    },
+    {
+      "path": "melee-policy-frisson-ai/training.py",
+      "git_blob_sha": "dbeb03eec3ca5d48c83038299bbc057446fc9954",
+      "sha256": "8645ddc6b7cc6b92938b79d18f9ff3c19de2bd74bd021908756d1c83fcc39b81",
+      "bytes": 32568
+    }
+  ],
+  "removed_acquisition_functions": [
+    "_dolphin_layers",
+    "_make_base_image",
+    "dolphin_image_commands",
+    "fetch_playback_asset",
+    "find_playback_asset",
+    "install_dolphin",
+    "mimic_image_commands",
+    "phillip_image_commands",
+    "slippi_ai_image_commands",
+    "smashbot_image_commands"
+  ],
+  "runtime_files": [
+    {
+      "path": "LICENSES/MIMIC-MIT.txt",
+      "sha256": "dddb0f1396b4b5b5c1fd8badae8d6ccb6f930207cc2916d2a09145886ceae8e1"
+    },
+    {
+      "path": "LICENSES/slippi-ai-MIT.txt",
+      "sha256": "a632127717250e9d7d32a7451f8fecb668da1003e333850a4808bcce38348112"
+    },
+    {
+      "path": "README.md",
+      "sha256": "c9fb29661457aec0d29acb816e947a45b154253012568240ab67523b3943c6ae"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "9b54f8524ad2042a882f5f614ef4437038e2baf0e2c1a032688470a029481045"
+    },
+    {
+      "path": "config.yaml",
+      "sha256": "770a2bd7f560085b7c2cc961a09ecb94d0007479018fdd283f66c0c1ed0a21f5"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_bc_stages_day.toml",
+      "sha256": "3bf83dac66599924f4e9c24bd163db03a6c0007c2e5b490af611cb3dd7fac8f4"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_bc_stages_prefix_day.toml",
+      "sha256": "3bace84f55d44322c19a0150dc0f78d148113b13d8666b26119c2bd7c89d8db5"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_bc_stages_prefix_smoke.toml",
+      "sha256": "f0587fe2a78b97e5b271a91d4511948dfd01e86aefacbeac88a59929f639a3b7"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_bc_stages_smoke.toml",
+      "sha256": "7578433e1a3770298f2fedea55ea75f47d299d6b02557960983e889905fd4feb"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_delay_distill_day.toml",
+      "sha256": "7542894b3f6f22dfdc4c5a40f414d334239c8d2e8354ca0cc2b2c46db40bc904"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_delay_distill_smoke.toml",
+      "sha256": "bbd4f370195c7828371832fc7995e9e62f9f1d10c430f19a2397373792f366ef"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_delay_ema_day.toml",
+      "sha256": "6267a968943305f596e42793721f4921deb95d81ed22a3c3bea17303d7745dd5"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_delay_league_day.toml",
+      "sha256": "34d9862c5354e473e10d683e2e989d972fcddfaf9a7fb85979f1e364d1e8af4e"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_delay_league_smoke.toml",
+      "sha256": "0a8141bd07aaa0650cd00a909ec66d6327477b5ea23a7333c943d99e69621d7f"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_delay_ppo_day.toml",
+      "sha256": "83e808ac64d5d918800a4a7f36465028e2a86487cbcbdad63df155575c938546"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_leash_kl0p003_day.toml",
+      "sha256": "72b6adca7f074b0430edb2b40b9e256b00171b2c0f25ce67358ae7031de8c446"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_leash_kl0p01_day.toml",
+      "sha256": "897ae7f836292faeb5bc3249db25eedc281c8b4e60459ca3b95d2b5c4148f5c8"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_leash_kl0p03_day.toml",
+      "sha256": "ac104b8dbf2fc4c8ab8bdbdd14092300e9e984420e1a02887ed4e8ba0c3b247c"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_pt_stages_arms4_smoke.toml",
+      "sha256": "4782fb473a47430ed78c3dce8349c7c0780a30d6fb810f8efbedaa1c82f64df1"
+    },
+    {
+      "path": "configs/rl/dolphin_10m_pt_stages_day.toml",
+      "sha256": "e2c48b5ea31abb5f8450e20e7379fec18da184b492fdc203e05f15c3dcc6eca9"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_bc_mix_day.toml",
+      "sha256": "9552618130f25d4d18916d804ef989f0fefaaa6a2ede2f67b7077458e7367c40"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_bc_mix_dmg005_day.toml",
+      "sha256": "5fd275cdae21948968bce97d1fc697a71c564e21a52738e4e6cbcb77f160050b"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_bc_mix_smoke.toml",
+      "sha256": "366b70ce10d90fa11981650a1fc3c893fdae2d0f735a723c626a9dbd1b5fd4de"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_bc_self_wide_day.toml",
+      "sha256": "6c1c92fb5d133a679cee574df94c3a94fece3092df9de932b30ec406e776e620"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_bc_self_wide_smoke.toml",
+      "sha256": "6e2daab9351fd3ee7434f653292b6845a6a37162f31c0c20250e38401b5d203b"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_day.toml",
+      "sha256": "63575a8d4c4ac9f277e44d3232c99c8010e1d069257d5e75dd7244751963bad2"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_self_wide_day.toml",
+      "sha256": "b7d931feabe8570c45696269f9c9a83eae08a836f875bdfd244edd6fdbf229b1"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_self_wide_smoke.toml",
+      "sha256": "31a848e12916c495454acf822347df814b0d3bf029713b97d218666b1aa2531e"
+    },
+    {
+      "path": "configs/rl/dolphin_20m_wide_day.toml",
+      "sha256": "8a38ee284c47f72717ee17f22e69ffa93a53cffd5287726feb7d41fea09d489c"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_bc_self_wide_day.toml",
+      "sha256": "63216e4d4551133c98f18a9e92efcdf6eaaf490cdfb6ffb1fef894950b9d8f68"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_bc_self_wide_fast_smoke.toml",
+      "sha256": "b2d25959ed7bc406efe30a5bb96fd8c34db646509b9b480c2296738401f0ba55"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_bc_self_wide_mp_smoke.toml",
+      "sha256": "0cce2fc70d9724f572b78326cf9d8061344736fa9c5e82c60a2760e3f04709c5"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_bc_self_wide_smoke.toml",
+      "sha256": "afd75080e206880db5c007ba80eb95031b8a90d1a10cb325a81f3321bd71ced1"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_delay_b2k4_smoke.toml",
+      "sha256": "259f7365dbc975583d2dd27d5b4faabcc939d29ad3d651b5deacd3e5e686c272"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_delay_b4k3_smoke.toml",
+      "sha256": "ab0fab4991fd2a318d0a6645ee8ec9d8ed605aca2d373f455f1a8476f07ef68b"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_delay_day.toml",
+      "sha256": "7ed15a14f83fa757bfba2eefe552676d58b6c8c49d7299e7ef996a916938083f"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_delay_e128_probe.toml",
+      "sha256": "133179156792fd3e8d75252553d611c44688c5e6bb264f63c71d551e88560218"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_delay_e160_probe.toml",
+      "sha256": "8241dad36a92f5bbbcd6dbe79166586505aca93f5a54c10c0698151bbc65b33d"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_delay_nb16_smoke.toml",
+      "sha256": "6c2d2f6b695cd2710b4d6025b9531fd25e326d67a31b1a25f1537b886215defd"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_self_wide_day.toml",
+      "sha256": "0dc782fe45781ff9c1bf8516c327f1e7775c1a088913431d3c165bec2ce55ae9"
+    },
+    {
+      "path": "configs/rl/dolphin_5m_self_wide_smoke.toml",
+      "sha256": "0b48db7984d98bb075b110e2e7cafccbed49132a47dd9b7dc5975ed9687ad9eb"
+    },
+    {
+      "path": "configs/rl/dolphin_75m_bc_stages_day.toml",
+      "sha256": "fd3a6a54501fc553473f9f5b9b986f5b7e956ad79529cf2c1ca1f60ae3ee1e65"
+    },
+    {
+      "path": "configs/rl/dolphin_75m_bc_stages_smoke.toml",
+      "sha256": "6dd5986fe610f05d346f1a2fa532c66f8089850b208aa00ca7651f776e919add"
+    },
+    {
+      "path": "configs/rl/dolphin_75m_profile_smoke.toml",
+      "sha256": "4492e47aeadf47c0b2f550dc4f1d7c2770b5743a3efd27ae0d497bb81dd5d4d8"
+    },
+    {
+      "path": "configs/rl/dolphin_75m_pt_stages_day.toml",
+      "sha256": "edaa27468e27f78015730521f18ac71fcfb6776287c0183089a645759ead70e5"
+    },
+    {
+      "path": "configs/rl/dolphin_cpu.toml",
+      "sha256": "c90ed2ca5f042eadcaf982dcaa092e46e1a9d7c3607b8a99bc5bd6ecdc21cc46"
+    },
+    {
+      "path": "configs/rl/dolphin_cpu8.toml",
+      "sha256": "df4f1d8b960622aa9e6d2d8160db15e6acf8d2dbc8f5297c5dc281c776d25e35"
+    },
+    {
+      "path": "configs/rl/dolphin_cpu8_day.toml",
+      "sha256": "32f6d4c4b90fd62c1cd0654b807c44960b24e490b7b19e38d480ebaad5fde32f"
+    },
+    {
+      "path": "configs/rl/dolphin_cpu8_delay.toml",
+      "sha256": "6b8d676bc8e9d2fc527e5c57d8a5a541f8714ee3af2fb43e3d3dbd9fcd316794"
+    },
+    {
+      "path": "configs/rl/dolphin_cpu8_eval.toml",
+      "sha256": "ba4abb0e535618b708e297de124bc6faf4ce732f3ad25ed27817cd1a6e7e9c1b"
+    },
+    {
+      "path": "configs/rl/dolphin_cpu8_mp.toml",
+      "sha256": "208e3281cd1e64c0be78ed3dfed98ec3f32b58a3d003c1e75e7dd4bc459253af"
+    },
+    {
+      "path": "configs/rl/dolphin_other8.toml",
+      "sha256": "077a07dc65682b933b2887a87cf6ecf83ce1057c872ae7722551bac73f517647"
+    },
+    {
+      "path": "configs/rl/dolphin_self.toml",
+      "sha256": "f6287b91b7e206e6f35dda441da475da392027f43d0a02462709b088ac2ecf07"
+    },
+    {
+      "path": "configs/rl/dolphin_self8.toml",
+      "sha256": "76d76a8d9c7c42f3b646a60186064f3407de34c78d3fdc20a414d0d72a0df80b"
+    },
+    {
+      "path": "configs/rl/dummy_75m_bench.toml",
+      "sha256": "b8864efe617a12c63015bf16df545adfe89a3f576a8cca91bbcc9a6baec7273f"
+    },
+    {
+      "path": "configs/rl/dummy_75m_bench_base.toml",
+      "sha256": "439db9b798395269c8071e2991104881bb31d63e4c4dc581cdac8bba77a0f9bc"
+    },
+    {
+      "path": "configs/rl/dummy_75m_bench_mb24.toml",
+      "sha256": "8c3f0e40cf7984305a3260572ba020abb8ae956b72506898753b5aa3324f6f42"
+    },
+    {
+      "path": "configs/rl/dummy_75m_bench_nockpt.toml",
+      "sha256": "14398c2adfc5a1508a3c26526fe952d857409dcd1d6e979a9bb19f10f17a742a"
+    },
+    {
+      "path": "configs/rl/dummy_75m_bench_tf32.toml",
+      "sha256": "0fffbeb0c43df01f8abc55c4b4f6f554c4794caedc2352dd32fbf5b310f03360"
+    },
+    {
+      "path": "configs/rl/learn_tiny.toml",
+      "sha256": "a25ef152aef4e83f858f1a4f0cfae24e89cd52ead013b75e707bbb8e6eb7c123"
+    },
+    {
+      "path": "configs/rl/phillip_cpu9.toml",
+      "sha256": "14350e05ea17760230f6dbf31a637b5d9934fa7626c376d078d0a0fb2e212511"
+    },
+    {
+      "path": "configs/rl/phillip_mimic.toml",
+      "sha256": "49c5a123a6c79fe705159734ff7b4d2871dce36d9f7e5e7a6b2b830eefeafaf0"
+    },
+    {
+      "path": "configs/rl/slippi_ai_cpu9.toml",
+      "sha256": "29606e81de4c8ed235815595d9d20fc2cd8a03dcda8c67c8cb83f5d4b9e397b3"
+    },
+    {
+      "path": "configs/rl/slippi_ai_mimic.toml",
+      "sha256": "2063c2fdc1cd147ed0ebb58027c9a820f0ca70b0fa9f8c324b1247580a7bf2c7"
+    },
+    {
+      "path": "configs/rl/slippi_parity.toml",
+      "sha256": "54a768686f88d6434b1867c0e8a5b5905ea94c7934eae6a6af829769dd9ca645"
+    },
+    {
+      "path": "configs/rl/smashbot_cpu9.toml",
+      "sha256": "33e1a7717fafec05f220da9ae694b97c4ce3a93ada73dc3573bd6aa31d19005c"
+    },
+    {
+      "path": "configs/rl/smashbot_mimic.toml",
+      "sha256": "6ab601c65c0d37c77839d3e3a61efac5d33c6ad86674de57675f391dfe2300dd"
+    },
+    {
+      "path": "configs/rl/smoke_3m.toml",
+      "sha256": "da205646531592a086244181390b2dc0c7b5adce9ddb07fd049009e393a75f92"
+    },
+    {
+      "path": "configs/rl/smoke_tiny.toml",
+      "sha256": "543a88964bdfcd7636a8471482dd5120a951549461418d8f6f44af689710ab73"
+    },
+    {
+      "path": "configs/rl/smoke_tiny_pipeline.toml",
+      "sha256": "93c700981eedc7044c68b718dab08a43b0fc6387f39d5f997514eab4853d805b"
+    },
+    {
+      "path": "configs/rl/video_20m_bc.toml",
+      "sha256": "152e6818dcb54d79f79012003810a2968ba2e6cb225c5adbced98a33fcadac52"
+    },
+    {
+      "path": "configs/rl/video_match.toml",
+      "sha256": "40df4a6d9d28359ec862fcb74e352fee8aea58b9a43da0feb9bd55433bc4936f"
+    },
+    {
+      "path": "configs/rl/video_match_probe.toml",
+      "sha256": "e67b6eb255b9023ead8a9fb92093a7b8f310f8a0abcf3434e682d5462e331153"
+    },
+    {
+      "path": "configs/rl/video_match_stages.toml",
+      "sha256": "916b53264d4fc8664b37096f80285ee1d15dd1ee3f9cf313251a2a9e4d93da3a"
+    },
+    {
+      "path": "configs/rl/video_mimic.toml",
+      "sha256": "db51fe39e0023aa5831b626231a1e9a60408349065b4ea04463b0a7026e6ec1f"
+    },
+    {
+      "path": "configs/rl/video_mimic_stages.toml",
+      "sha256": "7d24529474cd23a2753e38aa225d379525b947472b0ac72f5c897bcb9930bb61"
+    },
+    {
+      "path": "configs/rl/video_phillip.toml",
+      "sha256": "c875c53ca50450536ae831c9623f546c094f016e8f24cfbbf61d66d0879fea87"
+    },
+    {
+      "path": "configs/rl/video_phillip_stages.toml",
+      "sha256": "31dc8f371edce4aeaceb5d8065bf6037fee11f679f817cb912f75db5b22bb038"
+    },
+    {
+      "path": "configs/rl/video_seed_probe.toml",
+      "sha256": "9169948ecac452df981f080839c5f552530258ef3839baf13a19fd88e5a8d79e"
+    },
+    {
+      "path": "configs/rl/video_slippi_ai.toml",
+      "sha256": "a9a7153045f982b27c4d836f35a9adb2a2b175cdd8b0dcd54bfbf32cb25baac7"
+    },
+    {
+      "path": "configs/rl/video_slippi_ai_stages.toml",
+      "sha256": "a024f60cb857b7dc03c7f81361a33eeeaf3b0415f2f9cb16dfaece4a9cc5a4f8"
+    },
+    {
+      "path": "configs/rl/video_smashbot.toml",
+      "sha256": "f788e42b168dde681705743c90ae3d0053f0e3b73868dc2715464c51070f9d7d"
+    },
+    {
+      "path": "configs/rl/video_smashbot_stages.toml",
+      "sha256": "a05b8ffc7a0cc9028c6ef2537f5f3a8aa8a958c69fabefd8c345654655d3b71a"
+    },
+    {
+      "path": "controller_codec.py",
+      "sha256": "4a51a6eb2bd1da48a1a7c852194d914ab6e5072b7d353096f351e89b24252286"
+    },
+    {
+      "path": "melee_rl/__init__.py",
+      "sha256": "8d920a62476ad064fecc5fc40c78589fa254745adfa8a2543e9aa0d294bee381"
+    },
+    {
+      "path": "melee_rl/actor.py",
+      "sha256": "a4b8f630a881154ea0d1f5924001e77e6c62bc5e2c1b7d51d7b954cec4ad6c6c"
+    },
+    {
+      "path": "melee_rl/adapter.py",
+      "sha256": "874d53475d5112ea56716f65a27bf34ae57c2fa7553733c7ad932a2422246570"
+    },
+    {
+      "path": "melee_rl/bench_step.py",
+      "sha256": "8587ba6ae816005638527729868a7bc8a81c4c0a3e9b55c4f1e552c16d875a48"
+    },
+    {
+      "path": "melee_rl/checkpoint.py",
+      "sha256": "499d24098d413b5b37fcedf8ba2072081ced047ccc21d903834004c132ac2931"
+    },
+    {
+      "path": "melee_rl/config.py",
+      "sha256": "262f5192c63475525023b33530fedc3d002d513f4e01e93165a93aae6f30ae3b"
+    },
+    {
+      "path": "melee_rl/distributions.py",
+      "sha256": "7c541d9158037bb74240ca9f6b19a1f6fdeaa998b4c1584804de4b65358dbe19"
+    },
+    {
+      "path": "melee_rl/env/__init__.py",
+      "sha256": "cfd2a95572db1a37cbf8cfd403ca2f817e5c877bdf8fd932a781309ca9241b1e"
+    },
+    {
+      "path": "melee_rl/env/async_env.py",
+      "sha256": "0dde91532909199675f1fd51b6b98794edf30e2807a32bd2a982840c62a4d15e"
+    },
+    {
+      "path": "melee_rl/env/dolphin.py",
+      "sha256": "a51b5fcdefaecbdbc3922a93bb929ea319aac29d78eacfda0bfefc03e5e8122d"
+    },
+    {
+      "path": "melee_rl/env/dolphin_mp.py",
+      "sha256": "e889a8b66be172a6241cb9d816cdc0c6948cca4be18d1d401f6eaf589d960f4a"
+    },
+    {
+      "path": "melee_rl/env/dummy.py",
+      "sha256": "5a865dce53d3bc4e6d486704188e434f9511976d86547241c7d0f80077261c69"
+    },
+    {
+      "path": "melee_rl/env/libmelee_frames.py",
+      "sha256": "c3edec2c2c7c7a53e80772da6cc4b15e85546cbace8293442e63e05013c73291"
+    },
+    {
+      "path": "melee_rl/env/protocol.py",
+      "sha256": "4205e866eaf90372a0fcc3a63d5f2a97980f848b4bb23e565b6422243173a8a3"
+    },
+    {
+      "path": "melee_rl/env/shm.py",
+      "sha256": "d96cfa56a6e828cb2cc1f8bec17fff869729b8eee8cec8de98f559365bf9129d"
+    },
+    {
+      "path": "melee_rl/env/timing.py",
+      "sha256": "9bc325b51f75e9a76e268100870fabde751fbe19aa38346c04e32076b65c3985"
+    },
+    {
+      "path": "melee_rl/env_bench.py",
+      "sha256": "657f3f75d98a86ba4c97e110c185353b1eb3e65ebf9696514e18a1ce92574c82"
+    },
+    {
+      "path": "melee_rl/evaluate.py",
+      "sha256": "cfaff9f0d08579e0cea873ea8adafeca6f7e66ed055d2e4fc8a32f4f79d7ddc4"
+    },
+    {
+      "path": "melee_rl/external_match.py",
+      "sha256": "ba1c9520f0e395e965a8f3e2481ba92781c2642aca9b3010e0ad71370270585c"
+    },
+    {
+      "path": "melee_rl/fast_encode.py",
+      "sha256": "c3c3b3da387ba30d61e92fdcf667d585dce453659917250f28aa5734ac744606"
+    },
+    {
+      "path": "melee_rl/fast_forward.py",
+      "sha256": "d45e6eaf1b231ddea0e633de87f7c9b7d821ee6fed2174b7ad5aca496bed24b2"
+    },
+    {
+      "path": "melee_rl/fast_step.py",
+      "sha256": "0c5d4932784b4e8b7b9d57fb81078a7feb28a1633001780fe50eb37ba81ac41e"
+    },
+    {
+      "path": "melee_rl/frames.py",
+      "sha256": "9ed7ced34bc520351cd3de4a6ed3aa603f795f31df294eea3f9463d1b8a4a2a8"
+    },
+    {
+      "path": "melee_rl/graph_step.py",
+      "sha256": "5f75da3da53b35418353dedae54e1ea05c5eaf54f59bb5c41ac329e2f230711e"
+    },
+    {
+      "path": "melee_rl/kv_cache.py",
+      "sha256": "b834c7565c68b7e159155b1ec86e34106e698f793c49cee2dd1e91340e23a4ad"
+    },
+    {
+      "path": "melee_rl/learner.py",
+      "sha256": "1124d80be45591e1dfe5cd8694ac462eb475717a673c3ba70bf5b29536ef21cb"
+    },
+    {
+      "path": "melee_rl/logging.py",
+      "sha256": "4bf4c111a460ff8fc8818642f59d182730bb7800d16179a0e5867819ee176926"
+    },
+    {
+      "path": "melee_rl/mimic.py",
+      "sha256": "4c445dd658f1a2d0f87c563604c78dd15d70c10f2b0b3bd0378922f252976444"
+    },
+    {
+      "path": "melee_rl/modal_app.py",
+      "sha256": "ffaefee75cf955e77486902e2c13c97bc1b52f808fe016c91444fc819d80522b"
+    },
+    {
+      "path": "melee_rl/opponents.py",
+      "sha256": "3d6067f4afac78e9a5b51166e38132632b2da1530a48f968c8de1bd7c35cc8e4"
+    },
+    {
+      "path": "melee_rl/packed.py",
+      "sha256": "d96e07225312aa6e375cca1af359c80f0c3e951a91c9a5af522a66eb625b4b49"
+    },
+    {
+      "path": "melee_rl/phillip.py",
+      "sha256": "e318c9103250b6b10380462edbc15252d4b28c903165a8b39816b8220c99093b"
+    },
+    {
+      "path": "melee_rl/phillip_sidecar.py",
+      "sha256": "23e3d21519b192beb580e2c4308d1831d5f46df50e93342cc0cb29181df39f59"
+    },
+    {
+      "path": "melee_rl/pipeline.py",
+      "sha256": "767f832fa9d24f426e2a0d42edb4527f026db8379bfa66ed8b51e398b76d44d5"
+    },
+    {
+      "path": "melee_rl/pool.py",
+      "sha256": "917fe378d92eb6af8f058569357d1271671c8240bb59634472d42bcb9ce2f0d8"
+    },
+    {
+      "path": "melee_rl/profiling.py",
+      "sha256": "a7cb490d7fd84dc2c2cb7beb6ab7b4af45741aca6e32b997a65c24979a687480"
+    },
+    {
+      "path": "melee_rl/protocol.py",
+      "sha256": "a863c624e5c0b1ae5a77248f8b87faf471a6a2ff7e61808e01440b6b75823e3f"
+    },
+    {
+      "path": "melee_rl/release_cli.py",
+      "sha256": "c1765a4129101b6ffbdda49db027e3348459b84c513d9b950350e85881754808"
+    },
+    {
+      "path": "melee_rl/release_runner.py",
+      "sha256": "5a85ccb6e31e5acc548bf30fe1e40a7ecd1aae9f010e8994f2116ac324ea6a63"
+    },
+    {
+      "path": "melee_rl/render.py",
+      "sha256": "6fb52ed23c8d61238c24c43a658c2bd2be29ecc65de79d9103e87ef34c3295d0"
+    },
+    {
+      "path": "melee_rl/reward.py",
+      "sha256": "ef8674992ca76f5b5b33e6b176306c08d2ec7d129627efe33c4ba3bd1356f3f6"
+    },
+    {
+      "path": "melee_rl/rl_lib.py",
+      "sha256": "7d418258f3dd4de178bcd731bafd233e3a876ba5b43335930abbce26f4e392bc"
+    },
+    {
+      "path": "melee_rl/slippi_ai_agent.py",
+      "sha256": "f27c4d2820612e0ad13b37755a09b48b140f12a69015b93e0cd075022d93d7f0"
+    },
+    {
+      "path": "melee_rl/slippi_ai_parity.py",
+      "sha256": "68ad209ef2d811999d607fd056626f26255cff72c9c7e6cc5f6c83fccae012c3"
+    },
+    {
+      "path": "melee_rl/slippi_ai_torch.py",
+      "sha256": "830d1fde1e507e5e5af7b152aa94670ff7a15e056f0e76b8e0d46e7465d7fed3"
+    },
+    {
+      "path": "melee_rl/slp.py",
+      "sha256": "b2ef263910b6b1931f2842e9d095c085636f12fde5734b5857500cedae618948"
+    },
+    {
+      "path": "melee_rl/slp_inputs.py",
+      "sha256": "30f4de76a84c664f564c6fad3ba14d39e80fda38341255812f6c2aebbac6f8bf"
+    },
+    {
+      "path": "melee_rl/smashbot.py",
+      "sha256": "b9b900bef548a0a069dc51d43f7c3518cb7136ee8c9cf7b76f6cdcda06dd5277"
+    },
+    {
+      "path": "melee_rl/smashbot_compat.py",
+      "sha256": "42545823f753cc5f40a6cf9f8bef55aac612c6bb042137f5107d47904abc7e55"
+    },
+    {
+      "path": "melee_rl/train.py",
+      "sha256": "c4315d1a522806df532c1c1cac7b6edb889b5f27e76d9f26a2661a930e2f58c8"
+    },
+    {
+      "path": "melee_rl/trajectory.py",
+      "sha256": "c343486194cac9b5c44e5e86de8b3da0d2b6f3a33073839d208f4fb783196469"
+    },
+    {
+      "path": "melee_rl/value.py",
+      "sha256": "7bd88b278c1b1fd7bdd856a61d2e31b5c70ad7175456fa5741682c0521e27550"
+    },
+    {
+      "path": "melee_rl/video.py",
+      "sha256": "83c104592343d5381b1d8d425a058e12f0261060279a81545c4dde602644b19f"
+    },
+    {
+      "path": "model.py",
+      "sha256": "cd6d3757f01c1460c884413e47e1bbb6ae7a2854996a8803adfda47d30473049"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "185e76b3ee34a6aec9b0dcb1729c0f4f5a91f81510901bf1e07d637a7c0df1c3"
+    },
+    {
+      "path": "tensor_batch.py",
+      "sha256": "07c39e9e5d5152b9d8d73aa74edf77c690db53f45b6ec03c6d4e64c80f4814ed"
+    },
+    {
+      "path": "tests/rl/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/rl/_mp_backend.py",
+      "sha256": "342763681f755abb292bc6a53939d8383ea2c22d3036c3ca819ad15182a76a34"
+    },
+    {
+      "path": "tests/rl/_phillip_stub/phillip/__init__.py",
+      "sha256": "9b15644a67e72e30c23ce80e10bfd979670f4b127a47bbf02b8361ff54f16f9e"
+    },
+    {
+      "path": "tests/rl/_phillip_stub/phillip/agent.py",
+      "sha256": "d8a985c607b6fc32929f1e0d81b766d49ace6c3d2f88b6b31c9fb5791d22f597"
+    },
+    {
+      "path": "tests/rl/_phillip_stub/phillip/ssbm.py",
+      "sha256": "9831f22b3e4d537fca8d7e1a524dd8bf62f1b2b41b72a6a4d65bcbffcb2cf4aa"
+    },
+    {
+      "path": "tests/rl/_phillip_stub/phillip/util.py",
+      "sha256": "31fd1949c6f294277ec7a98c98864df2637d9a6c6e8b86637e0f914444a92b02"
+    },
+    {
+      "path": "tests/rl/_slippi_release.py",
+      "sha256": "2ec9840094290c01d6ae75cadfe149af99a821a951d2ecbe1298cf0c035b24f8"
+    },
+    {
+      "path": "tests/rl/_slp_fixtures.py",
+      "sha256": "d5e316d466592093fbadb95c1039a5ff57d98653862f806f2b1b07c41ef6fb31"
+    },
+    {
+      "path": "tests/rl/conftest.py",
+      "sha256": "814eea73e7b35bc547787fab40654e5d10834b5d3983fafc0429d162ca725810"
+    },
+    {
+      "path": "tests/rl/test_actor.py",
+      "sha256": "09a50c992c2f52115dc3ea3e13b3d203e1e06bd5a2ec732dbca7f9eb3619cadf"
+    },
+    {
+      "path": "tests/rl/test_adapter.py",
+      "sha256": "80623b7e004f465e1b9d4771584fc3235547d677d2b84feb4ccf64ebbdd59665"
+    },
+    {
+      "path": "tests/rl/test_adaptive.py",
+      "sha256": "5b1835038f8fdd68b1eda21c86314297288035f8a9e9336d606df8e5f902bace"
+    },
+    {
+      "path": "tests/rl/test_analog_fidelity.py",
+      "sha256": "84108580c0543465a22d673ade3b5979320732a34fee727d9ea5f63d5e745e75"
+    },
+    {
+      "path": "tests/rl/test_async_env.py",
+      "sha256": "8e5ede8fd6b5b7c2b6d6210afb925b3842c6bd07208b8b40f1b42eca4b5f1821"
+    },
+    {
+      "path": "tests/rl/test_checkpoint.py",
+      "sha256": "0ed2ffacb1e1ac24c0f02378de4bfb71099d46308c5d3306f755d726de3abce9"
+    },
+    {
+      "path": "tests/rl/test_config.py",
+      "sha256": "c3a7d00d64b8868d7a8923be53e3b120efef0bb9a5bab1f0668c5d155bff7eed"
+    },
+    {
+      "path": "tests/rl/test_distributions.py",
+      "sha256": "f55bf28251fe23efed2aaa2447ad303e40b64ecdfc4d014ac041d6a0e6f09e4f"
+    },
+    {
+      "path": "tests/rl/test_dolphin_env.py",
+      "sha256": "8e2f754e74c7f484a2fb31698ed2cab7e5261d1b64dc0a33e25946d7ca8c9ec8"
+    },
+    {
+      "path": "tests/rl/test_dolphin_mp.py",
+      "sha256": "85e4d8845400c5ef4eaae16f2553bcca1d5856bf948138d89be62f7c642382b1"
+    },
+    {
+      "path": "tests/rl/test_dolphin_skip.py",
+      "sha256": "f6b841694c4d668c2804d70a86d668beef2c62e49749fde61059115dc7d71747"
+    },
+    {
+      "path": "tests/rl/test_dummy_env.py",
+      "sha256": "70e4b029571f8ec35985f032d9cffab718d331725831d3ef38153fdcc6800fd0"
+    },
+    {
+      "path": "tests/rl/test_env_bench.py",
+      "sha256": "5c1cdf90ab1c7f81c8773e216d3ace7e33dd9d3b8e6f2ea261493582ea22e6a7"
+    },
+    {
+      "path": "tests/rl/test_env_timing.py",
+      "sha256": "98b0a44955fc64f9459a33d7f224695356840aeef47dee43fe1290d93371ad9b"
+    },
+    {
+      "path": "tests/rl/test_evaluate.py",
+      "sha256": "c33cc38f4f2720446a923744edbc5c26f84b562ade64bc943a6469685bbd11f0"
+    },
+    {
+      "path": "tests/rl/test_external_match.py",
+      "sha256": "f2df086754c04e4e237be7a9e6f606abe263a2e709167b0d02b5ab61e3603e7c"
+    },
+    {
+      "path": "tests/rl/test_fast_attention.py",
+      "sha256": "ec9cd517842dc8cb855e3affafc52f549aae4db684720cf62e7fc3dc96ecd9bb"
+    },
+    {
+      "path": "tests/rl/test_fast_encode.py",
+      "sha256": "73d161e336da1ba2a77a59b64aeb04cde00ed86e16ba314cbd8b92f4c395be55"
+    },
+    {
+      "path": "tests/rl/test_fast_forward.py",
+      "sha256": "b40abdd9bce31b89b1c0a4238f43b71d4ed126c94d471508e7abe0d767e1fb1d"
+    },
+    {
+      "path": "tests/rl/test_fast_step.py",
+      "sha256": "b2412d70489c541dcf4d6a2de7014366a2052a38237b29729f7782e9c75c5c93"
+    },
+    {
+      "path": "tests/rl/test_frames.py",
+      "sha256": "e22eed1ea790fc4ca01fd49c943779c5b24665da20fd7d995157feb5d40d7209"
+    },
+    {
+      "path": "tests/rl/test_graph_step.py",
+      "sha256": "63a013c2a69d3f1711a2ae7f8230aa98886cd8c6d8d33f472e6cbd916a1b9db6"
+    },
+    {
+      "path": "tests/rl/test_hindsight.py",
+      "sha256": "dabddab8ab073176242aaa13ef4ffb094c364ac5d528a03bce909c5282ee8f8a"
+    },
+    {
+      "path": "tests/rl/test_interleave.py",
+      "sha256": "24e97ddbe20086dddfc53ac2fcbc6766d0972a3be5924358f72b65ba3119f491"
+    },
+    {
+      "path": "tests/rl/test_kv_cache.py",
+      "sha256": "ce04a6b6acad1f18d5808c488c64e23fed633353baab30baf389765431876759"
+    },
+    {
+      "path": "tests/rl/test_learner.py",
+      "sha256": "cc5fc4a2eae75e70565b0bea5ee391f425fc1be248b0f786ccd609a0601737f3"
+    },
+    {
+      "path": "tests/rl/test_learning_signal.py",
+      "sha256": "e54115840a6900023da717fea8e05f52302badaf0acacb1fdafd75e7dcf7ef41"
+    },
+    {
+      "path": "tests/rl/test_libmelee_frames.py",
+      "sha256": "6fb79594cdcc20358dea468847c871627d216150e579ec3c6e656e7032f7f0e9"
+    },
+    {
+      "path": "tests/rl/test_logging.py",
+      "sha256": "4c5c50a9a58858341f5078ba31410bb0c3e5619b430698b4932dd2cce7a4edb0"
+    },
+    {
+      "path": "tests/rl/test_mimic.py",
+      "sha256": "b8662b2ba61879501aa3573c60d1ef8966bc3666680429f126109777498ab660"
+    },
+    {
+      "path": "tests/rl/test_mix.py",
+      "sha256": "6ad35d770111bbf7ef436fe25eaafafe93b960c9d52ff30630c1fefd93ee97e5"
+    },
+    {
+      "path": "tests/rl/test_multi_step.py",
+      "sha256": "1483032df1026d79ef4d671af5ffd08bcec9d7efe736176e4068b2a34cab8c80"
+    },
+    {
+      "path": "tests/rl/test_opponents.py",
+      "sha256": "aa82681255a4ac525775812ce17e1c0103d13515477a0b172eecbced798b20d0"
+    },
+    {
+      "path": "tests/rl/test_packed.py",
+      "sha256": "2e4775d0b4b495aba9072c6cba282a41c098ac00ea0290514d5fe47c11b279ed"
+    },
+    {
+      "path": "tests/rl/test_phillip.py",
+      "sha256": "96b84f1a854def002128601ab0b4194bb1d7ad660040d9695e3306b00a7c5a55"
+    },
+    {
+      "path": "tests/rl/test_pipeline.py",
+      "sha256": "b25d86e918c0e506400f80551a309d563df949ca3c930ec0419d11762336f201"
+    },
+    {
+      "path": "tests/rl/test_pool.py",
+      "sha256": "717bfa515e2d0c48e3e3274e84f13aa196c1356ed7d020020e4c8644865994e6"
+    },
+    {
+      "path": "tests/rl/test_prefix_forward.py",
+      "sha256": "ca8d5db3c7774460fd0e651ba29b5ce062870c59cd302976e87e7539a08a1f09"
+    },
+    {
+      "path": "tests/rl/test_profiling.py",
+      "sha256": "3022883dc415d332b0bbedb4f001a5cac3a0c28180d888951c388eee1d67f4fa"
+    },
+    {
+      "path": "tests/rl/test_release_cli.py",
+      "sha256": "a4d310dfc275942a83d28ab743f7ecde9cfb4d79abc398007fe0e26dab2238da"
+    },
+    {
+      "path": "tests/rl/test_render.py",
+      "sha256": "c218a9119976b85099b12cc3e08856775aa0d1c625764d5e1f546137f5bf6280"
+    },
+    {
+      "path": "tests/rl/test_reward.py",
+      "sha256": "5e5046d996dca799613fc27151c1359fd0a5f2c830285d6fbf50cfee41a59ede"
+    },
+    {
+      "path": "tests/rl/test_rl_lib.py",
+      "sha256": "25d5f3e2af0992b6d615c1bbec19093f8478252de7fc64209fdf74a80f8902c1"
+    },
+    {
+      "path": "tests/rl/test_shm.py",
+      "sha256": "028ae9ae4381b67d2e58e0fd2d18b93836156556b84b9da84ef4349d6c42741e"
+    },
+    {
+      "path": "tests/rl/test_slippi_ai_agent.py",
+      "sha256": "add04495f6f4e1669e01681c7ecdfac7046f0eabd242ef76f8c911670f96315c"
+    },
+    {
+      "path": "tests/rl/test_slippi_ai_parity.py",
+      "sha256": "363364d39e626e70b25bf34127962afb1741b3ce6bf8bc6c2a989f74a792d4f6"
+    },
+    {
+      "path": "tests/rl/test_slippi_ai_torch.py",
+      "sha256": "88ba1e67fd50a49944ac9b0e0be6b32d6b5f16a5ec2ed66ec1fbcb2258ca5f0a"
+    },
+    {
+      "path": "tests/rl/test_slp.py",
+      "sha256": "5cc3b71edf046b9943b2dcd756b969412139b3f680566d52fd75cae6928db178"
+    },
+    {
+      "path": "tests/rl/test_slp_inputs.py",
+      "sha256": "d2570a23f29531aacbf2fb573b7c6d4b836035a96cd1e56c5652c66e5bbd987f"
+    },
+    {
+      "path": "tests/rl/test_smashbot.py",
+      "sha256": "53cf56379cde873cb0dc70da155776307685f9e342c56b956f94b77a9ad47b13"
+    },
+    {
+      "path": "tests/rl/test_smashbot_compat.py",
+      "sha256": "331d3260b5635cbde85111c78866450da279e9409d38b2f12dc0944764e22e87"
+    },
+    {
+      "path": "tests/rl/test_train_smoke.py",
+      "sha256": "95f5408d505ea7b3f78d170a25ce385a9353bfc919edaa391007fcd7dbd47f7c"
+    },
+    {
+      "path": "tests/rl/test_trajectory.py",
+      "sha256": "3046050f2d0272fcf9cfc8b93eed59c5dfb0a044fa00edffc656123e961980d4"
+    },
+    {
+      "path": "tests/rl/test_value.py",
+      "sha256": "0cabca28ff8aaaf2050d1e912eeffe19688e4971dc45dd4de3b034ec7981a50d"
+    },
+    {
+      "path": "tests/rl/test_video.py",
+      "sha256": "d0d97be6a3e97c7f1a8d6eae576b05237d8727edf5dbe1f96f4f90a2d8fb60cd"
+    }
+  ],
+  "release_changes": [
+    "Runtime acquisition replaced with explicit separately provided image inputs",
+    "Frozen hash-checked source allowlist for cloud mounting",
+    "Local evaluation CLI using unchanged research execution helpers",
+    "Faynt application and logging names",
+    "Upstream source and license notices retained"
+  ],
+  "original_execution_helpers_ast_unchanged": [
+    "run_record_video",
+    "run_external_match",
+    "run_phillip_check",
+    "run_slippi_check",
+    "run_slippi_parity_job"
+  ]
+}

@@ -1,0 +1,93 @@
+# P6a shake-out run: the ``other`` opponent -- a frozen policy loaded from a checkpoint plays Dolphin port 2
+# (here the latest.pt of the dolphin_cpu8 run, /runs/p6a/cpu8 on the Volume melee-rl-runs; ours or Ali's
+# checkpoint format both load) while the student on port 1 is trained (PLAN.md §3.8, §6 P6, P6-PLAN.md).
+# Eight headless Dolphins, T = C = 128, every slippi-ai reward term on; the run ends at max_runtime_s (about
+# 4 minutes).  Meant for the Modal Dolphin image (estimate + yes first, CLAUDE.md rule 4), after the cpu8 run:
+#   .venv/bin/modal run -e smash_melee_bot -m melee_rl.modal_app::train --config dolphin_other8 \
+#       --wandb-mode online
+# Same paths and caveats as dolphin_cpu8.toml (image paths, random init => teacher-KL weight 0, fp32).
+format = "melee_rl.rl_config.v1"
+
+[runtime]
+num_steps = 10000                 # the wall-time limit below ends the run
+max_runtime_s = 240
+seed = 0
+deterministic = true
+device = "cpu"
+threads = 4
+save_interval_steps = 5
+snapshot_interval_steps = 0
+
+[policy]
+profile = "3m"
+init = "random"
+seed = 0
+compute_dtype = "float32"
+cache_dtype = "float32"
+
+[teacher]
+source = "policy"
+
+[env]
+type = "dolphin"
+
+[env.dolphin]
+num_envs = 8
+dolphin_path = "/opt/dolphin/mainline-exiai-14.1-noleak/squashfs-root/usr/bin/dolphin-emu"
+iso_path = "/iso/melee.iso"
+characters = [1, 1]               # libmelee internal ids: Fox vs Fox
+costumes = [0, 1]
+stage = 25                        # Final Destination (libmelee id)
+slippi_port = 51441               # env i listens on 51441 + i
+console_timeout_s = 30.0
+boot_timeout_s = 120.0
+keepalive_seconds = 0.0           # libmelee 0.47.3 keeps enet alive on its own; >0 enables idle ticks
+step_threads = 0                  # 0 = one thread per Dolphin for send + advance + convert (1 = sequential)
+boot = "two_phase"                # start every Dolphin, then connect / settle them (overlapping boots)
+
+[actor]
+rollout_length = 128
+context_frames = 128
+delay_frames = 0
+context_mode = "reprime"
+seed = 0
+
+[actor.reward]
+damage_ratio = 0.01
+nana_ratio = 0.5
+ledge_grab_penalty = 0.02
+stalling_penalty = 0.1
+stalling_threshold = 50.0
+approaching_factor = 1e-3
+
+[opponent]
+type = "other"
+checkpoint = "/runs/p6a/cpu8/latest.pt"   # the dolphin_cpu8 run's checkpoint on the Volume melee-rl-runs
+temperature = 1.0
+seed = 1
+
+[learner]
+learning_rate = 1e-4
+kl_teacher_weight = 0.0
+
+[learner.returns]
+reward_halflife = 4.0
+
+[learner.ppo]
+num_epochs = 2
+num_batches = 1
+epsilon = 1e-2
+beta = 0.3
+max_mean_actor_kl = 1e-4
+
+[delay]
+allow_mismatch = false
+
+[logging]
+mode = "disabled"                 # cloud runs pass --wandb-mode online (secret: smash-melee-wandb-secret)
+entity = "frisson-labs"           # shared W&B project: our runs are separable by group / tags / job_type
+project = "Faynt"
+group = "rl-post-training"
+job_type = "rl"
+tags = ["ppo", "dolphin-env", "p6a", "other-opponent", "3m"]
+print_interval_steps = 1
